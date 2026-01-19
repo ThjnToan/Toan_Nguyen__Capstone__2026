@@ -4,8 +4,16 @@
 % ==================================================================
 clear all; close all; clc;
 
-% 1. Setup
+if exist('thesis_dtc', 'dir')
+    rmdir('thesis_dtc', 's'); % 's' removes all subdirectories/files
+end
+if exist('+thesis_dtc', 'dir')
+    rmdir('+thesis_dtc', 's');
+end
+
+%run dynare
 dynare thesis_dtc noclearall nolog;
+
 global M_ oo_ options_
 
 subsidy_range = 0:2:30; % Test subsidies from 0% to 30%
