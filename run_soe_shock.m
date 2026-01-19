@@ -4,32 +4,48 @@
 % ==================================================================
 clear all; close all; clc;
 
-% 1. Initialize
+if exist('thesis_dtc', 'dir')
+    rmdir('thesis_dtc', 's'); % 's' removes all subdirectories/files
+end
+if exist('+thesis_dtc', 'dir')
+    rmdir('+thesis_dtc', 's');
+end
+
+%run dynare
 dynare thesis_dtc noclearall nolog;
+
 global M_ oo_ options_
 
+% --- CRITICAL SAFETY PATCH ---
+% Enforce the same installation friction as Figure 1
+% This ensures the "SOE Risk Shift" comparison is fair.
+i_adj = strmatch('phi_adj_bat', M_.param_names, 'exact');
+M_.params(i_adj) = 50.0; 
+
 % 2. Isolate the Global Price Shock
-% We want to see what happens when P_tech spikes (e_price shock)
-% Set renewable shock to 0 for this experiment
 options_.irf = 40;
 options_.order = 1;
+options_.noprint = 1;
 
-% Manually zero out the e_ren shock variance for this run
+% Manually zero out the e_ren shock (Domestic)
 M_.xo_variance = zeros(M_.exo_nbr, M_.exo_nbr);
+
+% Set e_price shock (Global) to 10% 
+% (A 10% spike in Lithium prices is a standard stress test)
 i_price = strmatch('e_price', M_.exo_names, 'exact');
-M_.xo_variance(i_price, i_price) = (0.10)^2; % 10% Price Shock
+M_.xo_variance(i_price, i_price) = (0.10)^2; 
 
 % 3. Run Simulation
 [info, oo_, options_] = stoch_simul(M_, options_, oo_, []);
 
 % 4. PLOTTING FIGURE
-figure('Name', 'Imported Greenflation (SOE)');
+figure('Name', 'Figure 6: Imported Greenflation');
 
 % Panel 1: The Global Shock
 subplot(1,2,1);
 plot(oo_.irfs.P_tech_e_price * 100, 'r-', 'LineWidth', 2);
 title('Global Battery Price (P_{tech})');
-ylabel('% Increase (USD)');
+ylabel('% Increase');
 xlabel('Quarters');
 grid on;
 
@@ -40,6 +56,3 @@ title('Impact on Domestic GDP');
 ylabel('% Deviation');
 xlabel('Quarters');
 grid on;
-
-% Add Note
-annotation('textbox', [.3 .05 .4 .1], 'String', 'EdgeColor', 'none', 'HorizontalAlignment', 'center');
