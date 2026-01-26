@@ -53,11 +53,11 @@ for i = 1:length(mu_values)
     [info, oo_, options_] = stoch_simul(M_, options_, oo_, []);
     
     % Capture the "Max Drop" (Recession Depth)
-    if isfield(oo_.irfs, 'Y_e_ren')
+    if isfield(oo_.irfs, 'Y_e_ren_shock')
         % We multiply by 100 to get percentage
-        output_drop(i) = min(oo_.irfs.Y_e_ren) * 100; 
+        output_drop(i) = min(oo_.irfs.Y_e_ren_shock) * 100; 
     else
-        error('IRF for Y_e_ren not found. Check shock name.');
+        error('IRF for Y_e_ren_shock not found. Check shock name.');
     end
     
     fprintf('  Mu = %.2f | Max Output Drop = %.6f%%\n', mu_values(i), output_drop(i));
