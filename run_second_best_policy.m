@@ -1,21 +1,22 @@
 % ==================================================================
-% DISTINCTION UPGRADE: SECOND-BEST POLICY ANALYSIS
+% SECOND-BEST POLICY ANALYSIS
 % "Does a broken price signal justify government subsidies?"
 % ==================================================================
 clear all; close all; clc;
 
+% 1. Cleanup
 if exist('thesis_dtc', 'dir')
-    rmdir('thesis_dtc', 's'); % 's' removes all subdirectories/files
+    rmdir('thesis_dtc', 's'); 
 end
 if exist('+thesis_dtc', 'dir')
     rmdir('+thesis_dtc', 's');
 end
 
-%run dynare
+% 2. Run Dynare
 dynare thesis_dtc noclearall nolog;
-
 global M_ oo_ options_
 
+% 3. Setup Experiment
 subsidy_range = 0:2:30; % Test subsidies from 0% to 30%
 market_scenarios = [1.0, 0.3]; % 1.0 = Perfect Market, 0.3 = Regulated (Sticky)
 scenario_labels = {'Perfect Market (\chi=1.0)', 'Regulated Market (\chi=0.3)'};
@@ -26,16 +27,17 @@ welfare_results = zeros(length(subsidy_range), length(market_scenarios));
 % Parameters indices
 i_sub = strmatch('phi_sub', M_.param_names, 'exact');
 i_chi = strmatch('chi_price', M_.param_names, 'exact');
-i_welfare = strmatch('Welfare', M_.endo_names, 'exact');
 
-fprintf('Running Policy Robustness Check...\n');
+fprintf('\nRunning Policy Robustness Check...\n');
 options_.irf = 40;
 options_.order = 1;
 options_.noprint = 1;
 
-% 2. The Double Loop
+% 4. The Double Loop
 for s = 1:length(market_scenarios)
     M_.params(i_chi) = market_scenarios(s); % Set Market Regime
+    
+    fprintf('Simulating Scenario %d/2 (Chi = %.1f)...\n', s, market_scenarios(s));
     
     for i = 1:length(subsidy_range)
         M_.params(i_sub) = subsidy_range(i); % Set Subsidy
@@ -44,17 +46,26 @@ for s = 1:length(market_scenarios)
         [info, oo_, options_] = stoch_simul(M_, options_, oo_, []);
         
         if info(1) == 0
-            % Capture Welfare Loss (IRF Drop)
-            % Note: We look for the "Least Bad" outcome (Max Welfare)
-            W_drop = min(oo_.irfs.Welfare_e_ren); 
+            % --- CRITICAL FIX: CHECK SHOCK NAME ---
+            if isfield(oo_.irfs, 'Welfare_e_ren_shock')
+                % Use the new shock name
+                W_drop = min(oo_.irfs.Welfare_e_ren_shock);
+            elseif isfield(oo_.irfs, 'Welfare_e_ren')
+                % Fallback for old mod versions
+                W_drop = min(oo_.irfs.Welfare_e_ren); 
+            else
+                error('Welfare IRF not found. Check shock name.');
+            end
+            
             welfare_results(i, s) = W_drop;
         else
             welfare_results(i, s) = NaN;
+            fprintf('  Warning: Simulation failed at subsidy %.1f\n', subsidy_range(i));
         end
     end
 end
 
-% 3. The Distinction Graph
+% 5. The Distinction Graph
 figure('Name', 'Second-Best Policy Analysis');
 hold on;
 
@@ -65,6 +76,7 @@ plot(subsidy_range, welfare_results(:,1), colors{1}, 'LineWidth', 2, 'MarkerFace
 plot(subsidy_range, welfare_results(:,2), colors{2}, 'LineWidth', 2, 'MarkerFaceColor', 'r');
 
 % Find Peaks (Optimal Policies)
+% Since values are negative (welfare loss), max() finds the "Least Bad" outcome.
 [max_w1, idx1] = max(welfare_results(:,1));
 [max_w2, idx2] = max(welfare_results(:,2));
 
@@ -72,11 +84,14 @@ plot(subsidy_range, welfare_results(:,2), colors{2}, 'LineWidth', 2, 'MarkerFace
 plot(subsidy_range(idx1), max_w1, 'k*', 'MarkerSize', 15, 'LineWidth', 2);
 plot(subsidy_range(idx2), max_w2, 'k*', 'MarkerSize', 15, 'LineWidth', 2);
 
-text(subsidy_range(idx1), max_w1+0.00005, [' Optimal: \phi=' num2str(subsidy_range(idx1))], 'HorizontalAlignment', 'center');
-text(subsidy_range(idx2), max_w2+0.00005, [' Optimal: \phi=' num2str(subsidy_range(idx2))], 'HorizontalAlignment', 'center');
+text(subsidy_range(idx1), max_w1 + (abs(max_w1)*0.05), ...
+    [' Optimal: \phi=' num2str(subsidy_range(idx1))], 'HorizontalAlignment', 'center', 'Color', 'b');
+text(subsidy_range(idx2), max_w2 + (abs(max_w2)*0.05), ...
+    [' Optimal: \phi=' num2str(subsidy_range(idx2))], 'HorizontalAlignment', 'center', 'Color', 'r');
 
 xlabel('R&D Subsidy Aggressiveness (\phi_{sub})');
 ylabel('Welfare Impact (Utils)');
+title('Fiscal Impotence: Do Subsidies Fix Broken Markets?');
 legend(scenario_labels{1}, scenario_labels{2}, 'Optimal Point', 'Location', 'SouthWest');
 grid on;
 hold off;
