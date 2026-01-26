@@ -46,10 +46,10 @@ options_.order = 1;
 [info, oo_, options_] = stoch_simul(M_, options_, oo_, []); 
 
 % Save the results
-if isfield(oo_.irfs, 'Y_e_ren')
-    Y_no_innov = oo_.irfs.Y_e_ren;
+if isfield(oo_.irfs, 'Y_e_ren_shock')
+    Y_no_innov = oo_.irfs.Y_e_ren_shock;
 else
-    error('IRF for Y_e_ren not found in Run 1.');
+    error('IRF for Y_e_ren_shock not found in Run 1.');
 end
 
 % ------------------------------------------------------------------
@@ -64,10 +64,10 @@ M_.params(i_eta) = 0.5;
 [info, oo_, options_] = stoch_simul(M_, options_, oo_, []);
 
 % Save the results
-if isfield(oo_.irfs, 'Y_e_ren')
-    Y_with_innov = oo_.irfs.Y_e_ren;
+if isfield(oo_.irfs, 'Y_e_ren_shock')
+    Y_with_innov = oo_.irfs.Y_e_ren_shock;
 else
-    error('IRF for Y_e_ren not found in Run 2.');
+    error('IRF for Y_e_ren_shock not found in Run 2.');
 end
 
 % ==================================================================
