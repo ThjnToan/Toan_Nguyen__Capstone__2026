@@ -1,0 +1,30 @@
+# LaTeX intermediate files
+*.aux
+*.log
+*.out
+*.bbl
+*.blg
+*.toc
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+_ul
+nul
+cited_keys.txt
+
+# Dynare intermediate files
++vietnam_dsge/
+vietnam_dsge/
+vietnam_dsge.log
+
+# MATLAB
+*.asv
+*.m~
+*.mat
+*.csv
+
+# However, you might want to keep the final dynare results and IRFs around, so we force-add them later or keep them out of gitignore if needed. Actually, let's keep `.mat` and `.csv` in gitignore to prevent huge diffs, but we will track your main source files.
+
+# Misc
+.DS_Store
+.claude/
