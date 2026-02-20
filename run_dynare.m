@@ -1030,8 +1030,8 @@ yline(97, 'r--', 'Target (97%)', 'LineWidth', 1.5, 'LabelHorizontalAlignment', '
 hold off;
 grid on; xlabel('Years'); ylabel('Grid Reliability (%)');
 title('Reliability Valley: Policy Comparison');
-legend('Location', 'southeast', 'FontSize', 7);
-ylim([88 100]);
+legend('Location', 'south', 'FontSize', 9);
+ylim([85 100]);
 
 % Panel 3: Flexibility growth
 subplot(1,3,3);
