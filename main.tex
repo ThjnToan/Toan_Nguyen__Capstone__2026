@@ -276,12 +276,13 @@ A representative household maximizes expected lifetime utility:
 
 subject to the budget constraint:
 \begin{equation}
-C_t + I_{p,t} + P_{bat,t} I_{bat,t} + I_{grid,t} + B^*_t
+C_t + I_{p,t} + P_{bat,t} I_{bat,t} + B^*_t + T_t
 =
 Y_t + (1+r^*_{t-1}) B^*_{t-1}
+\label{eq:hh_budget}
 \end{equation}
 
-where $I_{p,t}$ is productive capital investment, $I_{bat,t}$ battery investment at world price $P_{bat,t}$, $I_{grid,t}$ public grid investment (following the rule specified in Section~\ref{sec:government}), and $B^*_t$ denotes net foreign asset holdings earning the country-specific interest rate $r^*_t$.
+where $I_{p,t}$ is productive capital investment, $I_{bat,t}$ battery investment at world price $P_{bat,t}$, $B^*_t$ denotes net foreign asset holdings earning the country-specific interest rate $r^*_t$, and $T_t$ is a lump-sum tax levied by the government to finance public grid investment (specified in Section~\ref{sec:government}).
 
 The household chooses $\{C_t, L_t, K_{p,t+1}, B^*_t\}$ to maximize utility subject to the budget constraint. The first-order conditions are derived as follows.
 
@@ -584,7 +585,13 @@ The government does not solve a Ramsey optimization problem. Instead, it follows
 
 This rule captures the reactive nature of infrastructure policy, where investment accelerates following reliability crises rather than anticipating them. The parameter $\phi_{grid}$ governs the aggressiveness of the fiscal response.
 
-Grid investment is financed through lump-sum taxation, which is embedded in the resource constraint \eqref{eq:goods_market_clearing}. The government does not optimize; it follows the mechanical rule above, consistent with the reactive nature of infrastructure policy in developing economies.
+The government runs a balanced budget each period, financing grid investment through lump-sum taxes $T_t$ levied on the representative household:
+\begin{equation}
+T_t = I_{grid,t}
+\label{eq:gov_budget}
+\end{equation}
+
+The government does not optimize; it follows the mechanical investment rule above and balances its budget period-by-period through lump-sum taxation.
 
 \subsection{Battery Price Dynamics}
 
@@ -618,7 +625,7 @@ The household's optimality condition for international bond holdings yields:
 
 \subsubsection{Current Account and Budget Constraint}
 
-The economy-wide resource constraint in the open economy is:
+Substituting the government budget constraint \eqref{eq:gov_budget} into the household budget constraint \eqref{eq:hh_budget} eliminates $T_t$ and yields the economy-wide resource constraint directly. Because $T_t$ is lump-sum, the household cannot optimize around it, and the consolidated allocation is identical to one in which the household directly pays for grid investment---an instance of Ricardian equivalence. The economy-wide resource constraint in the open economy is:
 \begin{equation}
 \underbrace{B^*_t}_{\substack{\text{end-of-period}\\\text{foreign assets}}} = \underbrace{(1 + r^*_{t-1}) B^*_{t-1}}_{\substack{\text{last period's assets}\\\text{plus interest}}} + \underbrace{Y_t - C_t - I_{p,t} - P_{bat,t} I_{bat,t} - I_{grid,t}}_{\text{trade balance (output minus domestic absorption)}}
 \label{eq:current_account}
@@ -1317,7 +1324,7 @@ A_{bat,t} = A_{bat,t-1} \left[1 + \eta_{bat} \cdot \chi \cdot \frac{u^* - u_t}{u
 \end{equation}
 where $\chi$ captures the degree to which the reliability gap is transmitted to innovators. In the baseline calibration, $\chi = 1.0$ (full transmission). In Vietnam's current regulatory environment, where electricity prices are administratively set and ancillary service markets remain underdeveloped, $\chi < 1$ reflects incomplete transmission of scarcity signals.
 
-While the per-shock learning effect is modest, it is cumulative and persistent. The autocorrelation of $A_{bat}$ is 0.997, indicating near-permanent effects. Over a 10-year horizon with repeated intermittency shocks, the simulated mean of $A_{bat}$ reaches 1.015---a 1.5\% improvement in battery technology driven entirely by endogenous learning. Crucially, this learning is conditional on the regulatory parameter $\chi$: when $\chi$ is driven toward zero through regulatory suppression of scarcity signals, this learning channel collapses.
+While the per-shock learning effect is modest, it is cumulative and persistent. The first-order autocorrelation of $A_{bat}$ in the stochastic simulation is 0.998, indicating near-permanent effects: a reliability shortfall today raises the technology level not just tomorrow, but indefinitely. In the 1000-quarter stochastic simulation, the ergodic mean of $A_{bat}$ reaches 1.013---a 1.3\% long-run improvement in battery technology driven entirely by accumulated intermittency-induced learning, with no R\&D expenditure. Crucially, this learning is conditional on the regulatory parameter $\chi$: when $\chi$ is driven toward zero through regulatory suppression of scarcity signals, this learning channel collapses entirely.
 
 \subsubsection{Consumption and Resource Allocation}
 
@@ -1361,17 +1368,17 @@ Figure \ref{fig:reliability_valley} illustrates the transition dynamics. The sim
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.98\textwidth]{agility_gap_dynare.png}
+    \includegraphics[width=0.98\textwidth]{reliability_valley.png}
     \caption{\textbf{The Reliability Valley: PDP8 Transition Path}}
     \label{fig:reliability_valley}
-    \parbox{0.95\textwidth}{\footnotesize \textit{Note:} Left panel shows the policy-driven increase in renewable penetration (green line), modeled as a front-loaded S-curve reflecting PDP8 targets. Right panel shows the evolution of grid reliability (blue line) relative to the 97\% target (red dashed line). The Reliability Valley (orange vertical line) occurs at quarter 45 (year 11.2), when the gap between VRE deployment and flexibility capacity is largest. The red shaded region indicates periods when reliability falls below the policy target, requiring emergency interventions such as load shedding, industrial demand curtailment, or increased reliance on fossil backup generation.}
+    \parbox{0.95\textwidth}{\footnotesize \textit{Note:} Left panel shows the policy-driven increase in renewable penetration (green line), modeled as a front-loaded S-curve ($\theta_{ren}$: 15\%$\to$50\% over 100 quarters) reflecting PDP8 targets. Right panel shows the evolution of grid reliability (blue line) relative to the 97\% target (red dashed line). The red shaded region marks quarters when reliability falls below target. The valley nadir occurs at quarter 45 ($\approx$11 years into the transition), when the gap between VRE deployment and flexibility capacity is largest. At the nadir, grid reliability drops to approximately 92\%---implying roughly 700 hours per year of unmet demand.}
 \end{figure}
 
 \subsubsection{Valley Characteristics}
 
-The Reliability Valley reaches its nadir at \textbf{quarter 45}, approximately 11.2 years into the transition. At this point, grid reliability drops to \textbf{91.98\%}---a decline of 5.17 percentage points below the 97\% target. To contextualize this magnitude: a reliability rate of 92\% implies that the grid fails to meet demand for approximately 700 hours per year, or roughly 8\% of all hours. For comparison, the 2021 Texas winter storm reduced grid reliability to approximately 88--90\% over a multi-day period, triggering widespread economic disruption and an estimated \$130 billion in damages \citep{callaway2018}.
+The Reliability Valley reaches its nadir at \textbf{quarter 45}, approximately 11.2 years into the transition. At this point, grid reliability drops to \textbf{81.3\%}---a decline of 15.7 percentage points below the 97\% target. To contextualize this magnitude: a reliability rate of 81\% implies that the grid fails to meet demand for approximately 1,640 hours per year, or roughly 19\% of all hours. This is comparable in severity to the 2021 Texas winter storm (88--90\% reliability over several days, \$130 billion in damages; \citealp{callaway2018}), but it represents a \textit{sustained} multi-year degradation rather than a transient crisis---making its macroeconomic consequences potentially far more damaging.
 
-While Vietnam's valley is less severe than the Texas event, it represents a \textit{sustained} period of degraded performance rather than a one-time crisis. The valley persists for approximately 10--15 quarters, during which reliability remains below target. This prolonged instability has several economic consequences:
+While the simulation's quantitative depth depends on investment calibration choices, the \textit{qualitative} finding---that an agility gap between fast VRE deployment and slow flexibility accumulation generates a sustained reliability shortfall centered on the early-to-mid transition---is robust to a wide range of parameterizations. The valley persists throughout the transition period (100 quarters in the baseline), during which reliability remains below target. This prolonged instability has several economic consequences:
 
 \begin{enumerate}
 \item \textbf{Industrial Production Losses:} Energy-intensive sectors---steel, cement, textiles, semiconductors---face unpredictable supply interruptions, reducing capacity utilization and increasing unit costs.

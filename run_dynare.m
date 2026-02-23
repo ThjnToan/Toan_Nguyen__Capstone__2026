@@ -1054,6 +1054,76 @@ sgtitle('Closing the Agility Gap: Policy Counterfactuals', ...
 print('closing_the_gap.png', '-dpng', '-r300');
 fprintf('\nFigure saved: closing_the_gap.png\n');
 
+% -------------------------------------------------------------------------
+% FIGURE: Reliability Valley (baseline only, two-panel for paper)
+% Left: S-curve renewable penetration path
+% Right: Reliability transition path showing the valley
+% -------------------------------------------------------------------------
+fig_valley = figure('Position', [100 100 1100 430]);
+
+% Left panel: Renewable penetration S-curve
+subplot(1,2,1);
+hold on;
+plot(t_trans/4, theta_path*100, 'Color', [0.18 0.55 0.34], 'LineWidth', 2.5);
+yline(50, 'r--', 'LineWidth', 1.5);
+text(23.5, 51.5, 'PDP8 Target (50\%)', 'Color', 'r', 'FontSize', 9);
+% Mark the midpoint
+[~, mid_q] = min(abs(theta_path - (theta_start + theta_end)/2));
+plot(mid_q/4, theta_path(mid_q)*100, 'ko', 'MarkerSize', 7, 'MarkerFaceColor', 'k');
+text(mid_q/4 + 0.5, theta_path(mid_q)*100 - 3, 'Inflection', 'FontSize', 8, 'Color', 'k');
+hold off;
+grid on;
+xlabel('Years from baseline', 'FontSize', 10);
+ylabel('Renewable penetration (\theta_{ren}, \%)', 'FontSize', 10);
+title('VRE Deployment: S-Curve Path', 'FontSize', 11, 'FontWeight', 'bold');
+xlim([0 T_trans/4]);
+ylim([10 55]);
+
+% Right panel: Baseline reliability path
+subplot(1,2,2);
+u_baseline_pct = u_paths(:,1) * 100;
+[min_u_val, min_u_idx] = min(u_baseline_pct);
+below_97 = u_baseline_pct < 97;
+hold on;
+
+% Shade the valley region
+x_fill = [(find(below_97,1,'first')-1)/4, (find(below_97,1,'last'))/4, ...
+           (find(below_97,1,'last'))/4, (find(below_97,1,'first')-1)/4];
+y_fill = [min_u_val-1, min_u_val-1, 97, 97];
+fill(x_fill, y_fill, [1 0.8 0.7], 'EdgeColor', 'none', 'FaceAlpha', 0.5);
+
+% Reliability path
+plot(t_trans/4, u_baseline_pct, 'b-', 'LineWidth', 2.5, 'DisplayName', 'Grid reliability');
+yline(97, 'r--', 'LineWidth', 1.8);
+text(0.5, 97.4, 'Target (97\%)', 'Color', 'r', 'FontSize', 9);
+
+% Annotate nadir
+plot(min_u_idx/4, min_u_val, 'rv', 'MarkerSize', 10, 'MarkerFaceColor', 'r');
+text(min_u_idx/4 + 0.5, min_u_val - 0.8, ...
+    sprintf('Nadir: Q%d\n(%.1f%%)', min_u_idx, min_u_val), ...
+    'FontSize', 8, 'Color', [0.7 0 0]);
+
+% Label valley
+valley_center = (find(below_97,1,'first') + find(below_97,1,'last')) / 2;
+text(valley_center/4, min_u_val + 1.0, 'Reliability Valley', ...
+    'FontSize', 9, 'Color', [0.8 0 0], 'HorizontalAlignment', 'center', ...
+    'FontWeight', 'bold');
+
+hold off;
+grid on;
+xlabel('Years from baseline', 'FontSize', 10);
+ylabel('Grid reliability (u, \%)', 'FontSize', 10);
+title('Reliability Valley: Baseline Transition', 'FontSize', 11, 'FontWeight', 'bold');
+xlim([0 T_trans/4]);
+ylim([min_u_val - 3, 100]);
+
+sgtitle('The Reliability Valley: PDP8 Transition Dynamics', ...
+    'FontSize', 13, 'FontWeight', 'bold');
+
+print('reliability_valley.png', '-dpng', '-r300');
+fprintf('Figure saved: reliability_valley.png\n');
+close(fig_valley);
+
 %% ========================================================================
 %% SAVE WORKSPACE AND EXPORT DATA
 %% ========================================================================
