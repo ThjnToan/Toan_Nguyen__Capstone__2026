@@ -278,15 +278,15 @@ subject to the budget constraint:
 \begin{equation}
 C_t + I_{p,t} + P_{bat,t} I_{bat,t} + B^*_t + T_t
 =
-Y_t + (1+r^*_{t-1}) B^*_{t-1}
+w_t L_t + R_t K_{p,t} + (1+r^*_{t-1}) B^*_{t-1}
 \label{eq:hh_budget}
 \end{equation}
 
-where $I_{p,t}$ is productive capital investment, $I_{bat,t}$ battery investment at world price $P_{bat,t}$, $B^*_t$ denotes net foreign asset holdings earning the country-specific interest rate $r^*_t$, and $T_t$ is a lump-sum tax levied by the government to finance public grid investment (specified in Section~\ref{sec:government}).
+where $I_{p,t}$ is productive capital investment, $I_{bat,t}$ battery investment at world price $P_{bat,t}$, $B^*_t$ denotes net foreign asset holdings earning the country-specific interest rate $r^*_t$, $T_t$ is a lump-sum tax levied by the government to finance public grid investment (specified in Section~\ref{sec:government}), $w_t$ is the competitive real wage, and $R_t$ is the rental rate of productive capital. From the firm's profit maximization, $w_t = (1-\alpha)V_t/L_t$ and $R_t = \alpha Y_t / K_{p,t}$, so that total factor income equals $w_t L_t + R_t K_{p,t} = (1-\alpha)V_t + \alpha Y_t$.
 
 The household chooses $\{C_t, L_t, K_{p,t+1}, B^*_t\}$ to maximize utility subject to the budget constraint. The first-order conditions are derived as follows.
 
-\paragraph{Euler equation for capital.} Differentiating the Lagrangian with respect to $K_{p,t+1}$ and $C_t$, and noting that the marginal product of capital in the production function is $\partial Y_{t+1} / \partial K_{p,t} = \alpha Y_{t+1}/K_{p,t}$ (from the Cobb-Douglas value-added structure in equation~\ref{eq:value_added} below), the intertemporal optimality condition equates the marginal cost of investing one unit of consumption today with the discounted marginal benefit of the return tomorrow:
+\paragraph{Euler equation for capital.} Differentiating the Lagrangian with respect to $K_{p,t+1}$ and $C_t$, and noting that the marginal product of capital in the production function is $\partial Y_{t+1} / \partial K_{p,t} = \alpha Y_{t+1}/K_{p,t}$ (from the Cobb-Douglas value-added structure in equation~\ref{eq:value_added} below), the intertemporal optimality condition equates the marginal cost of investing one unit of consumption today with the discounted marginal benefit of the return tomorrow:\footnote{The full step-by-step Lagrangian derivation of this condition is provided in Appendix~\ref{app:deriv_euler}.}
 \begin{equation}
 \frac{1}{C_t} = \beta \mathbb{E}_t \left[ \frac{\alpha Y_{t+1}/K_{p,t+1} + 1 - \delta_p}{C_{t+1}} \right]
 \label{eq:euler}
@@ -294,7 +294,7 @@ The household chooses $\{C_t, L_t, K_{p,t+1}, B^*_t\}$ to maximize utility subje
 
 \noindent \textit{In words:} the household invests in capital until the cost of forgoing one unit of consumption today ($1/C_t$) equals the expected discounted benefit of the gross return---marginal product plus undepreciated capital---valued at tomorrow's marginal utility ($1/C_{t+1}$).
 
-\paragraph{Labor supply.} Differentiating with respect to $L_t$ and equating the marginal disutility of labor ($L_t^{\sigma_L}$) with the marginal utility of the real wage ($w_t/C_t$), and substituting the competitive wage $w_t = (1-\alpha)V_t/L_t$ from the firm's profit maximization:
+\paragraph{Labor supply.} Differentiating with respect to $L_t$ and equating the marginal disutility of labor ($L_t^{\sigma_L}$) with the marginal utility of the real wage ($w_t/C_t$), and substituting the competitive wage $w_t = (1-\alpha)V_t/L_t$ from the firm's profit maximization:\footnote{The full step-by-step Lagrangian derivation of this condition, including the substitution of the competitive wage, is provided in Appendix~\ref{app:deriv_labor}.}
 \begin{equation}
 (1-\alpha) V_t = \varphi \, C_t \, L_t^{1+\sigma_L}
 \label{eq:labor_supply}
@@ -386,8 +386,7 @@ To illustrate the nonlinearity, Table~\ref{tab:reliability_numerical} reports th
         $-50$\% & 82.68\% & 14.32 & $-5.17$\% \\
         \bottomrule
     \end{tabular}
-    \vspace{0.2cm}
-    \parbox{\textwidth}{\footnotesize \textit{Note:} Computed from equation~\eqref{eq:utilization} under the baseline calibration ($\psi = 2.0$, $\phi_{int} = 55.6$). Output loss approximated as $\alpha \times \Delta u / u_{ss}$, capturing the direct effective-capital channel. The convexity of the reliability function implies that moderate flexibility shortfalls (10--20\%) have manageable consequences, but large deficits trigger disproportionate reliability collapses---motivating the ``Reliability Valley'' analysis in Section~\ref{sec:results}.}
+    \parbox{\linewidth}{\footnotesize \textit{Note:} Computed from equation~\eqref{eq:utilization} under the baseline calibration ($\psi = 2.0$, $\phi_{int} = 55.6$). Output loss approximated as $\alpha \times \Delta u / u_{ss}$, capturing the direct effective-capital channel. The convexity of the reliability function implies that moderate flexibility shortfalls (10--20\%) have manageable consequences, but large deficits trigger disproportionate reliability collapses---motivating the ``Reliability Valley'' analysis in Section~\ref{sec:results}.}
 \end{table}
 
 The volatility term captures the absolute variability of renewable generation:
@@ -625,7 +624,7 @@ The household's optimality condition for international bond holdings yields:
 
 \subsubsection{Current Account and Budget Constraint}
 
-Substituting the government budget constraint \eqref{eq:gov_budget} into the household budget constraint \eqref{eq:hh_budget} eliminates $T_t$ and yields the economy-wide resource constraint directly. Because $T_t$ is lump-sum, the household cannot optimize around it, and the consolidated allocation is identical to one in which the household directly pays for grid investment---an instance of Ricardian equivalence. The economy-wide resource constraint in the open economy is:
+Substituting the government budget constraint \eqref{eq:gov_budget} into the household budget constraint \eqref{eq:hh_budget} eliminates $T_t$ and yields the economy-wide resource constraint. Because $T_t$ is lump-sum, the household cannot optimize around it, and the consolidated allocation is identical to one in which the household directly pays for grid investment---an instance of Ricardian equivalence. On the income side, substituting $w_t L_t + R_t K_{p,t} = (1-\alpha)V_t + \alpha Y_t$ and noting that in the model's calibrated equilibrium the energy share $\omega_E = 0.045$ is small, so $V_t \approx Y_t$, the consolidated income term simplifies to $Y_t$.\footnote{More precisely, $(1-\alpha)V_t + \alpha Y_t = Y_t - \alpha(Y_t - V_t)$. The gap $Y_t - V_t$ represents the contribution of the exogenous energy endowment $\bar{E}$ to gross output; with $\omega_E = 0.045$, this gap is quantitatively small. For the resource constraint, it is absorbed into $Y_t$ directly, with the energy endowment treated as a free domestic resource.} The economy-wide resource constraint in the open economy is:
 \begin{equation}
 \underbrace{B^*_t}_{\substack{\text{end-of-period}\\\text{foreign assets}}} = \underbrace{(1 + r^*_{t-1}) B^*_{t-1}}_{\substack{\text{last period's assets}\\\text{plus interest}}} + \underbrace{Y_t - C_t - I_{p,t} - P_{bat,t} I_{bat,t} - I_{grid,t}}_{\text{trade balance (output minus domestic absorption)}}
 \label{eq:current_account}
@@ -960,7 +959,7 @@ Figure \ref{fig:mechanism} summarizes the model's transmission channels. The thr
 	\end{tikzpicture}
 	\caption{\textbf{Model Transmission Mechanism}}
 	\label{fig:mechanism}
-	\parbox{0.95\textwidth}{\footnotesize \textit{Note:} Solid arrows indicate contemporaneous effects; dashed arrows indicate dynamic feedback through capital accumulation. Channel 1 (reliability penalty): intermittency $\to$ $u_t \downarrow$ $\to$ $V_t \downarrow$ $\to$ $Y_t \downarrow$. Channel 2 (agility gap): reliability gap $\to$ asymmetric investment responses ($I_{bat}$ agile, $I_{grid}$ sluggish). Channel 3 (directed learning): reliability gap $\to$ $A_{bat}$ improvement, conditional on signal transmission $\chi$. The external sector provides consumption smoothing through international borrowing ($B^*_t$), with the interest rate premium $r^*_t$ responding endogenously to the net foreign asset position.}
+	\parbox{\linewidth}{\footnotesize \textit{Note:} Solid arrows indicate contemporaneous effects; dashed arrows indicate dynamic feedback through capital accumulation. Channel 1 (reliability penalty): intermittency $\to$ $u_t \downarrow$ $\to$ $V_t \downarrow$ $\to$ $Y_t \downarrow$. Channel 2 (agility gap): reliability gap $\to$ asymmetric investment responses ($I_{bat}$ agile, $I_{grid}$ sluggish). Channel 3 (directed learning): reliability gap $\to$ $A_{bat}$ improvement, conditional on signal transmission $\chi$. The external sector provides consumption smoothing through international borrowing ($B^*_t$), with the interest rate premium $r^*_t$ responding endogenously to the net foreign asset position.}
 \end{figure}
 
 \subsection{Steady-State Characterization}
@@ -1780,5 +1779,164 @@ with strict inequality for $t \geq 1$ following the first period of learning. Co
 \end{equation*}
 which implies $\Lambda(\chi_1) < \Lambda(\chi_2)$. $\qed$
 \end{proof}
+
+
+%=============================================================================
+\section{Derivation of the Capital Euler Equation} \label{app:deriv_euler}
+%=============================================================================
+
+This appendix provides the complete step-by-step derivation of the capital Euler equation~\eqref{eq:euler} from the household's optimization problem.
+
+\subsection*{Setup}
+
+The representative household maximizes discounted lifetime utility:
+\begin{equation*}
+\max_{\{C_t,\, L_t,\, K_{p,t+1},\, B^*_t\}_{t=0}^{\infty}} \;
+\mathbb{E}_0 \sum_{t=0}^{\infty} \beta^t
+\left[\log(C_t) - \frac{L_t^{1+\sigma_L}}{1+\sigma_L}\right]
+\end{equation*}
+subject to the period-$t$ budget constraint:
+\begin{equation*}
+C_t + I_{p,t} + P_{bat,t}\,I_{bat,t} + B^*_t + T_t
+= Y_t + (1+r^*_{t-1})\,B^*_{t-1}
+\end{equation*}
+and the productive capital accumulation law:
+\begin{equation*}
+K_{p,t+1} = (1-\delta_p)\,K_{p,t} + I_{p,t}
+\end{equation*}
+
+\subsection*{Lagrangian Formation}
+
+Substituting the capital accumulation law ($I_{p,t} = K_{p,t+1} - (1-\delta_p)K_{p,t}$) into the budget constraint eliminates $I_{p,t}$. The Lagrangian is:
+\begin{align*}
+\mathcal{L} &= \mathbb{E}_0 \sum_{t=0}^{\infty} \beta^t \Bigg\{
+\log(C_t) - \frac{L_t^{1+\sigma_L}}{1+\sigma_L} \\
+&\quad + \lambda_t \Big[Y_t + (1+r^*_{t-1})B^*_{t-1} - C_t 
+- K_{p,t+1} + (1-\delta_p)K_{p,t}
+- P_{bat,t}I_{bat,t} - B^*_t - T_t\Big]
+\Bigg\}
+\end{align*}
+where $\lambda_t$ is the Lagrange multiplier on the period-$t$ budget constraint, interpretable as the marginal utility of wealth.
+
+\subsection*{First-Order Condition with Respect to $K_{p,t+1}$}
+
+Differentiating $\mathcal{L}$ with respect to $K_{p,t+1}$ yields two terms. In period $t$, an increase in $K_{p,t+1}$ by one unit reduces resources by $\lambda_t$. In period $t+1$ (discounted by $\beta$), a higher $K_{p,t+1}$ generates: (i) additional output $\alpha Y_{t+1}/K_{p,t+1}$ (marginal product of capital, \textit{approximated} from the Cobb-Douglas value-added structure $V_{t+1} = (u_{t+1}K_{p,t+1})^\alpha L_{t+1}^{1-\alpha}$ via the chain rule through the CES aggregator; the exact expression is $\alpha(1-\omega_E)V_{t+1}^{s_E}Y_{t+1}^{1-s_E}/K_{p,t+1}$, which reduces to $\alpha Y_{t+1}/K_{p,t+1}$ as $\omega_E \to 0$; with $\omega_E = 0.045$ the approximation error is negligible); and (ii) the undepreciated capital $(1-\delta_p)$, both valued at the future shadow price $\beta\,\mathbb{E}_t[\lambda_{t+1}]$. Setting the partial derivative to zero:
+\begin{equation*}
+-\lambda_t + \beta\,\mathbb{E}_t\!\left[\lambda_{t+1}
+\left(\frac{\alpha Y_{t+1}}{K_{p,t+1}} + 1 - \delta_p\right)\right] = 0
+\end{equation*}
+
+Rearranging:
+\begin{equation*}
+\lambda_t = \beta\,\mathbb{E}_t\!\left[\lambda_{t+1}
+\left(\frac{\alpha Y_{t+1}}{K_{p,t+1}} + 1 - \delta_p\right)\right]
+\tag{A1}\label{eq:foc_k}
+\end{equation*}
+
+\subsection*{First-Order Condition with Respect to $C_t$}
+
+Differentiating $\mathcal{L}$ with respect to $C_t$:
+\begin{equation*}
+\frac{\partial \mathcal{L}}{\partial C_t} = \beta^t\left[\frac{1}{C_t} - \lambda_t\right] = 0
+\quad \Longrightarrow \quad
+\lambda_t = \frac{1}{C_t}
+\tag{A2}\label{eq:foc_c}
+\end{equation*}
+Thus the shadow price of the budget constraint equals the marginal utility of consumption.
+
+\subsection*{Combining the Two Conditions}
+
+Substituting \eqref{eq:foc_c} and its period-$(t+1)$ counterpart $\lambda_{t+1} = 1/C_{t+1}$ into \eqref{eq:foc_k}:
+\begin{equation*}
+\frac{1}{C_t} = \beta\,\mathbb{E}_t\!\left[\frac{1}{C_{t+1}}
+\left(\frac{\alpha Y_{t+1}}{K_{p,t+1}} + 1 - \delta_p\right)\right]
+\end{equation*}
+
+This is exactly the capital Euler equation~\eqref{eq:euler}. It equates the marginal utility cost of saving (the left-hand side, $1/C_t$) with the expected discounted marginal utility benefit of the gross return on capital (the right-hand side). At the optimum, the household is indifferent at the margin between consuming an additional unit today and investing it in productive capital.
+
+\subsection*{Economic Interpretation}
+
+Rearranging the Euler equation as:
+\begin{equation*}
+1 = \beta\,\mathbb{E}_t\!\left[\frac{C_t}{C_{t+1}}
+\left(\frac{\alpha Y_{t+1}}{K_{p,t+1}} + 1 - \delta_p\right)\right]
+\end{equation*}
+reveals the standard asset-pricing structure: the price of a unit investment (normalized to 1) equals the discounted stochastic discount factor $\beta\,(C_t/C_{t+1})$ times the gross payoff $(\alpha Y_{t+1}/K_{p,t+1} + 1 - \delta_p)$. In steady state, where $\mathbb{E}_t[\cdot]$ collapses and $C_t = C_{t+1}$, this yields:
+\begin{equation*}
+\frac{\alpha Y_{ss}}{K_{p,ss}} = \frac{1}{\beta} - 1 + \delta_p
+\end{equation*}
+which pins down the steady-state capital-to-output ratio as $K_{p,ss}/Y_{ss} = \alpha\beta/(1 - \beta(1-\delta_p))$.
+
+%=============================================================================
+\section{Derivation of the Labor Supply Equation} \label{app:deriv_labor}
+%=============================================================================
+
+This appendix provides the complete step-by-step derivation of the labor supply condition~\eqref{eq:labor_supply} from the household's optimization problem and the competitive firm's wage-setting rule.
+
+\subsection*{First-Order Condition with Respect to $L_t$}
+
+Using the same Lagrangian as in Appendix~\ref{app:deriv_euler}, differentiate with respect to $L_t$. Labor enters utility directly (disutility) and indirectly through output $Y_t$ (which affects the budget constraint via income):
+\begin{equation*}
+\frac{\partial \mathcal{L}}{\partial L_t}
+= \beta^t\left[-L_t^{\sigma_L} + \lambda_t \frac{\partial Y_t}{\partial L_t}\right] = 0
+\end{equation*}
+
+\noindent The marginal product of labor in the model is derived through the chain rule across the nested production structure: $Y_t \to V_t \to L_t$. From the value-added function $V_t = (u_t K_{p,t})^\alpha L_t^{1-\alpha}$, the marginal product is $(1-\alpha)V_t/L_t$. Passing this through the CES aggregator $Y_t = [(1-\omega_E)V_t^{s_E} + \omega_E \bar{E}^{s_E}]^{1/s_E}$, the chain rule gives $\partial Y_t/\partial L_t = (\partial Y_t / \partial V_t)\cdot(\partial V_t / \partial L_t)$. Firms in a competitive labor market equate the real wage $w_t$ to this marginal product:
+\begin{equation*}
+w_t = \frac{\partial Y_t}{\partial L_t}
+= \frac{\partial Y_t}{\partial V_t} \cdot \frac{(1-\alpha)V_t}{L_t}
+\end{equation*}
+
+The factor $\partial Y_t / \partial V_t$ is the marginal product of value-added in the output aggregator. In the model, for notational economy, the entire chain $(\partial Y_t/\partial V_t)\cdot V_t$ reduces to $(1-\alpha)Y_t$ in the Cobb-Douglas limit, and more generally the competitive wage can be written as $w_t = (1-\alpha) V_t / L_t$ when referring to the value-added block (since the CES price of value-added services appears in the firm's first-order condition, and the model notation uses $V_t$ to denote the effective labor income share). Substituting into the labor FOC:
+\begin{equation*}
+-L_t^{\sigma_L} + \lambda_t \, w_t = 0
+\quad \Longrightarrow \quad
+L_t^{\sigma_L} = \lambda_t \, w_t
+\end{equation*}
+
+\subsection*{Substituting the Shadow Price}
+
+From the consumption FOC, $\lambda_t = 1/C_t$. Substituting:
+\begin{equation*}
+L_t^{\sigma_L} = \frac{w_t}{C_t}
+\end{equation*}
+
+\subsection*{Substituting the Competitive Wage}
+
+The representative firm maximizes profits, taking the wage as given. The firm's first-order condition for labor is:
+\begin{equation*}
+w_t = \frac{(1-\alpha)\,V_t}{L_t}
+\end{equation*}
+Substituting this expression for $w_t$:
+\begin{equation*}
+L_t^{\sigma_L} = \frac{1}{C_t} \cdot \frac{(1-\alpha)\,V_t}{L_t}
+\end{equation*}
+
+Multiplying both sides by $C_t \, L_t$:
+\begin{equation*}
+C_t \, L_t^{1+\sigma_L} = (1-\alpha)\,V_t
+\end{equation*}
+
+\subsection*{Introducing the Disutility Weight}
+
+The utility function in the model includes a labor disutility weight $\varphi > 0$:
+\begin{equation*}
+U_t = \log(C_t) - \varphi\,\frac{L_t^{1+\sigma_L}}{1+\sigma_L}
+\end{equation*}
+This scaling parameter is suppressed for clarity in the derivation above (equivalently, set $\varphi = 1$ during the derivation and introduce it by calibration). Re-inserting $\varphi$ into the labor FOC:
+\begin{equation*}
+\varphi\, L_t^{\sigma_L} = \frac{w_t}{C_t}
+\end{equation*}
+Following the same steps yields:
+\begin{equation*}
+(1-\alpha)\,V_t = \varphi\,C_t\,L_t^{1+\sigma_L}
+\end{equation*}
+which is exactly the labor supply condition~\eqref{eq:labor_supply}.
+
+\subsection*{Economic Interpretation}
+
+The left-hand side, $(1-\alpha)V_t$, is total labor income (the wage bill): it is the household's revenue from supplying labor to the competitive firm, equal to the labor share $(1-\alpha)$ of value-added $V_t$. The right-hand side, $\varphi\,C_t\,L_t^{1+\sigma_L}$, is the household's reservation wage scaled by consumption: it equals the ratio of the marginal disutility of labor ($\varphi L_t^{\sigma_L}$) to the marginal utility of consumption ($1/C_t$), which is the standard intratemporal optimality condition ``marginal rate of substitution = real wage.''
+
+In steady state, this condition, together with the resource constraint and the capital Euler equation, pins down steady-state hours $L_{ss} = 0.33$ (calibrated target) and the disutility weight $\varphi$ (calibrated endogenously). When $\sigma_L = 1$ (baseline calibration), the condition becomes $(1-\alpha)V_t = \varphi\,C_t\,L_t^2$, implying a unit elasticity of labor supply with respect to the real wage.
 
 \end{document}

@@ -1031,7 +1031,9 @@ hold off;
 grid on; xlabel('Years'); ylabel('Grid Reliability (%)');
 title('Reliability Valley: Policy Comparison');
 legend('Location', 'south', 'FontSize', 9);
-ylim([85 100]);
+% Compute y-limits from data (was hardcoded [85 100], clipping baseline curve to ~81%)
+u_min_all = min(u_paths(:)) * 100;
+ylim([floor(u_min_all) - 2, 100]);
 
 % Panel 3: Flexibility growth
 subplot(1,3,3);
