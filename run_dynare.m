@@ -300,8 +300,8 @@ fprintf('\n========================================\n');
 fprintf('COUNTERFACTUAL ANALYSIS: SIGNAL ATTENUATION\n');
 fprintf('========================================\n\n');
 
-chi_values = [1.0, 0.5, 0.0];
-chi_labels = {'chi=1.0 (Baseline)', 'chi=0.5 (Partial)', 'chi=0.0 (No Learning)'};
+chi_values = [1.0, 0.3, 0.0];
+chi_labels = {'chi=1.0 (Baseline)', 'chi=0.3 (Partial)', 'chi=0.0 (No Learning)'};
 chi_welfare = zeros(size(chi_values));
 chi_irfs_Y = zeros(length(chi_values), T);
 chi_irfs_u = zeros(length(chi_values), T);
@@ -424,7 +424,7 @@ grid on; title('Battery Technology (A_{bat})'); ylabel('% dev'); xlabel('Quarter
 % Panel 4: Welfare cost bar chart
 subplot(2,2,4);
 bar(chi_welfare);
-set(gca, 'XTickLabel', {'chi=1.0', 'chi=0.5', 'chi=0.0'});
+set(gca, 'XTickLabel', {'chi=1.0', 'chi=0.3', 'chi=0.0'});
 ylabel('Welfare Cost (% consumption)');
 title('Welfare Cost by Signal Transmission');
 grid on;

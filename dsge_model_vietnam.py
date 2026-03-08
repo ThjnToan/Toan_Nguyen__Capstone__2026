@@ -44,7 +44,7 @@ class Parameters:
         
         # Innovation
         self.eta_bat = 0.50
-        self.chi = 0.70
+        self.chi = 1.0
         
         # Grid investment rule
         self.phi_grid = 1.5
@@ -384,7 +384,7 @@ if __name__ == "__main__":
             ax.text(peak_t+2, irf[var][peak_t], f'{irf[var][peak_t]:.1f}%', fontsize=8)
     
     plt.tight_layout()
-    plt.savefig('/mnt/user-data/outputs/irf_corrected.png', dpi=300, bbox_inches='tight')
+    plt.savefig('./irf_corrected.png', dpi=300, bbox_inches='tight')
     print("  Saved: irf_corrected.png")
     
     # Reliability Valley Figure
@@ -417,7 +417,7 @@ if __name__ == "__main__":
     ax2.set_ylim([90, 99])
     
     plt.tight_layout()
-    plt.savefig('/mnt/user-data/outputs/valley_corrected.png', dpi=300, bbox_inches='tight')
+    plt.savefig('./valley_corrected.png', dpi=300, bbox_inches='tight')
     print("  Saved: valley_corrected.png")
     
     # Export data
@@ -431,7 +431,7 @@ if __name__ == "__main__":
         'Battery_Investment': irf['I_bat'],
         'Shadow_Value': irf['lambda_F']
     })
-    results_df.to_csv('/mnt/user-data/outputs/irf_corrected.csv', index=False)
+    results_df.to_csv('./irf_corrected.csv', index=False)
     
     valley_df = pd.DataFrame({
         'Quarter': quarters,
@@ -442,10 +442,10 @@ if __name__ == "__main__":
         'Battery_Capital': K_b_path,
         'Grid_Capital': K_g_path
     })
-    valley_df.to_csv('/mnt/user-data/outputs/valley_corrected.csv', index=False)
+    valley_df.to_csv('./valley_corrected.csv', index=False)
     
     ss_df = pd.DataFrame([ss])
-    ss_df.to_csv('/mnt/user-data/outputs/steady_state_corrected.csv', index=False)
+    ss_df.to_csv('./steady_state_corrected.csv', index=False)
     
     print("\n" + "="*70)
     print("Simulation Complete (Corrected Version)")
