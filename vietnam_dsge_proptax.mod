@@ -1,6 +1,11 @@
 // =========================================================================
 // VIETNAM RENEWABLE ENERGY TRANSITION DSGE MODEL
 // Small Open Economy with Exponential Reliability + Scarcity-Induced Technological Change
+// ** PROPORTIONAL TAX VARIANT **
+// Fiscal financing via proportional output tax tau_t = I_grid_t / Y_t
+// rather than lump-sum taxation. This introduces a fiscal amplification
+// channel: intermittency shocks raise grid investment, which raises tau_t,
+// which distorts both the capital Euler and labor supply conditions.
 //
 // Author:  Toan T. Nguyen
 // Advisor: Dr. Xavier Martin G. Bautista
@@ -20,7 +25,7 @@
 // =========================================================================
 
 // =========================================================================
-// ENDOGENOUS VARIABLES (16 total)
+// ENDOGENOUS VARIABLES (19 total — proportional tax variant adds tau; AR(1) states add a_ren, a_I)
 // =========================================================================
 // See Table "Equilibrium Definition" in the paper for the full mapping.
 var
@@ -40,6 +45,9 @@ var
     P_bat       // P_{bat,t} : World battery price (exogenous AR(1))
     B_star      // B^*_t     : Net foreign assets (>0 = creditor)
     r_star      // r^*_t     : Country-specific real interest rate
+    tau         // tau_t     : Proportional output tax rate (= I_grid / Y)
+    a_ren       // a_{ren,t} : Renewable intermittency process (AR(1) state variable)
+    a_I         // a_{I,t}   : Grid implementation shock process (AR(1) state variable)
 ;
 
 // =========================================================================
@@ -78,7 +86,8 @@ parameters
     // --- Renewable volatility ---
     sigma_ren       // Std. dev. of intermittency shock
     theta_ren       // Renewable capacity share (used to compute Vol_ren)
-    rho_ren         // Persistence of intermittency shock
+    rho_ren         // Persistence of intermittency shock AR(1)
+    rho_I           // Persistence of grid implementation shock AR(1)
 
     // --- Scarcity-Induced Technological Change ---
     eta_bat         // Innovation elasticity (speed of technology improvement)
@@ -126,7 +135,8 @@ delta_g  = 0.0125;      // grid depreciation (~5% annual, long-lived)
 delta_b  = 0.030;       // battery depreciation (~12% annual, shorter-lived)
 
 // Shock persistence and innovation
-rho_ren  = 0.85;        // intermittency shock persistence
+rho_ren  = 0.85;        // intermittency shock AR(1) persistence
+rho_I    = 0.70;        // grid implementation shock AR(1) persistence
 eta_bat  = 0.10;        // innovation elasticity (induced innovation; BloombergNEF experience curves)
 chi      = 1.0;         // full signal transmission (baseline)
 rho_bat  = 0.90;        // battery price shock persistence
@@ -146,13 +156,17 @@ phi_b    = 0.001;       // debt-elastic premium (small, for stationarity)
 B_star_ss = 0;          // balanced trade in steady state
 
 // =========================================================================
-// MODEL EQUATIONS (16 equations for 16 endogenous variables)
+// MODEL EQUATIONS (17 equations for 17 endogenous variables)
 // =========================================================================
 // Each equation is labeled with its counterpart in the LaTeX manuscript.
-// The system is exactly identified: 16 equations, 16 unknowns.
+// The system is exactly identified: 17 equations, 17 unknowns.
+// ** PROPORTIONAL TAX VARIANT: tau added as 17th variable/equation **
 //
 // Classification:
-//   Static variables (6):  Y, L, u, F, V, I_bat, I_grid
+//   Static variables (7):  Y, L, u, F, V, I_bat, I_grid, tau
+//                          (tau = I_grid/Y is purely static; no new
+//                           eigenvalue — tau(+1) in Euler uses Y(+1)
+//                           and I_grid(+1) which are already in the system)
 //                          (A_bat is also static: responds to current u,
 //                           but F uses A_bat(-1), so no simultaneity loop)
 //   Predetermined (7):     K_p(-1), K_b(-1), K_g(-1), A_bat(-1),
@@ -177,12 +191,13 @@ model;
 
 // ------- HOUSEHOLD BLOCK -------
 
-// [1] Capital Euler equation (eq:euler in paper)
-// Household FOC for productive capital: equates marginal cost of
-// investing one unit today to the discounted marginal benefit tomorrow.
-// Uses alpha*Y(+1)/K_p form (standard RBC, avoids making V and u
-// forward-looking, which would break Blanchard-Kahn conditions).
-1/C = beta * (alpha * Y(+1) / K_p + 1 - delta_p) / C(+1);
+// [1] Capital Euler equation (eq:euler in paper) -- PROPORTIONAL TAX VARIANT
+// After-tax return to capital: (1-tau(+1)) * alpha*Y(+1)/K_p + (1-delta_p).
+// tau(+1) = I_grid(+1)/Y(+1) is forward-looking but determined by
+// the grid investment rule and output, both already in the system.
+// This creates fiscal amplification: intermittency -> higher I_grid(+1)
+// -> higher tau(+1) -> lower after-tax MPK -> reduced investment today.
+1/C = beta * ((1 - tau(+1)) * alpha * Y(+1) / K_p + 1 - delta_p) / C(+1);
 
 // [2] Bond Euler equation (eq:bond_euler in paper)
 // Household FOC for international bonds: equates domestic and foreign
@@ -190,10 +205,12 @@ model;
 // realized next period, making r_star a jumper variable.
 1/C = beta * (1 + r_star) / C(+1);
 
-// [3] Labor supply / labor market clearing (eq:labor_supply in paper)
-// Intratemporal FOC: marginal product of labor = marginal rate of
-// substitution between consumption and leisure.
-(1-alpha) * V = varphi * C * L^(1+sigma_L);
+// [3] Labor supply / labor market clearing (eq:labor_supply in paper) -- PROPORTIONAL TAX VARIANT
+// Proportional tax drives a wedge: household equates disutility of labor
+// to the AFTER-TAX marginal product. The (1-tau) term reduces effective
+// labor income, lowering equilibrium labor supply and amplifying
+// the contractionary effect of intermittency shocks.
+(1 - tau) * (1-alpha) * V = varphi * C * L^(1+sigma_L);
 
 // ------- PRODUCTION BLOCK -------
 
@@ -215,8 +232,10 @@ V = (u * K_p(-1))^alpha * L^(1-alpha);
 // Maps the ratio of flexibility assets to renewable volatility into
 // grid utilization. The exponential form ensures u in (0,1) and
 // captures the convexity: flexibility is most valuable when scarce.
-// exp(eps_ren) scales volatility up/down with the intermittency shock.
-u = 1 - exp(-psi * F / (phi_int * Vol_ren_bar * exp(eps_ren)));
+// exp(a_ren) scales volatility up/down with the intermittency AR(1) process.
+// NOTE: a_ren (not eps_ren) is used here so the AR(1) persistence rho_ren=0.85
+// is correctly inherited. eps_ren is the i.i.d. innovation; a_ren carries memory.
+u = 1 - exp(-psi * F / (phi_int * Vol_ren_bar * exp(a_ren)));
 
 // [7] CES flexibility aggregator (eq:flexibility_bundle in paper)
 // Combines battery storage (private, agile) and grid capital (public,
@@ -260,9 +279,9 @@ A_bat = A_bat(-1) * (1 + eta_bat * chi * (u_target - u) / u_target);
 // [11] Grid investment rule (eq:grid_investment_rule in paper)
 // Government follows a mechanical reliability-targeting rule (not Ramsey
 // optimal). Investment accelerates when reliability falls below target.
-// phi_grid governs aggressiveness; eps_I captures implementation shocks
-// (e.g., project delays, budget constraints).
-I_grid / steady_state(I_grid) = (u_target / u)^phi_grid * exp(eps_I);
+// phi_grid governs aggressiveness; a_I captures implementation shocks
+// (e.g., multi-year project delays, budget constraints) with AR(1) persistence rho_I.
+I_grid / steady_state(I_grid) = (u_target / u)^phi_grid * exp(a_I);
 
 // [12] Grid capital accumulation (eq:grid_capital in paper)
 K_g = (1 - delta_g) * K_g(-1) + I_grid;
@@ -293,6 +312,27 @@ r_star = r_bar + phi_b * (exp(B_star_ss - B_star) - 1);
 // P_bat = 1 in steady state (normalization via log specification).
 log(P_bat) = rho_bat * log(P_bat(-1)) + eps_bat;
 
+// [17] Proportional tax rate (eq:gov_budget in paper) -- NEW IN PROPTAX VARIANT
+// Government balanced budget: tau_t * Y_t = I_grid_t.
+// Tax rate adjusts endogenously each period to finance grid investment.
+// In steady state: tau_ss = I_grid_ss / Y_ss = delta_g * K_g_ss / Y_ss (~1.5%).
+// Dynamic movements in tau create the fiscal amplification channel.
+tau = I_grid / Y;
+
+// [18] Renewable intermittency AR(1) process
+// a_ren is the persistent component of the intermittency shock.
+// eps_ren is the i.i.d. innovation (std dev = sigma_ren = 0.12).
+// In steady state: a_ren_ss = 0 (shock mean is zero).
+// This is the standard way to implement AR(1) shocks in Dynare.
+a_ren = rho_ren * a_ren(-1) + eps_ren;
+
+// [19] Grid implementation shock AR(1) process
+// a_I captures persistent delays in grid infrastructure deployment
+// (multi-year permitting, construction schedules).
+// eps_I is the i.i.d. innovation (std dev = 0.05).
+// rho_I = 0.70: implementation shocks are moderately persistent.
+a_I = rho_I * a_I(-1) + eps_I;
+
 end;
 
 // =========================================================================
@@ -313,6 +353,9 @@ initval;
     I_grid = 0.01425; u = 0.97; F = 0.526; A_bat = 1.0;
     V = 1.14; P_bat = 1.0;
     B_star = 0; r_star = 0.01;
+    tau = 0.01425 / 0.95;  // tau_ss = I_grid_ss / Y_ss ~ 0.015
+    a_ren = 0;              // intermittency process = 0 in steady state
+    a_I = 0;                // implementation shock = 0 in steady state
 end;
 
 // Compute the deterministic steady state (calls vietnam_dsge_steadystate.m)
@@ -346,4 +389,4 @@ end;
 //             run_dynare.m)
 
 stoch_simul(order=1, irf=40, periods=1000, nograph)
-    Y C L I_p I_bat I_grid u F A_bat V P_bat B_star r_star;
+    Y C L I_p I_bat I_grid u F A_bat V P_bat B_star r_star tau a_ren a_I;

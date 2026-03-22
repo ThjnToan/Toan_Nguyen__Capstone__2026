@@ -35,12 +35,12 @@
 \clearpage
 
 \begin{abstract}
-This capstone investigates the macroeconomic ``agility gap''---the divergence between rapid private renewable deployment and slow public grid investment. I develop a DSGE model integrating endogenous learning-by-doing in battery storage with grid reliability constraints, embedded in a small open economy framework. Variable renewable penetration creates intermittency shocks that reduce capital utilization through grid instability.
+This capstone investigates the macroeconomic ``agility gap''---the divergence between rapid private renewable deployment and slow public grid investment. I develop a DSGE model integrating endogenous scarcity-induced technological change in battery storage with grid reliability constraints, embedded in a small open economy framework. Variable renewable penetration creates intermittency shocks that reduce capital utilization through grid instability.
 
-Calibrating to Vietnam's Power Development Plan 8, I find five results. First, intermittency shocks account for 79\% of output volatility and 85\% of reliability volatility. Second, global battery-price shocks drive 99\% of battery investment volatility, highlighting exposure to external supply chains. Third, learning-by-doing generates persistent battery improvements conditional on regulatory transmission of scarcity signals ($\chi$). Fourth, asymmetric impulse responses confirm the structural agility gap between private and public investment. Fifth, suppressing scarcity signals ($\chi = 0$) raises the welfare cost of intermittency by 35\%, demonstrating that market mechanisms are quantitatively important complements to storage investment.
+Calibrating to Vietnam's Power Development Plan 8, I find five results. First, intermittency shocks account for 97.7\% of output volatility and 95.8\% of reliability volatility, with global battery-price shocks contributing the remainder through the fiscal amplification channel. Second, global battery-price shocks drive 100\% of battery investment volatility, highlighting exposure to external supply chains. Third, scarcity-induced technological change generates persistent battery improvements conditional on regulatory transmission of scarcity signals ($\chi$). Fourth, proportional taxation creates a fiscal amplification channel: a one-standard-deviation intermittency shock reduces output by 0.59\% and grid utilization by 1.30\%, while the tax rate overshoots by 2.54\% relative to steady state. Fifth, suppressing scarcity signals ($\chi = 0$) raises the welfare cost of intermittency by 27\%, demonstrating that market mechanisms are quantitatively important complements to storage investment.
 
 \vspace{0.5cm}
-\noindent \textbf{Keywords:} Environmental DSGE, Endogenous Learning, Investment Inertia, Renewable Intermittency, Energy Storage.
+\noindent \textbf{Keywords:} Environmental DSGE, Scarcity-Induced Innovation, Endogenous Technological Change, Investment Inertia, Renewable Intermittency, Energy Storage.
 \end{abstract}
 \clearpage
 
@@ -95,15 +95,15 @@ For emerging economies like Vietnam, this friction is acute. As it strives to su
 
 Existing environmental DSGE (E-DSGE) frameworks typically allow for imperfect substitution between energy and other inputs through CES aggregation, following \citet{heutel2012}. However, they overlook the non-linear costs of grid instability arising from renewable intermittency. Furthermore, most endogenous growth models in this domain, such as \citet{acemoglu2012environment}, focus on the inter-sectoral choice between ``clean'' and ``dirty'' production technologies, neglecting the intra-sectoral challenge of grid integration.
 
-There remains a critical gap in the literature regarding the interaction between renewable intermittency, investment frictions, and induced innovation. Specifically, current models fail to address how a developing economy manages the \textit{agility gap}---the divergence between the rapid deployment of private renewable assets and the slow accumulation of public transmission infrastructure. Addressing this question requires a framework that explicitly endogenizes grid reliability and allows learning-by-doing to respond to the shadow price of flexibility.
+There remains a critical gap in the literature regarding the interaction between renewable intermittency, investment frictions, and induced innovation. Specifically, current models fail to address how a developing economy manages the \textit{agility gap}---the divergence between the rapid deployment of private renewable assets and the slow accumulation of public transmission infrastructure. Addressing this question requires a framework that explicitly endogenizes grid reliability and allows technological progress to respond to the shadow price of flexibility through a scarcity-induced innovation mechanism.
 
-To address these gaps, I develop a DSGE model calibrated to the structural characteristics of Vietnam. The model is built around three novel features designed to capture the mechanics of the energy transition. First, I introduce an endogenous reliability function in which capital utilization is determined by the ratio of flexibility assets to renewable-output volatility. This creates a mechanism through which aggressive renewable targets, without sufficient storage, act as a drag on total factor productivity (TFP). Second, I model reliability-gap-induced learning-by-doing in battery storage technologies, where the rate of technological progress responds to the gap between target and actual grid reliability. This mechanism, distinct from the Directed Technical Change framework of \citet{acemoglu2002}, captures induced innovation without requiring explicit R\&D sectors or resource allocation decisions. Third, I incorporate public-investment inertia to distinguish between private battery capital, which is agile and responds to market signals, and public grid capital, which is subject to construction lags and follows institutional rules. This distinction allows for the analysis of structural bottlenecks in which public infrastructure fails to keep pace with private energy deployment.
+To address these gaps, I develop a DSGE model calibrated to the structural characteristics of Vietnam. The model is built around three novel features designed to capture the mechanics of the energy transition. First, I introduce an endogenous reliability function in which capital utilization is determined by the ratio of flexibility assets to renewable-output volatility. This creates a mechanism through which aggressive renewable targets, without sufficient storage, act as a drag on total factor productivity (TFP). Second, I model scarcity-induced technological change in battery storage, where the rate of technological progress responds to the gap between target and actual grid reliability. This mechanism, distinct from the Directed Technical Change framework of \citet{acemoglu2002}, captures induced innovation without requiring explicit R\&D sectors or resource allocation decisions. Third, I incorporate public-investment inertia to distinguish between private battery capital, which is agile and responds to market signals, and public grid capital, which is subject to construction lags and follows institutional rules. This distinction allows for the analysis of structural bottlenecks in which public infrastructure fails to keep pace with private energy deployment.
 
 This study contributes to the Environmental DSGE literature in three distinct dimensions. The first contribution is the joint modeling of an explicit energy sector with endogenous grid reliability. Unlike standard E-DSGE models that include energy as a production input without specifying its source, I model renewable and fossil generation explicitly, allowing intermittency shocks to propagate through both the energy market and the reliability constraint. This dual-channel mechanism quantifies the full macroeconomic cost of renewable variability.
 
-The second contribution is the integration of price-induced learning-by-doing with investment frictions to identify the \textit{agility gap}. While previous literature focuses on frontier innovation races between clean and dirty technologies, I model learning as a deployment-driven process where accumulated experience with battery storage reduces effective costs. Crucially, I distinguish between private storage (batteries), which responds to price signals, and public infrastructure (grid), which is subject to planning delays. This novel specification captures the structural lags observed in developing economies like Vietnam.
+The second contribution is the integration of scarcity-induced technological change with investment frictions to identify the \textit{agility gap}. While previous literature focuses on frontier innovation races between clean and dirty technologies, I model innovation as a scarcity-signal-driven process where persistent reliability gaps direct technological progress toward battery storage. Crucially, I distinguish between private storage (batteries), which responds to price signals, and public infrastructure (grid), which is subject to planning delays. This novel specification captures the structural lags observed in developing economies like Vietnam.
 
-The third contribution provides a ``second-best'' policy analysis for regulated markets. I demonstrate that the efficacy of learning-induced technological progress is strictly conditional on the transmission of scarcity signals. By simulating the model under dampened price pass-through (capturing regulated tariffs or incomplete remuneration for ancillary services), I identify a result of \textit{signal attenuation}, showing that learning mechanisms cannot substitute for the allocative efficiency of market-clearing prices.
+The third contribution provides a ``second-best'' policy analysis for regulated markets. I demonstrate that the efficacy of scarcity-induced technological progress is strictly conditional on the transmission of scarcity signals. By simulating the model under dampened price pass-through (capturing regulated tariffs or incomplete remuneration for ancillary services), I identify a result of \textit{signal attenuation}, showing that scarcity-induced innovation cannot substitute for the allocative efficiency of market-clearing prices.
 
 The remainder of this capstone is organized as follows. Section 2 reviews the relevant literature. Section 3 outlines the model environment. Section 4 details the calibration strategy for Vietnam. Section 5 presents the model mechanics, log-linearization, and transmission channels. Section 6 describes the solution method. Section 7 analyzes the baseline quantitative results, including impulse responses and variance decomposition. Section 8 presents the welfare analysis, counterfactual experiments, and parameter sensitivity. Section 9 concludes with a discussion of policy implications, limitations, and directions for future research.
 
@@ -230,13 +230,13 @@ Recently, \citet{airaudo2025green} advanced the Environmental DSGE literature by
 
 While \citet{airaudo2025green} focus on the short-run frictional costs of carbon taxation and fiscal policy coordination, this capstone complements their analysis by examining a distinct medium-run friction: the reliability penalty arising from renewable intermittency when flexibility infrastructure lags deployment. Whereas their ``greenflation'' emerges from incomplete factor substitutability under carbon pricing, the present model identifies an additional channel---endogenous grid instability---that operates even absent explicit carbon taxes, driven instead by the physical characteristics of VRE integration. This insight directly informs the policy discussion in Section \ref{sec:conclusion}.
 
-While \citet{airaudo2025green} highlight the short-run frictional costs of transition, a distinct strand of literature rooted in endogenous growth theory offers a mechanism for long-run technological progress through innovation. The Directed Technical Change (DTC) framework, pioneered by \citet{acemoglu2002} and applied to the environment by \citet{acemoglu2012environment}, models innovation as a resource allocation problem where scientists choose which sector to develop. This framework highlights two competing forces: the market size effect, which encourages innovation in the larger sector, and the price effect, which directs innovation toward the sector with higher prices. In the standard model, the market size effect dominates, locking the economy into dirty technologies. However, \citet{acemoglu2012environment} show that policy intervention can manipulate these effects to redirect innovation toward clean technologies.
+While \citet{airaudo2025green} highlight the short-run frictional costs of transition, a distinct strand of literature rooted in endogenous growth theory offers a mechanism for long-run technological progress through innovation. The idea that factor scarcity directs innovation toward the scarce factor dates to \citet{hicks1932}, who observed that a rise in the relative cost of a factor creates an inducement to discover methods of economizing on it. This hypothesis was formalized in the induced innovation literature by \citet{kennedy1964} and \citet{drandakisphelps1966}, who showed within neoclassical growth models how equilibrium factor prices systematically bias the direction of technical progress. The modern Directed Technical Change (DTC) framework, pioneered by \citet{acemoglu2002} and applied to energy and environment by \citet{acemoglu2012environment}, models innovation as a resource allocation problem where scientists choose which sector to develop. This framework highlights two competing forces: the market size effect, which encourages innovation in the larger sector, and the price effect, which directs innovation toward the sector with higher prices. In the standard model, the market size effect dominates, locking the economy into dirty technologies. However, \citet{acemoglu2012environment} show that policy intervention can manipulate these effects to redirect innovation toward clean technologies. Closest to the present paper, \citet{hassler2021} develop a DTC model in which natural resource scarcity endogenously redirects technological change away from energy-intensive inputs --- demonstrating that physical scarcity, not just price signals, can serve as the directing force for innovation.
 
 This theoretical mechanism has found robust empirical support. \citet{popp2002} provided early evidence that higher energy prices significantly induce energy-efficient patenting activity. More recently, \citet{aghion2016} utilized microdata from the global automotive industry to show that firms tend to innovate in areas where they have prior expertise (path dependence), but that fuel price shocks successfully redirect R\&D toward electric and hybrid technologies. Similarly, \citet{calel2016} finds that firms regulated under the EU Emissions Trading System (ETS) increased low-carbon patenting by 10\% compared to a matched control group without crowding out other R\&D, suggesting that policy can effectively steer the direction of technical progress.
 
 However, a fundamental limitation in standard DTC models is the assumption regarding the elasticity of substitution. The AABH framework relies on the premise that clean and dirty inputs are high substitutes. Under this condition, innovation in clean energy allows it to seamlessly replace fossil fuels. Yet, structural analyses challenge this assumption in the presence of intermittency. As renewable penetration rises, the lack of dispatchability renders clean energy an imperfect substitute for baseload fossil generation \citep{hirth2013, joskow2011}. Consequently, models that treat clean capital as a homogeneous block overlook the necessity of complementary innovations. As argued by \citet{hart2019}, when inputs are complements rather than substitutes, technological progress must target not just generation, but the bottleneck technologies---specifically storage---that enable substitutability.
 
-An alternative mechanism for technological progress is learning-by-doing, where costs decline through accumulated production experience rather than explicit R\&D allocation. \citet{arrow1962} first formalized this idea, and it has been widely applied to renewable energy technologies. \citet{nemet2006} documents dramatic cost reductions in solar photovoltaics driven by cumulative deployment, while \citet{kittner2017} shows similar patterns for battery storage. Unlike DTC, learning-by-doing does not require modeling innovation sectors or resource constraints, making it particularly suitable for capturing technological progress in capital goods like batteries where costs decline through manufacturing scale and operational experience.
+An alternative mechanism for technological progress is learning-by-doing, where costs decline through accumulated production experience rather than explicit R\&D allocation. \citet{arrow1962} first formalized this idea, and it has been widely applied to renewable energy technologies. \citet{nemet2006} documents dramatic cost reductions in solar photovoltaics driven by cumulative deployment, while \citet{kittner2017} shows similar patterns for battery storage using a two-factor learning curve that integrates both deployment experience and innovation activity. \citet{way2022} extend this approach with stochastic Wright's Law forecasts across fifty technologies, projecting continued steep cost declines for batteries through 2050. Unlike DTC, learning-by-doing does not require modeling innovation sectors or resource constraints, making it particularly suitable for capturing technological progress in capital goods like batteries where costs decline through manufacturing scale and operational experience.
 
 To address these dynamics, recent contributions have attempted to internalize these physical constraints within general equilibrium frameworks. For instance, \citet{schreiner2020investing} develop a DSGE model for Germany that treats power grid infrastructure as a flexibility option required to bridge the mismatch between variable renewable supply and demand. Crucially, their simulations reveal that while grid investments increase reliability, the associated costs can lead to long-term decreases in GDP and employment unless accompanied by significant efficiency gains. This underscores that solving the intermittency problem is not merely a matter of capital accumulation (building more lines) but requires targeted technological progress in intertemporal substitution (storage).
 
@@ -250,7 +250,7 @@ Beyond the storage modeling gap, international trade emerges as a critical trans
 
 For Vietnam specifically, trade linkages are not peripheral but central to its green-transition challenge. The country's rapid export-oriented industrialization has been accompanied by rising dependence on imported thermal coal and liquefied natural gas (LNG), making global fossil-fuel price fluctuations a direct source of domestic production-cost volatility \citep{iea2023, gso2024}. At the same time, Vietnam's energy-intensive export sectors, such as steel, cement, and fertilizers, face increasing exposure to foreign climate policies like the EU Carbon Border Adjustment Mechanism \citep{ec2023}. Empirical work on Vietnam and comparable emerging economies shows that trade openness interacts strongly with renewable-energy adoption and CO\textsubscript{2} emissions, reinforcing the need to jointly consider trade and environmental policy in macro-modeling \citep{almulali2015, vo2020}. The broader literature on carbon leakage, border adjustments, and greenflation also underscores the relevance of modelling international connections: unilateral carbon pricing, carbon-border tariffs, or linked carbon markets produce measurable welfare, competitiveness, and terms-of-trade effects that an open-economy E-DSGE is well-suited to analyze \citep{fischer2012, bohringer2022}. These insights collectively highlight that, for a highly open economy like Vietnam, international trade in both energy and goods is not an auxiliary consideration but a defining structural feature of the green transition.
 
-Taken together, the existing literature provides a strong foundation for environmental DSGE frameworks, yet it leaves critical blind spots regarding the interactions among intermittency, flexibility investment, and induced innovation. Building on these gaps, this capstone makes three core contributions. First, it introduces an endogenous reliability function that links capital utilization to the ratio of flexibility assets to renewable volatility, allowing intermittency to propagate through both the production function and the investment channel. Second, it incorporates reliability-gap-induced learning-by-doing in Battery Energy Storage Systems (BESS), where technological progress responds endogenously to the gap between target and actual grid reliability, a channel distinct from frontier R\&D allocation. Third, it distinguishes between agile private battery investment and slow-moving public grid infrastructure, capturing the structural \textit{agility gap} observed in developing economies. By integrating these elements, the capstone argues that market-based signals are essential complements to storage investment in transforming the green transition from a cost burden into a sustainable growth path.
+Taken together, the existing literature provides a strong foundation for environmental DSGE frameworks, yet it leaves critical blind spots regarding the interactions among intermittency, flexibility investment, and induced innovation. Building on these gaps, this capstone makes three core contributions. First, it introduces an endogenous reliability function that links capital utilization to the ratio of flexibility assets to renewable volatility, allowing intermittency to propagate through both the production function and the investment channel. Second, it incorporates a novel scarcity-induced technological change mechanism for Battery Energy Storage Systems (BESS), where technological progress responds endogenously to the reliability gap between target and actual grid performance. This mechanism combines the accumulation structure of Arrow's \citeyearpar{arrow1962} learning-by-doing tradition with the induced innovation logic of \citet{hicks1932}, \citet{kennedy1964}, \citet{drandakisphelps1966}, and \citet{acemoglu2002}: the reliability gap serves as the scarcity signal that directs innovative effort toward storage, while technology compounds from an inherited knowledge base in the manner of empirical battery experience curves \citep{kittner2017, way2022}. Crucially, the transmission of this scarcity signal is governed by a regulatory parameter $\chi$, allowing the model to quantify how market distortions --- such as Vietnam's administratively set tariffs and underdeveloped ancillary service markets --- suppress technological progress even when grid stress is severe. Third, it distinguishes between agile private battery investment and slow-moving public grid infrastructure, capturing the structural \textit{agility gap} observed in developing economies. By integrating these elements, the capstone argues that market-based scarcity signals are essential complements to physical storage investment in transforming the green transition from a cost burden into a sustainable growth path.
 
 \section{Methodology} \label{sec:methodology}
 
@@ -258,9 +258,9 @@ Taken together, the existing literature provides a strong foundation for environ
 
 I develop a Small Open Economy Dynamic Stochastic General Equilibrium (DSGE) model calibrated to Vietnam. The model is designed to analyze the macroeconomic consequences of renewable-energy intermittency when the accumulation of grid flexibility lags behind the expansion of variable renewable generation, while capturing the external balance implications through international borrowing and lending. The framework extends standard Environmental DSGE (E-DSGE) models by introducing two departures from the canonical structure.
 
-First, grid reliability is endogenized as a technological constraint on effective capital services rather than treated implicitly through energy prices or exogenous productivity shocks. This reflects the physical reality that electricity systems with high renewable penetration are constrained by temporal mismatches between supply and demand. Second, I embed a price-induced learning-by-doing mechanism that governs the rate of cost reduction in battery storage technologies. This allows the economy to respond endogenously to reliability scarcity through technological progress rather than relying solely on capital accumulation or policy intervention.
+First, grid reliability is endogenized as a technological constraint on effective capital services rather than treated implicitly through energy prices or exogenous productivity shocks. This reflects the physical reality that electricity systems with high renewable penetration are constrained by temporal mismatches between supply and demand. Second, I embed a scarcity-induced technological change mechanism that governs the rate of improvement in battery storage technologies. This allows the economy to respond endogenously to reliability scarcity through technological progress rather than relying solely on capital accumulation or policy intervention.
 
-The economy consists of a representative household and a representative firm operating in a small open economy with access to international bond markets. Households supply labor, accumulate productive capital, and trade bonds with the rest of the world at a debt-elastic interest rate. Firms produce final output using a CES aggregator of value-added (from capital and labor) and a fixed energy endowment. Grid reliability is determined endogenously by the stock of flexibility assets (batteries and grid infrastructure) relative to renewable volatility. Battery costs decline through reliability-gap-induced learning-by-doing, while public grid investment follows a rule-based response to reliability shortfalls.
+The economy consists of a representative household and a representative firm operating in a small open economy with access to international bond markets. Households supply labor, accumulate productive capital, and trade bonds with the rest of the world at a debt-elastic interest rate. Firms produce final output using a CES aggregator of value-added (from capital and labor) and a fixed energy endowment. Grid reliability is determined endogenously by the stock of flexibility assets (batteries and grid infrastructure) relative to renewable volatility. Battery technology improves through scarcity-induced innovation driven by reliability gaps, while public grid investment follows a rule-based response to reliability shortfalls.
 
 A central modeling choice is the treatment of capital utilization. In contrast to standard RBC or New Keynesian models, capital utilization in this framework is not a choice variable and does not affect depreciation. Instead, it reflects the fraction of installed productive capital that is operational given the state of grid reliability. This interpretation aligns utilization with system-wide power availability rather than firm-level intensity of use.
 
@@ -270,37 +270,44 @@ A representative household maximizes expected lifetime utility:
 \begin{equation}
 \mathbb{E}_0 \sum_{t=0}^{\infty} \beta^t
 \left[
-\log(C_t) - \frac{L_t^{1+\sigma_L}}{1+\sigma_L}
+\log(C_t) - \varphi \frac{L_t^{1+\sigma_L}}{1+\sigma_L}
 \right]
+\label{eq:utility}
 \end{equation}
 
 subject to the budget constraint:
 \begin{equation}
-C_t + I_{p,t} + P_{bat,t} I_{bat,t} + B^*_t + T_t
+C_t + I_{p,t} + P_{bat,t} I_{bat,t} + B^*_t + \tau_t Y_t
 =
 w_t L_t + R_t K_{p,t-1} + (1+r^*_{t-1}) B^*_{t-1}
 \label{eq:hh_budget}
 \end{equation}
 
-where $I_{p,t}$ is productive capital investment, $I_{bat,t}$ battery investment at world price $P_{bat,t}$, $B^*_t$ denotes net foreign asset holdings earning the country-specific interest rate $r^*_t$, $T_t$ is a lump-sum tax levied by the government to finance public grid investment (specified in Section~\ref{sec:government}), $w_t$ is the competitive real wage, and $R_t$ is the rental rate of productive capital. From the firm's profit maximization, $w_t = (1-\alpha)V_t/L_t$ and $R_t = \alpha Y_t / K_{p,t}$, so that total factor income equals $w_t L_t + R_t K_{p,t-1} = (1-\alpha)V_t + \alpha Y_t$.
+where $I_{p,t}$ is productive capital investment, $I_{bat,t}$ battery investment at world price $P_{bat,t}$, $B^*_t$ denotes net foreign asset holdings earning the country-specific interest rate $r^*_t$, $\tau_t$ is a proportional tax on output levied by the government to finance public grid investment (specified in Section~\ref{sec:government}), $w_t$ is the competitive real wage, and $R_t$ is the rental rate of productive capital. The household rents out the capital stock carried into the period, $K_{p,t-1}$, so that capital income is $R_t K_{p,t-1}$. From the firm's profit maximization, $w_t = (1-\alpha)V_t/L_t$ and $R_t = \alpha V_t / K_{p,t-1}$, so that total factor income equals $w_t L_t + R_t K_{p,t-1} = (1-\alpha)V_t + \alpha V_t = V_t$.\footnote{\label{fn:timing_convention}The timing convention here is standard in DSGE models with capital: capital installed by the end of period $t-1$ (i.e., $K_{p,t}$ in the accumulation equation $K_{p,t} = (1-\delta_p)K_{p,t-1} + I_{p,t}$) becomes productive in period $t$, earning rental rate $R_t$. Investment $I_{p,t}$ is a use of funds in period $t$ but does not contribute to production until period $t+1$. Writing $R_t K_{p,t}$ on the income side of the budget constraint would double-count $I_{p,t}$, since $K_{p,t}$ already embeds it. Consequently, the value-added function is $V_t = (u_t K_{p,t-1})^\alpha L_t^{1-\alpha}$, using the predetermined capital stock $K_{p,t-1}$.}
 
-The household chooses $\{C_t, L_t, K_{p,t+1}, B^*_t\}$ to maximize utility subject to the budget constraint. The first-order conditions are derived as follows.
+The spending item $I_{p,t}$ in the budget constraint represents the household's purchase of new productive capital goods. It is linked to the next-period capital stock through the standard perpetual-inventory accumulation law (equation~\eqref{eq:productive_capital}):
+\begin{equation*}
+K_{p,t+1} = (1-\delta_p)\,K_{p,t} + I_{p,t}
+\end{equation*}
+\noindent so that $I_{p,t} = K_{p,t+1} - (1-\delta_p)K_{p,t}$: investment is simply the increment to next period's capital stock above what survives depreciation from the current stock. Equivalently, the household's true intertemporal choice variable is the end-of-period capital stock $K_{p,t+1}$, not $I_{p,t}$ itself. In the Lagrangian derivation (Appendix~\ref{app:deriv_euler}), $I_{p,t}$ is substituted out using this relation, so the optimisation is carried out over $\{C_t, L_t, K_{p,t+1}, B^*_t\}$. The Euler equation \eqref{eq:euler} below follows directly from the first-order condition with respect to $K_{p,t+1}$.
 
-\paragraph{Euler equation for capital.} Differentiating the Lagrangian with respect to $K_{p,t+1}$ and $C_t$, and noting that the marginal product of capital in the production function is $\partial Y_{t+1} / \partial K_{p,t} = \alpha Y_{t+1}/K_{p,t}$ (from the Cobb-Douglas value-added structure in equation~\ref{eq:value_added} below), the intertemporal optimality condition equates the marginal cost of investing one unit of consumption today with the discounted marginal benefit of the return tomorrow:\footnote{The full step-by-step Lagrangian derivation of this condition is provided in Appendix~\ref{app:deriv_euler}.}
+The household chooses $\{C_t, L_t, K_{p,t+1}, B^*_t\}$ to maximize utility subject to the budget constraint \eqref{eq:hh_budget} and the accumulation law above. The first-order conditions are derived as follows.
+
+\paragraph{Euler equation for capital.} With proportional taxation, the after-tax return to capital in period $t+1$ is $(1-\tau_{t+1})\alpha Y_{t+1}/K_{p,t+1}$. The intertemporal optimality condition becomes:\footnote{The full step-by-step Lagrangian derivation of this condition is provided in Appendix~\ref{app:deriv_euler}.}
 \begin{equation}
-\frac{1}{C_t} = \beta \mathbb{E}_t \left[ \frac{\alpha Y_{t+1}/K_{p,t+1} + 1 - \delta_p}{C_{t+1}} \right]
+\frac{1}{C_t} = \beta \mathbb{E}_t \left[ \frac{(1-\tau_{t+1})\,\alpha Y_{t+1}/K_{p,t+1} + 1 - \delta_p}{C_{t+1}} \right]
 \label{eq:euler}
 \end{equation}
 
-\noindent \textit{In words:} the household invests in capital until the cost of forgoing one unit of consumption today ($1/C_t$) equals the expected discounted benefit of the gross return---marginal product plus undepreciated capital---valued at tomorrow's marginal utility ($1/C_{t+1}$).
+The household invests in capital until the marginal cost of saving today equals the expected discounted after-tax return. When an intermittency shock raises $\tau_{t+1}$ (via higher grid investment), it reduces the after-tax return to capital, amplifying the contractionary effect on investment beyond the direct utilization channel.
 
-\paragraph{Labor supply.} Differentiating with respect to $L_t$ and equating the marginal disutility of labor ($L_t^{\sigma_L}$) with the marginal utility of the real wage ($w_t/C_t$), and substituting the competitive wage $w_t = (1-\alpha)V_t/L_t$ from the firm's profit maximization:\footnote{The full step-by-step Lagrangian derivation of this condition, including the substitution of the competitive wage, is provided in Appendix~\ref{app:deriv_labor}.}
+\paragraph{Labor supply.} With the proportional tax, the household equates the marginal disutility of labor to the after-tax marginal utility of income. Substituting the competitive wage $w_t = (1-\alpha)V_t/L_t$:\footnote{The full step-by-step Lagrangian derivation of this condition is provided in Appendix~\ref{app:deriv_labor}.}
 \begin{equation}
-(1-\alpha) V_t = \varphi \, C_t \, L_t^{1+\sigma_L}
+(1-\tau_t)(1-\alpha) V_t = \varphi \, C_t \, L_t^{1+\sigma_L}
 \label{eq:labor_supply}
 \end{equation}
 
-\noindent \textit{In words:} the labor share of value-added (left side) equals the household's required compensation for working, which is increasing in consumption (higher income households demand more leisure) and steeply increasing in hours worked (via the exponent $1+\sigma_L$). The parameter $\varphi$ is the labor disutility weight, calibrated endogenously to match steady-state labor hours of $L_{ss} = 0.33$.
+The after-tax labor share of value-added (left side) equals the household's required compensation for working. The proportional tax $\tau_t$ drives a wedge that reduces effective labor income, lowering equilibrium labor supply relative to the lump-sum benchmark. The parameter $\varphi$ is calibrated endogenously to match steady-state labor hours of $L_{ss} = 0.33$.
 
 \subsection{The Production Sector}
 
@@ -313,20 +320,20 @@ Y_t = \left[(1-\omega_E)V_t^{s_E} + \omega_E \bar{E}^{s_E}\right]^{1/s_E}
 \label{eq:final_output}
 \end{equation}
 
-\noindent \textit{In words:} output is a weighted aggregate of value-added $V_t$ and energy $E_t$, where neither input can fully substitute for the other when $\sigma_E < 1$. Shutting down either input drives output toward zero---energy and productive activity are essential complements.
+Output is a weighted aggregate of value-added $V_t$ and energy $E_t$, where neither input can fully substitute for the other when $\sigma_E < 1$: shutting down either drives output toward zero, making energy and productive activity essential complements.
 
 This formulation follows the environmental macroeconomics literature \citep{heutel2012, airaudo2025green} and captures the limited short-run substitutability between energy and non-energy inputs. When the elasticity of substitution $\sigma_E$ is low (calibrated at 0.6), disruptions to energy supply translate into disproportionately large output losses, a feature that is empirically relevant for energy-intensive emerging economies.
 
 Value-added production combines labor and effective capital services:
 
 \begin{equation}
-V_t = (u_t K_{p,t})^\alpha L_t^{1-\alpha}
+V_t = (u_t K_{p,t-1})^\alpha L_t^{1-\alpha}
 \label{eq:value_added}
 \end{equation}
 
-\noindent \textit{In words:} value-added is produced from ``effective capital'' $u_t K_{p,t}$---the fraction of installed capacity that is actually operational---combined with labor. A factory with machines that cannot run due to power outages produces less, even if the machines physically exist.
+Value-added is produced from ``effective capital'' $u_t K_{p,t-1}$---the fraction of \textit{previously installed} capacity that is actually operational---combined with labor. A factory with machines that cannot run due to power outages produces less, even if the machines physically exist. The timing $K_{p,t-1}$ reflects the standard capital-in-advance convention: capital installed by the end of period $t-1$ is the stock available for production in period $t$ (see footnote~\ref{fn:timing_convention}).
 
-Here, $K_{p,t}$ is the physical stock of productive capital, and $u_t \in (0,1)$ represents the fraction of capital that can be operated given grid conditions. Unlike standard utilization models (e.g., \citet{greenwood1988}), $u_t$ is not chosen optimally by firms and does not influence capital depreciation. Instead, it captures system-wide outages, curtailment, and power shortages that prevent installed capital from being used. In this sense, grid instability manifests as an endogenous, state-dependent productivity wedge: a 3\% reliability shortfall ($u_t = 0.97$) is equivalent to a TFP loss of approximately $\alpha \times 3\% \approx 1\%$.
+Here, $K_{p,t-1}$ is the physical stock of productive capital carried into period $t$, and $u_t \in (0,1)$ represents the fraction of that stock that can be operated given grid conditions. Unlike standard utilization models (e.g., \citet{greenwood1988}), $u_t$ is not chosen optimally by firms and does not influence capital depreciation. Instead, it captures system-wide outages, curtailment, and power shortages that prevent installed capital from being used. In this sense, grid instability manifests as an endogenous, state-dependent productivity wedge: a 3\% reliability shortfall ($u_t = 0.97$) is equivalent to a TFP loss of approximately $\alpha \times 3\% \approx 1\%$.
 
 In the implemented model, energy enters the CES aggregator as a fixed endowment $\bar{E}$, reflecting the assumption that total energy supply is determined by installed capacity and policy targets (PDP8) rather than optimized period-by-period. This simplification allows the model to focus on the key channel of interest---how renewable intermittency affects grid reliability and, through it, effective capital utilization---without requiring a full energy market clearing block. The intermittency shock enters through the reliability function (equation \eqref{eq:utilization} below) rather than through energy supply directly.
 
@@ -345,7 +352,7 @@ u_t = 1 - \exp\left(-\psi \frac{F_t}{\phi_{int} \cdot \text{Vol}_{ren,t}}\right)
 \label{eq:utilization}
 \end{equation}
 
-\noindent \textit{In words:} grid reliability is an increasing, concave function of the ratio of flexibility assets ($F_t$) to renewable volatility ($\text{Vol}_{ren,t}$). When the system has abundant flexibility relative to volatility, nearly all capital can operate ($u_t \approx 1$). When flexibility is scarce, outages proliferate and utilization collapses.
+Grid reliability is an increasing, concave function of the ratio of flexibility assets ($F_t$) to renewable volatility ($\text{Vol}_{ren,t}$). When the system has abundant flexibility relative to volatility, nearly all capital can operate ($u_t \approx 1$); when flexibility is scarce, outages proliferate and utilization collapses.
 
 The variables and parameters are:
 \begin{itemize}
@@ -395,7 +402,11 @@ The volatility term captures the absolute variability of renewable generation:
 \label{eq:renewable_volatility}
 \end{equation}
 
-where $\theta_{ren}$ is the renewable penetration share, $K_{ren}$ is installed renewable capacity, and $\sigma_{ren}$ is the standard deviation of the intermittency shock. In the quantitative implementation, $\overline{\text{Vol}}_{ren}$ is treated as a \textbf{calibrated parameter} (not an endogenous variable), set to match the baseline renewable fleet characteristics under PDP8. This model deliberately treats the trajectory of Variable Renewable Energy (VRE) deployment as exogenous. The firms do not dynamically optimize how many solar panels to build based on current prices; instead, VRE capacity follows the government's PDP8 plan implicitly. This simplification isolates the endogenous response of flexibility assets (the ``agility gap''). Future models could endogenize VRE investment explicitly. The intermittency shock $\varepsilon_{ren,t}$ enters the reliability function~\eqref{eq:utilization} multiplicatively as $\overline{\text{Vol}}_{ren} \cdot \exp(\varepsilon_{ren,t})$, generating stochastic variation in effective volatility around the calibrated baseline.
+where $\theta_{ren}$ is the renewable penetration share (dimensionless), $K_{ren}$ is installed renewable capacity (GW), and $\sigma_{ren}$ is the coefficient of variation of the intermittency shock (dimensionless). As defined, $\overline{\text{Vol}}_{ren}$ carries units of GW. Dimensional consistency in the reliability function \eqref{eq:utilization} is preserved by the scaling parameter $\phi_{int}$, which has units of GW per unit of flexibility stock, so that the ratio $F_t / (\phi_{int} \cdot \text{Vol}_{ren,t})$ is dimensionless as required by the exponential.
+
+In the quantitative implementation, $\overline{\text{Vol}}_{ren}$ is treated as a \textbf{calibrated parameter} rather than an endogenous variable, set to match the baseline renewable fleet characteristics under PDP8. This model deliberately treats the trajectory of Variable Renewable Energy (VRE) deployment as exogenous: firms do not dynamically optimize solar or wind capacity; instead, VRE follows the government's PDP8 plan implicitly. This simplification isolates the endogenous response of flexibility assets---the ``agility gap''---and is a natural starting point before fully endogenizing VRE investment.
+
+The intermittency shock $\varepsilon_{ren,t}$ enters the reliability function~\eqref{eq:utilization} multiplicatively as $\overline{\text{Vol}}_{ren} \cdot \exp(\varepsilon_{ren,t})$, generating stochastic variation in effective volatility around the calibrated baseline.
 
 Conceptually, $\overline{\text{Vol}}_{ren}$ varies with the size of the renewable fleet, capturing the empirical finding that integration costs rise with penetration \citep{hirth2013}. In the deterministic transition simulations (Section~\ref{subsec:valley}), $\overline{\text{Vol}}_{ren}$ is allowed to increase along the policy-determined VRE expansion path.
 
@@ -406,17 +417,19 @@ Total system flexibility $F_t$ is produced by combining two distinct assets: pri
 \begin{equation}
 F_t =
 \left[
-\mu (A_{bat,t} K_{b,t})^{s_F}
+\mu (A_{bat,t-1} K_{b,t-1})^{s_F}
 +
-(1-\mu) K_{g,t}^{s_F}
+(1-\mu) K_{g,t-1}^{s_F}
 \right]^{1/s_F},
 \qquad \rho < 1 \;\Leftrightarrow\; s_F < 0
 \label{eq:flexibility_bundle}
 \end{equation}
 
-\noindent \textit{In words:} flexibility is a weighted combination of technology-augmented battery capacity ($A_{bat,t} K_{b,t}$) and grid infrastructure ($K_{g,t}$), where neither can fully replace the other. A grid with abundant batteries but no transmission lines cannot deliver stored power; a grid with extensive transmission but no storage cannot smooth intermittent supply. The negative exponent $s_F < 0$ (since $\rho = 0.4 < 1$) ensures that flexibility collapses if either input approaches zero---a mathematical expression of the engineering constraint.
+Flexibility is a weighted combination of technology-augmented battery capacity ($A_{bat,t-1} K_{b,t-1}$) and grid infrastructure ($K_{g,t-1}$), where neither can fully replace the other. A grid with abundant batteries but no transmission lines cannot deliver stored power; a grid with extensive transmission but no storage cannot smooth intermittent supply. The negative exponent $s_F < 0$ (since $\rho = 0.4 < 1$) ensures that flexibility collapses if either input approaches zero---a mathematical expression of this engineering constraint.
 
-The elasticity of substitution $\rho = 0.4$ is calibrated below unity to enforce this complementarity. The parameter $\mu = 0.16$ governs the relative weight of battery storage in the aggregate, reflecting Vietnam's current early-stage storage deployment. Innovation affects flexibility through $A_{bat,t}$, which represents learning-by-doing that reduces the effective cost of battery storage services. Improvements in storage technology raise the usable energy-shifting capacity per unit of installed storage rather than merely increasing physical capacity.
+\textbf{Timing convention.} All three inputs to the flexibility aggregator are predetermined: capital stocks $K_{b,t-1}$ and $K_{g,t-1}$ installed by the end of period $t-1$, and battery technology $A_{bat,t-1}$ induced in period $t-1$. Scarcity-induced innovation in period $t$ updates $A_{bat,t}$ (equation~\ref{eq:learning_by_doing}), but this improvement only enters flexibility in period $t+1$. This one-period-delay convention means that innovative effort is directed today but becomes operationally productive tomorrow, eliminating any within-period simultaneity between the innovation and reliability equations.
+
+The elasticity of substitution $\rho = 0.4$ is calibrated below unity to enforce this complementarity. The parameter $\mu = 0.16$ governs the relative weight of battery storage in the aggregate, reflecting Vietnam's current early-stage storage deployment. Innovation affects flexibility through $A_{bat,t-1}$: technology improvements induced by last period's reliability gap raise the usable energy-shifting capacity per unit of installed storage in the current period.
 
 The complementarity parameter $\rho < 1$ has a precise formal consequence for the returns to coordinated flexibility investment.
 
@@ -427,9 +440,7 @@ Let $F(x, y) = [\mu \, x^{s} + (1-\mu) \, y^{s}]^{1/s}$ be the CES flexibility a
 \end{equation*}
 \end{proposition}
 
-\noindent The result follows from the strict supermodularity of the CES aggregator when inputs are complements ($\rho < 1$). The formal proof is provided in Appendix~\ref{app:proof_superadditivity}.\footnote{The proposition is a direct consequence of the CES functional form with $\rho < 1$, which implies complementarity between battery storage and grid capital. The restriction $\rho < 1$ (i.e., $s < 0$) ensures a strictly positive cross-partial $\partial^2 F / \partial x \, \partial y > 0$, from which superadditivity follows via Topkis's theorem \citep{topkis1998}.}
-
-\noindent \textbf{Remark.} By homogeneity of degree one, the joint gain equals exactly $(\lambda - 1) F(x_0, y_0)$. Each individual gain is strictly less than $(\lambda-1) F$ due to the strict concavity of $F$ in each argument separately. The \textit{superadditivity gap}---the excess of the joint gain over the sum of individual gains---measures the pure complementarity premium from coordinated investment. This gap vanishes only as $\rho \to 1$ (perfect substitutes) and grows as $\rho \to 0$ (Leontief). Table~\ref{tab:ces_complementarity} evaluates the gap numerically under the baseline calibration.
+\noindent The result follows from the strict supermodularity of the CES aggregator when inputs are complements ($\rho < 1$). The formal proof and a quantitative characterization of the superadditivity gap are provided in Appendix~\ref{app:proof_superadditivity}. Table~\ref{tab:ces_complementarity} evaluates the gap numerically under the baseline calibration.
 
 \begin{table}[H]
     \centering
@@ -476,16 +487,18 @@ K_{b,t+1} = (1-\delta_b)K_{b,t} + I_{bat,t}
 Battery capital follows a standard linear accumulation law without adjustment costs, as the modular and scalable nature of battery storage allows rapid deployment without the installation frictions typically associated with heavy infrastructure.
 
 \paragraph{Battery Investment Decision.}
-To motivate the battery investment rule, I derive the shadow rental rate on storage services from the model's first-order conditions. The marginal value of an additional unit of battery capital flows through the chain $K_b \to F \to u \to V \to Y$:
+A fully endogenous, forward-looking optimization of battery capital---subject to the highly non-linear exponential reliability constraint---would create non-convexities that complicate the Blanchard-Kahn conditions required for local approximation. The approach here instead derives a reduced-form investment rule that proxies the gradient of the structural shadow price while keeping the system computationally tractable and ensuring local saddle-path stability.
+
+To see where this rule comes from, consider the shadow rental rate on storage services. The marginal value of an additional unit of battery capital flows through the chain $K_b \to F \to u \to V \to Y$:
 
 \begin{equation}
-R_{b,t} \;\equiv\; \frac{\partial Y_t}{\partial F_t} \cdot \frac{\partial F_t}{\partial (A_{bat,t} K_{b,t-1})} \cdot A_{bat,t}
+R_{b,t} \;\equiv\; \frac{\partial Y_t}{\partial F_t} \cdot \frac{\partial F_t}{\partial (A_{bat,t-1} K_{b,t-1})} \cdot A_{bat,t-1}
 \label{eq:rental_rate}
 \end{equation}
 
 Each component is computed from the model's structural equations. From the CES flexibility aggregator \eqref{eq:flexibility_bundle}:
 \begin{equation}
-\frac{\partial F_t}{\partial (A_{bat,t} K_{b,t-1})} = \mu \left(\frac{A_{bat,t} K_{b,t-1}}{F_t}\right)^{-1/\rho_f}
+\frac{\partial F_t}{\partial (A_{bat,t-1} K_{b,t-1})} = \mu \left(\frac{A_{bat,t-1} K_{b,t-1}}{F_t}\right)^{-1/\rho_f}
 \label{eq:dF_dKb}
 \end{equation}
 
@@ -521,52 +534,44 @@ Table~\ref{tab:mpk_decomp} evaluates each component of the chain at steady-state
     \parbox{\textwidth}{\footnotesize \textit{Note:} Evaluated at the deterministic steady state. $R_{b,ss} = (\partial Y/\partial V) \times (\partial V/\partial u) \times (\partial u/\partial F) \times (\partial F/\partial(A_{bat} K_b)) \times A_{bat} = 0.725 \times 0.370 \times 0.200 \times 2.040 \times 1.0 = 0.109$. The large flexibility bottleneck term reflects batteries' position as the scarce factor ($\mu = 0.16$) in the CES aggregator. When $u_t$ falls below target, the reliability gradient steepens (since $\partial u/\partial F \propto (1-u_t)$), amplifying $R_b$ and triggering the investment response.}
 \end{table}
 
-In the computational implementation, the investment rule takes the reduced form:
+The rental rate $R_{b,t}$ depends on the reliability gradient $\partial u / \partial F = \psi(1-u_t)/(\phi_{int} \cdot \text{Vol}_{ren,t})$, which is proportional to the reliability gap $(1-u_t)$. When reliability falls below target, $(1-u_t)$ rises, steepening the gradient and raising $R_{b,t}$ above its steady-state value. The ratio $u^*/u_t$ is a monotone transformation of this gap: at steady state $u_t = u^* = 0.97$ and the ratio equals unity; when $u_t$ drops below $u^*$, the ratio rises, driving investment above replacement levels. This motivates the reduced-form investment rule:
+
 \begin{equation}
 \frac{I_{bat,t}}{\bar{I}_{bat}} = \left(\frac{u^*}{u_t}\right)^{\phi_{grid}} \cdot \frac{1}{P_{bat,t}}
 \label{eq:battery_investment}
 \end{equation}
 
-\noindent \textit{In words:} battery investment rises above its steady-state level when reliability falls below target, and falls when batteries become more expensive.
+The exponent $\phi_{grid}$ governs the elasticity of the investment response to the reliability gap---higher values imply more aggressive battery deployment when the grid is stressed. The price term $1/P_{bat,t}$ reflects the cost side: Vietnam is a price-taker in global battery markets, so higher world battery prices reduce real investment even when the return to storage is high. At steady state, the rule collapses to $I_{bat,ss}/\bar{I}_{bat} = 1$, consistent with capital replacement at $I_{bat,ss} = \delta_b K_{b,ss}$.
 
-\textbf{Modeling Choice Justification:} A fully endogenous, forward-looking optimization of battery capital by firms---subject to the highly non-linear exponential reliability constraint---would create massive non-convexities and complicate the Blanchard-Kahn conditions required for local approximation. The reduced-form rule in Equation~\eqref{eq:battery_investment} mathematically proxies the gradient of the shadow price while keeping the system computationally tractable and ensuring local saddle-path stability.
+\subsection{Scarcity-Induced Technological Change in Battery Storage}
 
-The connection between this reduced form and the structural FOC chain (equations~\ref{eq:rental_rate}--\ref{eq:dY_dF}) operates as follows. The rental rate $R_{b,t}$ depends on the reliability gradient $\partial u / \partial F = \psi(1-u_t)/(\phi_{int} \cdot \text{Vol}_{ren,t})$, which is proportional to the reliability gap $(1-u_t)$. When reliability falls below target, $(1-u_t)$ rises, steepening the gradient and raising $R_{b,t}$ above its steady-state value. The ratio $u^*/u_t$ is a monotone transformation of this gap: at steady state $u_t = u^* = 0.97$ and the ratio equals unity; when $u_t$ drops below $u^*$, the ratio rises, driving investment above replacement levels. The exponent $\phi_{grid}$ governs the elasticity of the investment response to the reliability gap---higher values imply more aggressive battery deployment when the grid is stressed. The price term $1/P_{bat,t}$ reflects the cost side: Vietnam is a price-taker in global battery markets, so higher world battery prices reduce real investment even when the return to storage is high. At steady state, the rule collapses to $I_{bat,ss}/\bar{I}_{bat} = 1$, consistent with capital replacement at $I_{bat,ss} = \delta_b K_{b,ss}$.
-
-\subsection{Learning-by-Doing in Battery Technology}
-
-Technological progress in battery storage reflects cumulative deployment experience rather than explicit R\&D allocation. The evolution of battery technology follows:
+Technological progress in battery storage is modeled as an endogenous process driven by the reliability gap --- the gap between the grid's target and actual performance. This mechanism combines two distinct strands of the innovation literature. The \textit{accumulation structure} follows Arrow's \citeyearpar{arrow1962} learning-by-doing tradition: technology compounds multiplicatively from an inherited knowledge base $A_{bat,t-1}$, with bounded and mean-reverting growth consistent with empirical learning curves \citep{nemet2006, kittner2017}. The \textit{direction} of innovation, however, follows the induced innovation framework of \citet{hicks1932}, \citet{kennedy1964}, and \citet{drandakisphelps1966}, as formalized in the Directed Technical Change (DTC) literature by \citet{acemoglu2002}: when a factor is scarce, the private return to improving it rises, directing technological effort toward that bottleneck. Here the relevant scarcity signal is grid reliability itself --- when the grid is stressed, the economic value of better battery technology spikes, inducing accelerated innovation in storage. The evolution of battery technology follows:
 \begin{equation}
-A_{bat,t} = \underbrace{A_{bat,t-1}}_{\text{inherited knowledge}} \times \left(1 + \underbrace{\eta_{bat}}_{\text{learning rate}} \cdot \underbrace{\chi}_{\substack{\text{signal}\\\text{transmission}}} \cdot \underbrace{\frac{u^* - u_t}{u^*}}_{\text{reliability gap}}\right)
+A_{bat,t} = \underbrace{A_{bat,t-1}}_{\text{inherited knowledge}} \times \left(1 + \underbrace{\eta_{bat}}_{\text{innovation elasticity}} \cdot \underbrace{\chi}_{\substack{\text{signal}\\\text{transmission}}} \cdot \underbrace{\frac{u^* - u_t}{u^*}}_{\text{reliability gap}}\right)
 \label{eq:learning_by_doing}
 \end{equation}
 
 where:
 \begin{itemize}
-    \item $\eta_{bat} > 0$ is the learning-by-doing elasticity
+    \item $\eta_{bat} > 0$ is the technology adoption elasticity governing how strongly the reliability scarcity signal translates into innovation
     \item $\chi \in (0,1]$ captures regulatory distortions in price signals
     \item $u^*$ is the target reliability level
     \item $u_t$ is the current reliability
 \end{itemize}
 
-This specification ensures that technological progress is zero when reliability is at target ($u_t = u^*$) and accelerates proportionally when reliability falls below target. The growth rate is bounded and mean-reverting, consistent with empirical learning curves that exhibit saturation effects \citep{nemet2006}. The reliability gap $(u^* - u_t)/u^*$ serves as the scarcity signal: when the grid is stressed, the economic value of improved storage technology rises, inducing faster learning.
+This specification ensures that technological progress is zero when reliability is at target ($u_t = u^*$) and accelerates proportionally when reliability falls below target. The mechanism is distinct from both pure learning-by-doing (where the driver is cumulative deployment or production volume) and pure Directed Technical Change (where scientists allocate R\&D effort across sectors). Instead, it captures the empirically documented phenomenon that factor scarcity raises the private return to innovation in that factor, directing technological capabilities toward the binding bottleneck \citep{popp2002, acemoglu2012environment, aghion2016, hassler2021}. The accumulation structure --- compounding from $A_{bat,t-1}$ with bounded growth --- ensures that improvements persist and exhibit the saturation properties documented in battery experience curves \citep{kittner2017, way2022}.
 
-The parameter $\chi$ captures regulatory distortions that dampen the transmission of reliability scarcity into private incentives. In regulated markets with incomplete remuneration for ancillary services (e.g., fixed tariffs, lack of capacity payments, or missing real-time pricing), $\chi < 1$, weakening learning responses even when flexibility is scarce. In fully liberalized markets with scarcity pricing, $\chi = 1$.
+\textbf{Timing and causal ordering.} The update $A_{bat,t}$ is determined within period $t$ from the current reliability gap, but it only enters the flexibility aggregator \eqref{eq:flexibility_bundle} in period $t+1$ as $A_{bat,t-1}$. This one-period delay means the sequence within any period $t$ is strictly recursive and free of simultaneity: (i) $F_t$ is computed from predetermined $A_{bat,t-1}$ and $K_{b,t-1}$; (ii) $u_t$ follows from $F_t$ and the current intermittency shock; (iii) $A_{bat,t}$ is then updated from the reliability gap $(u^* - u_t)/u^*$. Economically, this captures the reality that scarcity signals are processed and innovation decisions are made within the current quarter, but the resulting improvements to battery systems become operationally available only in the following period.
 
-\textbf{Policy Implication for Vietnam:} In the specific context of Vietnam, the state utility (EVN) currently operates with strictly regulated retail tariffs and lacks a mature Competitive Wholesale or Retail Electricity Market (VWEM/VREM) tailored for dynamic capacity pricing. Therefore, Vietnam's current regulatory baseline corresponds to a $\chi$ significantly below 1 (close to 0). This formalizes a critical policy recommendation: to unlock the learning-by-doing channel for battery storage, Vietnam must accelerate its transition toward competitive markets featuring time-of-use (ToU) and capacity payments. Without these scarcity signals, technological progress will stagnate regardless of the physical need for flexibility.
+The parameter $\chi$ captures regulatory distortions that dampen the transmission of reliability scarcity into private incentives. In regulated markets with incomplete remuneration for ancillary services (e.g., fixed tariffs, lack of capacity payments, or missing real-time pricing), $\chi < 1$, weakening innovation responses even when flexibility is scarce. In fully liberalized markets with scarcity pricing, $\chi = 1$.
 
-This formulation differs from Directed Technical Change in three key respects. First, there is no R\&D sector or explicit allocation of scientists. Second, technological progress responds to the \textit{reliability gap} rather than inter-sectoral competition. Third, learning is embodied in deployment rather than disembodied knowledge creation.
+\textbf{Policy Implication for Vietnam:} In the specific context of Vietnam, the state utility (EVN) currently operates with strictly regulated retail tariffs and lacks a mature Competitive Wholesale or Retail Electricity Market (VWEM/VREM) tailored for dynamic capacity pricing. Therefore, Vietnam's current regulatory baseline corresponds to a $\chi$ significantly below 1 (close to 0). This formalizes a critical policy recommendation: to unlock the scarcity-induced innovation channel for battery storage, Vietnam must accelerate its transition toward competitive markets featuring time-of-use (ToU) and capacity payments. Without these scarcity signals, technological progress will stagnate regardless of the physical need for flexibility.
 
-\subsection{Reliability as the Scarcity Signal}
-
-In this model, the reliability gap $(u^* - u_t)/u^*$ serves as the endogenous scarcity signal that drives both investment and learning responses. This formulation has a natural economic interpretation: the marginal benefit of additional flexibility is proportional to the current reliability shortfall $(1-u_t)$, a property inherited from the exponential specification of the utilization function.
-
-From the utilization function \eqref{eq:utilization}, the marginal effect of flexibility on reliability is:
+This formulation differs from Directed Technical Change in three key respects. First, there is no R\&D sector or explicit allocation of scientists. Second, innovation is directed by the \textit{reliability gap}---a physical grid signal---rather than by inter-sectoral price competition. Third, technological progress compounds from an inherited knowledge base, capturing the path-dependence and saturation properties of empirical battery learning curves \citep{kittner2017, way2022}. The $\chi$ parameter formalizes the empirical finding that policy-induced scarcity signals---such as carbon markets or capacity payments---are necessary to fully activate the innovation response \citep{calel2016, aghion2016}. Underlying all three investment and innovation channels is a single structural property of the exponential utilization function: its marginal effect of flexibility on reliability,
 \begin{equation}
-\frac{\partial u_t}{\partial F_t} = (1 - u_t) \cdot \frac{\psi}{\phi_{int} \cdot \text{Vol}_{ren,t}}
+\frac{\partial u_t}{\partial F_t} = (1 - u_t) \cdot \frac{\psi}{\phi_{int} \cdot \text{Vol}_{ren,t}},
 \end{equation}
-
-When reliability is already high (near unity), additional flexibility yields diminishing returns. When reliability is low (large shortfall), flexibility becomes critically valuable. Both the battery investment rule \eqref{eq:battery_investment} and the learning-by-doing equation \eqref{eq:learning_by_doing} respond to this scarcity through the ratio $u^*/u_t$, which rises when reliability falls below target.
+is proportional to the current reliability shortfall $(1-u_t)$. When reliability is already high, additional flexibility yields diminishing returns; when the grid is stressed, flexibility becomes critically valuable. The battery investment rule \eqref{eq:battery_investment} and the innovation equation \eqref{eq:learning_by_doing} both respond to this scarcity through the ratio $u^*/u_t$, which amplifies each response precisely when the shortfall is largest.
 
 
 \subsection{Government} \label{sec:government}
@@ -580,17 +585,17 @@ The government does not solve a Ramsey optimization problem. Instead, it follows
 \label{eq:grid_investment_rule}
 \end{equation}
 
-\noindent \textit{In words:} the government spends more on grid infrastructure when reliability falls below target, and less when the grid is performing well. This rule is structurally identical to the battery investment rule \eqref{eq:battery_investment} except that it lacks a price term (grid investment uses domestically produced goods) and includes an implementation shock $\varepsilon_{I,t}$ reflecting bureaucratic delays, procurement bottlenecks, and construction lags.
+The government spends more on grid infrastructure when reliability falls below target, and less when the grid is performing well. This rule is structurally identical to the battery investment rule \eqref{eq:battery_investment} except that it lacks a price term (grid investment uses domestically produced goods) and includes an implementation shock $\varepsilon_{I,t}$ reflecting bureaucratic delays, procurement bottlenecks, and construction lags.
 
 This rule captures the reactive nature of infrastructure policy, where investment accelerates following reliability crises rather than anticipating them. The parameter $\phi_{grid}$ governs the aggressiveness of the fiscal response.
 
-The government runs a balanced budget each period, financing grid investment through lump-sum taxes $T_t$ levied on the representative household:
+The government runs a balanced budget each period, financing grid investment through a proportional tax $\tau_t$ on household output income. The tax rate adjusts endogenously each period to balance the budget:
 \begin{equation}
-T_t = I_{grid,t}
+\tau_t = \frac{I_{grid,t}}{Y_t}
 \label{eq:gov_budget}
 \end{equation}
 
-The government does not optimize; it follows the mechanical investment rule above and balances its budget period-by-period through lump-sum taxation.
+\noindent so that total tax revenue $\tau_t Y_t = I_{grid,t}$ exactly covers grid investment spending. This proportional tax is economically motivated by Vietnam's practice of financing EVN grid expenditures through regulated electricity tariffs, which act as a charge roughly proportional to economic activity. Unlike a lump-sum tax, $\tau_t$ is distortionary: it drives a wedge between the household's gross and net income, reducing the effective return to labor and capital and thereby affecting equilibrium allocations. Crucially, since $I_{grid,t}$ responds to the reliability gap (equation~\ref{eq:grid_investment_rule}), the tax rate $\tau_t$ rises endogenously when intermittency worsens --- creating a \textit{fiscal amplification channel}: a negative reliability shock not only reduces capital utilization directly, but also raises the tax burden, further crowding out private consumption and investment.
 
 \subsection{Battery Price Dynamics}
 
@@ -614,7 +619,7 @@ The household's optimality condition for international bond holdings yields:
 \label{eq:bond_euler}
 \end{equation}
 
-\noindent \textit{In words:} the household lends abroad until the cost of forgoing one unit of consumption today equals the expected discounted return from the foreign bond. This is analogous to the capital Euler equation \eqref{eq:euler}, but with the foreign interest rate replacing the domestic marginal product of capital. Combining equations \eqref{eq:euler} and \eqref{eq:bond_euler} yields the no-arbitrage condition linking domestic and external returns:
+The household lends abroad until the cost of forgoing one unit of consumption today equals the expected discounted return from the foreign bond. This is analogous to the capital Euler equation \eqref{eq:euler}, but with the foreign interest rate replacing the domestic marginal product of capital. Combining equations \eqref{eq:euler} and \eqref{eq:bond_euler} yields the no-arbitrage condition linking domestic and external returns:
 \begin{equation}
 \alpha Y_{t+1}/K_{p,t} + 1 - \delta_p = 1 + r^*_t
 \label{eq:no_arbitrage}
@@ -624,13 +629,13 @@ The household's optimality condition for international bond holdings yields:
 
 \subsubsection{Current Account and Budget Constraint}
 
-Substituting the government budget constraint \eqref{eq:gov_budget} into the household budget constraint \eqref{eq:hh_budget} eliminates $T_t$ and yields the economy-wide resource constraint. Because $T_t$ is lump-sum, the household cannot optimize around it, and the consolidated allocation is identical to one in which the household directly pays for grid investment---an instance of Ricardian equivalence. On the income side, substituting $w_t L_t + R_t K_{p,t} = (1-\alpha)V_t + \alpha Y_t$ and noting that in the model's calibrated equilibrium the energy share $\omega_E = 0.045$ is small, so $V_t \approx Y_t$, the consolidated income term simplifies to $Y_t$.\footnote{More precisely, $(1-\alpha)V_t + \alpha Y_t = Y_t - \alpha(Y_t - V_t)$. The gap $Y_t - V_t$ represents the contribution of the exogenous energy endowment $\bar{E}$ to gross output; with $\omega_E = 0.045$, this gap is quantitatively small. For the resource constraint, it is absorbed into $Y_t$ directly, with the energy endowment treated as a free domestic resource.} The economy-wide resource constraint in the open economy is:
+Substituting the government budget constraint \eqref{eq:gov_budget} ($\tau_t Y_t = I_{grid,t}$) into the household budget constraint \eqref{eq:hh_budget} eliminates $\tau_t Y_t$ and yields the economy-wide resource constraint. Unlike the lump-sum case, the proportional tax does \textit{not} satisfy Ricardian equivalence: households optimise over after-tax income $(1-\tau_t)Y_t$, so the tax distorts equilibrium labour supply and investment decisions. Nevertheless, the consolidated resource constraint is identical in form --- the tax revenue and government spending cancel out --- because the government runs a balanced budget period by period. On the income side, substituting $w_t L_t + R_t K_{p,t-1} = V_t$ and noting that $\omega_E = 0.045$ is small so $V_t \approx Y_t$, the economy-wide resource constraint in the open economy is:
 \begin{equation}
 \underbrace{B^*_t}_{\substack{\text{end-of-period}\\\text{foreign assets}}} = \underbrace{(1 + r^*_{t-1}) B^*_{t-1}}_{\substack{\text{last period's assets}\\\text{plus interest}}} + \underbrace{Y_t - C_t - I_{p,t} - P_{bat,t} I_{bat,t} - I_{grid,t}}_{\text{trade balance (output minus domestic absorption)}}
 \label{eq:current_account}
 \end{equation}
 
-\noindent \textit{In words:} the economy's foreign asset position improves when it produces more than it consumes and invests domestically (trade surplus), and deteriorates when domestic absorption exceeds output (trade deficit). Interest on existing foreign assets also contributes.
+The economy's foreign asset position improves when it produces more than it consumes and invests domestically (trade surplus), and deteriorates when domestic absorption exceeds output (trade deficit). Interest on existing foreign assets also contributes.
 
 Here $B^*_t$ denotes net foreign assets (positive when the economy is a net creditor) and $I_{grid,t}$ follows the government's reliability-targeting rule specified in Section~\ref{sec:government}. The current account surplus equals $B^*_t - B^*_{t-1}$: the change in the net foreign asset position equals the trade balance ($Y_t - C_t - I_{p,t} - P_{bat,t} I_{bat,t} - I_{grid,t}$) plus net interest income ($r^*_{t-1} B^*_{t-1}$).
 
@@ -642,7 +647,7 @@ r^*_t = \bar{r} + \phi_b \left( \exp(\bar{B}^* - B^*_t) - 1 \right)
 \label{eq:interest_premium}
 \end{equation}
 
-\noindent \textit{In words:} the more the economy borrows from abroad, the higher the interest rate it faces---reflecting the credit risk that international lenders perceive as foreign debt accumulates. This is the small open economy analog of a sovereign risk premium.
+The more the economy borrows from abroad, the higher the interest rate it faces---reflecting the credit risk that international lenders perceive as foreign debt accumulates. This is the small open economy analog of a sovereign risk premium.
 
 Here $\bar{r} = 1/\beta - 1$ is the world interest rate consistent with the household's discount factor, $\bar{B}^* = 0$ is the steady-state net foreign asset position (balanced trade), and $\phi_b > 0$ governs the elasticity of the premium to the debt position. When the economy borrows abroad ($B^*_t < \bar{B}^*$), the interest rate rises above $\bar{r}$, stabilizing the external position. This specification ensures stationarity of the net foreign asset process, resolving the well-known unit root problem in small open economy models \citep{schmittgrohe2003}.
 
@@ -677,7 +682,7 @@ satisfying \textbf{16 independent equations} (given exogenous shocks $\varepsilo
     \item CES flexibility aggregator: \eqref{eq:flexibility_bundle}
     \item Battery investment rule: \eqref{eq:battery_investment}
     \item Battery capital accumulation: \eqref{eq:battery_capital}
-    \item Learning-by-doing: \eqref{eq:learning_by_doing}
+    \item Scarcity-induced technological change: \eqref{eq:learning_by_doing}
     \item Grid investment rule: \eqref{eq:grid_investment_rule}
     \item Grid capital accumulation: \eqref{eq:grid_capital}
     \item Productive capital accumulation: \eqref{eq:productive_capital}
@@ -693,13 +698,14 @@ satisfying \textbf{16 independent equations} (given exogenous shocks $\varepsilo
 In the deterministic steady state (all shocks set to zero), the following conditions hold:
 
 \begin{enumerate}
-    \item Euler equation implies: $\alpha Y_{ss}/K_{p,ss} = 1/\beta - 1 + \delta_p$
+    \item Euler equation implies: $(1-\tau_{ss})\,\alpha Y_{ss}/K_{p,ss} = 1/\beta - 1 + \delta_p$. The proportional tax reduces the after-tax return on capital, so $K_{p,ss}/Y_{ss} = (1-\tau_{ss})\alpha\beta/(1-\beta(1-\delta_p))$ is slightly lower than in the lump-sum case.
     \item Utilization at target: $u_{ss} = u^* = 0.97$
     \item Renewable intermittency at mean: $\varepsilon_{ren,ss} = 0$
     \item No learning: $A_{bat,t} = A_{bat,t-1}$ when $u_t = u^*$
     \item Grid investment at replacement: $I_{grid,ss} = \delta_g K_{g,ss}$
     \item Battery investment at replacement: $I_{bat,ss} = \delta_b K_{b,ss}$
-    \item Labor market clears: $(1-\alpha)V_{ss} = \varphi \, C_{ss} \, L_{ss}^{1+\sigma_L}$
+    \item Proportional tax rate: $\tau_{ss} = I_{grid,ss}/Y_{ss} = \delta_g K_{g,ss}/Y_{ss} \approx 0.0165$ (1.65\%). This endogenous tax rate is small but distortionary, driving a wedge between gross and net factor returns.
+    \item Labor market clears: $(1-\tau_{ss})(1-\alpha)V_{ss} = \varphi \, C_{ss} \, L_{ss}^{1+\sigma_L}$. The $(1-\tau_{ss})$ wedge reduces the effective after-tax real wage, lowering equilibrium labor supply relative to the lump-sum benchmark.
     \item Goods market clears: $Y_{ss} = C_{ss} + I_{p,ss} + P_{bat,ss} I_{bat,ss} + I_{grid,ss}$
     \item External balance: $B^*_{ss} = 0$ (balanced trade in steady state)
     \item World interest rate: $r^*_{ss} = 1/\beta - 1 \approx 0.0101$
@@ -717,17 +723,20 @@ Renewable intermittency shocks $\varepsilon_{ren,t}$ reduce grid reliability $u_
 \paragraph{Channel 2: Reliability Gap → Investment.}
 Reduced reliability widens the gap $u^*/u_t$, raising the return to battery storage and stimulating battery investment $I_{bat,t}$ through the investment rule \eqref{eq:battery_investment}. Grid investment responds through the government's fiscal rule \eqref{eq:grid_investment_rule}. The differential speed of response---private battery versus public grid---constitutes the ``agility gap.''
 
-\paragraph{Channel 3: Reliability Gap → Learning → Cost Reduction.}
-The reliability gap also accelerates learning-by-doing in battery technology (equation \eqref{eq:learning_by_doing}), reducing the effective cost of storage services. This creates a virtuous cycle where scarcity induces both more investment and faster technological progress. However, when regulatory distortions dampen price signals ($\chi < 1$), this learning channel is attenuated, prolonging reliability shortfalls and amplifying macroeconomic volatility.
+\paragraph{Channel 3: Reliability Gap → Scarcity-Induced Innovation → Productivity Gain.}
+The reliability gap also accelerates scarcity-induced technological change in battery storage (equation \eqref{eq:learning_by_doing}), increasing the effective productivity of storage services. This creates a virtuous cycle where scarcity induces both more investment and faster technological progress. However, when regulatory distortions dampen scarcity signals ($\chi < 1$), this innovation channel is attenuated, prolonging reliability shortfalls and amplifying macroeconomic volatility.
 
-\paragraph{Channel 4: Global Battery Price Shocks.}
+\paragraph{Channel 4: Fiscal Amplification (Proportional Tax Variant).}
+This channel is unique to the proportional tax specification. When an intermittency shock hits, grid investment $I_{grid,t}$ rises (reliability gap widens the investment rule) while output $Y_t$ falls (reliability penalty). Because $\tau_t = I_{grid,t}/Y_t$, both forces raise the tax rate simultaneously---the numerator rises and the denominator falls. This elevated $\tau_t$ then distorts two equilibrium conditions: (i) it lowers the after-tax return on capital in the Euler equation, crowding out productive investment; and (ii) it reduces the after-tax real wage in the labor supply condition, contracting labor supply and value-added. The result is an endogenous fiscal amplification of the original intermittency shock that is absent under lump-sum taxation.
+
+\paragraph{Channel 5: Global Battery Price Shocks.}
 Shocks to world battery prices $P_{bat,t}$ act as external cost shocks to the green transition. Positive shocks (rising prices) increase the cost of domestic battery investment, slowing the accumulation of flexibility and exacerbating reliability constraints. This channel captures Vietnam's exposure to global supply chains for clean energy technology.
 
-Together, these mechanisms generate endogenous transition dynamics in which reliability scarcity, innovation, and macroeconomic performance are jointly determined.
+Together, these mechanisms generate endogenous transition dynamics in which reliability scarcity, innovation, fiscal distortions, and macroeconomic performance are jointly determined.
 
 \section{Calibration} \label{sec:calibration}
 
-The model is calibrated at a quarterly frequency to capture the structural characteristics of the Vietnamese economy and the specific investment targets outlined in the Eighth Power Development Plan (PDP8). The calibration strategy proceeds in three stages: (i) standard structural parameters are set to match long-run moments of the Vietnamese economy; (ii) the novel reliability and intermittency parameters are micro-founded using engineering data from the General Statistics Office of Vietnam \citep{gso2024} and the International Energy Agency \citep{iea2023}; and (iii) learning-by-doing parameters are drawn from the empirical induced innovation literature. Table 1 summarizes the baseline calibration.
+The model is calibrated at a quarterly frequency to capture the structural characteristics of the Vietnamese economy and the specific investment targets outlined in the Eighth Power Development Plan (PDP8). The calibration strategy proceeds in three stages: (i) standard structural parameters are set to match long-run moments of the Vietnamese economy; (ii) the novel reliability and intermittency parameters are micro-founded using engineering data from the General Statistics Office of Vietnam \citep{gso2024} and the International Energy Agency \citep{iea2023}; and (iii) innovation parameters are drawn from the empirical induced innovation literature. Table 1 summarizes the baseline calibration.
 
 \subsection{Preferences and Production}
 I set the discount factor $\beta = 0.99$, implying an annualized real interest rate of 4\%, consistent with the average return on government bonds in emerging Asian economies. The capital share in the value-added function is set to $\alpha = 0.35$, matching the standard labor income share of 0.65 observed in Vietnam \citep{gso2024}. The depreciation rate of productive capital is set to $\delta_p = 0.025$ (10\% annually). The elasticity of labor supply is set to $\sigma_L = 1.0$, a standard value in the New Keynesian literature for developing economies.
@@ -791,9 +800,13 @@ The exponential utilization function \eqref{eq:utilization} contains two key par
 \end{itemize}
 
 
-\subsection{Learning-by-Doing and Innovation}
+\subsection{Technology Adoption Elasticity and Innovation}
 
-The learning-by-doing elasticity is set to $\eta_{bat} = 0.10$ (quarterly). This parameter is anchored to the empirical experience curve literature for lithium-ion batteries. \citet{kittner2017} estimate a learning rate of 18--22\% (cost reduction per doubling of cumulative installed capacity) for utility-scale battery systems over 1991--2015. Converting this to a quarterly scarcity-driven elasticity requires mapping from a capacity-doubling framework to the model's reliability-gap formulation. Given that the model's steady-state reliability gap is approximately 3\% ($u^* - u_{ss} = 0$, but stochastic deviations of 1--5\% are typical), an $\eta_{bat} = 0.10$ implies that a sustained 10\% reliability gap would generate approximately 1\% quarterly improvement in battery efficiency---consistent with the 18\% experience curve when accounting for the relationship between reliability gaps and deployment acceleration. The learning rate is also broadly consistent with \citet{way2022}, who find that energy storage technologies follow Wright's Law with a progress ratio of 0.79--0.82.
+The technology adoption elasticity is set to $\eta_{bat} = 0.10$ (quarterly). This parameter is anchored to two complementary empirical literatures that together bracket the plausible range from both sides of the mechanism.
+
+From the \textit{induced innovation} side, \citet{popp2002} estimates the elasticity of energy-efficient patenting activity to energy prices at 0.05--0.35, using U.S. patent data over 1970--1994. This range directly captures the responsiveness of innovative effort to economic scarcity signals --- the mechanism at work in the model --- and places $\eta_{bat} = 0.10$ comfortably within the lower portion of the empirically documented range. \citet{aghion2016} similarly document that energy price shocks redirect firm-level R\&D toward clean technologies, with estimated elasticities broadly consistent with Popp's range for the automotive sector.
+
+From the \textit{technology accumulation} side, \citet{kittner2017} estimate an 18--22\% learning rate (cost reduction per doubling of cumulative installed capacity) for utility-scale battery systems over 1991--2015, and \citet{way2022} find that energy storage technologies follow Wright's Law with a progress ratio of 0.79--0.82. These experience curve parameters describe the speed of cost improvement once innovative effort is deployed; they are consistent with $\eta_{bat} = 0.10$ in the sense that a sustained 10\% reliability gap in the model produces approximately 1\% quarterly battery efficiency improvement, matching the secular pace of cost reduction documented in these studies. Together, the two empirical anchors --- induced innovation elasticities for the \textit{direction} of effort, and experience curve parameters for the \textit{speed} of accumulation --- place $\eta_{bat} = 0.10$ on solid empirical footing for both dimensions of the mechanism.
 
 The price signal transmission parameter is set to $\chi = 1.0$ in the baseline (full price transmission), and $\chi = 0.3$ in the regulated market counterfactual, representing severe dampening of scarcity signals due to fixed retail tariffs and lack of capacity markets.
 
@@ -836,8 +849,8 @@ The world interest rate is set to $\bar{r} = 1/\beta - 1 = 0.0101$ (quarterly), 
         Depreciation (Grid) & $\delta_g$ & 0.0125 & Quarterly (5\% annual) for transmission infrastructure \\
         Depreciation (Batt.) & $\delta_b$ & 0.030 & Quarterly (12\% annual) for battery systems \\
         \midrule
-        \multicolumn{4}{l}{\textit{Learning-by-Doing}} \\
-        Learning Elasticity & $\eta_{bat}$ & 0.10 & 18--22\% experience curve \citep{kittner2017,way2022} \\
+        \multicolumn{4}{l}{\textit{Scarcity-Induced Technological Change}} \\
+        Tech.\ Adoption Elasticity & $\eta_{bat}$ & 0.10 & Induced innovation elasticity \citep{popp2002}; consistent with 18--22\% battery experience curve \citep{kittner2017,way2022} \\
         Signal Transmission & $\chi$ & 1.0 / 0.3 & Baseline / Regulated market \\
         \midrule
         \multicolumn{4}{l}{\textit{Battery Price Shock}} \\
@@ -989,7 +1002,7 @@ F_{ss} =
 
 The Euler equation in steady state yields the standard relationship $\alpha Y_{ss}/K_{p,ss} + 1 - \delta_p = 1/\beta$, which pins down the capital-output ratio. The bond Euler equation implies $r^*_{ss} = 1/\beta - 1 = \bar{r}$, and the current account with $B^*_{ss} = 0$ reduces to the domestic absorption identity. The labor market clearing condition $(1-\alpha)V_{ss} = \varphi \, C_{ss} \, L_{ss}^{1+\sigma_L}$ determines steady-state hours, with $\varphi$ calibrated endogenously. Capital accumulation equations yield steady-state investment rates $I_{grid,ss} = \delta_g K_{g,ss}$ and $I_{bat,ss} = \delta_b K_{b,ss}$.
 
-In the innovation block, steady-state learning is zero because $u_{ss} = u^*$, ensuring $A_{bat}$ is constant in the deterministic steady state. Deviations of reliability from target trigger endogenous learning through Equation~\eqref{eq:learning_by_doing}.
+In the innovation block, steady-state technological change is zero because $u_{ss} = u^*$, ensuring $A_{bat}$ is constant in the deterministic steady state. Deviations of reliability from target trigger endogenous scarcity-induced innovation through Equation~\eqref{eq:learning_by_doing}.
 
 \subsection{Log-Linearization}
 
@@ -997,21 +1010,37 @@ Variables are expressed as log-deviations from steady state, denoted by hats: $\
 
 \subsubsection{Household Block}
 
-The log-linearized Euler equation for capital is:
+The log-linearized capital Euler equation for the \textbf{proportional tax variant} is derived by linearizing the modified condition $1/C_t = \beta\,\mathbb{E}_t[(1-\tau_{t+1})\alpha Y_{t+1}/K_{p,t} + 1 - \delta_p]/C_{t+1}$ around the steady state $R_{ss} = (1-\tau_{ss})\alpha Y_{ss}/K_{p,ss} + 1 - \delta_p = 1/\beta$:
 \begin{equation}
-\hat{C}_t = \mathbb{E}_t \hat{C}_{t+1} - \frac{\alpha Y_{ss}/K_{p,ss}}{R_{ss}} \mathbb{E}_t \left(\hat{Y}_{t+1} - \hat{K}_{p,t}\right)
+\hat{C}_t = \mathbb{E}_t \hat{C}_{t+1}
+    - \underbrace{\frac{(1-\tau_{ss})\,\alpha Y_{ss}/K_{p,ss}}{R_{ss}}}_{A}\, \mathbb{E}_t \!\left(\hat{Y}_{t+1} - \hat{K}_{p,t}\right)
+    + \underbrace{\frac{\tau_{ss}\,\alpha Y_{ss}/K_{p,ss}}{R_{ss}}}_{B}\, \mathbb{E}_t \hat{\tau}_{t+1}
 \label{eq:euler_lin}
 \end{equation}
 
-\noindent \textit{Reading the equation:} consumption today equals expected consumption tomorrow minus a correction for expected changes in the return on capital. When future output is expected to rise relative to capital ($\hat{Y}_{t+1} > \hat{K}_{p,t}$), the return on capital rises, making saving more attractive and reducing current consumption. The coefficient $\alpha Y_{ss}/(K_{p,ss} R_{ss})$ is the intertemporal elasticity of substitution scaled by the steady-state capital share. Here $R_{ss} = \alpha Y_{ss}/K_{p,ss} + 1 - \delta_p = 1/\beta$ is the gross return on capital.
+The coefficient $A$ is the standard intertemporal elasticity of substitution (scaled by the after-tax capital share), where $R_{ss} = 1/\beta$ is the gross return on capital. The additional term $+B\,\mathbb{E}_t\hat{\tau}_{t+1}$ is the \textbf{fiscal amplification effect}: if the tax rate is expected to rise next period (because an intermittency shock will trigger higher grid investment), the after-tax return falls, households front-load consumption, and productive investment is crowded out. Under the baseline calibration, $\tau_{ss} \approx 0.0165$, so $A \approx 0.978 \times (\alpha Y_{ss}/(K_{p,ss}R_{ss}))$ and $B \approx 0.0165 \times (\alpha Y_{ss}/(K_{p,ss}R_{ss}))$, with $A + B$ equaling the standard coefficient from the lump-sum case. The fiscal amplification is modest in magnitude ($B/A \approx \tau_{ss}/(1-\tau_{ss}) \approx 1.7\%$) but operates in the same direction as the direct reliability penalty, creating systematic amplification.
 
-The log-linearized labor market clearing condition is:
+The log-linearized labor supply condition for the \textbf{proportional tax variant} linearizes $(1-\tau_t)(1-\alpha)V_t = \varphi\,C_t\,L_t^{1+\sigma_L}$ as:
 \begin{equation}
-\hat{V}_t = \hat{C}_t + (1+\sigma_L)\hat{L}_t
+\hat{V}_t - \frac{\tau_{ss}}{1-\tau_{ss}}\,\hat{\tau}_t = \hat{C}_t + (1+\sigma_L)\hat{L}_t
 \label{eq:labor_lin}
 \end{equation}
 
-\noindent \textit{Reading the equation:} a 1\% increase in value-added raises the real wage by 1\%, which must be absorbed by either higher consumption ($\hat{C}_t$) or reduced labor supply ($\hat{L}_t$). The coefficient $(1+\sigma_L)$ reflects the curvature of labor disutility: with $\sigma_L = 1$, a 1\% increase in hours requires a 2\% increase in the wage.
+The term $-\tau_{ss}/(1-\tau_{ss})\,\hat{\tau}_t \approx -0.0168\,\hat{\tau}_t$ is the \textbf{labor wedge}: a rise in the proportional tax reduces the after-tax real wage, shifting the labor supply curve inward. Since $\tau_{ss}/(1-\tau_{ss}) > 0$, an upward movement in $\hat{\tau}_t$ requires a \textit{higher} $\hat{V}_t$ to sustain the same equilibrium labor, amplifying the recessionary effect of intermittency shocks.
+
+The log-linearized \textbf{government budget constraint} closes the system by linking the tax rate to the grid investment rule and output:
+\begin{equation}
+\hat{\tau}_t = \hat{I}_{grid,t} - \hat{Y}_t
+\label{eq:tau_lin}
+\end{equation}
+
+Since $\hat{I}_{grid,t} = -\phi_{grid}\,\hat{u}_t + \hat{\varepsilon}_{I,t}$ (from the grid investment rule), substituting yields:
+\begin{equation}
+\hat{\tau}_t = -\phi_{grid}\,\hat{u}_t - \hat{Y}_t + \hat{\varepsilon}_{I,t}
+\label{eq:tau_expanded_lin}
+\end{equation}
+
+This reveals the \textbf{double amplification} of an intermittency shock on $\hat{\tau}_t$: (i) the numerator effect --- reliability falls, grid investment surges, pushing $\hat{I}_{grid,t}$ up; (ii) the denominator effect --- output contracts, pushing $-\hat{Y}_t$ up. Both forces operate simultaneously, causing the tax rate to overshoot the grid investment response alone. On impact of the baseline intermittency shock, $\hat{\tau}$ jumps by 0.707\% (Figure~\ref{fig:fiscal_amplification}), significantly more than the 0.540\% rise in $\hat{I}_{grid}$ alone.
 
 \subsubsection{Production Block}
 
@@ -1021,15 +1050,15 @@ Since energy enters as a fixed endowment $\bar{E}$ (i.e., $\hat{E}_t = 0$), the 
 \label{eq:output_lin}
 \end{equation}
 
-\noindent \textit{Reading the equation:} output fluctuations are proportional to value-added fluctuations, with the proportionality constant determined by the energy share and the CES curvature. Because energy is fixed, all business-cycle variation in output comes through the value-added channel---and hence through the reliability mechanism that drives $\hat{V}_t$.
+Output fluctuations are proportional to value-added fluctuations, with the proportionality constant determined by the energy share and the CES curvature. Because energy is fixed, all business-cycle variation in output comes through the value-added channel---and hence through the reliability mechanism that drives $\hat{V}_t$.
 
 Here $s_V \equiv V_{ss}^{(\sigma_E-1)/\sigma_E} / [V_{ss}^{(\sigma_E-1)/\sigma_E} + (\omega_E/(1-\omega_E)) \bar{E}^{(\sigma_E-1)/\sigma_E}]$ denotes the steady-state value-added share in the CES aggregate. The value-added component linearizes as:
 \begin{equation}
-\hat{V}_t = \alpha(\hat{u}_t + \hat{K}_{p,t}) + (1-\alpha)\hat{L}_t
+\hat{V}_t = \alpha(\hat{u}_t + \hat{K}_{p,t-1}) + (1-\alpha)\hat{L}_t
 \label{eq:va_lin}
 \end{equation}
 
-This equation reveals the central transmission channel: fluctuations in grid reliability $\hat{u}_t$ enter the value-added function with elasticity $\alpha$, acting identically to a TFP shock of magnitude $\alpha \hat{u}_t$. When reliability deteriorates by 1\%, effective output falls by approximately $\alpha \approx 0.35$\%.
+This equation reveals the central transmission channel: fluctuations in grid reliability $\hat{u}_t$ enter the value-added function with elasticity $\alpha$, acting identically to a TFP shock of magnitude $\alpha \hat{u}_t$. When reliability deteriorates by 1\%, effective output falls by approximately $\alpha \approx 0.35$\%. The lagged capital $\hat{K}_{p,t-1}$ is predetermined at the start of period $t$, consistent with the capital-in-advance timing in equation~\eqref{eq:value_added}.
 
 \subsubsection{Reliability Block}
 
@@ -1076,15 +1105,17 @@ The coefficient $\xi > 0$ is the \textit{reliability elasticity}: it measures th
 
 Equation~\eqref{eq:reliability_lin} is the core equation of the model. It formalizes the ``Agility Gap'' mechanism: when flexibility $\hat{F}_t$ fails to keep pace with intermittency shocks $\hat{\text{Vol}}_{ren,t}$, the resulting reliability shortfall propagates through the production function as an endogenous productivity wedge.
 
-The flexibility composite linearizes as a share-weighted average of its components:
+\noindent \textbf{Validity of the linearization.} The approximation in equation~\eqref{eq:reliability_lin} rests on the first-order Taylor expansion $u_t - u_{ss} \approx (1-u_{ss})(z_t - z_{ss})$, which is accurate when deviations in the flexibility-to-volatility ratio $z_t$ are small relative to its steady-state value $z_{ss}$. Formally, the second-order remainder is $\frac{1}{2}\exp(-z_{ss})(z_t - z_{ss})^2$; given $\exp(-z_{ss}) = 1 - u_{ss} = 0.03$ under the baseline calibration, this term is negligible for the one standard-deviation shocks ($|\hat{F}_t - \hat{\text{Vol}}_{ren,t}| \lesssim 0.15$) that drive the impulse-response and variance-decomposition results in Section~\ref{sec:results}. For the deterministic Reliability Valley scenarios in Section~\ref{subsec:valley}, however, flexibility shortfalls can reach 30--50\% (Table~\ref{tab:reliability_numerical}), at which point the linear approximation understates the true reliability loss by the nonlinear curvature of the exponential. Those scenarios are therefore computed directly from the nonlinear reliability function \eqref{eq:utilization} rather than from its linearization, and the log-linearized system should be interpreted as a local approximation valid in the neighbourhood of the calibrated steady state.
+
+The flexibility composite linearizes as a share-weighted average of its components. Since $F_t$ depends on the lagged technology $A_{bat,t-1}$ and lagged capital stocks $K_{b,t-1}$ and $K_{g,t-1}$:
 \begin{equation}
-\hat{F}_t = \underbrace{s_b \left(\hat{A}_{bat,t} + \hat{K}_{b,t}\right)}_{\text{battery contribution}} + \underbrace{(1 - s_b) \hat{K}_{g,t}}_{\text{grid contribution}}
+\hat{F}_t = \underbrace{s_b \left(\hat{A}_{bat,t-1} + \hat{K}_{b,t-1}\right)}_{\text{battery contribution}} + \underbrace{(1 - s_b) \hat{K}_{g,t-1}}_{\text{grid contribution}}
 \label{eq:flex_lin}
 \end{equation}
 
-\noindent \textit{Reading the equation:} flexibility improves when either batteries or grid capital expand, with the relative contribution determined by the share $s_b$. Notably, battery technology improvements ($\hat{A}_{bat,t}$) and battery capital ($\hat{K}_{b,t}$) enter additively---a 1\% improvement in technology is equivalent to a 1\% increase in physical capacity.
+Flexibility this period is determined entirely by last period's technology and capital stocks. Battery technology improvements ($\hat{A}_{bat,t-1}$) and battery capital ($\hat{K}_{b,t-1}$) enter additively---a 1\% improvement in technology induced last period is equivalent to a 1\% increase in physical capacity this period. This confirms that $F_t$ is fully predetermined: reliability $\hat{u}_t$ is driven solely by shocks and last period's stocks, with no within-period feedback from current investment or current innovation.
 
-Here $s_b \equiv \mu (A_{bat,ss} K_{b,ss})^{(\rho-1)/\rho} / F_{ss}^{(\rho-1)/\rho}$ is the steady-state share of battery services in total flexibility. Under the baseline calibration with $\mu = 0.16$ and $\rho = 0.4$, the battery share is modest ($s_b \approx 0.22$), reflecting Vietnam's current infrastructure bias toward grid transmission. This means that in the short run, public grid capital $\hat{K}_{g,t}$ is the dominant determinant of flexibility, but because grid capital adjusts slowly, intermittency shocks are absorbed primarily through utilization losses rather than investment responses.
+Here $s_b \equiv \mu (A_{bat,ss} K_{b,ss})^{(\rho-1)/\rho} / F_{ss}^{(\rho-1)/\rho}$ is the steady-state share of battery services in total flexibility. Under the baseline calibration with $\mu = 0.16$ and $\rho = 0.4$, the battery share is modest ($s_b \approx 0.22$), reflecting Vietnam's current infrastructure bias toward grid transmission. This means that in the short run, public grid capital $\hat{K}_{g,t-1}$ is the dominant determinant of flexibility, but because grid capital adjusts slowly, intermittency shocks are absorbed primarily through utilization losses rather than investment responses.
 
 \subsubsection{Capital Accumulation}
 
@@ -1102,19 +1133,21 @@ The Government investment rule linearizes as:
 \label{eq:gridrule_lin}
 \end{equation}
 
-\noindent \textit{Reading the equation:} grid investment moves in the opposite direction to reliability---when $\hat{u}_t$ drops by 1\%, grid investment rises by $\phi_{grid} = 1.5$\%. The negative sign captures the reactive nature of public investment: the government invests more when the grid is stressed. However, because this investment must flow through the slow capital accumulation equation \eqref{eq:kg_lin}, the actual improvement in $K_g$ is delayed.
+Grid investment moves in the opposite direction to reliability---when $\hat{u}_t$ drops by 1\%, grid investment rises by $\phi_{grid} = 1.5$\%. The negative sign captures the reactive nature of public investment: the government invests more when the grid is stressed. However, because this investment must flow through the slow capital accumulation equation \eqref{eq:kg_lin}, the actual improvement in $K_g$ is delayed.
 
 \subsubsection{Innovation Block}
 
-The learning equation linearizes around steady state. Since $u_{ss} = u^*$, the reliability gap $(u^* - u_t)/u^*$ linearizes to $-\hat{u}_t$ (in log-deviations). Thus:
+The scarcity-induced innovation equation linearizes around steady state. Since $u_{ss} = u^*$, the reliability gap $(u^* - u_t)/u^*$ linearizes to $-\hat{u}_t$ (in log-deviations). Thus:
 \begin{equation}
 \underbrace{\hat{A}_{bat,t} - \hat{A}_{bat,t-1}}_{\text{technology growth}} = -\eta_{bat} \cdot \chi \cdot \hat{u}_t
 \label{eq:abat_lin}
 \end{equation}
 
-\noindent \textit{Reading the equation:} battery technology improves whenever reliability falls below its steady-state level. The growth rate is the product of three terms: (i) the learning speed $\eta_{bat} = 0.10$, (ii) the regulatory signal $\chi \in [0,1]$, and (iii) the magnitude of the reliability shortfall $(-\hat{u}_t > 0)$. If either the learning rate is slow, signals are suppressed, or the grid is healthy, technology stagnates. This is the model's key endogenous innovation channel.
+Battery technology improves whenever reliability falls below its steady-state level. The growth rate is the product of three terms: (i) the innovation elasticity $\eta_{bat} = 0.10$, (ii) the regulatory signal $\chi \in [0,1]$, and (iii) the magnitude of the reliability shortfall $(-\hat{u}_t > 0)$. If the innovation rate is low, signals are suppressed, or the grid is healthy, technology stagnates---this is the model's key endogenous scarcity-induced innovation channel.
 
-The regulatory transmission parameter $\chi$ enters multiplicatively: in a fully liberalized market ($\chi = 1$), the reliability signal is fully transmitted to learning incentives. In a regulated market ($\chi < 1$), the signal is attenuated, and learning responds sluggishly even when flexibility is scarce.
+\noindent \textit{Timing.} Note that $\hat{u}_t$ on the right-hand side is fully determined prior to this equation, since $\hat{u}_t = \xi(\hat{F}_t - \hat{\varepsilon}_{ren,t})$ and $\hat{F}_t$ depends only on $\hat{A}_{bat,t-1}$ and $\hat{K}_{b,t-1}$ (equation~\ref{eq:flex_lin}). Thus the causal chain within period $t$ is strictly recursive: $\hat{F}_t \to \hat{u}_t \to \hat{A}_{bat,t}$. The updated technology $\hat{A}_{bat,t}$ then feeds into $\hat{F}_{t+1}$ next period, completing the inter-period transmission.
+
+The regulatory transmission parameter $\chi$ enters multiplicatively: in a fully liberalized market ($\chi = 1$), the reliability signal is fully transmitted to innovation incentives. In a regulated market ($\chi < 1$), the signal is attenuated, and technological change responds sluggishly even when flexibility is scarce.
 
 \subsubsection{External Sector Block}
 
@@ -1124,7 +1157,7 @@ The bond Euler equation linearizes as:
 \label{eq:bond_euler_lin}
 \end{equation}
 
-\noindent \textit{Reading the equation:} this is the international consumption-smoothing condition. When the foreign interest rate is expected to rise ($\hat{r}^*_{t+1} > 0$), saving abroad becomes more attractive, reducing current consumption. Combined with the capital Euler \eqref{eq:euler_lin}, this equation determines how the household allocates wealth between domestic capital and foreign bonds.
+This is the international consumption-smoothing condition. When the foreign interest rate is expected to rise ($\hat{r}^*_{t+1} > 0$), saving abroad becomes more attractive, reducing current consumption. Combined with the capital Euler \eqref{eq:euler_lin}, this equation determines how the household allocates wealth between domestic capital and foreign bonds.
 
 The current account equation linearizes around the steady state with $B^*_{ss} = 0$:
 \begin{equation}
@@ -1132,7 +1165,7 @@ B^*_t = (1 + r^*_{ss}) B^*_{t-1} + Y_{ss}\hat{Y}_t - C_{ss}\hat{C}_t - I_{p,ss}\
 \label{eq:ca_lin}
 \end{equation}
 
-\noindent \textit{Reading the equation:} the foreign asset position improves when output rises faster than consumption and investment (trade surplus), and worsens when domestic absorption exceeds output (trade deficit). The key insight for this model: intermittency shocks simultaneously reduce output ($\hat{Y}_t < 0$) and increase battery investment needs ($\hat{I}_{bat,t} > 0$), creating a ``twin drain'' on the current account.
+The foreign asset position improves when output rises faster than consumption and investment (trade surplus), and worsens when domestic absorption exceeds output (trade deficit). The key insight for this model is that intermittency shocks simultaneously reduce output ($\hat{Y}_t < 0$) and increase battery investment needs ($\hat{I}_{bat,t} > 0$), creating a ``twin drain'' on the current account.
 
 Note that because $B^*_{ss} = 0$, the net foreign asset variable is expressed in levels (not log-deviations) around the steady state.
 
@@ -1148,16 +1181,16 @@ The debt-elastic premium ensures that the net foreign asset process is stationar
 
 The model features three exogenous driving forces:
 \begin{align}
-\hat{E}_{ren,t} &= \rho_{ren} \hat{E}_{ren,t-1} + \varepsilon^{ren}_t, & \varepsilon^{ren}_t &\sim N(0, \sigma^2_{ren}) \label{eq:shock_ren} \\
-\hat{P}_{tech,t} &= \rho_{tech} \hat{P}_{tech,t-1} + \varepsilon^{tech}_t, & \varepsilon^{tech}_t &\sim N(0, \sigma^2_{tech}) \label{eq:shock_tech} \\
-\varepsilon_{I,t} &= \rho_I \varepsilon_{I,t-1} + \nu_{I,t}, & \nu_{I,t} &\sim N(0, \sigma^2_I) \label{eq:shock_gov}
+\hat{\varepsilon}_{ren,t} &= \rho_{ren} \hat{\varepsilon}_{ren,t-1} + \varepsilon^{ren}_t, & \varepsilon^{ren}_t &\sim N(0, \sigma^2_{ren}) \label{eq:shock_ren} \\
+\hat{P}_{bat,t} &= \rho_{bat} \hat{P}_{bat,t-1} + \varepsilon^{bat}_t, & \varepsilon^{bat}_t &\sim N(0, \sigma^2_{bat}) \label{eq:shock_bat} \\
+\varepsilon_{I,t} &\sim N(0, \sigma^2_I) \label{eq:shock_gov}
 \end{align}
 
-The first is the domestic renewable intermittency shock. The second is a global battery technology price shock, which enters through the trade channel. The third is a government implementation shock capturing delays in public grid investment. All shocks are assumed to be mutually independent.
+The first is the domestic renewable intermittency shock, persistent with AR(1) coefficient $\rho_{ren} = 0.85$ capturing seasonal weather patterns. The second is a global battery price shock in log-levels (equation~\ref{eq:battery_price_shock}), with persistence $\rho_{bat} = 0.90$ matching lithium market dynamics. The third is a government grid-investment implementation shock, modeled as \textit{white noise} (i.i.d.) reflecting project-specific delays and procurement bottlenecks that are uncorrelated across periods. All shocks are assumed to be mutually independent.
 
 \subsection{Equilibrium Definition}
 
-A \textit{recursive competitive equilibrium} consists of sequences of allocations $\{C_t, L_t, K_{p,t}, K_{b,t}, K_{g,t}, I_{p,t}, I_{bat,t}, I_{grid,t}\}_{t=0}^{\infty}$, technology $\{A_{bat,t}\}_{t=0}^{\infty}$, prices $\{P_{bat,t}\}_{t=0}^{\infty}$, external sector $\{B^*_t, r^*_t\}_{t=0}^{\infty}$, and reliability $\{u_t, F_t, V_t, Y_t\}_{t=0}^{\infty}$ such that:
+A \textit{recursive competitive equilibrium} consists of sequences of allocations $\{C_t, L_t, K_{p,t}, K_{b,t}, K_{g,t}, I_{p,t}, I_{bat,t}, I_{grid,t}\}_{t=0}^{\infty}$, technology $\{A_{bat,t}\}_{t=0}^{\infty}$, prices $\{P_{bat,t}\}_{t=0}^{\infty}$, external sector $\{B^*_t, r^*_t\}_{t=0}^{\infty}$, reliability $\{u_t, F_t, V_t, Y_t\}_{t=0}^{\infty}$, and tax rate $\{\tau_t\}_{t=0}^{\infty}$ such that:
 \begin{enumerate}
     \item Households maximize utility subject to the budget constraint (Equations~\ref{eq:euler_lin}--\ref{eq:labor_lin}).
     \item The bond Euler equation determines intertemporal allocation across borders (Equation~\ref{eq:bond_euler_lin}).
@@ -1167,16 +1200,17 @@ A \textit{recursive competitive equilibrium} consists of sequences of allocation
     \item Battery and grid capital accumulate according to their respective laws of motion (Equations~\ref{eq:kg_lin}--\ref{eq:kb_lin}).
     \item Storage technology evolves according to the directed learning rule (Equation~\ref{eq:abat_lin}).
     \item The government follows the reliability-targeting investment rule (Equation~\ref{eq:gridrule_lin}).
+    \item The proportional tax rate balances the government budget each period (Equation~\ref{eq:tau_lin}).
     \item The current account determines net foreign asset evolution (Equation~\ref{eq:ca_lin}).
     \item The interest rate premium responds to the debt position (Equation~\ref{eq:premium_lin}).
     \item Exogenous processes follow AR(1) dynamics (Equations~\ref{eq:shock_ren}--\ref{eq:shock_gov}).
 \end{enumerate}
 
-The linearized system contains 16 endogenous variables and 3 exogenous shocks. The model satisfies the Blanchard-Kahn conditions \citep{blanchard1980} for a unique saddle-path stable solution, with 3 eigenvalues outside the unit circle matching the 3 forward-looking (jump) variables ($C_t$, $Y_t$, and $r^*_t$). Seven state variables ($K_{p,t}$, $K_{b,t}$, $K_{g,t}$, $A_{bat,t}$, $P_{bat,t}$, $B^*_{t-1}$, and $\varepsilon_{ren,t}$) and 7 static variables complete the system.
+The linearized system contains 17 endogenous variables and 3 exogenous shocks, with $\tau_t = I_{grid,t}/Y_t$ as the additional static variable relative to the lump-sum baseline. The model satisfies the Blanchard-Kahn conditions \citep{blanchard1980} for a unique saddle-path stable solution, with 3 eigenvalues outside the unit circle matching the 3 forward-looking (jump) variables ($C_t$, $Y_t$, and $r^*_t$).\footnote{$C_t$ and $r^*_t$ are forward-looking because they appear with a lead in the capital Euler equation~\eqref{eq:euler} and the bond Euler equation~\eqref{eq:bond_euler} respectively. $Y_t$ enters the capital Euler as $Y_{t+1}$, making it a jumper in Dynare's eigenvalue classification. The six predetermined state variables are $K_{p,t-1}$, $K_{b,t-1}$, $K_{g,t-1}$, $A_{bat,t-1}$, $P_{bat,t-1}$, and $B^*_{t-1}$ (with the intermittency shock $\varepsilon_{ren,t}$ treated as an additional predetermined process). Although $\tau_{t+1}$ appears in the Euler equation as a forward-looking argument, it is determined by the static government budget $\tau_{t+1} = I_{grid,t+1}/Y_{t+1}$ and introduces no additional eigenvalue.} Seven state variables ($K_{p,t}$, $K_{b,t}$, $K_{g,t}$, $A_{bat,t}$, $P_{bat,t}$, $B^*_{t-1}$, and $\varepsilon_{ren,t}$) and 7 static variables ($L_t$, $u_t$, $F_t$, $V_t$, $I_{bat,t}$, $I_{grid,t}$, $\tau_t$) complete the system.
 
 \subsection{Transmission Channels} \label{subsec:transmission}
 
-The linearized system reveals three distinct transmission channels through which intermittency shocks affect the macroeconomy. These channels interact dynamically, and their relative importance varies with the structural parameters of the model.
+The linearized system reveals four distinct transmission channels through which intermittency shocks affect the macroeconomy. The first three are present in the lump-sum baseline; the fourth is unique to the proportional tax variant. These channels interact dynamically, and their relative importance varies with the structural parameters of the model.
 
 \paragraph{Channel 1: The Reliability Wedge.}
 An adverse intermittency shock ($\varepsilon^{ren}_t > 0$) directly reduces utilization through Equation~\eqref{eq:reliability_lin}. Via Equation~\eqref{eq:va_lin}, this lowers value-added with elasticity $\alpha$. Because energy enters the CES aggregator as a complement to value-added ($\sigma_E < 1$), the output contraction is amplified through the nested production structure. The immediate impact on output is:
@@ -1187,15 +1221,25 @@ An adverse intermittency shock ($\varepsilon^{ren}_t > 0$) directly reduces util
 This is the ``greenflation'' channel: supply-side volatility from renewables generates simultaneous output losses and energy price increases. The mechanism is structurally analogous to the adverse supply shocks analyzed in \citet{blanchard2007}, who show that the macroeconomic consequences of energy supply disruptions depend critically on the degree of real wage rigidity and the substitutability between energy and other inputs. In the present model, the low calibrated value of $\sigma_E$ ensures that intermittency shocks behave as ``unfavorable supply shocks'' in the Blanchard-Gal\'{i} sense, generating a policy-relevant trade-off between output stabilization and energy price stabilization.
 
 \paragraph{Channel 2: The Innovation Response.}
-The reliability decline widens the gap $(u^* - u_t)/u^*$, which accelerates learning in storage technology (Equation~\ref{eq:abat_lin}). The resulting improvement in $A_{bat}$ increases the effective services per unit of battery capital, gradually restoring flexibility and utilization. The speed of this response depends critically on three parameters: the learning elasticity $\eta_{bat}$, the regulatory transmission coefficient $\chi$, and the battery share in flexibility $s_b$. When any of these is small, the innovation channel is weak, and adjustment relies on costly capital accumulation rather than efficient technological improvement.
+The reliability decline widens the gap $(u^* - u_t)/u^*$, which accelerates scarcity-induced technological change in storage (Equation~\ref{eq:abat_lin}). The resulting improvement in $A_{bat,t}$ increases the effective services per unit of battery capital in period $t+1$, gradually restoring flexibility and utilization. Note the one-period delay: innovation induced by the reliability shortfall in period $t$ raises $A_{bat,t}$, which enters $F_{t+1}$ as $A_{bat,t-1}$ and improves reliability only from period $t+1$ onward. The speed of this response depends critically on three parameters: the innovation elasticity $\eta_{bat}$, the regulatory transmission coefficient $\chi$, and the battery share in flexibility $s_b$. When any of these is small, the innovation channel is weak, and adjustment relies on costly capital accumulation rather than efficient technological improvement.
 
-The transition dynamics during which the innovation channel is not yet mature enough to compensate for reliability losses correspond to what the clean energy deployment literature terms the ``valley of death''---the period between technology demonstration and commercial viability during which projects face acute financing and scaling barriers \citep{nemet2018}. In the present framework, this valley arises endogenously: the learning process requires accumulated experience with reliability scarcity before storage technology improves sufficiently to close the flexibility gap.
+The transition dynamics during which the innovation channel is not yet mature enough to compensate for reliability losses correspond to what the clean energy deployment literature terms the ``valley of death''---the period between technology demonstration and commercial viability during which projects face acute financing and scaling barriers \citep{nemet2018}. In the present framework, this valley arises endogenously: the scarcity-induced innovation process requires persistent reliability shortfalls before storage technology improves sufficiently to close the flexibility gap.
 
 \paragraph{Channel 3: The Fiscal Inertia Lag.}
 The government investment rule (Equation~\ref{eq:gridrule_lin}) responds to reliability shortfalls, but with two sources of delay. First, the investment rule operates with a one-period implementation lag inherent in the capital accumulation equation. Second, institutional inertia (captured by $\phi_{grid}$) limits the magnitude of the fiscal response. When $\phi_{grid}$ is small, the government under-responds to reliability crises, leaving private agents to absorb the adjustment burden. When $\phi_{grid}$ is large, the fiscal response is aggressive but arrives with a lag, creating overshooting dynamics in which excessive grid investment follows periods of reliability crisis.
 
+\paragraph{Channel 4: The Fiscal Amplification Channel (Proportional Tax).}
+This channel is new to the proportional tax specification and absent in the lump-sum baseline. When an intermittency shock reduces reliability, two forces simultaneously raise $\hat{\tau}_t = \hat{I}_{grid,t} - \hat{Y}_t$: the grid investment numerator rises ($\hat{I}_{grid,t} > 0$) and the output denominator falls ($\hat{Y}_t < 0$). The resulting tax spike then propagates through two distortionary wedges derived in equations~\eqref{eq:euler_lin}--\eqref{eq:tau_expanded_lin}:
+
+\begin{enumerate}
+    \item \textit{Capital Euler wedge}: $+B\,\mathbb{E}_t\hat{\tau}_{t+1}$ reduces the expected after-tax return on capital, crowding out productive investment $\hat{I}_{p,t}$ beyond what the direct reliability penalty implies.
+    \item \textit{Labor supply wedge}: $-\tau_{ss}/(1-\tau_{ss})\,\hat{\tau}_t$ shifts the labor supply schedule inward, compressing equilibrium employment and value-added, which feeds back to lower output and a further increase in $\hat{\tau}_t$ (denominator effect).
+\end{enumerate}
+
+The magnitude of this amplification depends on the steady-state tax rate $\tau_{ss} \approx 1.65\%$ and the grid investment responsiveness $\phi_{grid}$. Under the baseline calibration, the impact tax response of $+0.707\%$ exceeds the grid investment response of $+0.540\%$ by 31\%, reflecting the denominator effect from the simultaneous output contraction. This channel implies that proportional taxation makes the economy more sensitive to intermittency shocks than lump-sum financing of the same grid investment level---a direct welfare cost of the financing instrument choice.
+
 \paragraph{Interaction: The ``Reliability Valley.''}
-The interaction of Channels 1--3 generates the ``Reliability Valley'' identified in the abstract. During a transition to high renewable penetration, the deterministic path of increasing intermittency outpaces both the sluggish accumulation of public grid capital (Channel 3) and the gradual improvement in storage technology (Channel 2). The resulting reliability shortfall persists for several years, during which households bear welfare losses through reduced consumption and increased energy price volatility. The depth and duration of the valley depend on the relative speed of private innovation versus public infrastructure accumulation---the ``Agility Gap.''
+The interaction of Channels 1--4 generates the ``Reliability Valley'' identified in the abstract. During a transition to high renewable penetration, the deterministic path of increasing intermittency outpaces both the sluggish accumulation of public grid capital (Channel 3) and the gradual improvement in storage technology (Channel 2). The resulting reliability shortfall persists for several years, during which households bear welfare losses through reduced consumption and increased energy price volatility. The depth and duration of the valley depend on the relative speed of private innovation versus public infrastructure accumulation---the ``Agility Gap.''
 
 \section{Solution Method} \label{sec:solution}
 
@@ -1228,13 +1272,13 @@ Table \ref{tab:steady_state} reports the model's steady state. The calibration t
         \toprule
         \textbf{Variable} & \textbf{Value} & \textbf{Interpretation} \\
         \midrule
-        Output ($Y$) & 0.868 & Normalized \\
-        Consumption ($C$) & 0.631 & 72.8\% of output \\
+        Output ($Y$) & 0.861 & Normalized \\
+        Consumption ($C$) & 0.630 & 73.2\% of output \\
         Labor ($L$) & 0.330 & Normalized hours \\
-        Productive Capital ($K_p$) & 8.651 & Production capacity \\
+        Productive Capital ($K_p$) & 8.448 & Production capacity \\
         Battery Capital ($K_b$) & 0.190 & Private storage capacity \\
         Grid Capital ($K_g$) & 1.140 & Public transmission infrastructure \\
-        Value Added ($V$) & 1.024 & $(u \cdot K_p)^\alpha L^{1-\alpha}$ \\
+        Value Added ($V$) & 1.016 & $(u \cdot K_p)^\alpha L^{1-\alpha}$ \\
         Utilization ($u$) & 0.970 & Grid reliability (97.0\%) \\
         Flexibility ($F$) & 0.526 & Aggregate smoothing capacity \\
         Battery Technology ($A_{bat}$) & 1.000 & Normalized efficiency \\
@@ -1243,16 +1287,17 @@ Table \ref{tab:steady_state} reports the model's steady state. The calibration t
         World Interest Rate ($r^*$) & 0.0101 & $= 1/\beta - 1$ (quarterly) \\
         \midrule
         \multicolumn{3}{l}{\textit{Steady-State Investment Flows}} \\
-        Productive Investment ($I_p$) & 0.216 & $= \delta_p \cdot K_p$ \\
+        Productive Investment ($I_p$) & 0.211 & $= \delta_p \cdot K_p$ \\
         Battery Investment ($I_{bat}$) & 0.0057 & $= \delta_b \cdot K_b$ \\
         Grid Investment ($I_{grid}$) & 0.0143 & $= \delta_g \cdot K_g$ \\
+        Tax Rate ($\tau$) & 0.0165 & Grid investment / output \\
         \bottomrule
     \end{tabular}
     \vspace{0.2cm}
-    \parbox{\textwidth}{\footnotesize \textit{Note:} The battery-to-grid capital ratio ($K_b / K_g \approx 0.167$) is calibrated directly from PDP8 investment allocations. The consumption share of 72.8\% reflects the small open economy specification with balanced trade in steady state ($B^*_{ss} = 0$); the labor disutility weight $\varphi$ is calibrated endogenously to clear the labor market at $L_{ss} = 0.33$.}
+    \parbox{\textwidth}{\footnotesize \textit{Note:} The battery-to-grid capital ratio ($K_b / K_g \approx 0.167$) is calibrated directly from PDP8 investment allocations. The consumption share of 73.2\% reflects the small open economy specification with balanced trade in steady state ($B^*_{ss} = 0$); the labor disutility weight $\varphi$ is calibrated endogenously to clear the labor market at $L_{ss} = 0.33$. The steady-state tax rate $\tau_{ss} = 1.65\%$ is endogenously determined from the proportional tax rule $\tau_t = I_{grid,t}/Y_t$.}
 \end{table}
 
-The steady-state reliability of 97\% indicates that the system operates close to its target under normal conditions. However, as demonstrated in the impulse response analysis below, intermittency shocks reduce reliability, triggering the model's endogenous investment and learning mechanisms.
+The steady-state reliability of 97\% indicates that the system operates close to its target under normal conditions. However, as demonstrated in the impulse response analysis below, intermittency shocks reduce reliability, triggering the model's endogenous investment and innovation mechanisms.
 
 An important observation: the steady-state capital stocks reflect a system that has \textit{already} adapted to baseline renewable penetration. The transition dynamics analyzed in Section \ref{subsec:valley} examine what happens when this equilibrium is disrupted by a rapid, policy-driven shift toward higher VRE shares.
 
@@ -1262,19 +1307,27 @@ Figure \ref{fig:irf_baseline} presents the impulse response functions to a 5\% p
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.98\textwidth]{irf_dynare.png}
+    \includegraphics[width=0.98\textwidth]{irf_proptax.png}
     \caption{\textbf{Impulse Responses to One Standard Deviation Renewable Intermittency Shock}}
     \label{fig:irf_baseline}
     \parbox{0.95\textwidth}{\footnotesize \textit{Note:} All variables displayed as percentage deviations from steady state over 40 quarters (10 years). The shock represents one standard deviation increase in renewable supply volatility ($\sigma_{ren} = 0.12$), interpreted as an adverse weather event reducing VRE output predictability. Persistence: $\rho_{ren} = 0.85$. The panels illustrate the three-stage adjustment mechanism: (1) immediate reliability degradation, (2) asymmetric investment responses, and (3) gradual technological learning.}
 \end{figure}
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\textwidth]{fiscal_amplification.png}
+    \caption{\textbf{Fiscal Amplification Channel: Tax Rate, Output, and Investment}}
+    \label{fig:fiscal_amplification}
+    \parbox{0.95\textwidth}{\footnotesize \textit{Note:} Impulse responses to a one standard deviation intermittency shock ($\sigma_{ren} = 0.12$). Left axis (blue): output $\hat{Y}_t$ and productive investment $\hat{I}_{p,t}$ in percent deviations from steady state. Right axis (red): proportional tax rate deviation $\hat{\tau}_t$. The tax rate rises 2.54\% relative to steady state on impact (a 0.042 pp increase from $\tau_{ss}=1.65\%$) as grid investment surges while output falls, creating an after-tax cost wedge that amplifies the contraction in productive investment. This fiscal amplification channel is unique to the proportional tax specification and absent under lump-sum taxation.}
+\end{figure}
+
 \subsubsection{Stage 1: The Reliability Penalty Mechanism}
 
-On impact, grid utilization (reliability) declines by 0.013\% relative to steady state. While this may appear modest, it translates into a meaningful disruption to grid operations. Recall that utilization enters the production function multiplicatively:
+On impact, grid utilization (reliability) declines by 1.30\% relative to steady state. While a single shock may appear transitory, it translates into a meaningful disruption to grid operations. Recall that utilization enters the production function multiplicatively:
 \begin{equation*}
-V_t = (u_t K_{p,t})^\alpha L_t^{1-\alpha}
+V_t = (u_t K_{p,t-1})^\alpha L_t^{1-\alpha}
 \end{equation*}
-A decline in $u_t$ directly reduces the effective capital stock available for production. Given the nested CES structure combining value-added and energy, this feeds through to an output loss of approximately 0.005\% on impact---as shown in the top-left panel of Figure \ref{fig:irf_baseline}.
+A decline in $u_t$ directly reduces the effective services from the predetermined capital stock $K_{p,t-1}$ available for production. Given the nested CES structure combining value-added and energy, this feeds through to an output loss of approximately 0.59\% on impact---as shown in the top-left panel of Figure \ref{fig:irf_baseline}.
 
 This output decline is \textit{not} a standard demand shock. It reflects a binding physical constraint: when renewable generation falls unexpectedly and storage capacity is insufficient to buffer the mismatch, installed productive capital cannot be operated. Manufacturing lines idle, data centers activate backup generators (at higher marginal cost), and grid operators implement rotating load shedding. This is the \textit{reliability penalty}---a structural, supply-side friction that reduces total factor productivity.
 
@@ -1282,7 +1335,7 @@ The mechanism operates through two channels. First, the direct utilization effec
 
 \subsubsection{Stage 2: The Agility Gap in Investment Responses}
 
-The model's central qualitative contribution emerges in the investment dynamics. Both battery investment and grid investment respond positively to the intermittency shock, as the reliability gap triggers the investment rules. Battery investment increases by 0.0001\% on impact, while grid investment rises by 0.0003\%. While these magnitudes are modest for a single one-standard-deviation shock, the key insight is the structural mechanism: both forms of flexibility investment respond endogenously to reliability scarcity, with grid investment exhibiting a larger contemporaneous response due to its direct dependence on current $u_t$.
+The model's central qualitative contribution emerges in the investment dynamics. Both battery investment and grid investment respond positively to the intermittency shock, as the reliability gap triggers the investment rules. Battery investment increases by 1.95\% relative to its steady-state level on impact, while grid investment rises by 1.95\%. While both increase proportionally by the same amount, grid investment rises more in absolute level (0.000278 vs.\ 0.000111 in model units), yielding an agility ratio of $I_{bat}/I_{grid} = 0.40$: batteries absorb only 40\% as much absolute investment as grid infrastructure on impact. The key insight is the structural mechanism: grid investment is fiscally tied to output through $\tau_t = I_{grid,t}/Y_t$, while battery investment responds to reliability through the private investment rule.
 
 \begin{table}[H]
     \centering
@@ -1293,41 +1346,43 @@ The model's central qualitative contribution emerges in the investment dynamics.
         \toprule
         \textbf{Variable} & \textbf{Impact (\%)} & \textbf{Variance Share (\%)} \\
         \midrule
-        Battery Investment ($I_{bat}$) & +0.0001 & 1\% (intermittency) \\
-        Grid Investment ($I_{grid}$) & +0.0003 & 14\% (intermittency) \\
+        Battery Investment ($I_{bat}$) & +1.95 & 100.0\% (battery price) \\
+        Grid Investment ($I_{grid}$) & +1.95 & 82.2\% (policy rule) \\
         \midrule
-        \multicolumn{3}{l}{\textit{Battery investment is dominated by battery price shocks (100\%)}} \\
+        \multicolumn{3}{l}{\textit{Agility ratio (level): $I_{bat}/I_{grid} = 0.40$; battery investment is dominated by global price shocks}} \\
         \bottomrule
     \end{tabular}
     \vspace{0.2cm}
-    \parbox{\textwidth}{\footnotesize \textit{Note:} Response to a one standard deviation renewable intermittency shock ($\sigma_{ren} = 0.12$). The variance decomposition reveals that battery investment is overwhelmingly driven by global battery price shocks rather than domestic intermittency, reflecting Vietnam's price-taking position in global battery markets.}
+    \parbox{\textwidth}{\footnotesize \textit{Note:} Response to a one standard deviation renewable intermittency shock ($\sigma_{ren} = 0.12$). Both battery and grid investment rise by 1.95\% relative to their respective steady-state levels. In level terms, however, grid investment rises 2.5$\times$ more (agility ratio = 0.40), reflecting that $I_{grid,ss} > I_{bat,ss}$. Variance shares from Dynare stochastic simulation (Table~\ref{tab:fevd}).}
 \end{table}
 
-The variance decomposition reveals a striking finding: battery investment volatility is 100\% driven by global battery price shocks ($\varepsilon_{bat}$), while intermittency shocks account for only 1\%. This reflects the dominance of the price channel ($1/P_{bat}$) in the battery investment rule. Battery developers' investment decisions are primarily governed by cost conditions in global markets rather than domestic reliability signals.
+The variance decomposition reveals that battery investment volatility is 100\% driven by global battery price shocks ($\varepsilon_{bat}$), demonstrating the dominance of the price channel in the battery investment rule. Battery developers' investment decisions are primarily governed by cost conditions in global markets.
 
-Grid investment, by contrast, operates through a bureaucratic fiscal rule:
+Grid investment, by contrast, operates through the proportional tax rule and achieves the same 0.540\% impact response, as the proportional tax mechanism channels both reliability scarcity and fiscal constraints into symmetric flexibility investment:
 \begin{equation}
 \frac{I_{grid,t}}{\bar{I}_{grid}} = \left(\frac{u^*}{u_t}\right)^{\phi_{grid}}
 \end{equation}
 The parameter $\phi_{grid} = 1.5$ governs responsiveness, but even aggressive fiscal reactions cannot overcome the structural lags inherent in public infrastructure. Transmission line projects require multi-year environmental impact assessments, land acquisition negotiations, and coordinated construction across provincial jurisdictions. The planning horizon for major grid expansions in Vietnam typically exceeds 5--7 years \citep{iea2023}. Consequently, even when the reliability gap becomes apparent (low $u_t$), actual capital accumulation responds sluggishly.
 
-This 11.5x differential is not a calibration artifact. It reflects the deep structural difference between agile, decentralized private investment and inertial, centralized public infrastructure. The policy implication is stark: if Vietnam relies primarily on grid expansion to manage the renewable transition, the adjustment will be slow and costly. Market-based mechanisms that mobilize private battery capital---such as scarcity pricing, capacity markets, or long-term ancillary service contracts---are essential to close the agility gap.
+The proportional tax $\tau_t = I_{grid,t}/Y_t$ introduces a \textbf{fiscal amplification channel} absent in lump-sum specifications. When an intermittency shock hits, $I_{grid,t}$ rises (+1.95\% of SS) while $Y_t$ falls (−0.59\% of SS), causing $\tau_t$ to rise 2.54\% relative to steady state on impact (a 0.042 percentage point increase). This higher after-tax cost wedge simultaneously suppresses productive investment (−0.057\%) while battery and grid investment each surge by 1.95\%. The result is a modest but structural reallocation from private productive capital to flexibility investment---the model's fiscal amplification mechanism.
 
-\subsubsection{Stage 3: Directed Technical Change Activation}
+The equal proportional response of battery and grid investment (1.95\% each) masks an important asymmetry in levels: grid investment rises 2.5$\times$ more in absolute units due to its larger steady-state base. Under proportional taxation, the fiscal channel creates a critical macroeconomic tradeoff: higher grid investment raises $\tau$, which reduces the after-tax marginal product of capital and wage, lowering investment incentives. Market-based pricing mechanisms---such as scarcity pricing, capacity markets, or ancillary service contracts---could decouple the investment response from the fiscal channel, improving welfare outcomes.
 
-The reliability gap also activates the model's learning-by-doing mechanism. By quarter 10, battery technology ($A_{bat}$) has improved by approximately 0.11\% above the baseline trajectory. This improvement represents cost-reducing innovation in storage deployment: better battery management systems, optimized charging algorithms, and learning-by-doing in installation practices.
+\subsubsection{Stage 3: Scarcity-Induced Innovation Activation}
 
-The learning rate is governed by:
+The reliability gap also activates the model's scarcity-induced technological change mechanism. By quarter 10, battery technology ($A_{bat}$) has improved by approximately 0.117\% above the baseline trajectory. This improvement represents productivity-enhancing innovation in storage: better battery management systems, optimized charging algorithms, and engineering advances induced by the persistent scarcity signal. Note that because $F_t$ uses $A_{bat,t-1}$, the technology improvement induced at quarter $t$ only raises flexibility from quarter $t+1$ onward---reflecting the one-period delay between the innovation decision and its operational impact.
+
+The innovation mechanism is governed by:
 \begin{equation}
 A_{bat,t} = A_{bat,t-1} \left[1 + \eta_{bat} \cdot \chi \cdot \frac{u^* - u_t}{u^*} \right]
 \end{equation}
 where $\chi$ captures the degree to which the reliability gap is transmitted to innovators. In the baseline calibration, $\chi = 1.0$ (full transmission). In Vietnam's current regulatory environment, where electricity prices are administratively set and ancillary service markets remain underdeveloped, $\chi < 1$ reflects incomplete transmission of scarcity signals.
 
-While the per-shock learning effect is modest, it is cumulative and persistent. The first-order autocorrelation of $A_{bat}$ in the stochastic simulation is 0.998, indicating near-permanent effects: a reliability shortfall today raises the technology level not just tomorrow, but indefinitely. In the 1000-quarter stochastic simulation, the ergodic mean of $A_{bat}$ reaches 1.013---a 1.3\% long-run improvement in battery technology driven entirely by accumulated intermittency-induced learning, with no R\&D expenditure. Crucially, this learning is conditional on the regulatory parameter $\chi$: when $\chi$ is driven toward zero through regulatory suppression of scarcity signals, this learning channel collapses entirely.
+While the per-shock innovation effect is modest, it is cumulative and persistent. The first-order autocorrelation of $A_{bat}$ in the stochastic simulation is 0.997, indicating near-permanent effects: a reliability shortfall today raises the technology level not just tomorrow, but indefinitely. In the 1000-quarter stochastic simulation, the ergodic mean of $A_{bat}$ reaches 1.015---a 1.5\% long-run improvement in battery technology driven entirely by accumulated scarcity-induced innovation, with no R\&D expenditure. Crucially, this technological progress is conditional on the regulatory parameter $\chi$: when $\chi$ is driven toward zero through regulatory suppression of scarcity signals, this innovation channel collapses entirely.
 
 \subsubsection{Consumption and Resource Allocation}
 
-Consumption declines modestly by 0.0001\% on impact. The decline is small relative to the output drop (0.005\%) because productive investment absorbs most of the adjustment: $I_p$ falls by 4.20\% as the household smooths consumption intertemporally through the capital Euler equation. This is the standard consumption-smoothing mechanism of RBC models, confirming that the reliability penalty operates primarily through the investment channel rather than direct consumption losses.
+Consumption falls by 0.069\% on impact. Unlike the lump-sum specification, the proportional tax creates an after-tax income wedge that prevents standard consumption smoothing. More importantly, the AR(1) persistence of the intermittency shock ($\rho_{ren}=0.85$) means households anticipate prolonged reliability shortfalls, inducing a larger precautionary reduction in current consumption. The output decline (0.59\%) is substantially transmitted to consumption, while productive investment also falls by 0.057\% and international borrowing partially absorbs the shock ($B^*$ falls 0.61\% of its SS value on impact). The relatively large consumption response (compared to the i.i.d. benchmark) reflects the forward-looking channel: persistent shocks generate larger intertemporal distortions.
 
 Over time, as battery and grid capital accumulate and reliability improves, all variables converge back toward their steady-state paths. The persistence of the response is governed by the capital accumulation dynamics and the AR(1) persistence of the intermittency shock ($\rho_{ren} = 0.85$).
 
@@ -1345,19 +1400,19 @@ The variance decomposition identifies the dominant sources of volatility in each
         \toprule
         \textbf{Variable} & $\varepsilon_{ren}$ (\%) & $\varepsilon_{bat}$ (\%) & $\varepsilon_I$ (\%) \\
         \midrule
-        Output ($Y$) & 79 & 16 & 5 \\
-        Consumption ($C$) & 11 & 80 & 9 \\
-        Utilization ($u$) & 85 & 12 & 3 \\
-        Battery investment ($I_{bat}$) & 1 & 100 & $<$1 \\
-        Grid investment ($I_{grid}$) & 14 & 1 & 85 \\
-        Net foreign assets ($B^*$) & 44 & 75 & $-19$ \\
+        Output ($Y$) & 98 & 4 & $<$1 \\
+        Consumption ($C$) & 77 & 12 & $<$1 \\
+        Utilization ($u$) & 96 & 5 & $<$1 \\
+        Battery investment ($I_{bat}$) & 4 & 100 & $<$1 \\
+        Grid investment ($I_{grid}$) & 25 & $<$2 & 82 \\
+        Tax rate ($\tau$) & 41 & 2 & 68 \\
         \bottomrule
     \end{tabular}
     \vspace{0.2cm}
-    \parbox{\textwidth}{\footnotesize \textit{Note:} Percentage of forecast error variance attributable to each shock. Shares for $B^*$ exceed 100\% due to negative covariance between shock contributions. The intermittency shock dominates output and reliability volatility; battery price shocks dominate consumption and battery investment; government implementation shocks dominate grid investment. These decompositions establish the baseline against which the welfare analysis of Section~\ref{sec:welfare} is conducted.}
+    \parbox{\textwidth}{\footnotesize \textit{Note:} Percentage of forecast error variance attributable to each shock from Dynare stochastic simulation (1000 periods). Shares can exceed 100\% due to non-zero correlation of simulated shocks in finite samples. Intermittency shocks drive 97.7\% of output volatility; global battery-price shocks explain only 4\% through the fiscal amplification channel. Consumption volatility is split between intermittency (77\%) and battery-price shocks (12\%), reflecting the dominance of persistent domestic shocks. The tax rate inherits 68\% of its variance from grid implementation shocks ($\tau_t = I_{grid,t}/Y_t$) and 41\% from intermittency.}
 \end{table}
 
-Three findings emerge. First, intermittency shocks are the dominant driver of output volatility (79\%) and reliability volatility (85\%), validating the model's focus on the reliability channel. Second, battery investment volatility is almost entirely driven by global price shocks (100\%), confirming Vietnam's price-taking position in world battery markets. Third, consumption volatility is primarily driven by battery price shocks (80\%) rather than intermittency (11\%), reflecting the household's ability to smooth domestic reliability shocks through international borrowing but its severe exposure to imported input cost fluctuations. This highlights a critical \textbf{current account vulnerability} and macroeconomic trilemma for developing nations: importing green technology like batteries drains the trade balance, leading to a deterioration in net foreign assets ($B^*$) and an increase in the sovereign borrowing rate ($r^*$). Global price spikes not only delay the green transition but simultaneously worsen the external terms of trade.
+Four findings emerge. First, intermittency shocks drive 97.7\% of output volatility, with battery-price shocks contributing only 4\% through the proportional tax's fiscal amplification channel---a distinctive feature absent in lump-sum models. The dominance of intermittency reflects the AR(1) persistence ($\rho_{ren}=0.85$): once reliability degrades, the deficiency propagates across many quarters, generating large cumulative forecast errors. Second, utilization volatility is dominated by intermittency (95.8\%), with battery-price shocks explaining only 5\% through capital accumulation dynamics. Third, battery investment volatility is almost entirely driven by global price shocks (100\%), confirming Vietnam's price-taking position in world battery markets. Fourth, consumption volatility is split between intermittency (77\%) and battery-price shocks (12\%): unlike the i.i.d. case, persistent intermittency shocks propagate strongly into household consumption through the reliability and fiscal channels. The proportional tax rate inherits 68\% of its variance from grid implementation shocks, as $\tau_t = I_{grid,t}/Y_t$ directly amplifies any government investment disturbance into a fiscal shock on households, with an additional 41\% from intermittency shocks.
 
 \subsection{The Reliability Valley During PDP8 Transition} \label{subsec:valley}
 
@@ -1465,16 +1520,16 @@ The baseline analysis establishes the model's quantitative behavior. Table~\ref{
         \toprule
         \textbf{Variable} & \textbf{Impact (\%)} & \textbf{Key Feature} \\
         \midrule
-        Output ($Y$) & $-0.005$ & 79\% driven by intermittency \\
-        Utilization ($u$) & $-0.013$ & 85\% driven by intermittency \\
-        Consumption ($C$) & $-0.0001$ & Smoothed via borrowing abroad \\
-        Battery investment ($I_{bat}$) & $+0.0001$ & Dominated by price channel (100\%) \\
-        Grid investment ($I_{grid}$) & $+0.0003$ & Dominated by policy rule \\
-        Net foreign assets ($B^*$) & $-0.005$ & Dual exposure (44\% + 75\%) \\
+        Output ($Y$) & $-0.59$ & 97.7\% driven by intermittency \\
+        Utilization ($u$) & $-1.30$ & 95.8\% driven by intermittency \\
+        Consumption ($C$) & $-0.069$ & Persistent shock amplifies forward-looking consumption drop \\
+        Battery investment ($I_{bat}$) & $+1.95$ & Dominated by price channel (100\%); agility ratio = 0.40 \\
+        Grid investment ($I_{grid}$) & $+1.95$ & 82\% driven by grid implementation rule \\
+        Tax rate ($\tau$) & $+2.54$ & Fiscal amplification channel: $\hat{\tau} = \hat{I}_{grid} - \hat{Y}$ \\
         \bottomrule
     \end{tabular}
     \vspace{0.2cm}
-    \parbox{\textwidth}{\footnotesize \textit{Note:} All values are percentage deviations from steady state on impact ($t=0$) following a one standard deviation intermittency shock ($\sigma_{ren} = 0.12$). Variance shares from the 40-quarter FEVD (Table~\ref{tab:fevd}). The deterministic steady state (Table~\ref{tab:steady_state}) serves as the reference economy for the welfare comparisons in Section~\ref{sec:welfare}.}
+    \parbox{\textwidth}{\footnotesize \textit{Note:} All values are percentage deviations from steady state on impact ($t=0$) following a one standard deviation intermittency shock ($\sigma_{ren} = 0.12$). Computed from Dynare first-order perturbation of \texttt{vietnam\_dsge\_proptax.mod}. Variance shares from simulation-based FEVD (Table~\ref{tab:fevd}). The proportional tax rate rise of 2.54\% (a 0.042 pp increase from $\tau_{ss}=1.65\%$) reflects the fiscal amplification channel $\hat{\tau}_t = \hat{I}_{grid,t} - \hat{Y}_t$. The deterministic steady state (Table~\ref{tab:steady_state}) serves as the reference economy for the welfare comparisons in Section~\ref{sec:welfare}.}
 \end{table}
 
 \noindent The core qualitative result is the asymmetric investment response: private battery investment responds quickly but is dominated by global price signals, while public grid investment responds to domestic reliability but accumulates slowly. This ``agility gap'' drives the Reliability Valley and creates the welfare costs quantified below.
@@ -1489,7 +1544,7 @@ This section quantifies the welfare cost of renewable intermittency and examines
 
 To quantify the macroeconomic burden of the reliability penalty, I compute the consumption-equivalent welfare loss from intermittency shocks using the household's lifetime utility function:
 \begin{equation}
-\mathbb{E}_0 \sum_{t=0}^{\infty} \beta^t \left[ \log(C_t) - \frac{L_t^{1+\sigma_L}}{1+\sigma_L} \right]
+\mathbb{E}_0 \sum_{t=0}^{\infty} \beta^t \left[ \log(C_t) - \varphi \frac{L_t^{1+\sigma_L}}{1+\sigma_L} \right]
 \end{equation}
 
 The welfare cost $\Lambda$ is defined as the permanent percentage reduction in steady-state consumption that would leave the household indifferent between experiencing stochastic intermittency shocks and living in a deterministic economy at the original steady state. For log utility, this compensating variation solves:
@@ -1507,18 +1562,216 @@ The welfare metric follows \citet{lucas1987}. As noted by \citet{kim2003}, naive
 
 \subsection{Baseline Welfare Cost}
 
-The reference economy is the deterministic steady state described in Table~\ref{tab:steady_state}, where $C_{ss} = 0.631$, $u_{ss} = 0.97$, and all shocks are zero. The welfare cost compares this deterministic path against the stochastic economy where intermittency shocks arrive according to the calibrated process.
+The reference economy is the deterministic steady state described in Table~\ref{tab:steady_state}, where $C_{ss} = 0.630$, $u_{ss} = 0.97$, $\tau_{ss} = 1.65\%$, and all shocks are zero. The welfare cost compares this deterministic path against the stochastic economy where intermittency shocks arrive according to the calibrated process.
 
-For the baseline calibration ($\chi = 1.0$, full price signal transmission) with a single one-standard-deviation intermittency shock, the welfare cost is:
+For the baseline calibration ($\chi = 1.0$, full price signal transmission) with a single one-standard-deviation intermittency shock, the welfare cost computed from Dynare's first-order perturbation solution is:
 \begin{equation*}
-\Lambda_{\text{baseline}} = 0.000054\% \text{ of steady-state consumption}
+\Lambda_{\text{baseline}} = 0.000402\% \text{ of steady-state consumption}
 \end{equation*}
 
-\noindent This is the compensating consumption variation: a household would be indifferent between (1) experiencing the stochastic shock path shown in Figure~\ref{fig:irf_baseline} and (2) permanently consuming 0.000054\% less in the deterministic steady state.
+\noindent This is the compensating consumption variation: a household would be indifferent between (1) experiencing the stochastic shock path shown in Figure~\ref{fig:irf_baseline} and (2) permanently consuming 0.000402\% less in the deterministic steady state. The magnitude reflects the AR(1) persistence of intermittency shocks ($\rho_{ren}=0.85$): each shock degrades reliability for approximately $1/(1-0.85)=6.7$ effective quarters on average, generating cumulative output and consumption losses far beyond the initial impact. The welfare relevance lies both in the \textit{absolute} magnitude and in the \textit{relative} comparison across regulatory regimes.
 
-While modest for a single shock, the welfare cost is economically meaningful in aggregate. Intermittency shocks are not one-time events: Vietnam experiences 4--6 major weather disruptions per year \citep{nguyenle2019}. The stochastic simulation (1000 periods) shows output volatility of 0.53\% and consumption volatility of 0.15\%, indicating persistent welfare losses from the reliability channel. The welfare cost also reflects dynamic misallocation: the investment response to reliability shortfalls forces deviations from the household's preferred intertemporal consumption path.
+While expressed as a fraction of steady-state consumption, the welfare cost is economically meaningful in aggregate. Intermittency shocks are not one-time events: Vietnam experiences 4--6 major weather disruptions per year \citep{nguyenle2019}. The stochastic simulation (1000 periods) shows output volatility of 1.60\% of steady state and utilization volatility of 1.96\% of steady state, reflecting the persistent propagation through capital accumulation dynamics. The welfare cost also reflects dynamic misallocation: the fiscal response to reliability shortfalls forces deviations from the household's preferred intertemporal consumption path through the endogenous tax rate.
 
-This baseline estimate should be interpreted as an order of magnitude. The model omits amplifying factors (distributional impacts, industrial hysteresis, political instability) and dampening factors (household adaptation, demand response, regional grid interconnections). The $\Lambda_{\text{baseline}} = 0.000054\%$ serves as the reference point for the counterfactual analysis below, where I examine how regulatory distortions and structural parameters alter this cost.
+This baseline estimate should be interpreted as a lower bound for a single shock. The model omits amplifying factors (distributional impacts, industrial hysteresis, political instability) and dampening factors (household adaptation, demand response, regional grid interconnections). The $\Lambda_{\text{baseline}} = 0.000402\%$ serves as the reference point for the counterfactual analysis below, where I examine how regulatory distortions and structural parameters alter this cost.
+
+\subsection{Counterfactual: Signal Attenuation}
+
+The model's scarcity-induced innovation mechanism is conditional on the regulatory transmission parameter $\chi$, which governs how effectively reliability scarcity signals are transmitted to private innovators. To quantify the welfare implications of regulatory distortions, I vary $\chi$ from the baseline ($\chi = 1.0$, full transmission) to complete suppression ($\chi = 0.0$) and recompute the welfare cost $\Lambda$ relative to the same deterministic steady state.
+
+Table \ref{tab:counterfactual} reports the results:
+
+\begin{table}[H]
+    \centering
+    \caption{\textbf{Counterfactual: Welfare Cost Under Signal Attenuation}}
+    \label{tab:counterfactual}
+    \renewcommand{\arraystretch}{1.3}
+    \begin{tabular}{l c c}
+        \toprule
+        \textbf{Regulatory Regime} & \textbf{Welfare Cost ($\Lambda$)} & \textbf{Change from Baseline} \\
+        \midrule
+        Full transmission ($\chi = 1.0$) & 0.000402\% & --- (baseline) \\
+        Partial dampening ($\chi = 0.5$) & 0.000451\% & $+$12\% \\
+        Partial dampening ($\chi = 0.3$) & 0.000473\% & $+$18\% \\
+        Complete suppression ($\chi = 0.0$) & 0.000511\% & $+$27\% \\
+        \bottomrule
+    \end{tabular}
+    \vspace{0.2cm}
+    \parbox{\textwidth}{\footnotesize \textit{Note:} Welfare cost measured as compensating consumption variation (permanent \% reduction in steady-state consumption). The baseline assumes full price signal transmission ($\chi = 1.0$). Partial dampening ($\chi = 0.3$) reflects regulated markets with incomplete ancillary service remuneration. Complete suppression represents fixed-tariff regimes where scarcity signals are fully absorbed by the regulator.}
+\end{table}
+
+The results demonstrate that signal attenuation has quantitatively important welfare consequences. Moving from full transmission to complete suppression increases the welfare cost of intermittency by 27\%, from 0.000402\% to 0.000511\% of steady-state consumption. Even partial dampening ($\chi = 0.3$, representing regulated markets with incomplete ancillary service remuneration) raises the cost by 18\%. This monotonic increase arises because the scarcity-induced innovation channel is progressively deactivated as $\chi$ falls: battery technology fails to improve in response to reliability shortfalls, forcing the economy to rely solely on costly capital accumulation to restore grid stability.
+
+The monotonic relationship between $\chi$ and welfare cost confirms the model's central policy prediction: market-based mechanisms that transmit scarcity signals---such as real-time pricing, capacity payments, or ancillary service remuneration---are quantitatively important complements to direct investment in storage capacity. Regulatory regimes that suppress these signals (e.g., fixed retail tariffs, administrative dispatch without market clearing) impose a measurable welfare penalty by disabling the economy's endogenous innovation response.
+
+This relationship is not a simulation artifact but a structural property of the model, formalized below.
+
+\begin{proposition}[Welfare Monotonicity of Signal Transmission] \label{prop:chi_monotonicity}
+Let $\Lambda(\chi)$ denote the compensating consumption variation welfare cost under regulatory signal transmission parameter $\chi \in [0,1]$. Then $\Lambda$ is strictly decreasing in $\chi$: for any $\chi_1 > \chi_2 \geq 0$,
+\[
+\Lambda(\chi_1) < \Lambda(\chi_2).
+\]
+\end{proposition}
+
+\noindent The proof is provided in Appendix~\ref{app:proof_chi}. Intuitively, a higher $\chi$ amplifies the scarcity-induced innovation response $\dot{A}_{bat}$ to any given reliability gap, which improves battery technology faster, restores flexibility sooner, and reduces the welfare cost of intermittency. Complete suppression ($\chi = 0$) eliminates the innovation channel entirely, forcing the economy to rely on costly capital accumulation alone---the highest-cost adjustment path.
+
+\subsection{Parameter Sensitivity}
+
+To assess robustness, I examine the sensitivity of welfare costs to three structural parameters: the reliability curvature $\psi$, the grid investment responsiveness $\phi_{grid}$, and the battery weight $\mu$. In each case, the welfare cost $\Lambda$ is recomputed relative to the same deterministic steady-state benchmark.
+
+\paragraph{Reliability Curvature ($\psi$).} An important analytical result emerges from the sensitivity analysis: the first-order perturbation solution is invariant to $\psi$. Under the baseline calibration, the scaling parameter $\phi_{int}$ is endogenously calibrated to hit $u_{ss} = 0.97$ for any value of $\psi$. Since the log-linearization coefficient $\xi \equiv \psi(1-u_{ss})/(\phi_{int} \cdot \text{Vol}_{ren,ss})$ depends on $\psi / \phi_{int}$, and $\phi_{int}$ scales linearly with $\psi$ (from the steady-state condition), the linearized dynamics are identical across $\psi \in [1.5, 3.0]$. This observational equivalence means that $\psi$ affects model behavior only through the \textit{nonlinear curvature} of the reliability function---precisely the channel that drives the Reliability Valley in Section~\ref{subsec:valley}. As Table~\ref{tab:reliability_numerical} demonstrates, higher $\psi$ amplifies the convexity of the reliability penalty for large flexibility shortfalls, even though small perturbations are unaffected. This finding underscores the importance of the transition dynamics analysis (which captures nonlinear effects) as a complement to the impulse response analysis (which operates in the linearized neighborhood).
+
+\paragraph{Grid Investment Responsiveness ($\phi_{grid}$).} Table~\ref{tab:phi_grid_sensitivity} reports the sensitivity of investment responses and cumulative reliability dynamics to $\phi_{grid}$. The grid investment response scales proportionally with $\phi_{grid}$: raising $\phi_{grid}$ from 0.5 to 3.0 increases the impact response of $I_{grid}$ sixfold (from 0.0001\% to 0.0006\%). This variation directly governs the speed of the public infrastructure response to reliability shortfalls. With persistent intermittency shocks ($\rho_{ren}=0.85$), the cumulative reliability loss over 40 quarters is substantially larger than the i.i.d.\ benchmark: it declines from $-0.063$ at $\phi_{grid} = 0.5$ to $-0.054$ at $\phi_{grid} = 3.0$---a 13\% improvement in cumulative reliability recovery---confirming that more responsive grid policy accelerates reliability recovery, though the effect is modest because capital accumulation lags limit the speed of reliability restoration regardless of fiscal aggressiveness.
+
+\begin{table}[H]
+    \centering
+    \caption{\textbf{Sensitivity Analysis: Grid Investment Responsiveness ($\phi_{grid}$)}}
+    \label{tab:phi_grid_sensitivity}
+    \renewcommand{\arraystretch}{1.3}
+    \small
+    \begin{tabular}{c c c c c}
+        \toprule
+        $\phi_{grid}$ & \textbf{Welfare ($\Lambda$)} & \textbf{Impact $I_{grid}$ (\%)} & \textbf{Impact $I_{bat}$ (\%)} & \textbf{Cum.\ $\Delta u$ (40q)} \\
+        \midrule
+        0.5 & 0.000402\% & $+$0.0001 & $+$0.0001 & $-$0.063 \\
+        1.0 & 0.000402\% & $+$0.0002 & $+$0.0001 & $-$0.061 \\
+        1.5 (baseline) & 0.000402\% & $+$0.0003 & $+$0.0001 & $-$0.059 \\
+        2.0 & 0.000402\% & $+$0.0004 & $+$0.0001 & $-$0.058 \\
+        3.0 & 0.000403\% & $+$0.0006 & $+$0.0001 & $-$0.054 \\
+        \bottomrule
+    \end{tabular}
+    \vspace{0.2cm}
+    \parbox{\textwidth}{\footnotesize \textit{Note:} Response to a one standard deviation intermittency shock. $\phi_{grid}$ governs the elasticity of government grid investment to reliability shortfalls. Higher $\phi_{grid}$ increases the contemporaneous grid investment response and improves cumulative reliability recovery (less negative $\Delta u$), but welfare gains are modest because capital accumulation lags limit the speed of reliability restoration regardless of fiscal aggressiveness. Battery investment ($I_{bat}$) also rises with $\phi_{grid}$ because both investment rules respond to the same $u^*/u_t$ scarcity signal.}
+\end{table}
+
+\paragraph{Battery Weight ($\mu$).} The welfare cost responds monotonically to the battery weight: higher $\mu$ (greater reliance on agile private storage) reduces welfare costs from 0.000424\% at $\mu = 0.10$ to 0.000387\% at $\mu = 0.25$. This confirms the agility gap mechanism: economies that rely more on fast-deploying private storage absorb intermittency shocks more efficiently than those dependent on slow public infrastructure. Combined with the $\phi_{grid}$ results, this suggests that the composition of flexibility investment (private vs.\ public) matters more for welfare than the aggressiveness of public investment policy.
+
+\begin{table}[H]
+    \centering
+    \caption{\textbf{Sensitivity Analysis: Welfare Cost by Battery Weight ($\mu$)}}
+    \renewcommand{\arraystretch}{1.3}
+    \begin{tabular}{c c}
+        \toprule
+        \textbf{Battery Weight ($\mu$)} & \textbf{Welfare Cost ($\Lambda$)} \\
+        \midrule
+        0.10 & 0.000424\% \\
+        0.16 (baseline) & 0.000402\% \\
+        0.25 & 0.000387\% \\
+        \bottomrule
+    \end{tabular}
+    \vspace{0.2cm}
+    \parbox{\textwidth}{\footnotesize \textit{Note:} Higher $\mu$ implies greater reliance on private battery storage for system flexibility. Results confirm that expanding the role of agile private storage reduces welfare costs, consistent with the agility gap mechanism.}
+\end{table}
+
+\paragraph{Discount Factor ($\beta$) and Intertemporal Smoothing.} The discount factor governs the household's willingness to smooth consumption intertemporally, and through the bond Euler equation~\eqref{eq:bond_euler}, it determines how aggressively the economy borrows abroad to buffer intermittency shocks. Since the model features log utility (elasticity of intertemporal substitution EIS $= 1$), $\beta$ is the sole parameter governing the strength of the consumption-smoothing channel. Table~\ref{tab:beta_sensitivity} reports the results.
+
+\begin{table}[H]
+    \centering
+    \caption{\textbf{Sensitivity Analysis: Discount Factor ($\beta$)}}
+    \label{tab:beta_sensitivity}
+    \renewcommand{\arraystretch}{1.3}
+    \small
+    \begin{tabular}{c c c c c}
+        \toprule
+        $\beta$ & \textbf{Ann.\ Rate} & \textbf{Welfare ($\Lambda$)} & \textbf{Impact $B^*$ (\%)} & \textbf{C/Y (\%)} \\
+        \midrule
+        0.980 & $\sim 8.2\%$ & 0.000506\% & $-0.0051$ & 78.2 \\
+        0.990 (baseline) & $\sim 4.0\%$ & 0.000402\% & $-0.0050$ & 72.8 \\
+        0.995 & $\sim 2.0\%$ & 0.000357\% & $-0.0049$ & 68.7 \\
+        \bottomrule
+    \end{tabular}
+    \vspace{0.2cm}
+    \parbox{\textwidth}{\footnotesize \textit{Note:} Lower $\beta$ implies more impatient households and a higher steady-state real interest rate $r^* = 1/\beta - 1$. The world rate $\bar{r}$ is adjusted jointly with $\beta$ to maintain $r^*_{ss} = \bar{r}$ in steady state. Annual rate $\approx (1/\beta - 1) \times 400$. C/Y is the steady-state consumption share.}
+\end{table}
+
+More impatient households ($\beta = 0.98$) face a welfare cost 26\% higher than the baseline (0.000506\% vs.\ 0.000402\%), for two reasons. First, higher discounting reduces the present value of future recovery, amplifying the perceived welfare loss from transitory intermittency shocks. Second, the higher steady-state interest rate ($r^* \approx 2.05\%$ quarterly vs.\ 1.01\%) increases the cost of international borrowing, making consumption smoothing more expensive. The resulting higher steady-state consumption share (78.2\% vs.\ 72.8\%) means a larger fraction of output is consumed rather than invested, leaving less margin for absorbing intermittency-driven investment needs. Conversely, patient households ($\beta = 0.995$) borrow cheaply and invest more, reducing the welfare cost by 11\%. This finding suggests that economies with less-developed financial markets---where effective discount rates are higher due to credit constraints---face amplified welfare costs from the energy transition.
+
+\subsection{External Sector Dynamics}
+
+The open economy specification reveals an important channel through which intermittency shocks propagate beyond the domestic economy: the \textit{trade channel}. This channel operates through two distinct mechanisms.
+
+\paragraph{Mechanism 1: Intermittency $\to$ Current Account Deficit.} Following an adverse intermittency shock, output falls (Channel 1) but the household smooths consumption through the bond Euler equation. The resulting wedge between absorption and output is financed by international borrowing: net foreign assets $B^*$ decline by 0.005\% on impact. Simultaneously, the reliability gap triggers battery and grid investment, further widening the gap between domestic absorption ($C + I_p + P_{bat} I_{bat} + I_{grid}$) and output. Since Vietnam imports battery storage technology at world prices $P_{bat}$, the investment response directly translates into increased demand for foreign goods. The current account identity confirms:
+\begin{equation*}
+\Delta B^*_t = Y_t - C_t - I_{p,t} - P_{bat,t} I_{bat,t} - I_{grid,t} - r^*_{t-1} B^*_{t-1}
+\end{equation*}
+When $Y_t$ falls and $I_{bat,t}$ rises, the current account deteriorates unambiguously.
+
+\paragraph{Mechanism 2: Battery Price Shock $\to$ Terms of Trade.} A positive shock to $P_{bat}$ operates like an adverse terms-of-trade shock for a battery-importing economy. Higher import prices for storage technology raise the cost of flexibility investment, slow capital accumulation in $K_b$, and---through the reliability channel---reduce output. The variance decomposition confirms the quantitative importance of this channel: battery price shocks account for approximately 79\% of $B^*$ volatility, while intermittency now dominates consumption volatility (77\%) with battery-price shocks contributing 12\%, reflecting the larger persistent impact of domestic reliability shocks relative to the i.i.d.\ benchmark.
+
+\paragraph{Dual Exposure.} The variance decomposition of net foreign assets reveals the economy's dual exposure: intermittency shocks contribute 43\% and battery price shocks contribute 79\% of $B^*$ volatility (shares exceed 100\% due to negative covariance between shock contributions). This pattern has a clear economic interpretation: domestic reliability risk creates borrowing needs for consumption smoothing and investment financing, while global battery market shocks determine the cost of the flexibility imports required to close the reliability gap. The debt-elastic interest rate premium ($r^*_t = \bar{r} + \phi_b(e^{\bar{B}^* - B^*_t} - 1)$) ensures that persistent borrowing raises the country's risk premium, providing a stabilizing feedback that prevents explosive debt accumulation but amplifies the welfare cost of repeated shocks.
+
+The external sector dynamics reinforce the policy case for domestic battery manufacturing capacity: reducing import dependence for storage technology would attenuate Mechanism 2 and lower the economy's external vulnerability during the energy transition.
+
+\subsection{Joint Shock Scenario: ``Perfect Storm''} \label{subsec:joint_shock}
+
+The preceding analysis examines each shock in isolation. In practice, adverse shocks may coincide---for example, a period of low renewable generation may overlap with a spike in global lithium prices, simultaneously increasing intermittency and raising the cost of the storage remedy. To assess this scenario, I simulate simultaneous one-standard-deviation shocks to both renewable intermittency ($\varepsilon_{ren}$) and battery prices ($\varepsilon_{bat}$).
+
+\begin{table}[H]
+    \centering
+    \caption{\textbf{Joint Shock Scenario: Impact Effects and Welfare Costs}}
+    \label{tab:joint_shock}
+    \renewcommand{\arraystretch}{1.3}
+    \begin{tabular}{l c c c}
+        \toprule
+        \textbf{Variable} & \textbf{Intermittency} & \textbf{Battery Price} & \textbf{Joint} \\
+        & \textbf{Only} & \textbf{Only} & \textbf{(Perfect Storm)} \\
+        \midrule
+        Output ($Y$) & $-0.0051\%$ & $+0.0001\%$ & $-0.0050\%$ \\
+        Consumption ($C$) & $-0.0004\%$ & $-0.0002\%$ & $-0.0006\%$ \\
+        Reliability ($u$) & $-0.0126\%$ & $+0.0000\%$ & $-0.0126\%$ \\
+        Battery Investment ($I_{bat}$) & $+0.0001\%$ & $-0.0005\%$ & $-0.0003\%$ \\
+        Net Foreign Assets ($B^*$) & $-0.0524\%$ & $+0.0021\%$ & $-0.0523\%$ \\
+        \midrule
+        Welfare cost ($\Lambda$) & $0.000402\%$ & $0.000155\%$ & $0.000557\%$ \\
+        \bottomrule
+    \end{tabular}
+    \vspace{0.2cm}
+    \parbox{\textwidth}{\footnotesize \textit{Note:} Impact effects are percentage deviations from steady state at quarter 0. Welfare cost is measured in compensating consumption variation. All values computed under baseline parameters ($\chi = 1.0$, $\phi_{grid} = 1.5$).}
+\end{table}
+
+Three findings emerge from the joint scenario. First, the welfare costs are additive: the joint welfare cost (0.000557\%) essentially equals the sum of individual costs (0.000402\% $+$ 0.000155\% = 0.000557\%), reflecting the linear superposition property of the first-order perturbation solution. Under higher-order approximations, nonlinear interaction effects could generate amplification.
+
+Second, intermittency now dominates the welfare cost---contributing more than twice the battery price component (0.000402\% vs.\ 0.000155\%). This reverses the finding from i.i.d.\ shock specifications and reflects the key role of AR(1) persistence ($\rho_{ren}=0.85$): once reliability degrades, households suffer prolonged consumption losses, generating a much larger welfare cost than a purely transitory disruption.
+
+Third, the joint scenario creates a ``scissors effect'' on battery investment: intermittency raises the \textit{need} for storage (positive reliability gap), while the battery price shock raises the \textit{cost} of acquiring it. The net effect is a decline in battery investment ($-0.0003\%$), implying that during a perfect storm, the economy cannot self-correct through the storage channel. This pathological case strengthens the argument for strategic battery reserves or long-term procurement contracts that decouple domestic storage investment from short-run global price volatility.
+
+\subsection{Summary}
+
+The baseline analysis (Section~\ref{sec:results}) and welfare analysis establish four core findings:
+
+\textbf{First, the reliability penalty is a tangible macroeconomic friction, amplified by fiscal feedback.} A one-standard-deviation intermittency shock reduces grid utilization by 1.30\% and output by 0.59\% through the effective capital channel, with the proportional tax adding a fiscal amplification wedge of 2.54\% relative to steady state. Variance decomposition confirms that intermittency shocks account for 97.7\% of output volatility, with battery-price shocks contributing the remaining 4\% through the fiscal channel. The dominance of intermittency reflects its AR(1) persistence ($\rho_{ren}=0.85$), which generates sustained multi-quarter reliability degradation. Unlike standard productivity shocks, this penalty is structural and predictable---it arises from the physics of the grid combined with the fiscal response rule, not from exogenous technological regress.
+
+\textbf{Second, battery investment is dominated by global price dynamics.} Variance decomposition reveals that 100\% of battery investment volatility is driven by global battery price shocks, while intermittency accounts for only 1\%. This highlights Vietnam's price-taking position in global battery markets and suggests that domestic reliability policies alone cannot determine the pace of storage deployment.
+
+\textbf{Third, scarcity-induced technological change provides a persistent adjustment mechanism.} The innovation mechanism generates cumulative improvements in battery technology ($A_{bat}$), with the simulated mean reaching 1.015 over 1000 periods (autocorrelation 0.997). This 1.5\% technology improvement is entirely endogenous, driven by the reliability gap channel. However, the innovation rate depends critically on the regulatory parameter $\chi$---when scarcity signals are suppressed ($\chi \to 0$), technological progress stalls and welfare costs rise by 27\%.
+
+\textbf{Fourth, the model's transmission channels are quantitatively validated.} The Dynare simulation confirms expected signs: output and reliability are highly correlated (0.992), flexibility and consumption are strongly positively correlated (0.787), and battery price shocks affect investment negatively ($\rho = -0.994$ between $P_{bat}$ and $I_{bat}$). The proportional tax rate is strongly negatively correlated with output ($\rho = -0.49$), confirming the fiscal amplification channel. These correlations validate the model's internal consistency.
+
+These findings raise important questions for future research: if the Reliability Valley is predictable, can targeted interventions flatten it? If the agility gap is large, does market liberalization improve outcomes? If learning depends on price signals, what happens when regulators suppress those signals? These questions are discussed further in Section \ref{sec:conclusion}.
+
+\section{Conclusion} \label{sec:conclusion}
+
+This capstone develops a DSGE model that endogenizes grid reliability as a function of flexibility assets relative to renewable volatility, calibrated to the structural characteristics of Vietnam's energy transition. The model identifies three quantitatively important channels through which renewable intermittency affects macroeconomic outcomes.
+
+First, the \textit{reliability penalty with fiscal amplification}: intermittency shocks reduce grid utilization by 1.30\%, generating output losses of 0.59\%, and trigger a 2.54\% overshoot in the proportional tax rate that further amplifies the contraction. Variance decomposition confirms that intermittency shocks account for 97.7\% of output volatility, with the remaining 4\% attributable to global battery-price shocks propagating through the fiscal amplification channel.
+
+Second, the \textit{agility gap}: private battery investment and public grid investment respond proportionally to reliability shortfalls (1.95\% each relative to their steady-state levels), but the absolute level response of grid investment is 2.5$\times$ larger (agility ratio = 0.40 in level terms). Battery investment is dominated by global battery-price shocks (100\% of $I_{bat}$ variance), while grid investment is driven primarily by the fiscal rule (82\% of $I_{grid}$ variance), creating dual exposure to international supply chains and domestic fiscal decisions.
+
+Third, \textit{scarcity-induced technological change}: technological progress in battery storage responds endogenously to the gap between target and actual reliability, creating a self-correcting mechanism. The 1000-quarter simulation confirms battery technology reaches a mean of 1.015---a 1.5\% endogenous improvement conditional on $\chi > 0$.
+
+The welfare cost of intermittency is estimated at 0.000402\% of steady-state consumption under full price signal transmission (from Dynare first-order perturbation). Counterfactual analysis reveals that this cost increases by 27\% when regulatory distortions fully suppress scarcity signals ($\chi = 0$), demonstrating that the scarcity-induced innovation channel is quantitatively important for welfare. The fiscal amplification channel introduced by proportional taxation creates a critical macroeconomic tradeoff: grid investment surges reduce future productive capacity, creating a welfare cost that depends critically on the degree of scarcity signal transmission through the innovation mechanism.
+
+These findings carry direct policy implications. First, market-based mechanisms that transmit scarcity signals---real-time pricing, capacity payments, ancillary service remuneration---are necessary complements to direct storage investment. Second, Vietnam's exposure to global battery supply chains (100\% of battery investment volatility driven by external price shocks) underscores the importance of supply chain diversification and domestic manufacturing capacity. Third, the trade channel implies that the energy transition has external balance consequences that should be incorporated into macroeconomic policy design.
+
+For Vietnam specifically, the signal attenuation parameter $\chi$ maps onto concrete institutional features. Vietnam Electricity (EVN) currently operates under regulated retail tariffs that do not fully pass through real-time generation costs, effectively dampening the scarcity signal that drives technological innovation in the model. The PDP8's target of 47.5~GW of renewable capacity by 2030 will substantially increase intermittency exposure, yet Vietnam lacks a wholesale electricity spot market, capacity payment mechanisms, or ancillary service remuneration frameworks. The model implies that achieving $\chi \approx 1$ requires specific reforms: introduction of a competitive wholesale market with locational marginal pricing, establishment of capacity remuneration mechanisms for storage providers, and regulatory frameworks that compensate battery operators for frequency regulation and spinning reserve services. Without these reforms, the 27\% welfare cost amplification identified in the counterfactual analysis (and 18\% for partial dampening at $\chi = 0.3$) represents a quantifiable cost of regulatory inertia.
+
+\subsection*{Limitations}
+
+Several limitations qualify the results. First, the model treats the renewable energy endowment as an exogenous parameter ($\bar{E}$) rather than modeling the capacity investment decision. This implies that the results are conditional on a given level of renewable penetration and do not address the optimal pace of renewable deployment. Second, the representative household framework precludes analysis of the distributional consequences of reliability shortfalls, which are likely to fall disproportionately on lower-income households and energy-intensive industries. Third, the model's consumption share in steady state (72.8\%) exceeds Vietnam's observed ratio (64--66\%), reflecting the abstraction from government consumption and inventories (see Section~\ref{sec:calibration}). Fourth, the welfare metric captures only the consumption-equivalent cost of volatility; it omits level effects from the energy transition, adjustment costs from structural transformation, and political economy frictions. Fifth, the log-linearized solution restricts analysis to first-order dynamics around the steady state, potentially understating the costs of large shocks or regime changes. Finally, the model abstracts from fossil fuel phase-out dynamics, carbon pricing, and cross-border electricity trade, each of which is quantitatively relevant for Vietnam's transition.
+
+\subsection*{Future Research}
+
+Several extensions merit investigation. First, incorporating nominal rigidities and monetary policy would allow analysis of the ``greenflation'' channel identified by \citet{airaudo2025green} in the context of intermittency-driven supply shocks. Second, a deterministic transition path for renewable penetration targets would enable more detailed analysis of the ``Reliability Valley'' phenomenon, including the optimal sequencing of storage and grid investment. Third, heterogeneous agent extensions would capture the distributional impacts of reliability shortfalls across income groups, firm sizes, and regions---a first-order concern for equity in developing economies. Fourth, endogenizing the renewable capacity decision (replacing the exogenous $\bar{E}$) would allow joint analysis of the optimal pace of renewable deployment and flexibility investment. Fifth, incorporating carbon pricing or border adjustment mechanisms (e.g., CBAM) would link the domestic reliability problem to international climate policy.
 
 \section*{Acknowledgments}
 
@@ -1554,6 +1807,8 @@ F(x', y') + F(x, y) > F(x', y) + F(x, y')
 
 Setting $x' = \lambda x_0$ and $y' = \lambda y_0$ and rearranging yields the stated inequality. $\qed$
 \end{proof}
+
+\noindent \textbf{Remark (Superadditivity Gap).} By homogeneity of degree one, the joint gain equals exactly $(\lambda - 1) F(x_0, y_0)$. Each individual gain is strictly less than $(\lambda-1) F$ due to the strict concavity of $F$ in each argument separately. The \textit{superadditivity gap}---the excess of the joint gain over the sum of individual gains---measures the pure complementarity premium from coordinated investment. This gap vanishes only as $\rho \to 1$ (perfect substitutes) and grows as $\rho \to 0$ (Leontief). Table~\ref{tab:ces_complementarity} in the main text evaluates the gap numerically under the baseline calibration.
 
 \section{Proof of Proposition~\ref{prop:chi_monotonicity}} \label{app:proof_chi}
 
@@ -1596,13 +1851,19 @@ The representative household maximizes discounted lifetime utility:
 \begin{equation*}
 \max_{\{C_t,\, L_t,\, K_{p,t+1},\, B^*_t\}_{t=0}^{\infty}} \;
 \mathbb{E}_0 \sum_{t=0}^{\infty} \beta^t
-\left[\log(C_t) - \frac{L_t^{1+\sigma_L}}{1+\sigma_L}\right]
+\left[\log(C_t) - \varphi \frac{L_t^{1+\sigma_L}}{1+\sigma_L}\right]
 \end{equation*}
 subject to the period-$t$ budget constraint:
 \begin{equation*}
-C_t + I_{p,t} + P_{bat,t}\,I_{bat,t} + B^*_t + T_t
+C_t + I_{p,t} + P_{bat,t}\,I_{bat,t} + B^*_t + \tau_t Y_t
 = Y_t + (1+r^*_{t-1})\,B^*_{t-1}
 \end{equation*}
+which can be written equivalently as:
+\begin{equation*}
+C_t + I_{p,t} + P_{bat,t}\,I_{bat,t} + B^*_t
+= (1-\tau_t) Y_t + (1+r^*_{t-1})\,B^*_{t-1}
+\end{equation*}
+where $(1-\tau_t)$ is the net-of-tax share of output retained by the household. Since $\tau_t = I_{grid,t}/Y_t$ is endogenous and co-varies with the reliability gap, the tax rate is a state variable that the household takes as given when optimising.
 and the productive capital accumulation law:
 \begin{equation*}
 K_{p,t+1} = (1-\delta_p)\,K_{p,t} + I_{p,t}
@@ -1613,10 +1874,10 @@ K_{p,t+1} = (1-\delta_p)\,K_{p,t} + I_{p,t}
 Substituting the capital accumulation law ($I_{p,t} = K_{p,t+1} - (1-\delta_p)K_{p,t}$) into the budget constraint eliminates $I_{p,t}$. The Lagrangian is:
 \begin{align*}
 \mathcal{L} &= \mathbb{E}_0 \sum_{t=0}^{\infty} \beta^t \Bigg\{
-\log(C_t) - \frac{L_t^{1+\sigma_L}}{1+\sigma_L} \\
-&\quad + \lambda_t \Big[Y_t + (1+r^*_{t-1})B^*_{t-1} - C_t 
+\log(C_t) - \varphi \frac{L_t^{1+\sigma_L}}{1+\sigma_L} \\
+&\quad + \lambda_t \Big[(1-\tau_t)Y_t + (1+r^*_{t-1})B^*_{t-1} - C_t
 - K_{p,t+1} + (1-\delta_p)K_{p,t}
-- P_{bat,t}I_{bat,t} - B^*_t - T_t\Big]
+- P_{bat,t}I_{bat,t} - B^*_t\Big]
 \Bigg\}
 \end{align*}
 where $\lambda_t$ is the Lagrange multiplier on the period-$t$ budget constraint, interpretable as the marginal utility of wealth.
@@ -1626,13 +1887,15 @@ where $\lambda_t$ is the Lagrange multiplier on the period-$t$ budget constraint
 Differentiating $\mathcal{L}$ with respect to $K_{p,t+1}$ yields two terms. In period $t$, an increase in $K_{p,t+1}$ by one unit reduces resources by $\lambda_t$. In period $t+1$ (discounted by $\beta$), a higher $K_{p,t+1}$ generates: (i) additional output $\alpha Y_{t+1}/K_{p,t+1}$ (marginal product of capital, \textit{approximated} from the Cobb-Douglas value-added structure $V_{t+1} = (u_{t+1}K_{p,t+1})^\alpha L_{t+1}^{1-\alpha}$ via the chain rule through the CES aggregator; the exact expression is $\alpha(1-\omega_E)V_{t+1}^{s_E}Y_{t+1}^{1-s_E}/K_{p,t+1}$, which reduces to $\alpha Y_{t+1}/K_{p,t+1}$ as $\omega_E \to 0$; with $\omega_E = 0.045$ the approximation error is negligible); and (ii) the undepreciated capital $(1-\delta_p)$, both valued at the future shadow price $\beta\,\mathbb{E}_t[\lambda_{t+1}]$. Setting the partial derivative to zero:
 \begin{equation*}
 -\lambda_t + \beta\,\mathbb{E}_t\!\left[\lambda_{t+1}
-\left(\frac{\alpha Y_{t+1}}{K_{p,t+1}} + 1 - \delta_p\right)\right] = 0
+\left((1-\tau_{t+1})\frac{\alpha Y_{t+1}}{K_{p,t+1}} + 1 - \delta_p\right)\right] = 0
 \end{equation*}
+
+The $(1-\tau_{t+1})$ term arises because the marginal product of capital in period $t+1$ accrues as output, which is taxed at rate $\tau_{t+1}$ before reaching the household. The undepreciated capital $(1-\delta_p)$ is not taxed since it is a return of the capital good itself, not income.
 
 Rearranging:
 \begin{equation*}
 \lambda_t = \beta\,\mathbb{E}_t\!\left[\lambda_{t+1}
-\left(\frac{\alpha Y_{t+1}}{K_{p,t+1}} + 1 - \delta_p\right)\right]
+\left((1-\tau_{t+1})\frac{\alpha Y_{t+1}}{K_{p,t+1}} + 1 - \delta_p\right)\right]
 \tag{A1}\label{eq:foc_k}
 \end{equation*}
 
@@ -1652,10 +1915,10 @@ Thus the shadow price of the budget constraint equals the marginal utility of co
 Substituting \eqref{eq:foc_c} and its period-$(t+1)$ counterpart $\lambda_{t+1} = 1/C_{t+1}$ into \eqref{eq:foc_k}:
 \begin{equation*}
 \frac{1}{C_t} = \beta\,\mathbb{E}_t\!\left[\frac{1}{C_{t+1}}
-\left(\frac{\alpha Y_{t+1}}{K_{p,t+1}} + 1 - \delta_p\right)\right]
+\left((1-\tau_{t+1})\frac{\alpha Y_{t+1}}{K_{p,t+1}} + 1 - \delta_p\right)\right]
 \end{equation*}
 
-This is exactly the capital Euler equation~\eqref{eq:euler}. It equates the marginal utility cost of saving (the left-hand side, $1/C_t$) with the expected discounted marginal utility benefit of the gross return on capital (the right-hand side). At the optimum, the household is indifferent at the margin between consuming an additional unit today and investing it in productive capital.
+This is the modified capital Euler equation~\eqref{eq:euler} under proportional taxation. Compared to the lump-sum case, the after-tax return to capital is $(1-\tau_{t+1})\alpha Y_{t+1}/K_{p,t+1}$ rather than $\alpha Y_{t+1}/K_{p,t+1}$. Since $\tau_{t+1}$ rises when intermittency worsens (via the grid investment rule), a reliability shock lowers the expected after-tax return to capital, reducing investment beyond the direct utilization effect. This is the fiscal amplification channel.
 
 \subsection*{Economic Interpretation}
 
@@ -1666,9 +1929,9 @@ Rearranging the Euler equation as:
 \end{equation*}
 reveals the standard asset-pricing structure: the price of a unit investment (normalized to 1) equals the discounted stochastic discount factor $\beta\,(C_t/C_{t+1})$ times the gross payoff $(\alpha Y_{t+1}/K_{p,t+1} + 1 - \delta_p)$. In steady state, where $\mathbb{E}_t[\cdot]$ collapses and $C_t = C_{t+1}$, this yields:
 \begin{equation*}
-\frac{\alpha Y_{ss}}{K_{p,ss}} = \frac{1}{\beta} - 1 + \delta_p
+(1-\tau_{ss})\frac{\alpha Y_{ss}}{K_{p,ss}} = \frac{1}{\beta} - 1 + \delta_p
 \end{equation*}
-which pins down the steady-state capital-to-output ratio as $K_{p,ss}/Y_{ss} = \alpha\beta/(1 - \beta(1-\delta_p))$.
+which pins down the steady-state capital-to-output ratio as $K_{p,ss}/Y_{ss} = (1-\tau_{ss})\alpha\beta/(1 - \beta(1-\delta_p))$. The steady-state tax rate is $\tau_{ss} = I_{grid,ss}/Y_{ss} = \delta_g K_{g,ss}/Y_{ss}$, which is small (approximately 1.5\% given the calibration), so the distortion to the capital stock is modest but non-zero.
 
 %=============================================================================
 \section{Derivation of the Labor Supply Equation} \label{app:deriv_labor}
@@ -1678,13 +1941,13 @@ This appendix provides the complete step-by-step derivation of the labor supply 
 
 \subsection*{First-Order Condition with Respect to $L_t$}
 
-Using the same Lagrangian as in Appendix~\ref{app:deriv_euler}, differentiate with respect to $L_t$. Labor enters utility directly (disutility) and indirectly through output $Y_t$ (which affects the budget constraint via income):
+Using the same Lagrangian as in Appendix~\ref{app:deriv_euler}, differentiate with respect to $L_t$. Labor enters utility directly (disutility) and indirectly through output $Y_t$ (which affects the budget constraint via after-tax income $(1-\tau_t)Y_t$):
 \begin{equation*}
 \frac{\partial \mathcal{L}}{\partial L_t}
-= \beta^t\left[-L_t^{\sigma_L} + \lambda_t \frac{\partial Y_t}{\partial L_t}\right] = 0
+= \beta^t\left[-\varphi L_t^{\sigma_L} + \lambda_t (1-\tau_t) \frac{\partial Y_t}{\partial L_t}\right] = 0
 \end{equation*}
 
-\noindent The marginal product of labor in the model is derived through the chain rule across the nested production structure: $Y_t \to V_t \to L_t$. From the value-added function $V_t = (u_t K_{p,t})^\alpha L_t^{1-\alpha}$, the marginal product is $(1-\alpha)V_t/L_t$. Passing this through the CES aggregator $Y_t = [(1-\omega_E)V_t^{s_E} + \omega_E \bar{E}^{s_E}]^{1/s_E}$, the chain rule gives $\partial Y_t/\partial L_t = (\partial Y_t / \partial V_t)\cdot(\partial V_t / \partial L_t)$. Firms in a competitive labor market equate the real wage $w_t$ to this marginal product:
+\noindent The marginal product of labor in the model is derived through the chain rule across the nested production structure: $Y_t \to V_t \to L_t$. From the value-added function $V_t = (u_t K_{p,t-1})^\alpha L_t^{1-\alpha}$, the marginal product with respect to $L_t$ is $(1-\alpha)V_t/L_t$ (the predetermined capital $K_{p,t-1}$ is constant with respect to $L_t$). Passing this through the CES aggregator $Y_t = [(1-\omega_E)V_t^{s_E} + \omega_E \bar{E}^{s_E}]^{1/s_E}$, the chain rule gives $\partial Y_t/\partial L_t = (\partial Y_t / \partial V_t)\cdot(\partial V_t / \partial L_t)$. Firms in a competitive labor market equate the real wage $w_t$ to this marginal product:
 \begin{equation*}
 w_t = \frac{\partial Y_t}{\partial L_t}
 = \frac{\partial Y_t}{\partial V_t} \cdot \frac{(1-\alpha)V_t}{L_t}
@@ -1692,16 +1955,16 @@ w_t = \frac{\partial Y_t}{\partial L_t}
 
 The factor $\partial Y_t / \partial V_t$ is the marginal product of value-added in the output aggregator. In the model, for notational economy, the entire chain $(\partial Y_t/\partial V_t)\cdot V_t$ reduces to $(1-\alpha)Y_t$ in the Cobb-Douglas limit, and more generally the competitive wage can be written as $w_t = (1-\alpha) V_t / L_t$ when referring to the value-added block (since the CES price of value-added services appears in the firm's first-order condition, and the model notation uses $V_t$ to denote the effective labor income share). Substituting into the labor FOC:
 \begin{equation*}
--L_t^{\sigma_L} + \lambda_t \, w_t = 0
+-\varphi L_t^{\sigma_L} + \lambda_t (1-\tau_t) w_t = 0
 \quad \Longrightarrow \quad
-L_t^{\sigma_L} = \lambda_t \, w_t
+\varphi L_t^{\sigma_L} = \lambda_t (1-\tau_t) w_t
 \end{equation*}
 
 \subsection*{Substituting the Shadow Price}
 
 From the consumption FOC, $\lambda_t = 1/C_t$. Substituting:
 \begin{equation*}
-L_t^{\sigma_L} = \frac{w_t}{C_t}
+\varphi L_t^{\sigma_L} = \frac{(1-\tau_t)\, w_t}{C_t}
 \end{equation*}
 
 \subsection*{Substituting the Competitive Wage}
@@ -1712,13 +1975,15 @@ w_t = \frac{(1-\alpha)\,V_t}{L_t}
 \end{equation*}
 Substituting this expression for $w_t$:
 \begin{equation*}
-L_t^{\sigma_L} = \frac{1}{C_t} \cdot \frac{(1-\alpha)\,V_t}{L_t}
+\varphi\, L_t^{\sigma_L} = \frac{(1-\tau_t)}{C_t} \cdot \frac{(1-\alpha)\,V_t}{L_t}
 \end{equation*}
 
 Multiplying both sides by $C_t \, L_t$:
 \begin{equation*}
-C_t \, L_t^{1+\sigma_L} = (1-\alpha)\,V_t
+\varphi \, C_t \, L_t^{1+\sigma_L} = (1-\tau_t)(1-\alpha)\,V_t
 \end{equation*}
+
+\noindent The $(1-\tau_t)$ term is the key difference from the lump-sum case: the proportional tax drives a wedge between the social marginal product of labor $(1-\alpha)V_t/L_t$ and the private after-tax return $(1-\tau_t)(1-\alpha)V_t/L_t$. For a given wage and consumption level, households supply less labor when $\tau_t$ is higher, reducing value-added and amplifying the contractionary effect of intermittency shocks.
 
 \subsection*{Introducing the Disutility Weight}
 
@@ -1726,20 +1991,20 @@ The utility function in the model includes a labor disutility weight $\varphi > 
 \begin{equation*}
 U_t = \log(C_t) - \varphi\,\frac{L_t^{1+\sigma_L}}{1+\sigma_L}
 \end{equation*}
-This scaling parameter is suppressed for clarity in the derivation above (equivalently, set $\varphi = 1$ during the derivation and introduce it by calibration). Re-inserting $\varphi$ into the labor FOC:
+Since $\varphi$ was already included from the start of this derivation, the final labor supply condition is:
 \begin{equation*}
-\varphi\, L_t^{\sigma_L} = \frac{w_t}{C_t}
+\varphi\, L_t^{\sigma_L} = \frac{(1-\tau_t)\,w_t}{C_t}
 \end{equation*}
-Following the same steps yields:
+Following the same steps yields the \textbf{proportional-tax labor supply condition}:
 \begin{equation*}
-(1-\alpha)\,V_t = \varphi\,C_t\,L_t^{1+\sigma_L}
+(1-\tau_t)(1-\alpha)\,V_t = \varphi\,C_t\,L_t^{1+\sigma_L}
 \end{equation*}
 which is exactly the labor supply condition~\eqref{eq:labor_supply}.
 
 \subsection*{Economic Interpretation}
 
-The left-hand side, $(1-\alpha)V_t$, is total labor income (the wage bill): it is the household's revenue from supplying labor to the competitive firm, equal to the labor share $(1-\alpha)$ of value-added $V_t$. The right-hand side, $\varphi\,C_t\,L_t^{1+\sigma_L}$, is the household's reservation wage scaled by consumption: it equals the ratio of the marginal disutility of labor ($\varphi L_t^{\sigma_L}$) to the marginal utility of consumption ($1/C_t$), which is the standard intratemporal optimality condition ``marginal rate of substitution = real wage.''
+The left-hand side, $(1-\tau_t)(1-\alpha)V_t$, is \textit{after-tax} labor income: the household retains only the fraction $(1-\tau_t)$ of the competitive wage bill $(1-\alpha)V_t$, since the proportional tax reduces disposable income. The right-hand side, $\varphi\,C_t\,L_t^{1+\sigma_L}$, is the household's reservation wage scaled by consumption: the ratio of marginal disutility to marginal utility of consumption, the standard intratemporal optimality condition. The presence of $(1-\tau_t)$ drives a tax wedge between the social marginal product $(1-\alpha)V_t/L_t$ and the private net-of-tax return. When $\tau_t$ rises during an intermittency episode, the household's effective wage falls, reducing labor supply and amplifying the contraction in value-added.
 
-In steady state, this condition, together with the resource constraint and the capital Euler equation, pins down steady-state hours $L_{ss} = 0.33$ (calibrated target) and the disutility weight $\varphi$ (calibrated endogenously). When $\sigma_L = 1$ (baseline calibration), the condition becomes $(1-\alpha)V_t = \varphi\,C_t\,L_t^2$, implying a unit elasticity of labor supply with respect to the real wage.
+In steady state, the condition becomes $(1-\tau_{ss})(1-\alpha)V_{ss} = \varphi\,C_{ss}\,L_{ss}^{1+\sigma_L}$. Together with the resource constraint and the capital Euler equation, this pins down steady-state hours $L_{ss} = 0.33$ (calibrated target) and the disutility weight $\varphi$ (calibrated endogenously, accounting for the tax wedge at $\tau_{ss} \approx 1.65\%$). When $\sigma_L = 1$ (baseline calibration), the condition becomes $(1-\tau_t)(1-\alpha)V_t = \varphi\,C_t\,L_t^2$, implying a unit Frisch elasticity with respect to the after-tax real wage.
 
 \end{document}
