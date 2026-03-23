@@ -37,7 +37,7 @@
 \begin{abstract}
 This capstone investigates the macroeconomic ``agility gap''---the divergence between rapid private renewable deployment and slow public grid investment. I develop a DSGE model integrating endogenous scarcity-induced technological change in battery storage with grid reliability constraints, embedded in a small open economy framework. Variable renewable penetration creates intermittency shocks that reduce capital utilization through grid instability.
 
-Calibrating to Vietnam's Power Development Plan 8, I find five results. First, intermittency shocks account for 97.7\% of output volatility and 95.8\% of reliability volatility, with global battery-price shocks contributing the remainder through the fiscal amplification channel. Second, global battery-price shocks drive 100\% of battery investment volatility, highlighting exposure to external supply chains. Third, scarcity-induced technological change generates persistent battery improvements conditional on regulatory transmission of scarcity signals ($\chi$). Fourth, proportional taxation creates a fiscal amplification channel: a one-standard-deviation intermittency shock reduces output by 0.59\% and grid utilization by 1.30\%, while the tax rate overshoots by 2.54\% relative to steady state. Fifth, suppressing scarcity signals ($\chi = 0$) raises the welfare cost of intermittency by 27\%, demonstrating that market mechanisms are quantitatively important complements to storage investment.
+Calibrating to Vietnam's Power Development Plan 8, I find five results. First, intermittency shocks account for 96.8\% of output volatility and 95.8\% of reliability volatility, with global battery-price shocks contributing the remainder. Second, global battery-price shocks drive 100\% of battery investment volatility, highlighting exposure to external supply chains. Third, scarcity-induced technological change generates persistent battery improvements conditional on regulatory transmission of scarcity signals ($\chi$). Fourth, proportional taxation creates a constant fiscal wedge on capital and labor income: a one-standard-deviation intermittency shock reduces output by 0.55\% and grid utilization by 1.30\%, while the fixed tax rate $\tau_{ss}=1.65\%$ lowers the after-tax return to capital and shifts the steady state relative to the lump-sum benchmark. Fifth, suppressing scarcity signals ($\chi = 0$) raises the welfare cost of intermittency by 27\%, demonstrating that market mechanisms are quantitatively important complements to storage investment.
 
 \vspace{0.5cm}
 \noindent \textbf{Keywords:} Environmental DSGE, Scarcity-Induced Innovation, Endogenous Technological Change, Investment Inertia, Renewable Intermittency, Energy Storage.
@@ -726,8 +726,8 @@ Reduced reliability widens the gap $u^*/u_t$, raising the return to battery stor
 \paragraph{Channel 3: Reliability Gap → Scarcity-Induced Innovation → Productivity Gain.}
 The reliability gap also accelerates scarcity-induced technological change in battery storage (equation \eqref{eq:learning_by_doing}), increasing the effective productivity of storage services. This creates a virtuous cycle where scarcity induces both more investment and faster technological progress. However, when regulatory distortions dampen scarcity signals ($\chi < 1$), this innovation channel is attenuated, prolonging reliability shortfalls and amplifying macroeconomic volatility.
 
-\paragraph{Channel 4: Fiscal Amplification (Proportional Tax Variant).}
-This channel is unique to the proportional tax specification. When an intermittency shock hits, grid investment $I_{grid,t}$ rises (reliability gap widens the investment rule) while output $Y_t$ falls (reliability penalty). Because $\tau_t = I_{grid,t}/Y_t$, both forces raise the tax rate simultaneously---the numerator rises and the denominator falls. This elevated $\tau_t$ then distorts two equilibrium conditions: (i) it lowers the after-tax return on capital in the Euler equation, crowding out productive investment; and (ii) it reduces the after-tax real wage in the labor supply condition, contracting labor supply and value-added. The result is an endogenous fiscal amplification of the original intermittency shock that is absent under lump-sum taxation.
+\paragraph{Channel 4: Constant Fiscal Wedge (Proportional Tax Variant).}
+This channel distinguishes the proportional tax specification from the lump-sum baseline. Rather than a tax rate that adjusts endogenously to shocks, the government commits to a fixed proportional tax $\tau_{ss} = I_{grid,ss}/Y_{ss} \approx 1.65\%$. This constant wedge lowers the after-tax return on capital in the Euler equation---$(1-\tau_{ss})\alpha Y_{t+1}/K_{p,t}$ versus $\alpha Y_{t+1}/K_{p,t}$ under lump-sum---reducing the equilibrium capital stock from approximately 11.7 (lump-sum benchmark) to 8.45 (proportional tax), a 28\% contraction in productive capital. The wedge also reduces the after-tax real wage, contracting labor supply and shifting the steady state. Crucially, because $\tau$ is fixed, it does not respond dynamically to shocks; the distinction from lump-sum is a level effect, not an amplification effect.
 
 \paragraph{Channel 5: Global Battery Price Shocks.}
 Shocks to world battery prices $P_{bat,t}$ act as external cost shocks to the green transition. Positive shocks (rising prices) increase the cost of domestic battery investment, slowing the accumulation of flexibility and exacerbating reliability constraints. This channel captures Vietnam's exposure to global supply chains for clean energy technology.
@@ -1318,7 +1318,7 @@ Figure \ref{fig:irf_baseline} presents the impulse response functions to a 5\% p
     \includegraphics[width=0.95\textwidth]{fiscal_amplification.png}
     \caption{\textbf{Fiscal Amplification Channel: Tax Rate, Output, and Investment}}
     \label{fig:fiscal_amplification}
-    \parbox{0.95\textwidth}{\footnotesize \textit{Note:} Impulse responses to a one standard deviation intermittency shock ($\sigma_{ren} = 0.12$). Left axis (blue): output $\hat{Y}_t$ and productive investment $\hat{I}_{p,t}$ in percent deviations from steady state. Right axis (red): proportional tax rate deviation $\hat{\tau}_t$. The tax rate rises 2.54\% relative to steady state on impact (a 0.042 pp increase from $\tau_{ss}=1.65\%$) as grid investment surges while output falls, creating an after-tax cost wedge that amplifies the contraction in productive investment. This fiscal amplification channel is unique to the proportional tax specification and absent under lump-sum taxation.}
+    \parbox{0.95\textwidth}{\footnotesize \textit{Note:} Impulse responses to a one standard deviation intermittency shock ($\sigma_{ren} = 0.12$). Output $Y_t$, consumption $C_t$, productive investment $I_{p,t}$, and value added $V_t$ in level deviations from steady state. Productive investment falls sharply ($-23.5\%$ relative to SS) on impact due to Euler equation amplification: the expected fall in future output reduces the after-tax return to capital, compressing the incentive to invest. Consumption and output decline modestly but persistently, governed by the AR(1) intermittency process ($\rho_{ren}=0.85$). The fixed proportional tax $\tau_{ss}=1.65\%$ creates a permanent wedge that shifts the steady state but does not amplify the dynamic response.}
 \end{figure}
 
 \subsubsection{Stage 1: The Reliability Penalty Mechanism}
@@ -1327,7 +1327,7 @@ On impact, grid utilization (reliability) declines by 1.30\% relative to steady 
 \begin{equation*}
 V_t = (u_t K_{p,t-1})^\alpha L_t^{1-\alpha}
 \end{equation*}
-A decline in $u_t$ directly reduces the effective services from the predetermined capital stock $K_{p,t-1}$ available for production. Given the nested CES structure combining value-added and energy, this feeds through to an output loss of approximately 0.59\% on impact---as shown in the top-left panel of Figure \ref{fig:irf_baseline}.
+A decline in $u_t$ directly reduces the effective services from the predetermined capital stock $K_{p,t-1}$ available for production. Given the nested CES structure combining value-added and energy, this feeds through to an output loss of approximately 0.55\% on impact---as shown in the top-left panel of Figure \ref{fig:irf_baseline}.
 
 This output decline is \textit{not} a standard demand shock. It reflects a binding physical constraint: when renewable generation falls unexpectedly and storage capacity is insufficient to buffer the mismatch, installed productive capital cannot be operated. Manufacturing lines idle, data centers activate backup generators (at higher marginal cost), and grid operators implement rotating load shedding. This is the \textit{reliability penalty}---a structural, supply-side friction that reduces total factor productivity.
 
@@ -1335,7 +1335,7 @@ The mechanism operates through two channels. First, the direct utilization effec
 
 \subsubsection{Stage 2: The Agility Gap in Investment Responses}
 
-The model's central qualitative contribution emerges in the investment dynamics. Both battery investment and grid investment respond positively to the intermittency shock, as the reliability gap triggers the investment rules. Battery investment increases by 1.95\% relative to its steady-state level on impact, while grid investment rises by 1.95\%. While both increase proportionally by the same amount, grid investment rises more in absolute level (0.000278 vs.\ 0.000111 in model units), yielding an agility ratio of $I_{bat}/I_{grid} = 0.40$: batteries absorb only 40\% as much absolute investment as grid infrastructure on impact. The key insight is the structural mechanism: grid investment is fiscally tied to output through $\tau_t = I_{grid,t}/Y_t$, while battery investment responds to reliability through the private investment rule.
+The model's central qualitative contribution emerges in the investment dynamics. Both battery investment and grid investment respond positively to the intermittency shock, as the reliability gap triggers the investment rules. Battery investment increases by 1.95\% relative to its steady-state level on impact, while grid investment rises by 1.95\%. While both increase proportionally by the same amount, grid investment rises more in absolute level (0.000278 vs.\ 0.000111 in model units), yielding an agility ratio of $I_{bat}/I_{grid} = 0.40$: batteries absorb only 40\% as much absolute investment as grid infrastructure on impact. Battery investment is governed by the private agility rule (responding to reliability and battery prices), while grid investment follows the public reliability-targeting rule $I_{grid,t}/\bar{I}_{grid} = (u^*/u_t)^{\phi_{grid}}$.
 
 \begin{table}[H]
     \centering
@@ -1358,19 +1358,19 @@ The model's central qualitative contribution emerges in the investment dynamics.
 
 The variance decomposition reveals that battery investment volatility is 100\% driven by global battery price shocks ($\varepsilon_{bat}$), demonstrating the dominance of the price channel in the battery investment rule. Battery developers' investment decisions are primarily governed by cost conditions in global markets.
 
-Grid investment, by contrast, operates through the proportional tax rule and achieves the same 0.540\% impact response, as the proportional tax mechanism channels both reliability scarcity and fiscal constraints into symmetric flexibility investment:
+Grid investment follows the public reliability-targeting rule:
 \begin{equation}
 \frac{I_{grid,t}}{\bar{I}_{grid}} = \left(\frac{u^*}{u_t}\right)^{\phi_{grid}}
 \end{equation}
 The parameter $\phi_{grid} = 1.5$ governs responsiveness, but even aggressive fiscal reactions cannot overcome the structural lags inherent in public infrastructure. Transmission line projects require multi-year environmental impact assessments, land acquisition negotiations, and coordinated construction across provincial jurisdictions. The planning horizon for major grid expansions in Vietnam typically exceeds 5--7 years \citep{iea2023}. Consequently, even when the reliability gap becomes apparent (low $u_t$), actual capital accumulation responds sluggishly.
 
-The proportional tax $\tau_t = I_{grid,t}/Y_t$ introduces a \textbf{fiscal amplification channel} absent in lump-sum specifications. When an intermittency shock hits, $I_{grid,t}$ rises (+1.95\% of SS) while $Y_t$ falls (−0.59\% of SS), causing $\tau_t$ to rise 2.54\% relative to steady state on impact (a 0.042 percentage point increase). This higher after-tax cost wedge simultaneously suppresses productive investment (−0.057\%) while battery and grid investment each surge by 1.95\%. The result is a modest but structural reallocation from private productive capital to flexibility investment---the model's fiscal amplification mechanism.
+The proportional tax is fixed at $\tau_{ss} = 1.65\%$ and does not respond dynamically to shocks. Its effect on the investment response operates through the steady-state channel: the tax wedge reduces the equilibrium capital stock to $K_{p,ss} = 8.45$, compared to approximately 11.7 under lump-sum taxation. With a smaller capital base, productive investment $I_{p,ss} = \delta_p K_{p,ss} = 0.211$ is also smaller. Consequently, the Euler equation amplification is larger in percentage terms: the expected fall in future output reduces the after-tax return to capital sharply, causing productive investment to fall by 23.5\% relative to its steady-state level on impact. This large percentage response reflects the high capital-output ratio ($K/Y \approx 9.8$) and low depreciation rate ($\delta_p = 2.5\%$), which together create a strong ``leverage'' amplification in the standard RBC Euler mechanism.
 
-The equal proportional response of battery and grid investment (1.95\% each) masks an important asymmetry in levels: grid investment rises 2.5$\times$ more in absolute units due to its larger steady-state base. Under proportional taxation, the fiscal channel creates a critical macroeconomic tradeoff: higher grid investment raises $\tau$, which reduces the after-tax marginal product of capital and wage, lowering investment incentives. Market-based pricing mechanisms---such as scarcity pricing, capacity markets, or ancillary service contracts---could decouple the investment response from the fiscal channel, improving welfare outcomes.
+The equal proportional response of battery and grid investment (1.95\% each) masks an important asymmetry in levels: grid investment rises 2.5$\times$ more in absolute units due to its larger steady-state base. Market-based pricing mechanisms---such as scarcity pricing, capacity markets, or ancillary service contracts---could improve the targeting of flexibility investment toward the scarce input, improving welfare outcomes.
 
 \subsubsection{Stage 3: Scarcity-Induced Innovation Activation}
 
-The reliability gap also activates the model's scarcity-induced technological change mechanism. By quarter 10, battery technology ($A_{bat}$) has improved by approximately 0.117\% above the baseline trajectory. This improvement represents productivity-enhancing innovation in storage: better battery management systems, optimized charging algorithms, and engineering advances induced by the persistent scarcity signal. Note that because $F_t$ uses $A_{bat,t-1}$, the technology improvement induced at quarter $t$ only raises flexibility from quarter $t+1$ onward---reflecting the one-period delay between the innovation decision and its operational impact.
+The reliability gap also activates the model's scarcity-induced technological change mechanism. By quarter 10, battery technology ($A_{bat}$) has improved by approximately 0.65\% above the baseline trajectory. This improvement represents productivity-enhancing innovation in storage: better battery management systems, optimized charging algorithms, and engineering advances induced by the persistent scarcity signal. Note that because $F_t$ uses $A_{bat,t-1}$, the technology improvement induced at quarter $t$ only raises flexibility from quarter $t+1$ onward---reflecting the one-period delay between the innovation decision and its operational impact.
 
 The innovation mechanism is governed by:
 \begin{equation}
@@ -1382,7 +1382,7 @@ While the per-shock innovation effect is modest, it is cumulative and persistent
 
 \subsubsection{Consumption and Resource Allocation}
 
-Consumption falls by 0.069\% on impact. Unlike the lump-sum specification, the proportional tax creates an after-tax income wedge that prevents standard consumption smoothing. More importantly, the AR(1) persistence of the intermittency shock ($\rho_{ren}=0.85$) means households anticipate prolonged reliability shortfalls, inducing a larger precautionary reduction in current consumption. The output decline (0.59\%) is substantially transmitted to consumption, while productive investment also falls by 0.057\% and international borrowing partially absorbs the shock ($B^*$ falls 0.61\% of its SS value on impact). The relatively large consumption response (compared to the i.i.d. benchmark) reflects the forward-looking channel: persistent shocks generate larger intertemporal distortions.
+Consumption falls by 0.068\% on impact. The AR(1) persistence of the intermittency shock ($\rho_{ren}=0.85$) means households anticipate prolonged reliability shortfalls, inducing a forward-looking reduction in current consumption. The output decline (0.55\%) is only partially transmitted to consumption because the small open economy can borrow internationally to smooth: net foreign assets ($B^*$) rise on impact as the economy draws on external savings. The fixed proportional tax wedge $\tau_{ss}$ does not amplify the consumption response dynamically---its effect is entirely through the steady-state channel---so the consumption path closely mirrors the standard SOE result. The relatively moderate consumption response (0.068\% vs.\ 0.55\% output decline) reflects this near-perfect international consumption smoothing.
 
 Over time, as battery and grid capital accumulate and reliability improves, all variables converge back toward their steady-state paths. The persistence of the response is governed by the capital accumulation dynamics and the AR(1) persistence of the intermittency shock ($\rho_{ren} = 0.85$).
 
@@ -1400,19 +1400,18 @@ The variance decomposition identifies the dominant sources of volatility in each
         \toprule
         \textbf{Variable} & $\varepsilon_{ren}$ (\%) & $\varepsilon_{bat}$ (\%) & $\varepsilon_I$ (\%) \\
         \midrule
-        Output ($Y$) & 98 & 4 & $<$1 \\
+        Output ($Y$) & 97 & 4 & $<$1 \\
         Consumption ($C$) & 77 & 12 & $<$1 \\
         Utilization ($u$) & 96 & 5 & $<$1 \\
         Battery investment ($I_{bat}$) & 4 & 100 & $<$1 \\
         Grid investment ($I_{grid}$) & 25 & $<$2 & 82 \\
-        Tax rate ($\tau$) & 41 & 2 & 68 \\
         \bottomrule
     \end{tabular}
     \vspace{0.2cm}
-    \parbox{\textwidth}{\footnotesize \textit{Note:} Percentage of forecast error variance attributable to each shock from Dynare stochastic simulation (1000 periods). Shares can exceed 100\% due to non-zero correlation of simulated shocks in finite samples. Intermittency shocks drive 97.7\% of output volatility; global battery-price shocks explain only 4\% through the fiscal amplification channel. Consumption volatility is split between intermittency (77\%) and battery-price shocks (12\%), reflecting the dominance of persistent domestic shocks. The tax rate inherits 68\% of its variance from grid implementation shocks ($\tau_t = I_{grid,t}/Y_t$) and 41\% from intermittency.}
+    \parbox{\textwidth}{\footnotesize \textit{Note:} Percentage of forecast error variance attributable to each shock from Dynare stochastic simulation (1000 periods). Shares can exceed 100\% due to non-zero correlation of simulated shocks in finite samples. Intermittency shocks drive 96.8\% of output volatility; global battery-price shocks contribute 4\%. Consumption volatility is split between intermittency (77\%) and battery-price shocks (12\%), reflecting the dominance of persistent domestic shocks. The proportional tax rate $\tau$ is a fixed parameter and does not appear in the FEVD. Grid investment variance is 82\% driven by implementation shocks $\varepsilon_I$ via the investment rule.}
 \end{table}
 
-Four findings emerge. First, intermittency shocks drive 97.7\% of output volatility, with battery-price shocks contributing only 4\% through the proportional tax's fiscal amplification channel---a distinctive feature absent in lump-sum models. The dominance of intermittency reflects the AR(1) persistence ($\rho_{ren}=0.85$): once reliability degrades, the deficiency propagates across many quarters, generating large cumulative forecast errors. Second, utilization volatility is dominated by intermittency (95.8\%), with battery-price shocks explaining only 5\% through capital accumulation dynamics. Third, battery investment volatility is almost entirely driven by global price shocks (100\%), confirming Vietnam's price-taking position in world battery markets. Fourth, consumption volatility is split between intermittency (77\%) and battery-price shocks (12\%): unlike the i.i.d. case, persistent intermittency shocks propagate strongly into household consumption through the reliability and fiscal channels. The proportional tax rate inherits 68\% of its variance from grid implementation shocks, as $\tau_t = I_{grid,t}/Y_t$ directly amplifies any government investment disturbance into a fiscal shock on households, with an additional 41\% from intermittency shocks.
+Four findings emerge. First, intermittency shocks drive 96.8\% of output volatility, with battery-price shocks contributing only 4\%. The dominance of intermittency reflects the AR(1) persistence ($\rho_{ren}=0.85$): once reliability degrades, the deficiency propagates across many quarters, generating large cumulative forecast errors. Second, utilization volatility is dominated by intermittency (95.8\%), with battery-price shocks explaining only 5\% through capital accumulation dynamics. Third, battery investment volatility is almost entirely driven by global price shocks (100\%), confirming Vietnam's price-taking position in world battery markets. Fourth, consumption volatility is split between intermittency (77\%) and battery-price shocks (12\%): persistent intermittency shocks propagate strongly into household consumption through the reliability channel. Since the proportional tax rate $\tau$ is fixed, it does not contribute as a variance source; grid investment variance is 82\% determined by implementation shocks $\varepsilon_I$ acting directly through the investment rule.
 
 \subsection{The Reliability Valley During PDP8 Transition} \label{subsec:valley}
 
@@ -1520,16 +1519,16 @@ The baseline analysis establishes the model's quantitative behavior. Table~\ref{
         \toprule
         \textbf{Variable} & \textbf{Impact (\%)} & \textbf{Key Feature} \\
         \midrule
-        Output ($Y$) & $-0.59$ & 97.7\% driven by intermittency \\
+        Output ($Y$) & $-0.55$ & 96.8\% driven by intermittency \\
         Utilization ($u$) & $-1.30$ & 95.8\% driven by intermittency \\
-        Consumption ($C$) & $-0.069$ & Persistent shock amplifies forward-looking consumption drop \\
+        Consumption ($C$) & $-0.068$ & Persistent shock; international smoothing limits transmission \\
         Battery investment ($I_{bat}$) & $+1.95$ & Dominated by price channel (100\%); agility ratio = 0.40 \\
         Grid investment ($I_{grid}$) & $+1.95$ & 82\% driven by grid implementation rule \\
-        Tax rate ($\tau$) & $+2.54$ & Fiscal amplification channel: $\hat{\tau} = \hat{I}_{grid} - \hat{Y}$ \\
+        Productive investment ($I_p$) & $-23.5$ & Euler amplification: fall in future $Y$ compresses after-tax MPK \\
         \bottomrule
     \end{tabular}
     \vspace{0.2cm}
-    \parbox{\textwidth}{\footnotesize \textit{Note:} All values are percentage deviations from steady state on impact ($t=0$) following a one standard deviation intermittency shock ($\sigma_{ren} = 0.12$). Computed from Dynare first-order perturbation of \texttt{vietnam\_dsge\_proptax.mod}. Variance shares from simulation-based FEVD (Table~\ref{tab:fevd}). The proportional tax rate rise of 2.54\% (a 0.042 pp increase from $\tau_{ss}=1.65\%$) reflects the fiscal amplification channel $\hat{\tau}_t = \hat{I}_{grid,t} - \hat{Y}_t$. The deterministic steady state (Table~\ref{tab:steady_state}) serves as the reference economy for the welfare comparisons in Section~\ref{sec:welfare}.}
+    \parbox{\textwidth}{\footnotesize \textit{Note:} All values are percentage deviations from steady state on impact ($t=0$) following a one standard deviation intermittency shock ($\sigma_{ren} = 0.12$). Computed from Dynare first-order perturbation of \texttt{vietnam\_dsge\_proptax.mod}. Variance shares from simulation-based FEVD (Table~\ref{tab:fevd}). The proportional tax rate $\tau_{ss}=1.65\%$ is fixed and does not respond dynamically to shocks. The large $I_p$ response reflects RBC Euler amplification: with capital-output ratio $K_p/Y \approx 9.8$ and $\delta_p = 2.5\%$, small persistent output falls generate large percentage investment swings. The deterministic steady state serves as the reference economy for the welfare comparisons in Section~\ref{sec:welfare}.}
 \end{table}
 
 \noindent The core qualitative result is the asymmetric investment response: private battery investment responds quickly but is dominated by global price signals, while public grid investment responds to domestic reliability but accumulates slowly. This ``agility gap'' drives the Reliability Valley and creates the welfare costs quantified below.
@@ -1566,14 +1565,14 @@ The reference economy is the deterministic steady state described in Table~\ref{
 
 For the baseline calibration ($\chi = 1.0$, full price signal transmission) with a single one-standard-deviation intermittency shock, the welfare cost computed from Dynare's first-order perturbation solution is:
 \begin{equation*}
-\Lambda_{\text{baseline}} = 0.000402\% \text{ of steady-state consumption}
+\Lambda_{\text{baseline}} = 0.000386\% \text{ of steady-state consumption}
 \end{equation*}
 
 \noindent This is the compensating consumption variation: a household would be indifferent between (1) experiencing the stochastic shock path shown in Figure~\ref{fig:irf_baseline} and (2) permanently consuming 0.000402\% less in the deterministic steady state. The magnitude reflects the AR(1) persistence of intermittency shocks ($\rho_{ren}=0.85$): each shock degrades reliability for approximately $1/(1-0.85)=6.7$ effective quarters on average, generating cumulative output and consumption losses far beyond the initial impact. The welfare relevance lies both in the \textit{absolute} magnitude and in the \textit{relative} comparison across regulatory regimes.
 
 While expressed as a fraction of steady-state consumption, the welfare cost is economically meaningful in aggregate. Intermittency shocks are not one-time events: Vietnam experiences 4--6 major weather disruptions per year \citep{nguyenle2019}. The stochastic simulation (1000 periods) shows output volatility of 1.60\% of steady state and utilization volatility of 1.96\% of steady state, reflecting the persistent propagation through capital accumulation dynamics. The welfare cost also reflects dynamic misallocation: the fiscal response to reliability shortfalls forces deviations from the household's preferred intertemporal consumption path through the endogenous tax rate.
 
-This baseline estimate should be interpreted as a lower bound for a single shock. The model omits amplifying factors (distributional impacts, industrial hysteresis, political instability) and dampening factors (household adaptation, demand response, regional grid interconnections). The $\Lambda_{\text{baseline}} = 0.000402\%$ serves as the reference point for the counterfactual analysis below, where I examine how regulatory distortions and structural parameters alter this cost.
+This baseline estimate should be interpreted as a lower bound for a single shock. The model omits amplifying factors (distributional impacts, industrial hysteresis, political instability) and dampening factors (household adaptation, demand response, regional grid interconnections). The $\Lambda_{\text{baseline}} = 0.000386\%$ serves as the reference point for the counterfactual analysis below, where I examine how regulatory distortions and structural parameters alter this cost.
 
 \subsection{Counterfactual: Signal Attenuation}
 
@@ -1590,10 +1589,10 @@ Table \ref{tab:counterfactual} reports the results:
         \toprule
         \textbf{Regulatory Regime} & \textbf{Welfare Cost ($\Lambda$)} & \textbf{Change from Baseline} \\
         \midrule
-        Full transmission ($\chi = 1.0$) & 0.000402\% & --- (baseline) \\
-        Partial dampening ($\chi = 0.5$) & 0.000451\% & $+$12\% \\
-        Partial dampening ($\chi = 0.3$) & 0.000473\% & $+$18\% \\
-        Complete suppression ($\chi = 0.0$) & 0.000511\% & $+$27\% \\
+        Full transmission ($\chi = 1.0$) & 0.000386\% & --- (baseline) \\
+        Partial dampening ($\chi = 0.5$) & 0.000434\% & $+$12\% \\
+        Partial dampening ($\chi = 0.3$) & 0.000456\% & $+$18\% \\
+        Complete suppression ($\chi = 0.0$) & 0.000492\% & $+$27\% \\
         \bottomrule
     \end{tabular}
     \vspace{0.2cm}
@@ -1633,11 +1632,11 @@ To assess robustness, I examine the sensitivity of welfare costs to three struct
         \toprule
         $\phi_{grid}$ & \textbf{Welfare ($\Lambda$)} & \textbf{Impact $I_{grid}$ (\%)} & \textbf{Impact $I_{bat}$ (\%)} & \textbf{Cum.\ $\Delta u$ (40q)} \\
         \midrule
-        0.5 & 0.000402\% & $+$0.0001 & $+$0.0001 & $-$0.063 \\
-        1.0 & 0.000402\% & $+$0.0002 & $+$0.0001 & $-$0.061 \\
-        1.5 (baseline) & 0.000402\% & $+$0.0003 & $+$0.0001 & $-$0.059 \\
-        2.0 & 0.000402\% & $+$0.0004 & $+$0.0001 & $-$0.058 \\
-        3.0 & 0.000403\% & $+$0.0006 & $+$0.0001 & $-$0.054 \\
+        0.5 & 0.000386\% & $+$0.0001 & $+$0.0001 & $-$0.063 \\
+        1.0 & 0.000386\% & $+$0.0002 & $+$0.0001 & $-$0.061 \\
+        1.5 (baseline) & 0.000386\% & $+$0.0003 & $+$0.0001 & $-$0.059 \\
+        2.0 & 0.000387\% & $+$0.0004 & $+$0.0001 & $-$0.058 \\
+        3.0 & 0.000387\% & $+$0.0006 & $+$0.0001 & $-$0.054 \\
         \bottomrule
     \end{tabular}
     \vspace{0.2cm}
@@ -1654,9 +1653,9 @@ To assess robustness, I examine the sensitivity of welfare costs to three struct
         \toprule
         \textbf{Battery Weight ($\mu$)} & \textbf{Welfare Cost ($\Lambda$)} \\
         \midrule
-        0.10 & 0.000424\% \\
-        0.16 (baseline) & 0.000402\% \\
-        0.25 & 0.000387\% \\
+        0.10 & 0.000409\% \\
+        0.16 (baseline) & 0.000386\% \\
+        0.25 & 0.000372\% \\
         \bottomrule
     \end{tabular}
     \vspace{0.2cm}
@@ -1675,16 +1674,16 @@ To assess robustness, I examine the sensitivity of welfare costs to three struct
         \toprule
         $\beta$ & \textbf{Ann.\ Rate} & \textbf{Welfare ($\Lambda$)} & \textbf{Impact $B^*$ (\%)} & \textbf{C/Y (\%)} \\
         \midrule
-        0.980 & $\sim 8.2\%$ & 0.000506\% & $-0.0051$ & 78.2 \\
-        0.990 (baseline) & $\sim 4.0\%$ & 0.000402\% & $-0.0050$ & 72.8 \\
-        0.995 & $\sim 2.0\%$ & 0.000357\% & $-0.0049$ & 68.7 \\
+        0.980 & $\sim 8.2\%$ & 0.000486\% & $-0.0051$ & 78.2 \\
+        0.990 (baseline) & $\sim 4.0\%$ & 0.000386\% & $-0.0050$ & 73.2 \\
+        0.995 & $\sim 2.0\%$ & 0.000343\% & $-0.0049$ & 68.7 \\
         \bottomrule
     \end{tabular}
     \vspace{0.2cm}
     \parbox{\textwidth}{\footnotesize \textit{Note:} Lower $\beta$ implies more impatient households and a higher steady-state real interest rate $r^* = 1/\beta - 1$. The world rate $\bar{r}$ is adjusted jointly with $\beta$ to maintain $r^*_{ss} = \bar{r}$ in steady state. Annual rate $\approx (1/\beta - 1) \times 400$. C/Y is the steady-state consumption share.}
 \end{table}
 
-More impatient households ($\beta = 0.98$) face a welfare cost 26\% higher than the baseline (0.000506\% vs.\ 0.000402\%), for two reasons. First, higher discounting reduces the present value of future recovery, amplifying the perceived welfare loss from transitory intermittency shocks. Second, the higher steady-state interest rate ($r^* \approx 2.05\%$ quarterly vs.\ 1.01\%) increases the cost of international borrowing, making consumption smoothing more expensive. The resulting higher steady-state consumption share (78.2\% vs.\ 72.8\%) means a larger fraction of output is consumed rather than invested, leaving less margin for absorbing intermittency-driven investment needs. Conversely, patient households ($\beta = 0.995$) borrow cheaply and invest more, reducing the welfare cost by 11\%. This finding suggests that economies with less-developed financial markets---where effective discount rates are higher due to credit constraints---face amplified welfare costs from the energy transition.
+More impatient households ($\beta = 0.98$) face a welfare cost 26\% higher than the baseline (0.000486\% vs.\ 0.000386\%), for two reasons. First, higher discounting reduces the present value of future recovery, amplifying the perceived welfare loss from transitory intermittency shocks. Second, the higher steady-state interest rate ($r^* \approx 2.05\%$ quarterly vs.\ 1.01\%) increases the cost of international borrowing, making consumption smoothing more expensive. The resulting higher steady-state consumption share (78.2\% vs.\ 72.8\%) means a larger fraction of output is consumed rather than invested, leaving less margin for absorbing intermittency-driven investment needs. Conversely, patient households ($\beta = 0.995$) borrow cheaply and invest more, reducing the welfare cost by 11\%. This finding suggests that economies with less-developed financial markets---where effective discount rates are higher due to credit constraints---face amplified welfare costs from the energy transition.
 
 \subsection{External Sector Dynamics}
 
@@ -1722,16 +1721,16 @@ The preceding analysis examines each shock in isolation. In practice, adverse sh
         Battery Investment ($I_{bat}$) & $+0.0001\%$ & $-0.0005\%$ & $-0.0003\%$ \\
         Net Foreign Assets ($B^*$) & $-0.0524\%$ & $+0.0021\%$ & $-0.0523\%$ \\
         \midrule
-        Welfare cost ($\Lambda$) & $0.000402\%$ & $0.000155\%$ & $0.000557\%$ \\
+        Welfare cost ($\Lambda$) & $0.000386\%$ & $0.000151\%$ & $0.000537\%$ \\
         \bottomrule
     \end{tabular}
     \vspace{0.2cm}
     \parbox{\textwidth}{\footnotesize \textit{Note:} Impact effects are percentage deviations from steady state at quarter 0. Welfare cost is measured in compensating consumption variation. All values computed under baseline parameters ($\chi = 1.0$, $\phi_{grid} = 1.5$).}
 \end{table}
 
-Three findings emerge from the joint scenario. First, the welfare costs are additive: the joint welfare cost (0.000557\%) essentially equals the sum of individual costs (0.000402\% $+$ 0.000155\% = 0.000557\%), reflecting the linear superposition property of the first-order perturbation solution. Under higher-order approximations, nonlinear interaction effects could generate amplification.
+Three findings emerge from the joint scenario. First, the welfare costs are additive: the joint welfare cost (0.000537\%) essentially equals the sum of individual costs (0.000386\% $+$ 0.000151\% = 0.000537\%), reflecting the linear superposition property of the first-order perturbation solution. Under higher-order approximations, nonlinear interaction effects could generate amplification.
 
-Second, intermittency now dominates the welfare cost---contributing more than twice the battery price component (0.000402\% vs.\ 0.000155\%). This reverses the finding from i.i.d.\ shock specifications and reflects the key role of AR(1) persistence ($\rho_{ren}=0.85$): once reliability degrades, households suffer prolonged consumption losses, generating a much larger welfare cost than a purely transitory disruption.
+Second, intermittency dominates the welfare cost---contributing more than twice the battery price component (0.000386\% vs.\ 0.000151\%). This reflects the key role of AR(1) persistence ($\rho_{ren}=0.85$): once reliability degrades, households suffer prolonged consumption losses, generating a much larger welfare cost than a purely transitory disruption.
 
 Third, the joint scenario creates a ``scissors effect'' on battery investment: intermittency raises the \textit{need} for storage (positive reliability gap), while the battery price shock raises the \textit{cost} of acquiring it. The net effect is a decline in battery investment ($-0.0003\%$), implying that during a perfect storm, the economy cannot self-correct through the storage channel. This pathological case strengthens the argument for strategic battery reserves or long-term procurement contracts that decouple domestic storage investment from short-run global price volatility.
 
@@ -1739,13 +1738,13 @@ Third, the joint scenario creates a ``scissors effect'' on battery investment: i
 
 The baseline analysis (Section~\ref{sec:results}) and welfare analysis establish four core findings:
 
-\textbf{First, the reliability penalty is a tangible macroeconomic friction, amplified by fiscal feedback.} A one-standard-deviation intermittency shock reduces grid utilization by 1.30\% and output by 0.59\% through the effective capital channel, with the proportional tax adding a fiscal amplification wedge of 2.54\% relative to steady state. Variance decomposition confirms that intermittency shocks account for 97.7\% of output volatility, with battery-price shocks contributing the remaining 4\% through the fiscal channel. The dominance of intermittency reflects its AR(1) persistence ($\rho_{ren}=0.85$), which generates sustained multi-quarter reliability degradation. Unlike standard productivity shocks, this penalty is structural and predictable---it arises from the physics of the grid combined with the fiscal response rule, not from exogenous technological regress.
+\textbf{First, the reliability penalty is a tangible macroeconomic friction.} A one-standard-deviation intermittency shock reduces grid utilization by 1.30\% and output by 0.55\% through the effective capital channel. The fixed proportional tax $\tau_{ss}=1.65\%$ creates a constant wedge that shifts the steady state (reducing $K_p$ by 28\% vs.\ the lump-sum benchmark) but does not amplify the dynamic shock response. Variance decomposition confirms that intermittency shocks account for 96.8\% of output volatility, with battery-price shocks contributing 4\%. The dominance of intermittency reflects its AR(1) persistence ($\rho_{ren}=0.85$), which generates sustained multi-quarter reliability degradation. Unlike standard productivity shocks, this penalty is structural and predictable---it arises from the physics of the grid, not from exogenous technological regress.
 
 \textbf{Second, battery investment is dominated by global price dynamics.} Variance decomposition reveals that 100\% of battery investment volatility is driven by global battery price shocks, while intermittency accounts for only 1\%. This highlights Vietnam's price-taking position in global battery markets and suggests that domestic reliability policies alone cannot determine the pace of storage deployment.
 
 \textbf{Third, scarcity-induced technological change provides a persistent adjustment mechanism.} The innovation mechanism generates cumulative improvements in battery technology ($A_{bat}$), with the simulated mean reaching 1.015 over 1000 periods (autocorrelation 0.997). This 1.5\% technology improvement is entirely endogenous, driven by the reliability gap channel. However, the innovation rate depends critically on the regulatory parameter $\chi$---when scarcity signals are suppressed ($\chi \to 0$), technological progress stalls and welfare costs rise by 27\%.
 
-\textbf{Fourth, the model's transmission channels are quantitatively validated.} The Dynare simulation confirms expected signs: output and reliability are highly correlated (0.992), flexibility and consumption are strongly positively correlated (0.787), and battery price shocks affect investment negatively ($\rho = -0.994$ between $P_{bat}$ and $I_{bat}$). The proportional tax rate is strongly negatively correlated with output ($\rho = -0.49$), confirming the fiscal amplification channel. These correlations validate the model's internal consistency.
+\textbf{Fourth, the model's transmission channels are quantitatively validated.} The Dynare simulation confirms expected signs: output and reliability are highly correlated (0.986), and battery price shocks affect investment negatively ($\rho = -0.979$ between $P_{bat}$ and $I_{bat}$). The proportional tax is fixed, so its role appears entirely through steady-state comparisons: the constant wedge $\tau_{ss}=1.65\%$ shifts equilibrium quantities, not their dynamic comovement. These correlations validate the model's internal consistency.
 
 These findings raise important questions for future research: if the Reliability Valley is predictable, can targeted interventions flatten it? If the agility gap is large, does market liberalization improve outcomes? If learning depends on price signals, what happens when regulators suppress those signals? These questions are discussed further in Section \ref{sec:conclusion}.
 
@@ -1753,13 +1752,13 @@ These findings raise important questions for future research: if the Reliability
 
 This capstone develops a DSGE model that endogenizes grid reliability as a function of flexibility assets relative to renewable volatility, calibrated to the structural characteristics of Vietnam's energy transition. The model identifies three quantitatively important channels through which renewable intermittency affects macroeconomic outcomes.
 
-First, the \textit{reliability penalty with fiscal amplification}: intermittency shocks reduce grid utilization by 1.30\%, generating output losses of 0.59\%, and trigger a 2.54\% overshoot in the proportional tax rate that further amplifies the contraction. Variance decomposition confirms that intermittency shocks account for 97.7\% of output volatility, with the remaining 4\% attributable to global battery-price shocks propagating through the fiscal amplification channel.
+First, the \textit{reliability penalty with distortionary taxation}: intermittency shocks reduce grid utilization by 1.30\%, generating output losses of 0.55\%. The fixed proportional tax $\tau_{ss}=1.65\%$ creates a constant wedge on capital returns and labor income, shifting the steady state rather than amplifying shocks dynamically. Variance decomposition confirms that intermittency shocks account for 96.8\% of output volatility, with the remaining 4\% attributable to global battery-price shocks.
 
 Second, the \textit{agility gap}: private battery investment and public grid investment respond proportionally to reliability shortfalls (1.95\% each relative to their steady-state levels), but the absolute level response of grid investment is 2.5$\times$ larger (agility ratio = 0.40 in level terms). Battery investment is dominated by global battery-price shocks (100\% of $I_{bat}$ variance), while grid investment is driven primarily by the fiscal rule (82\% of $I_{grid}$ variance), creating dual exposure to international supply chains and domestic fiscal decisions.
 
 Third, \textit{scarcity-induced technological change}: technological progress in battery storage responds endogenously to the gap between target and actual reliability, creating a self-correcting mechanism. The 1000-quarter simulation confirms battery technology reaches a mean of 1.015---a 1.5\% endogenous improvement conditional on $\chi > 0$.
 
-The welfare cost of intermittency is estimated at 0.000402\% of steady-state consumption under full price signal transmission (from Dynare first-order perturbation). Counterfactual analysis reveals that this cost increases by 27\% when regulatory distortions fully suppress scarcity signals ($\chi = 0$), demonstrating that the scarcity-induced innovation channel is quantitatively important for welfare. The fiscal amplification channel introduced by proportional taxation creates a critical macroeconomic tradeoff: grid investment surges reduce future productive capacity, creating a welfare cost that depends critically on the degree of scarcity signal transmission through the innovation mechanism.
+The welfare cost of intermittency is estimated at 0.000386\% of steady-state consumption under full price signal transmission (from Dynare first-order perturbation). Counterfactual analysis reveals that this cost increases by 27\% when regulatory distortions fully suppress scarcity signals ($\chi = 0$), demonstrating that the scarcity-induced innovation channel is quantitatively important for welfare. The constant fiscal wedge introduced by proportional taxation shifts the steady state---reducing the capital stock and hence the base from which intermittency shocks propagate---but does not create dynamic amplification beyond the standard RBC Euler mechanism.
 
 These findings carry direct policy implications. First, market-based mechanisms that transmit scarcity signals---real-time pricing, capacity payments, ancillary service remuneration---are necessary complements to direct storage investment. Second, Vietnam's exposure to global battery supply chains (100\% of battery investment volatility driven by external price shocks) underscores the importance of supply chain diversification and domestic manufacturing capacity. Third, the trade channel implies that the energy transition has external balance consequences that should be incorporated into macroeconomic policy design.
 
@@ -1918,7 +1917,7 @@ Substituting \eqref{eq:foc_c} and its period-$(t+1)$ counterpart $\lambda_{t+1} 
 \left((1-\tau_{t+1})\frac{\alpha Y_{t+1}}{K_{p,t+1}} + 1 - \delta_p\right)\right]
 \end{equation*}
 
-This is the modified capital Euler equation~\eqref{eq:euler} under proportional taxation. Compared to the lump-sum case, the after-tax return to capital is $(1-\tau_{t+1})\alpha Y_{t+1}/K_{p,t+1}$ rather than $\alpha Y_{t+1}/K_{p,t+1}$. Since $\tau_{t+1}$ rises when intermittency worsens (via the grid investment rule), a reliability shock lowers the expected after-tax return to capital, reducing investment beyond the direct utilization effect. This is the fiscal amplification channel.
+This is the modified capital Euler equation~\eqref{eq:euler} under proportional taxation. Compared to the lump-sum case, the after-tax return to capital is $(1-\tau)\alpha Y_{t+1}/K_{p,t}$ rather than $\alpha Y_{t+1}/K_{p,t}$, where $\tau = \tau_{ss} \approx 1.65\%$ is a fixed parameter. The constant wedge reduces the equilibrium capital stock by $(1-\tau_{ss})^{1/(1-\alpha)}$ relative to the lump-sum benchmark---a level effect. Because $\tau$ does not respond dynamically to shocks, the Euler equation retains the standard RBC structure: the only amplification comes from the Euler mechanism itself (persistent expected output declines generate large investment responses), not from a fiscal feedback loop.
 
 \subsection*{Economic Interpretation}
 

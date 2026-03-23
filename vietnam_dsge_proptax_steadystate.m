@@ -1,6 +1,7 @@
 function [ys,params,check] = vietnam_dsge_proptax_steadystate(ys,exo,M_,options_)
-% Steady state file for vietnam_dsge_proptax.mod (17-variable SOE version)
-% Proportional tax variant: tau_t = I_grid_t / Y_t
+% Steady state file for vietnam_dsge_proptax.mod (18-variable SOE version)
+% Proportional tax variant: tau is a FIXED PARAMETER (exogenous policy rate)
+% tau_ss = I_grid_ss / Y_ss is computed here and written back to params.
 % Calibrates varphi and phi_int to hit L=0.33 and u=0.97
 % Key difference from baseline: varphi calibration uses (1-tau_ss) wedge
 % in labor FOC: (1-tau_ss)*(1-alpha)*V = varphi*C*L^(1+sigma_L)
@@ -99,8 +100,9 @@ params(strcmp(M_.param_names, 'varphi')) = p_varphi;
 params(strcmp(M_.param_names, 'E_bar')) = E_bar;
 params(strcmp(M_.param_names, 'Vol_ren_bar')) = Vol_ren_bar;
 params(strcmp(M_.param_names, 'r_bar')) = p_r_bar;
+params(strcmp(M_.param_names, 'tau')) = tau_ss;   % write calibrated tau back to params
 
-% ---- Assign steady state vector (19 variables: 17 original + a_ren, a_I) ----
+% ---- Assign steady state vector (18 variables: tau is now a parameter) ----
 ys(strcmp(M_.endo_names, 'Y')) = Y;
 ys(strcmp(M_.endo_names, 'C')) = C;
 ys(strcmp(M_.endo_names, 'L')) = L;
@@ -117,7 +119,6 @@ ys(strcmp(M_.endo_names, 'V')) = V;
 ys(strcmp(M_.endo_names, 'P_bat')) = P_bat;
 ys(strcmp(M_.endo_names, 'B_star')) = B_star;
 ys(strcmp(M_.endo_names, 'r_star')) = r_star;
-ys(strcmp(M_.endo_names, 'tau')) = tau_ss;
 ys(strcmp(M_.endo_names, 'a_ren')) = 0;   % intermittency AR(1) = 0 in SS
 ys(strcmp(M_.endo_names, 'a_I'))   = 0;   % implementation AR(1) = 0 in SS
 

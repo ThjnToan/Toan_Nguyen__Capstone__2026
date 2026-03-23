@@ -70,7 +70,7 @@ Ig_ss  = ss(strcmp(vn,'I_grid'));
 u_ss   = ss(strcmp(vn,'u'));
 F_ss   = ss(strcmp(vn,'F'));
 V_ss   = ss(strcmp(vn,'V'));
-tau_ss = ss(strcmp(vn,'tau'));
+tau_ss = M_.params(strcmp(M_.param_names,'tau'));   % tau is a parameter now
 r_ss   = ss(strcmp(vn,'r_star'));
 
 fprintf('========================================\n');
@@ -106,7 +106,6 @@ irf_I_grid = oo_.irfs.I_grid_eps_ren;
 irf_I_p    = oo_.irfs.I_p_eps_ren;
 irf_F      = oo_.irfs.F_eps_ren;
 irf_A_bat  = oo_.irfs.A_bat_eps_ren;
-irf_tau    = oo_.irfs.tau_eps_ren;
 irf_B_star = oo_.irfs.B_star_eps_ren;
 irf_r_star = oo_.irfs.r_star_eps_ren;
 
@@ -117,7 +116,6 @@ fprintf('  Output (Y):          %+.6f%%\n', irf_Y(1));
 fprintf('  Consumption (C):     %+.6f%%\n', irf_C(1));
 fprintf('  Labor (L):           %+.6f%%\n', irf_L(1));
 fprintf('  Utilization (u):     %+.6f%%\n', irf_u(1));
-fprintf('  Tax Rate (tau):      %+.6f%%\n', irf_tau(1));
 fprintf('  Battery Inv (I_bat): %+.6f%%\n', irf_I_bat(1));
 fprintf('  Grid Inv (I_grid):   %+.6f%%\n', irf_I_grid(1));
 fprintf('  Productive Inv (Ip): %+.6f%%\n', irf_I_p(1));
@@ -148,9 +146,6 @@ if isfield(oo_.irfs, 'Y_eps_bat')
     fprintf('  Battery Inv (I_bat): %+.6f%%\n', oo_.irfs.I_bat_eps_bat(1));
     fprintf('  Battery Price:       %+.6f%%\n', oo_.irfs.P_bat_eps_bat(1));
     fprintf('  Utilization (u):     %+.6f%%\n', oo_.irfs.u_eps_bat(1));
-    if isfield(oo_.irfs, 'tau_eps_bat')
-        fprintf('  Tax Rate (tau):      %+.6f%%\n', oo_.irfs.tau_eps_bat(1));
-    end
     fprintf('  Net FA (B_star) q1:  %+.6f\n',   oo_.irfs.B_star_eps_bat(1));
 end
 fprintf('\n');
@@ -163,11 +158,11 @@ fprintf('FORECAST ERROR VARIANCE DECOMPOSITION\n');
 fprintf('========================================\n');
 
 % oo_.variance_decomposition is (nvar_listed x nshocks) in percent
-% Variables listed in stoch_simul: Y C L I_p I_bat I_grid u F A_bat V P_bat B_star r_star tau
+% Variables listed in stoch_simul: Y C L I_p I_bat I_grid u F A_bat V P_bat B_star r_star a_ren a_I
 if isfield(oo_, 'variance_decomposition')
     vd = oo_.variance_decomposition;
     % Dynare lists shocks in order of varexo: eps_ren eps_bat eps_I
-    var_list = {'Y','C','L','I_p','I_bat','I_grid','u','F','A_bat','V','P_bat','B_star','r_star','tau'};
+    var_list = {'Y','C','L','I_p','I_bat','I_grid','u','F','A_bat','V','P_bat','B_star','r_star','a_ren','a_I'};
     shock_list = {'eps_ren','eps_bat','eps_I'};
     fprintf('  Variable    | eps_ren(%%)  | eps_bat(%%)  | eps_I(%%)\n');
     fprintf('  -----------   ----------    ----------    ---------\n');
@@ -200,7 +195,6 @@ try
     Y_mean_idx    = find(strcmp(M_.endo_names, 'Y'));
     C_mean_idx    = find(strcmp(M_.endo_names, 'C'));
     u_mean_idx    = find(strcmp(M_.endo_names, 'u'));
-    tau_mean_idx  = find(strcmp(M_.endo_names, 'tau'));
 
     if isnumeric(oo_.mean)
         fprintf('  Mean A_bat = %.6f  (long-run tech improvement)\n', oo_.mean(Abat_mean_idx));
@@ -217,7 +211,6 @@ try
         fprintf('  Std dev u   = %.6f (%.4f%% of u_ss)\n', ...
             sqrt(oo_.var(u_mean_idx, u_mean_idx)), ...
             sqrt(oo_.var(u_mean_idx, u_mean_idx))/u_ss*100);
-        fprintf('  Std dev tau = %.6f\n', sqrt(oo_.var(tau_mean_idx, tau_mean_idx)));
     end
 catch ME_moments
     fprintf('  [Moments not extracted: %s]\n', ME_moments.message);
@@ -253,7 +246,6 @@ chi_irfs_C  = zeros(length(chi_values), T_w);
 chi_irfs_Y  = zeros(length(chi_values), T);
 chi_irfs_u  = zeros(length(chi_values), T);
 chi_irfs_A  = zeros(length(chi_values), T);
-chi_irfs_tau= zeros(length(chi_values), T);
 
 for i = 1:length(chi_values)
     set_param_value('chi', chi_values(i));
@@ -285,21 +277,19 @@ for i = 1:length(chi_values)
         Y_idx   = find(strcmp(M_.endo_names,'Y'));
         u_idx   = find(strcmp(M_.endo_names,'u'));
         A_idx   = find(strcmp(M_.endo_names,'A_bat'));
-        tau_idx = find(strcmp(M_.endo_names,'tau'));
 
         chi_irfs_C(i,:)   = irf_ro(C_idx,:);
         chi_irfs_Y(i,:)   = irf_ro(Y_idx,:);
         chi_irfs_u(i,:)   = irf_ro(u_idx,:);
         chi_irfs_A(i,:)   = irf_ro(A_idx,:);
-        chi_irfs_tau(i,:) = irf_ro(tau_idx,:);
 
         sd_chi = sum(disc .* log(1 + chi_irfs_C(i,:)/100));
         chi_welfare(i) = abs((1 - exp(sd_chi / norm_factor)) * 100);
 
-        fprintf('  chi=%.1f: Welfare=%.6f%%  DeltaWelfare=%+.2f%%  Impact_Y=%+.4f%%  Impact_tau=%+.4f%%\n', ...
+        fprintf('  chi=%.1f: Welfare=%.6f%%  DeltaWelfare=%+.2f%%  Impact_Y=%+.4f%%\n', ...
             chi_values(i), chi_welfare(i), ...
             (chi_welfare(i)/chi_welfare(1)-1)*100, ...
-            chi_irfs_Y(i,1), chi_irfs_tau(i,1));
+            chi_irfs_Y(i,1));
     else
         fprintf('  chi=%.1f: FAILED (BK conditions not satisfied)\n', chi_values(i));
         chi_welfare(i) = NaN;
@@ -326,7 +316,6 @@ phi_welfare  = zeros(size(phi_vals));
 phi_impact_Ig= zeros(size(phi_vals));
 phi_impact_Ib= zeros(size(phi_vals));
 phi_cum_u    = zeros(size(phi_vals));
-phi_impact_tau= zeros(size(phi_vals));
 
 for i = 1:length(phi_vals)
     set_param_value('phi_grid', phi_vals(i));
@@ -354,18 +343,16 @@ for i = 1:length(phi_vals)
         Ig_i= find(strcmp(M_.endo_names,'I_grid'));
         Ib_i= find(strcmp(M_.endo_names,'I_bat'));
         u_i = find(strcmp(M_.endo_names,'u'));
-        tau_i=find(strcmp(M_.endo_names,'tau'));
 
         phi_impact_Ig(i) = irf_ro2(Ig_i,1);
         phi_impact_Ib(i) = irf_ro2(Ib_i,1);
         phi_cum_u(i)     = sum(irf_ro2(u_i,:));
-        phi_impact_tau(i)= irf_ro2(tau_i,1);
 
         sd_phi = sum(disc .* log(1 + irf_ro2(C_i,1:T_w)/100));
         phi_welfare(i) = abs((1 - exp(sd_phi / norm_factor)) * 100);
 
-        fprintf('  phi_grid=%.1f: Welfare=%.6f%% Impact_Igrid=%+.4f%% Impact_tau=%+.4f%% CumU=%.4f\n', ...
-            phi_vals(i), phi_welfare(i), phi_impact_Ig(i), phi_impact_tau(i), phi_cum_u(i));
+        fprintf('  phi_grid=%.1f: Welfare=%.6f%% Impact_Igrid=%+.4f%% CumU=%.4f\n', ...
+            phi_vals(i), phi_welfare(i), phi_impact_Ig(i), phi_cum_u(i));
     else
         fprintf('  phi_grid=%.1f: FAILED\n', phi_vals(i));
         phi_welfare(i) = NaN;
@@ -410,7 +397,6 @@ C_idx_j   = find(strcmp(M_.endo_names,'C'));
 Y_idx_j   = find(strcmp(M_.endo_names,'Y'));
 u_idx_j   = find(strcmp(M_.endo_names,'u'));
 Ib_idx_j  = find(strcmp(M_.endo_names,'I_bat'));
-tau_idx_j = find(strcmp(M_.endo_names,'tau'));
 
 sd_joint = sum(disc .* log(1 + irf_joint(C_idx_j,1:T_w)/100));
 welfare_joint = abs((1 - exp(sd_joint / norm_factor)) * 100);
@@ -440,7 +426,6 @@ fprintf('  Interaction term:            %.6f%%\n', welfare_joint-(welfare_ren+we
 fprintf('  Impact Y (joint):    %+.4f%%\n', irf_joint(Y_idx_j,1));
 fprintf('  Impact u (joint):    %+.4f%%\n', irf_joint(u_idx_j,1));
 fprintf('  Impact I_bat (joint):%+.4f%%\n', irf_joint(Ib_idx_j,1));
-fprintf('  Impact tau (joint):  %+.4f%%\n', irf_joint(tau_idx_j,1));
 fprintf('\n');
 
 %% ========================================================================
@@ -465,10 +450,11 @@ fprintf('\n');
 
 %% Figure 1: Full IRF grid (12 panels)
 figure('Position',[50 50 1600 1000]);
-vars_to_plot = {'Y','C','u','tau','I_bat','I_grid','I_p','F','A_bat','L','B_star','r_star'};
-irfs_to_plot = {irf_Y, irf_C, irf_u, irf_tau, irf_I_bat, irf_I_grid, ...
+irf_V = oo_.irfs.V_eps_ren;
+vars_to_plot = {'Y','C','u','V','I_bat','I_grid','I_p','F','A_bat','L','B_star','r_star'};
+irfs_to_plot = {irf_Y, irf_C, irf_u, irf_V, irf_I_bat, irf_I_grid, ...
                 irf_I_p, irf_F, irf_A_bat, irf_L, irf_B_star, irf_r_star};
-titles_plot = {'Output (Y)','Consumption (C)','Utilization (u)','Tax Rate (\tau_t)', ...
+titles_plot = {'Output (Y)','Consumption (C)','Utilization (u)','Value Added (V)', ...
                'Battery Inv. (I_{bat})','Grid Inv. (I_{grid})','Productive Inv. (I_p)', ...
                'Flexibility (F)','Battery Tech. (A_{bat})','Labor (L)', ...
                'Net Foreign Assets (B^*)','Interest Rate (r^*)'};
@@ -505,9 +491,9 @@ fprintf('[Saved] agility_gap_proptax.png\n');
 %% Figure 3: Battery price shock IRFs
 if isfield(oo_.irfs,'Y_eps_bat')
     figure('Position',[100 100 1000 600]);
-    bat_vars  = {'Y','P_bat','I_bat','u','tau','B_star'};
-    bat_field = {'Y_eps_bat','P_bat_eps_bat','I_bat_eps_bat','u_eps_bat','tau_eps_bat','B_star_eps_bat'};
-    bat_title = {'Output (Y)','Battery Price (P_{bat})','Battery Inv. (I_{bat})','Utilization (u)','Tax Rate (\tau_t)','Net FA (B^*)'};
+    bat_vars  = {'Y','P_bat','I_bat','u','I_grid','B_star'};
+    bat_field = {'Y_eps_bat','P_bat_eps_bat','I_bat_eps_bat','u_eps_bat','I_grid_eps_bat','B_star_eps_bat'};
+    bat_title = {'Output (Y)','Battery Price (P_{bat})','Battery Inv. (I_{bat})','Utilization (u)','Grid Inv. (I_{grid})','Net FA (B^*)'};
     for ii = 1:6
         subplot(2,3,ii);
         if isfield(oo_.irfs, bat_field{ii})
@@ -521,19 +507,18 @@ if isfield(oo_.irfs,'Y_eps_bat')
     fprintf('[Saved] irf_battery_price_proptax.png\n');
 end
 
-%% Figure 4: Fiscal Amplification
+%% Figure 4: Output & Investment — Proportional Tax Distortion
 figure('Position',[100 100 900 500]);
-yyaxis left;
-plot(t, irf_Y,   'b-', 'LineWidth',2.5,'DisplayName','Output (Y)'); hold on;
-plot(t, irf_I_p, 'b--','LineWidth',1.5,'DisplayName','Productive Inv. (I_p)');
+hold on;
+plot(t, irf_Y,      'b-',  'LineWidth',2.5,'DisplayName','Output (Y)');
+plot(t, irf_C,      'r-',  'LineWidth',2.0,'DisplayName','Consumption (C)');
+plot(t, irf_I_p,    'b--', 'LineWidth',1.5,'DisplayName','Productive Inv. (I_p)');
+plot(t, irf_V,      'k:',  'LineWidth',1.5,'DisplayName','Value Added (V)');
 plot(t, zeros(1,T),'k--','LineWidth',0.5,'HandleVisibility','off');
-ylabel('% Deviation (Y / I_p)','FontSize',11);
-yyaxis right;
-plot(t, irf_tau,'Color',[0.8 0.2 0.2],'LineWidth',2.5,'DisplayName','Tax Rate (\tau_t)');
-ylabel('% Deviation (Tax Rate)','FontSize',11);
 hold off; grid on;
 xlabel('Quarters','FontSize',12);
-title('Fiscal Amplification Channel — Tax Rate, Output & Investment','FontSize',12,'FontWeight','bold');
+ylabel('% Deviation from SS','FontSize',11);
+title('Output, Consumption & Investment — Proportional Tax Variant','FontSize',12,'FontWeight','bold');
 legend('Location','northeast','FontSize',10);
 print('fiscal_amplification.png','-dpng','-r300');
 fprintf('[Saved] fiscal_amplification.png\n');
@@ -545,8 +530,8 @@ figure('Position',[100 100 1200 900]);
 cols_cf = {'b','r',[0.4 0.4 0.4]};
 ls_cf   = {'-','--',':'};
 lbl_cf  = {'\chi=1.0 (Baseline)','\chi=0.3 (Partial)','\chi=0.0 (Suppressed)'};
-sub_vars = {chi_irfs_Y, chi_irfs_u, chi_irfs_A, chi_irfs_tau};
-sub_title= {'Output (Y)','Utilization (u)','Battery Technology (A_{bat})','Tax Rate (\tau_t)'};
+sub_vars = {chi_irfs_Y, chi_irfs_u, chi_irfs_A, chi_irfs_C};
+sub_title= {'Output (Y)','Utilization (u)','Battery Technology (A_{bat})','Consumption (C)'};
 for p = 1:4
     subplot(2,3,p);
     hold on;
@@ -625,7 +610,6 @@ fprintf(fid,'    "Y": %.10f,\n',     irf_Y(1));
 fprintf(fid,'    "C": %.10f,\n',     irf_C(1));
 fprintf(fid,'    "L": %.10f,\n',     irf_L(1));
 fprintf(fid,'    "u": %.10f,\n',     irf_u(1));
-fprintf(fid,'    "tau": %.10f,\n',   irf_tau(1));
 fprintf(fid,'    "I_bat": %.10f,\n', irf_I_bat(1));
 fprintf(fid,'    "I_grid": %.10f,\n',irf_I_grid(1));
 fprintf(fid,'    "I_p": %.10f,\n',   irf_I_p(1));
@@ -638,7 +622,7 @@ fprintf(fid,'  },\n');
 % FEVD
 if isfield(oo_,'variance_decomposition')
     vd = oo_.variance_decomposition;
-    vl = {'Y','C','L','I_p','I_bat','I_grid','u','F','A_bat','V','P_bat','B_star','r_star','tau'};
+    vl = {'Y','C','L','I_p','I_bat','I_grid','u','F','A_bat','V','P_bat','B_star','r_star','a_ren','a_I'};
     fprintf(fid,'  "fevd": {\n');
     for ii = 1:min(length(vl), size(vd,1))
         comma = ','; if ii==min(length(vl),size(vd,1)), comma=''; end
@@ -667,8 +651,8 @@ end
 fprintf(fid,'  "sensitivity_phi_grid": [\n');
 for i = 1:length(phi_vals)
     comma = ','; if i==length(phi_vals), comma=''; end
-    fprintf(fid,'    {"phi_grid":%.1f,"welfare":%.8f,"impact_Igrid":%.6f,"impact_tau":%.6f,"cum_u":%.6f}%s\n',...
-        phi_vals(i),phi_welfare(i),phi_impact_Ig(i),phi_impact_tau(i),phi_cum_u(i),comma);
+    fprintf(fid,'    {"phi_grid":%.1f,"welfare":%.8f,"impact_Igrid":%.6f,"cum_u":%.6f}%s\n',...
+        phi_vals(i),phi_welfare(i),phi_impact_Ig(i),phi_cum_u(i),comma);
 end
 fprintf(fid,'  ],\n');
 
@@ -679,8 +663,7 @@ fprintf(fid,'    "welfare_bat_only": %.10f,\n', welfare_bat);
 fprintf(fid,'    "welfare_joint": %.10f,\n', welfare_joint);
 fprintf(fid,'    "impact_Y": %.10f,\n', irf_joint(Y_idx_j,1));
 fprintf(fid,'    "impact_u": %.10f,\n', irf_joint(u_idx_j,1));
-fprintf(fid,'    "impact_I_bat": %.10f,\n', irf_joint(Ib_idx_j,1));
-fprintf(fid,'    "impact_tau": %.10f\n',     irf_joint(tau_idx_j,1));
+fprintf(fid,'    "impact_I_bat": %.10f\n', irf_joint(Ib_idx_j,1));
 fprintf(fid,'  }\n');
 
 fprintf(fid,'}\n');
@@ -700,7 +683,6 @@ fprintf('  tau_ss = %.4f%% (= %.4f)\n', tau_ss*100, tau_ss);
 fprintf('\nIRF IMPACTS (intermittency shock):\n');
 fprintf('  dY/dep_ren = %+.4f%%\n', irf_Y(1));
 fprintf('  du/dep_ren = %+.4f%%\n', irf_u(1));
-fprintf('  dtau/dep_ren = %+.4f%%\n', irf_tau(1));
 fprintf('  dI_bat/dep_ren = %+.4f%%\n', irf_I_bat(1));
 fprintf('  dI_grid/dep_ren = %+.4f%%\n', irf_I_grid(1));
 fprintf('  dI_p/dep_ren = %+.4f%%\n', irf_I_p(1));
