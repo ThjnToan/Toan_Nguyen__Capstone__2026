@@ -1,0 +1,39 @@
+{
+  "theta_hat": {
+    "phi_b": 0.008207443085670438,
+    "rho_ca": 0.57,
+    "gamma_r": 0.8,
+    "sigma_ca": 0.003
+  },
+  "objective_value": 0.8274152717092637,
+  "success": true,
+  "message": "Optimization terminated successfully.",
+  "mode": "sgu-ca-only",
+  "data_moments_annual": {
+    "std_ca_ann": 0.028737122719963152,
+    "ac1_ca_ann": 0.2624650984366145
+  },
+  "model_moments_annual": {
+    "std_ca_ann": 0.0028112014888383107,
+    "ac1_ca_ann": 0.28973628825561104
+  },
+  "weights": {
+    "std_ca_ann": 1.0,
+    "ac1_ca_ann": 1.25
+  },
+  "config": {
+    "beta": 0.99,
+    "seed": 42,
+    "n_sim": 4000,
+    "burn_in": 500,
+    "maxiter": 120,
+    "data_path": "your_data.csv",
+    "self_test": false,
+    "moments_override": "vietnam_ca_targets.json",
+    "sgu_ca_only": true,
+    "rho_ca_fixed": 0.57,
+    "gamma_r_fixed": 0.8,
+    "sigma_ca_fixed": 0.003,
+    "annual_block_size": 4
+  }
+}

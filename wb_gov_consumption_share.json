@@ -1,0 +1,1071 @@
+﻿{
+    "value":  [
+                  {
+                      "page":  1,
+                      "pages":  1,
+                      "per_page":  200,
+                      "total":  66,
+                      "sourceid":  "2",
+                      "lastupdated":  "2026-02-24"
+                  },
+                  [
+                      {
+                          "indicator":  {
+                                            "id":  "NE.CON.GOVT.ZS",
+                                            "value":  "General government final consumption expenditure (% of GDP)"
+                                        },
+                          "country":  {
+                                          "id":  "VN",
+                                          "value":  "Viet Nam"
+                                      },
+                          "countryiso3code":  "VNM",
+                          "date":  "2025",
+                          "value":  null,
+                          "unit":  "",
+                          "obs_status":  "",
+                          "decimal":  1
+                      },
+                      {
+                          "indicator":  {
+                                            "id":  "NE.CON.GOVT.ZS",
+                                            "value":  "General government final consumption expenditure (% of GDP)"
+                                        },
+                          "country":  {
+                                          "id":  "VN",
+                                          "value":  "Viet Nam"
+                                      },
+                          "countryiso3code":  "VNM",
+                          "date":  "2024",
+                          "value":  8.87730358995804,
+                          "unit":  "",
+                          "obs_status":  "",
+                          "decimal":  1
+                      },
+                      {
+                          "indicator":  {
+                                            "id":  "NE.CON.GOVT.ZS",
+                                            "value":  "General government final consumption expenditure (% of GDP)"
+                                        },
+                          "country":  {
+                                          "id":  "VN",
+                                          "value":  "Viet Nam"
+                                      },
+                          "countryiso3code":  "VNM",
+                          "date":  "2023",
+                          "value":  8.84756445434067,
+                          "unit":  "",
+                          "obs_status":  "",
+                          "decimal":  1
+                      },
+                      {
+                          "indicator":  {
+                                            "id":  "NE.CON.GOVT.ZS",
+                                            "value":  "General government final consumption expenditure (% of GDP)"
+                                        },
+                          "country":  {
+                                          "id":  "VN",
+                                          "value":  "Viet Nam"
+                                      },
+                          "countryiso3code":  "VNM",
+                          "date":  "2022",
+                          "value":  8.81892224803344,
+                          "unit":  "",
+                          "obs_status":  "",
+                          "decimal":  1
+                      },
+                      {
+                          "indicator":  {
+                                            "id":  "NE.CON.GOVT.ZS",
+                                            "value":  "General government final consumption expenditure (% of GDP)"
+                                        },
+                          "country":  {
+                                          "id":  "VN",
+                                          "value":  "Viet Nam"
+                                      },
+                          "countryiso3code":  "VNM",
+                          "date":  "2021",
+                          "value":  9.58508554643739,
+                          "unit":  "",
+                          "obs_status":  "",
+                          "decimal":  1
+                      },
+                      {
+                          "indicator":  {
+                                            "id":  "NE.CON.GOVT.ZS",
+                                            "value":  "General government final consumption expenditure (% of GDP)"
+                                        },
+                          "country":  {
+                                          "id":  "VN",
+                                          "value":  "Viet Nam"
+                                      },
+                          "countryiso3code":  "VNM",
+                          "date":  "2020",
+                          "value":  9.47881328344632,
+                          "unit":  "",
+                          "obs_status":  "",
+                          "decimal":  1
+                      },
+                      {
+                          "indicator":  {
+                                            "id":  "NE.CON.GOVT.ZS",
+                                            "value":  "General government final consumption expenditure (% of GDP)"
+                                        },
+                          "country":  {
+                                          "id":  "VN",
+                                          "value":  "Viet Nam"
+                                      },
+                          "countryiso3code":  "VNM",
+                          "date":  "2019",
+                          "value":  9.5788363682709,
+                          "unit":  "",
+                          "obs_status":  "",
+                          "decimal":  1
+                      },
+                      {
+                          "indicator":  {
+                                            "id":  "NE.CON.GOVT.ZS",
+                                            "value":  "General government final consumption expenditure (% of GDP)"
+                                        },
+                          "country":  {
+                                          "id":  "VN",
+                                          "value":  "Viet Nam"
+                                      },
+                          "countryiso3code":  "VNM",
+                          "date":  "2018",
+                          "value":  9.74588913320742,
+                          "unit":  "",
+                          "obs_status":  "",
+                          "decimal":  1
+                      },
+                      {
+                          "indicator":  {
+                                            "id":  "NE.CON.GOVT.ZS",
+                                            "value":  "General government final consumption expenditure (% of GDP)"
+                                        },
+                          "country":  {
+                                          "id":  "VN",
+                                          "value":  "Viet Nam"
+                                      },
+                          "countryiso3code":  "VNM",
+                          "date":  "2017",
+                          "value":  10.1349272840895,
+                          "unit":  "",
+                          "obs_status":  "",
+                          "decimal":  1
+                      },
+                      {
+                          "indicator":  {
+                                            "id":  "NE.CON.GOVT.ZS",
+                                            "value":  "General government final consumption expenditure (% of GDP)"
+                                        },
+                          "country":  {
+                                          "id":  "VN",
+                                          "value":  "Viet Nam"
+                                      },
+                          "countryiso3code":  "VNM",
+                          "date":  "2016",
+                          "value":  10.3983766667541,
+                          "unit":  "",
+                          "obs_status":  "",
+                          "decimal":  1
+                      },
+                      {
+                          "indicator":  {
+                                            "id":  "NE.CON.GOVT.ZS",
+                                            "value":  "General government final consumption expenditure (% of GDP)"
+                                        },
+                          "country":  {
+                                          "id":  "VN",
+                                          "value":  "Viet Nam"
+                                      },
+                          "countryiso3code":  "VNM",
+                          "date":  "2015",
+                          "value":  10.6549127142472,
+                          "unit":  "",
+                          "obs_status":  "",
+                          "decimal":  1
+                      },
+                      {
+                          "indicator":  {
+                                            "id":  "NE.CON.GOVT.ZS",
+                                            "value":  "General government final consumption expenditure (% of GDP)"
+                                        },
+                          "country":  {
+                                          "id":  "VN",
+                                          "value":  "Viet Nam"
+                                      },
+                          "countryiso3code":  "VNM",
+                          "date":  "2014",
+                          "value":  10.3174617549851,
+                          "unit":  "",
+                          "obs_status":  "",
+                          "decimal":  1
+                      },
+                      {
+                          "indicator":  {
+                                            "id":  "NE.CON.GOVT.ZS",
+                                            "value":  "General government final consumption expenditure (% of GDP)"
+                                        },
+                          "country":  {
+                                          "id":  "VN",
+                                          "value":  "Viet Nam"
+                                      },
+                          "countryiso3code":  "VNM",
+                          "date":  "2013",
+                          "value":  10.9161669772076,
+                          "unit":  "",
+                          "obs_status":  "",
+                          "decimal":  1
+                      },
+                      {
+                          "indicator":  {
+                                            "id":  "NE.CON.GOVT.ZS",
+                                            "value":  "General government final consumption expenditure (% of GDP)"
+                                        },
+                          "country":  {
+                                          "id":  "VN",
+                                          "value":  "Viet Nam"
+                                      },
+                          "countryiso3code":  "VNM",
+                          "date":  "2012",
+                          "value":  10.4451862897283,
+                          "unit":  "",
+                          "obs_status":  "",
+                          "decimal":  1
+                      },
+                      {
+                          "indicator":  {
+                                            "id":  "NE.CON.GOVT.ZS",
+                                            "value":  "General government final consumption expenditure (% of GDP)"
+                                        },
+                          "country":  {
+                                          "id":  "VN",
+                                          "value":  "Viet Nam"
+                                      },
+                          "countryiso3code":  "VNM",
+                          "date":  "2011",
+                          "value":  9.98091727618404,
+                          "unit":  "",
+                          "obs_status":  "",
+                          "decimal":  1
+                      },
+                      {
+                          "indicator":  {
+                                            "id":  "NE.CON.GOVT.ZS",
+                                            "value":  "General government final consumption expenditure (% of GDP)"
+                                        },
+                          "country":  {
+                                          "id":  "VN",
+                                          "value":  "Viet Nam"
+                                      },
+                          "countryiso3code":  "VNM",
+                          "date":  "2010",
+                          "value":  10.3833082456979,
+                          "unit":  "",
+                          "obs_status":  "",
+                          "decimal":  1
+                      },
+                      {
+                          "indicator":  {
+                                            "id":  "NE.CON.GOVT.ZS",
+                                            "value":  "General government final consumption expenditure (% of GDP)"
+                                        },
+                          "country":  {
+                                          "id":  "VN",
+                                          "value":  "Viet Nam"
+                                      },
+                          "countryiso3code":  "VNM",
+                          "date":  "2009",
+                          "value":  5.77840741696787,
+                          "unit":  "",
+                          "obs_status":  "",
+                          "decimal":  1
+                      },
+                      {
+                          "indicator":  {
+                                            "id":  "NE.CON.GOVT.ZS",
+                                            "value":  "General government final consumption expenditure (% of GDP)"
+                                        },
+                          "country":  {
+                                          "id":  "VN",
+                                          "value":  "Viet Nam"
+                                      },
+                          "countryiso3code":  "VNM",
+                          "date":  "2008",
+                          "value":  5.62508392392053,
+                          "unit":  "",
+                          "obs_status":  "",
+                          "decimal":  1
+                      },
+                      {
+                          "indicator":  {
+                                            "id":  "NE.CON.GOVT.ZS",
+                                            "value":  "General government final consumption expenditure (% of GDP)"
+                                        },
+                          "country":  {
+                                          "id":  "VN",
+                                          "value":  "Viet Nam"
+                                      },
+                          "countryiso3code":  "VNM",
+                          "date":  "2007",
+                          "value":  5.55411627975992,
+                          "unit":  "",
+                          "obs_status":  "",
+                          "decimal":  1
+                      },
+                      {
+                          "indicator":  {
+                                            "id":  "NE.CON.GOVT.ZS",
+                                            "value":  "General government final consumption expenditure (% of GDP)"
+                                        },
+                          "country":  {
+                                          "id":  "VN",
+                                          "value":  "Viet Nam"
+                                      },
+                          "countryiso3code":  "VNM",
+                          "date":  "2006",
+                          "value":  5.53277472411016,
+                          "unit":  "",
+                          "obs_status":  "",
+                          "decimal":  1
+                      },
+                      {
+                          "indicator":  {
+                                            "id":  "NE.CON.GOVT.ZS",
+                                            "value":  "General government final consumption expenditure (% of GDP)"
+                                        },
+                          "country":  {
+                                          "id":  "VN",
+                                          "value":  "Viet Nam"
+                                      },
+                          "countryiso3code":  "VNM",
+                          "date":  "2005",
+                          "value":  5.46520189802856,
+                          "unit":  "",
+                          "obs_status":  "",
+                          "decimal":  1
+                      },
+                      {
+                          "indicator":  {
+                                            "id":  "NE.CON.GOVT.ZS",
+                                            "value":  "General government final consumption expenditure (% of GDP)"
+                                        },
+                          "country":  {
+                                          "id":  "VN",
+                                          "value":  "Viet Nam"
+                                      },
+                          "countryiso3code":  "VNM",
+                          "date":  "2004",
+                          "value":  6.39096220224323,
+                          "unit":  "",
+                          "obs_status":  "",
+                          "decimal":  1
+                      },
+                      {
+                          "indicator":  {
+                                            "id":  "NE.CON.GOVT.ZS",
+                                            "value":  "General government final consumption expenditure (% of GDP)"
+                                        },
+                          "country":  {
+                                          "id":  "VN",
+                                          "value":  "Viet Nam"
+                                      },
+                          "countryiso3code":  "VNM",
+                          "date":  "2003",
+                          "value":  6.32006559696663,
+                          "unit":  "",
+                          "obs_status":  "",
+                          "decimal":  1
+                      },
+                      {
+                          "indicator":  {
+                                            "id":  "NE.CON.GOVT.ZS",
+                                            "value":  "General government final consumption expenditure (% of GDP)"
+                                        },
+                          "country":  {
+                                          "id":  "VN",
+                                          "value":  "Viet Nam"
+                                      },
+                          "countryiso3code":  "VNM",
+                          "date":  "2002",
+                          "value":  6.2322449147196,
+                          "unit":  "",
+                          "obs_status":  "",
+                          "decimal":  1
+                      },
+                      {
+                          "indicator":  {
+                                            "id":  "NE.CON.GOVT.ZS",
+                                            "value":  "General government final consumption expenditure (% of GDP)"
+                                        },
+                          "country":  {
+                                          "id":  "VN",
+                                          "value":  "Viet Nam"
+                                      },
+                          "countryiso3code":  "VNM",
+                          "date":  "2001",
+                          "value":  6.3293821876396,
+                          "unit":  "",
+                          "obs_status":  "",
+                          "decimal":  1
+                      },
+                      {
+                          "indicator":  {
+                                            "id":  "NE.CON.GOVT.ZS",
+                                            "value":  "General government final consumption expenditure (% of GDP)"
+                                        },
+                          "country":  {
+                                          "id":  "VN",
+                                          "value":  "Viet Nam"
+                                      },
+                          "countryiso3code":  "VNM",
+                          "date":  "2000",
+                          "value":  6.41826259040046,
+                          "unit":  "",
+                          "obs_status":  "",
+                          "decimal":  1
+                      },
+                      {
+                          "indicator":  {
+                                            "id":  "NE.CON.GOVT.ZS",
+                                            "value":  "General government final consumption expenditure (% of GDP)"
+                                        },
+                          "country":  {
+                                          "id":  "VN",
+                                          "value":  "Viet Nam"
+                                      },
+                          "countryiso3code":  "VNM",
+                          "date":  "1999",
+                          "value":  6.78523385890954,
+                          "unit":  "",
+                          "obs_status":  "",
+                          "decimal":  1
+                      },
+                      {
+                          "indicator":  {
+                                            "id":  "NE.CON.GOVT.ZS",
+                                            "value":  "General government final consumption expenditure (% of GDP)"
+                                        },
+                          "country":  {
+                                          "id":  "VN",
+                                          "value":  "Viet Nam"
+                                      },
+                          "countryiso3code":  "VNM",
+                          "date":  "1998",
+                          "value":  7.62374071027126,
+                          "unit":  "",
+                          "obs_status":  "",
+                          "decimal":  1
+                      },
+                      {
+                          "indicator":  {
+                                            "id":  "NE.CON.GOVT.ZS",
+                                            "value":  "General government final consumption expenditure (% of GDP)"
+                                        },
+                          "country":  {
+                                          "id":  "VN",
+                                          "value":  "Viet Nam"
+                                      },
+                          "countryiso3code":  "VNM",
+                          "date":  "1997",
+                          "value":  8.13078122459131,
+                          "unit":  "",
+                          "obs_status":  "",
+                          "decimal":  1
+                      },
+                      {
+                          "indicator":  {
+                                            "id":  "NE.CON.GOVT.ZS",
+                                            "value":  "General government final consumption expenditure (% of GDP)"
+                                        },
+                          "country":  {
+                                          "id":  "VN",
+                                          "value":  "Viet Nam"
+                                      },
+                          "countryiso3code":  "VNM",
+                          "date":  "1996",
+                          "value":  8.35257098325222,
+                          "unit":  "",
+                          "obs_status":  "",
+                          "decimal":  1
+                      },
+                      {
+                          "indicator":  {
+                                            "id":  "NE.CON.GOVT.ZS",
+                                            "value":  "General government final consumption expenditure (% of GDP)"
+                                        },
+                          "country":  {
+                                          "id":  "VN",
+                                          "value":  "Viet Nam"
+                                      },
+                          "countryiso3code":  "VNM",
+                          "date":  "1995",
+                          "value":  8.18770424479667,
+                          "unit":  "",
+                          "obs_status":  "",
+                          "decimal":  1
+                      },
+                      {
+                          "indicator":  {
+                                            "id":  "NE.CON.GOVT.ZS",
+                                            "value":  "General government final consumption expenditure (% of GDP)"
+                                        },
+                          "country":  {
+                                          "id":  "VN",
+                                          "value":  "Viet Nam"
+                                      },
+                          "countryiso3code":  "VNM",
+                          "date":  "1994",
+                          "value":  null,
+                          "unit":  "",
+                          "obs_status":  "",
+                          "decimal":  1
+                      },
+                      {
+                          "indicator":  {
+                                            "id":  "NE.CON.GOVT.ZS",
+                                            "value":  "General government final consumption expenditure (% of GDP)"
+                                        },
+                          "country":  {
+                                          "id":  "VN",
+                                          "value":  "Viet Nam"
+                                      },
+                          "countryiso3code":  "VNM",
+                          "date":  "1993",
+                          "value":  null,
+                          "unit":  "",
+                          "obs_status":  "",
+                          "decimal":  1
+                      },
+                      {
+                          "indicator":  {
+                                            "id":  "NE.CON.GOVT.ZS",
+                                            "value":  "General government final consumption expenditure (% of GDP)"
+                                        },
+                          "country":  {
+                                          "id":  "VN",
+                                          "value":  "Viet Nam"
+                                      },
+                          "countryiso3code":  "VNM",
+                          "date":  "1992",
+                          "value":  null,
+                          "unit":  "",
+                          "obs_status":  "",
+                          "decimal":  1
+                      },
+                      {
+                          "indicator":  {
+                                            "id":  "NE.CON.GOVT.ZS",
+                                            "value":  "General government final consumption expenditure (% of GDP)"
+                                        },
+                          "country":  {
+                                          "id":  "VN",
+                                          "value":  "Viet Nam"
+                                      },
+                          "countryiso3code":  "VNM",
+                          "date":  "1991",
+                          "value":  null,
+                          "unit":  "",
+                          "obs_status":  "",
+                          "decimal":  1
+                      },
+                      {
+                          "indicator":  {
+                                            "id":  "NE.CON.GOVT.ZS",
+                                            "value":  "General government final consumption expenditure (% of GDP)"
+                                        },
+                          "country":  {
+                                          "id":  "VN",
+                                          "value":  "Viet Nam"
+                                      },
+                          "countryiso3code":  "VNM",
+                          "date":  "1990",
+                          "value":  null,
+                          "unit":  "",
+                          "obs_status":  "",
+                          "decimal":  1
+                      },
+                      {
+                          "indicator":  {
+                                            "id":  "NE.CON.GOVT.ZS",
+                                            "value":  "General government final consumption expenditure (% of GDP)"
+                                        },
+                          "country":  {
+                                          "id":  "VN",
+                                          "value":  "Viet Nam"
+                                      },
+                          "countryiso3code":  "VNM",
+                          "date":  "1989",
+                          "value":  null,
+                          "unit":  "",
+                          "obs_status":  "",
+                          "decimal":  1
+                      },
+                      {
+                          "indicator":  {
+                                            "id":  "NE.CON.GOVT.ZS",
+                                            "value":  "General government final consumption expenditure (% of GDP)"
+                                        },
+                          "country":  {
+                                          "id":  "VN",
+                                          "value":  "Viet Nam"
+                                      },
+                          "countryiso3code":  "VNM",
+                          "date":  "1988",
+                          "value":  null,
+                          "unit":  "",
+                          "obs_status":  "",
+                          "decimal":  1
+                      },
+                      {
+                          "indicator":  {
+                                            "id":  "NE.CON.GOVT.ZS",
+                                            "value":  "General government final consumption expenditure (% of GDP)"
+                                        },
+                          "country":  {
+                                          "id":  "VN",
+                                          "value":  "Viet Nam"
+                                      },
+                          "countryiso3code":  "VNM",
+                          "date":  "1987",
+                          "value":  null,
+                          "unit":  "",
+                          "obs_status":  "",
+                          "decimal":  1
+                      },
+                      {
+                          "indicator":  {
+                                            "id":  "NE.CON.GOVT.ZS",
+                                            "value":  "General government final consumption expenditure (% of GDP)"
+                                        },
+                          "country":  {
+                                          "id":  "VN",
+                                          "value":  "Viet Nam"
+                                      },
+                          "countryiso3code":  "VNM",
+                          "date":  "1986",
+                          "value":  null,
+                          "unit":  "",
+                          "obs_status":  "",
+                          "decimal":  1
+                      },
+                      {
+                          "indicator":  {
+                                            "id":  "NE.CON.GOVT.ZS",
+                                            "value":  "General government final consumption expenditure (% of GDP)"
+                                        },
+                          "country":  {
+                                          "id":  "VN",
+                                          "value":  "Viet Nam"
+                                      },
+                          "countryiso3code":  "VNM",
+                          "date":  "1985",
+                          "value":  null,
+                          "unit":  "",
+                          "obs_status":  "",
+                          "decimal":  1
+                      },
+                      {
+                          "indicator":  {
+                                            "id":  "NE.CON.GOVT.ZS",
+                                            "value":  "General government final consumption expenditure (% of GDP)"
+                                        },
+                          "country":  {
+                                          "id":  "VN",
+                                          "value":  "Viet Nam"
+                                      },
+                          "countryiso3code":  "VNM",
+                          "date":  "1984",
+                          "value":  null,
+                          "unit":  "",
+                          "obs_status":  "",
+                          "decimal":  1
+                      },
+                      {
+                          "indicator":  {
+                                            "id":  "NE.CON.GOVT.ZS",
+                                            "value":  "General government final consumption expenditure (% of GDP)"
+                                        },
+                          "country":  {
+                                          "id":  "VN",
+                                          "value":  "Viet Nam"
+                                      },
+                          "countryiso3code":  "VNM",
+                          "date":  "1983",
+                          "value":  null,
+                          "unit":  "",
+                          "obs_status":  "",
+                          "decimal":  1
+                      },
+                      {
+                          "indicator":  {
+                                            "id":  "NE.CON.GOVT.ZS",
+                                            "value":  "General government final consumption expenditure (% of GDP)"
+                                        },
+                          "country":  {
+                                          "id":  "VN",
+                                          "value":  "Viet Nam"
+                                      },
+                          "countryiso3code":  "VNM",
+                          "date":  "1982",
+                          "value":  null,
+                          "unit":  "",
+                          "obs_status":  "",
+                          "decimal":  1
+                      },
+                      {
+                          "indicator":  {
+                                            "id":  "NE.CON.GOVT.ZS",
+                                            "value":  "General government final consumption expenditure (% of GDP)"
+                                        },
+                          "country":  {
+                                          "id":  "VN",
+                                          "value":  "Viet Nam"
+                                      },
+                          "countryiso3code":  "VNM",
+                          "date":  "1981",
+                          "value":  null,
+                          "unit":  "",
+                          "obs_status":  "",
+                          "decimal":  1
+                      },
+                      {
+                          "indicator":  {
+                                            "id":  "NE.CON.GOVT.ZS",
+                                            "value":  "General government final consumption expenditure (% of GDP)"
+                                        },
+                          "country":  {
+                                          "id":  "VN",
+                                          "value":  "Viet Nam"
+                                      },
+                          "countryiso3code":  "VNM",
+                          "date":  "1980",
+                          "value":  null,
+                          "unit":  "",
+                          "obs_status":  "",
+                          "decimal":  1
+                      },
+                      {
+                          "indicator":  {
+                                            "id":  "NE.CON.GOVT.ZS",
+                                            "value":  "General government final consumption expenditure (% of GDP)"
+                                        },
+                          "country":  {
+                                          "id":  "VN",
+                                          "value":  "Viet Nam"
+                                      },
+                          "countryiso3code":  "VNM",
+                          "date":  "1979",
+                          "value":  null,
+                          "unit":  "",
+                          "obs_status":  "",
+                          "decimal":  1
+                      },
+                      {
+                          "indicator":  {
+                                            "id":  "NE.CON.GOVT.ZS",
+                                            "value":  "General government final consumption expenditure (% of GDP)"
+                                        },
+                          "country":  {
+                                          "id":  "VN",
+                                          "value":  "Viet Nam"
+                                      },
+                          "countryiso3code":  "VNM",
+                          "date":  "1978",
+                          "value":  null,
+                          "unit":  "",
+                          "obs_status":  "",
+                          "decimal":  1
+                      },
+                      {
+                          "indicator":  {
+                                            "id":  "NE.CON.GOVT.ZS",
+                                            "value":  "General government final consumption expenditure (% of GDP)"
+                                        },
+                          "country":  {
+                                          "id":  "VN",
+                                          "value":  "Viet Nam"
+                                      },
+                          "countryiso3code":  "VNM",
+                          "date":  "1977",
+                          "value":  null,
+                          "unit":  "",
+                          "obs_status":  "",
+                          "decimal":  1
+                      },
+                      {
+                          "indicator":  {
+                                            "id":  "NE.CON.GOVT.ZS",
+                                            "value":  "General government final consumption expenditure (% of GDP)"
+                                        },
+                          "country":  {
+                                          "id":  "VN",
+                                          "value":  "Viet Nam"
+                                      },
+                          "countryiso3code":  "VNM",
+                          "date":  "1976",
+                          "value":  null,
+                          "unit":  "",
+                          "obs_status":  "",
+                          "decimal":  1
+                      },
+                      {
+                          "indicator":  {
+                                            "id":  "NE.CON.GOVT.ZS",
+                                            "value":  "General government final consumption expenditure (% of GDP)"
+                                        },
+                          "country":  {
+                                          "id":  "VN",
+                                          "value":  "Viet Nam"
+                                      },
+                          "countryiso3code":  "VNM",
+                          "date":  "1975",
+                          "value":  null,
+                          "unit":  "",
+                          "obs_status":  "",
+                          "decimal":  1
+                      },
+                      {
+                          "indicator":  {
+                                            "id":  "NE.CON.GOVT.ZS",
+                                            "value":  "General government final consumption expenditure (% of GDP)"
+                                        },
+                          "country":  {
+                                          "id":  "VN",
+                                          "value":  "Viet Nam"
+                                      },
+                          "countryiso3code":  "VNM",
+                          "date":  "1974",
+                          "value":  null,
+                          "unit":  "",
+                          "obs_status":  "",
+                          "decimal":  1
+                      },
+                      {
+                          "indicator":  {
+                                            "id":  "NE.CON.GOVT.ZS",
+                                            "value":  "General government final consumption expenditure (% of GDP)"
+                                        },
+                          "country":  {
+                                          "id":  "VN",
+                                          "value":  "Viet Nam"
+                                      },
+                          "countryiso3code":  "VNM",
+                          "date":  "1973",
+                          "value":  null,
+                          "unit":  "",
+                          "obs_status":  "",
+                          "decimal":  1
+                      },
+                      {
+                          "indicator":  {
+                                            "id":  "NE.CON.GOVT.ZS",
+                                            "value":  "General government final consumption expenditure (% of GDP)"
+                                        },
+                          "country":  {
+                                          "id":  "VN",
+                                          "value":  "Viet Nam"
+                                      },
+                          "countryiso3code":  "VNM",
+                          "date":  "1972",
+                          "value":  null,
+                          "unit":  "",
+                          "obs_status":  "",
+                          "decimal":  1
+                      },
+                      {
+                          "indicator":  {
+                                            "id":  "NE.CON.GOVT.ZS",
+                                            "value":  "General government final consumption expenditure (% of GDP)"
+                                        },
+                          "country":  {
+                                          "id":  "VN",
+                                          "value":  "Viet Nam"
+                                      },
+                          "countryiso3code":  "VNM",
+                          "date":  "1971",
+                          "value":  null,
+                          "unit":  "",
+                          "obs_status":  "",
+                          "decimal":  1
+                      },
+                      {
+                          "indicator":  {
+                                            "id":  "NE.CON.GOVT.ZS",
+                                            "value":  "General government final consumption expenditure (% of GDP)"
+                                        },
+                          "country":  {
+                                          "id":  "VN",
+                                          "value":  "Viet Nam"
+                                      },
+                          "countryiso3code":  "VNM",
+                          "date":  "1970",
+                          "value":  null,
+                          "unit":  "",
+                          "obs_status":  "",
+                          "decimal":  1
+                      },
+                      {
+                          "indicator":  {
+                                            "id":  "NE.CON.GOVT.ZS",
+                                            "value":  "General government final consumption expenditure (% of GDP)"
+                                        },
+                          "country":  {
+                                          "id":  "VN",
+                                          "value":  "Viet Nam"
+                                      },
+                          "countryiso3code":  "VNM",
+                          "date":  "1969",
+                          "value":  null,
+                          "unit":  "",
+                          "obs_status":  "",
+                          "decimal":  1
+                      },
+                      {
+                          "indicator":  {
+                                            "id":  "NE.CON.GOVT.ZS",
+                                            "value":  "General government final consumption expenditure (% of GDP)"
+                                        },
+                          "country":  {
+                                          "id":  "VN",
+                                          "value":  "Viet Nam"
+                                      },
+                          "countryiso3code":  "VNM",
+                          "date":  "1968",
+                          "value":  null,
+                          "unit":  "",
+                          "obs_status":  "",
+                          "decimal":  1
+                      },
+                      {
+                          "indicator":  {
+                                            "id":  "NE.CON.GOVT.ZS",
+                                            "value":  "General government final consumption expenditure (% of GDP)"
+                                        },
+                          "country":  {
+                                          "id":  "VN",
+                                          "value":  "Viet Nam"
+                                      },
+                          "countryiso3code":  "VNM",
+                          "date":  "1967",
+                          "value":  null,
+                          "unit":  "",
+                          "obs_status":  "",
+                          "decimal":  1
+                      },
+                      {
+                          "indicator":  {
+                                            "id":  "NE.CON.GOVT.ZS",
+                                            "value":  "General government final consumption expenditure (% of GDP)"
+                                        },
+                          "country":  {
+                                          "id":  "VN",
+                                          "value":  "Viet Nam"
+                                      },
+                          "countryiso3code":  "VNM",
+                          "date":  "1966",
+                          "value":  null,
+                          "unit":  "",
+                          "obs_status":  "",
+                          "decimal":  1
+                      },
+                      {
+                          "indicator":  {
+                                            "id":  "NE.CON.GOVT.ZS",
+                                            "value":  "General government final consumption expenditure (% of GDP)"
+                                        },
+                          "country":  {
+                                          "id":  "VN",
+                                          "value":  "Viet Nam"
+                                      },
+                          "countryiso3code":  "VNM",
+                          "date":  "1965",
+                          "value":  null,
+                          "unit":  "",
+                          "obs_status":  "",
+                          "decimal":  1
+                      },
+                      {
+                          "indicator":  {
+                                            "id":  "NE.CON.GOVT.ZS",
+                                            "value":  "General government final consumption expenditure (% of GDP)"
+                                        },
+                          "country":  {
+                                          "id":  "VN",
+                                          "value":  "Viet Nam"
+                                      },
+                          "countryiso3code":  "VNM",
+                          "date":  "1964",
+                          "value":  null,
+                          "unit":  "",
+                          "obs_status":  "",
+                          "decimal":  1
+                      },
+                      {
+                          "indicator":  {
+                                            "id":  "NE.CON.GOVT.ZS",
+                                            "value":  "General government final consumption expenditure (% of GDP)"
+                                        },
+                          "country":  {
+                                          "id":  "VN",
+                                          "value":  "Viet Nam"
+                                      },
+                          "countryiso3code":  "VNM",
+                          "date":  "1963",
+                          "value":  null,
+                          "unit":  "",
+                          "obs_status":  "",
+                          "decimal":  1
+                      },
+                      {
+                          "indicator":  {
+                                            "id":  "NE.CON.GOVT.ZS",
+                                            "value":  "General government final consumption expenditure (% of GDP)"
+                                        },
+                          "country":  {
+                                          "id":  "VN",
+                                          "value":  "Viet Nam"
+                                      },
+                          "countryiso3code":  "VNM",
+                          "date":  "1962",
+                          "value":  null,
+                          "unit":  "",
+                          "obs_status":  "",
+                          "decimal":  1
+                      },
+                      {
+                          "indicator":  {
+                                            "id":  "NE.CON.GOVT.ZS",
+                                            "value":  "General government final consumption expenditure (% of GDP)"
+                                        },
+                          "country":  {
+                                          "id":  "VN",
+                                          "value":  "Viet Nam"
+                                      },
+                          "countryiso3code":  "VNM",
+                          "date":  "1961",
+                          "value":  null,
+                          "unit":  "",
+                          "obs_status":  "",
+                          "decimal":  1
+                      },
+                      {
+                          "indicator":  {
+                                            "id":  "NE.CON.GOVT.ZS",
+                                            "value":  "General government final consumption expenditure (% of GDP)"
+                                        },
+                          "country":  {
+                                          "id":  "VN",
+                                          "value":  "Viet Nam"
+                                      },
+                          "countryiso3code":  "VNM",
+                          "date":  "1960",
+                          "value":  null,
+                          "unit":  "",
+                          "obs_status":  "",
+                          "decimal":  1
+                      }
+                  ]
+              ],
+    "Count":  2
+}

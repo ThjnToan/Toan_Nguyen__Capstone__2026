@@ -1,0 +1,18 @@
+{
+  "n_non_missing": 28,
+  "mean_real_rate_pct_full_1993_2023_non_missing": 3.2760714285714285,
+  "mean_real_rate_pct_2013_2023": 5.241818181818182,
+  "mean_real_rate_pct_2016_2023": 4.72375,
+  "implied": {
+    "window_2013_2023": {
+      "annual_real_rate_decimal": 0.05241818181818182,
+      "quarterly_real_rate_decimal": 0.01285455516439793,
+      "beta": 0.9501926299604373
+    },
+    "window_2016_2023": {
+      "annual_real_rate_decimal": 0.0472375,
+      "quarterly_real_rate_decimal": 0.011605766514815263,
+      "beta": 0.9548932310006087
+    }
+  }
+}

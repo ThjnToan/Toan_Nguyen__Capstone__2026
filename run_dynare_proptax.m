@@ -369,6 +369,62 @@ M_.params = params_r2;
 fprintf('\n');
 
 %% ========================================================================
+%% 8b. SENSITIVITY ANALYSIS: phi_b (debt-elastic premium)
+%% ========================================================================
+fprintf('========================================\n');
+fprintf('SENSITIVITY: phi_b\n');
+fprintf('========================================\n');
+phib_vals    = [0.001, 0.039, 0.10];
+phib_welfare = zeros(size(phib_vals));
+phib_Ip_pct  = zeros(size(phib_vals));
+phib_Bstar   = zeros(size(phib_vals));
+
+for i = 1:length(phib_vals)
+    set_param_value('phi_b', phib_vals(i));
+    % SS is independent of phi_b (B_star_ss=0 => premium term = 0), so
+    % no need to re-run steadystate — just re-solve the dynamic system.
+    [dr_b, info_b, M_.params] = resol(0, M_, options_, oo_.dr, ...
+        oo_.dr.ys, oo_.exo_steady_state, oo_.exo_det_steady_state);
+
+    if info_b(1) == 0
+        nvar = M_.endo_nbr;
+        eps_idx = find(strcmp(M_.exo_names, 'eps_ren'));
+        sr = M_.params(strcmp(M_.param_names, 'sigma_ren'));
+        sv = zeros(M_.exo_nbr, 1); sv(eps_idx) = sr;
+
+        irf_b = zeros(nvar, T);
+        st = dr_b.ghu * sv; irf_b(:, 1) = st;
+        for tt = 2:T
+            sv2 = st(M_.nstatic+1:M_.nstatic+M_.nspred);
+            st  = dr_b.ghx * sv2; irf_b(:, tt) = st;
+        end
+        irf_rb = zeros(nvar, T); irf_rb(dr_b.order_var, :) = irf_b;
+
+        C_ib  = find(strcmp(M_.endo_names, 'C'));
+        Ip_ib = find(strcmp(M_.endo_names, 'I_p'));
+        Bs_ib = find(strcmp(M_.endo_names, 'B_star'));
+
+        phib_Ip_pct(i) = irf_rb(Ip_ib, 1) / Ip_ss * 100;
+        phib_Bstar(i)  = irf_rb(Bs_ib, 1);
+
+        sd_b = sum(disc .* log(1 + irf_rb(C_ib, 1:T_w) / 100));
+        phib_welfare(i) = abs((1 - exp(sd_b / norm_factor)) * 100);
+
+        fprintf('  phi_b=%.3f: Welfare=%.6f%%  I_p=%+.2f%%  B_star=%+.6f\n', ...
+            phib_vals(i), phib_welfare(i), phib_Ip_pct(i), phib_Bstar(i));
+    else
+        fprintf('  phi_b=%.3f: FAILED (BK conditions not satisfied)\n', phib_vals(i));
+        phib_welfare(i) = NaN; phib_Ip_pct(i) = NaN; phib_Bstar(i) = NaN;
+    end
+end
+
+% Restore phi_b = 0.039
+set_param_value('phi_b', 0.039);
+[oo_.dr, ~, M_.params] = resol(0, M_, options_, oo_.dr, ...
+    oo_.dr.ys, oo_.exo_steady_state, oo_.exo_det_steady_state);
+fprintf('\n');
+
+%% ========================================================================
 %% 9. JOINT SHOCK SCENARIO: "Perfect Storm"
 %%    Simultaneous eps_ren = sigma_ren AND eps_bat = sigma_bat
 %% ========================================================================
@@ -653,6 +709,15 @@ for i = 1:length(phi_vals)
     comma = ','; if i==length(phi_vals), comma=''; end
     fprintf(fid,'    {"phi_grid":%.1f,"welfare":%.8f,"impact_Igrid":%.6f,"cum_u":%.6f}%s\n',...
         phi_vals(i),phi_welfare(i),phi_impact_Ig(i),phi_cum_u(i),comma);
+end
+fprintf(fid,'  ],\n');
+
+% Sensitivity phi_b
+fprintf(fid,'  "sensitivity_phi_b": [\n');
+for i = 1:length(phib_vals)
+    comma = ','; if i==length(phib_vals), comma=''; end
+    fprintf(fid,'    {"phi_b":%.3f,"welfare":%.8f,"impact_Ip_pct":%.4f,"impact_Bstar":%.8f}%s\n', ...
+        phib_vals(i), phib_welfare(i), phib_Ip_pct(i), phib_Bstar(i), comma);
 end
 fprintf(fid,'  ],\n');
 

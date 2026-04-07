@@ -1,0 +1,54 @@
+{
+  "theta_hat": {
+    "phi_b": 0.04737124567757782,
+    "rho_ca": 0.5709267608471036,
+    "gamma_r": 0.7885437355633598,
+    "sigma_ca": 0.0028056847542170514
+  },
+  "objective_value": 0.54141497010317,
+  "success": true,
+  "message": "Optimization terminated successfully.",
+  "data_moments": {
+    "mean_b": 1.5502336837621304,
+    "std_b": 0.03150202752841157,
+    "ac1_b": 0.9920531364814287,
+    "std_ca": 0.004182887726619701,
+    "ac1_ca": 0.6776484931646183,
+    "mean_spread": -0.039384853025855496,
+    "std_spread": 0.00033291657917963876
+  },
+  "model_moments": {
+    "mean_b": 2.6786563930272824,
+    "std_b": 0.025576799037993078,
+    "ac1_b": 0.9913751491646524,
+    "std_ca": 0.0036313067802718796,
+    "ac1_ca": 0.6265693816909412,
+    "mean_spread": -0.03203958301220969,
+    "std_spread": 0.00039297731236795364
+  },
+  "weights": {
+    "mean_b": 0.75,
+    "std_b": 1.0,
+    "ac1_b": 1.25,
+    "std_ca": 1.0,
+    "ac1_ca": 1.25,
+    "mean_spread": 1.25,
+    "std_spread": 1.25
+  },
+  "config": {
+    "beta": 0.99,
+    "seed": 42,
+    "n_sim": 4000,
+    "burn_in": 500,
+    "maxiter": 120,
+    "data_path": "dummy.csv",
+    "self_test": true,
+    "self_test_data_path": "smm_self_test_data.csv"
+  },
+  "self_test_truth": {
+    "phi_b": 0.05,
+    "rho_ca": 0.65,
+    "gamma_r": 0.4,
+    "sigma_ca": 0.003
+  }
+}

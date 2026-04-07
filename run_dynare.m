@@ -617,6 +617,51 @@ end
 set_param_value('beta', 0.99);  % restore
 set_param_value('r_bar', 1/0.99 - 1);  % restore
 
+%% -----------------------------------------------------------------------
+%% Sensitivity: phi_b (debt-elastic premium)
+%% Table 6 in thesis: phi_b = 0.001 (SGU), 0.039 (baseline), 0.10
+%% -----------------------------------------------------------------------
+phi_b_values  = [0.001, 0.039, 0.10];
+phi_b_welfare = zeros(size(phi_b_values));
+phi_b_impact_Ip    = zeros(size(phi_b_values));
+phi_b_impact_Bstar = zeros(size(phi_b_values));
+phi_b_bk_ok        = false(size(phi_b_values));
+
+fprintf('\nSensitivity to phi_b (debt-elastic premium):\n');
+for i = 1:length(phi_b_values)
+    set_param_value('phi_b', phi_b_values(i));
+    [oo_.dr.ys, M_.params, info_check] = vietnam_dsge_steadystate(oo_.dr.ys, oo_.exo_steady_state, M_, options_);
+    [oo_.dr, info_ss, M_.params] = resol(0, M_, options_, oo_.dr, oo_.dr.ys, oo_.exo_steady_state, oo_.exo_det_steady_state);
+    if info_ss(1) == 0
+        phi_b_bk_ok(i) = true;
+        dr = oo_.dr;
+        shock_vec = zeros(M_.exo_nbr, 1);
+        shock_vec(find(strcmp(M_.exo_names, 'eps_ren'))) = M_.params(strcmp(M_.param_names, 'sigma_ren'));
+        state = dr.ghu * shock_vec;
+        irf_all = zeros(M_.endo_nbr, T);
+        irf_all(:,1) = state;
+        for tt = 2:T
+            irf_all(:,tt) = dr.ghx * irf_all(:,tt-1);
+        end
+        idx_C      = find(strcmp(M_.endo_names, 'C'));
+        idx_Ip     = find(strcmp(M_.endo_names, 'I_p'));
+        idx_Bstar  = find(strcmp(M_.endo_names, 'B_star'));
+        irf_C_phi   = irf_all(idx_C, :) * 100;
+        irf_Ip_phi  = irf_all(idx_Ip, :) * 100;
+        irf_Bs_phi  = irf_all(idx_Bstar, :);
+        disc = 0.99 .^ (0:T-1);
+        normalizer = (1 - 0.99^T)/(1-0.99);
+        phi_b_welfare(i) = abs((1 - exp(sum(disc .* log(1 + irf_C_phi/100)) / normalizer)) * 100);
+        phi_b_impact_Ip(i)    = irf_Ip_phi(1);
+        phi_b_impact_Bstar(i) = irf_Bs_phi(1);
+        fprintf('  phi_b = %.3f: Welfare = %.6f%%, I_p impact = %+.1f%%, B* impact = %+.3f, BK = OK\n', ...
+            phi_b_values(i), phi_b_welfare(i), phi_b_impact_Ip(i), phi_b_impact_Bstar(i));
+    else
+        fprintf('  phi_b = %.3f: FAILED (info = %d)\n', phi_b_values(i), info_ss(1));
+    end
+end
+set_param_value('phi_b', 0.039);  % restore to baseline
+
 % Final restore
 [oo_.dr.ys, M_.params, ~] = vietnam_dsge_steadystate(oo_.dr.ys, oo_.exo_steady_state, M_, options_);
 [oo_.dr, ~, M_.params] = resol(0, M_, options_, oo_.dr, oo_.dr.ys, oo_.exo_steady_state, oo_.exo_det_steady_state);

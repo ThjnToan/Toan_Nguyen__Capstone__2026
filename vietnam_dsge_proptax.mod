@@ -14,7 +14,36 @@
 // Fulbright University Vietnam, February 2026
 //
 // =========================================================================
-// DYNARE SYNTAX PRIMER (for better readings for non-Dynarers)
+// UNIT SYSTEM — what does "1" mean in this model?
+// -------------------------------------------------------------------------
+// Single output normalization: Y_ss = 1 (one period of GDP per household).
+//   This is the sole free scale choice, enforced by the TFP parameter Z
+//   (calibrated endogenously in vietnam_dsge_proptax_steadystate.m).
+//   Z = 1.1307 rescales the Cobb-Douglas value-added so that the CES
+//   output aggregator delivers exactly Y_ss = 1.  All levels in the
+//   steady-state table are expressed as fractions of this single GDP unit.
+//   Ratios such as C/Y, K_p/Y, I/Y, and all percentage impulse-response
+//   deviations are invariant to this scale choice.
+//
+// Time endowment: normalized to 1. L_ss = 0.33 means one-third of
+//   available time is spent working. This pins the scale of labour hours.
+//
+// Energy endowment E_bar = 0.15: maintained at its calibrated value
+//   (jointly consistent with omega_E = 0.045 and the CES structure).
+//   Z absorbs any residual scaling needed to reach Y_ss = 1; E_bar does
+//   not need to change.
+//
+// A_bat = 1 (steady state): a FREE scale normalization (distinct from Z).
+//   Only eta_bat and chi have economic content; any positive A_bat_ss
+//   works because phi_int re-calibrates to maintain u_ss = 0.97.
+//
+// P_bat = 1 (steady state): NOT a free choice. It is the unique fixed
+//   point of the zero-drift log-AR(1): E[log P_bat] = 0 => P_bat_ss = 1.
+//   One unit of battery capital costs one unit of output in steady state.
+//
+// B_star_ss = 0: a model assumption (balanced trade), not a normalization.
+// =========================================================================
+// DYNARE SYNTAX PRIMER
 // -------------------------------------------------------------------------
 // - X(-1) refers to X_{t-1}  (last period's value)
 // - X(+1) refers to X_{t+1}  (next period's expected value)
@@ -111,6 +140,7 @@ parameters
     // --- Calibrated aggregates ---
     E_bar           // Energy endowment (exogenous, normalized)
     Vol_ren_bar     // Steady-state renewable output volatility
+    Z               // TFP scale parameter [calibrated so Y_ss = 1; sole output normalization]
 ;
 
 // =========================================================================
@@ -151,12 +181,14 @@ phi_grid = 1.5;         // grid investment response elasticity
 u_target = 0.97;        // reliability target (97% utilization, EVN target)
 
 // Exogenous calibrated aggregates
-E_bar       = 0.15;     // normalized energy endowment
-Vol_ren_bar = 0.0054;   // steady-state renewable volatility
+E_bar       = 0.15;     // energy endowment level (calibrated jointly with omega_E = 0.045
+                         // to maintain CES internal consistency at SS; NOT a free normalization)
+Vol_ren_bar = 0.0054;   // steady-state renewable volatility (= theta_ren * sigma_ren)
+Z           = 1.0;      // PLACEHOLDER: recalibrated in steadystate file so that Y_ss = 1
 
 // External sector (Schmitt-Grohe & Uribe 2003)
 r_bar    = 1/beta - 1;  // world quarterly interest rate (~4% annual)
-phi_b    = 0.001;       // debt-elastic premium (small, for stationarity)
+phi_b    = 0.039;       // debt-elastic premium: real-data calibration from WB VN real rate & external debt/GNI
 B_star_ss = 0;          // balanced trade in steady state
 
 // =========================================================================
@@ -222,8 +254,10 @@ Y = ((1-omega_E) * V^((sigma_E-1)/sigma_E) + omega_E * E_bar^((sigma_E-1)/sigma_
 // [5] Cobb-Douglas value added (eq:value_added in paper)
 // Effective capital = u * K_p(-1): reliability enters multiplicatively,
 // so intermittency acts like a negative TFP shock.
+// Z is the TFP scale parameter calibrated so that Y_ss = 1 (the model's
+// single output normalization). Z = 1.1307 in the baseline calibration.
 // Note: K_p(-1) because capital installed last period is used today.
-V = (u * K_p(-1))^alpha * L^(1-alpha);
+V = Z * (u * K_p(-1))^alpha * L^(1-alpha);
 
 // ------- RELIABILITY BLOCK -------
 
@@ -308,7 +342,9 @@ r_star = r_bar + phi_b * (exp(B_star_ss - B_star) - 1);
 
 // [16] Battery price AR(1) process (eq:battery_price_shock in paper)
 // World battery price follows a persistent stochastic process.
-// P_bat = 1 in steady state (normalization via log specification).
+// P_bat = 1 in steady state: NOT a free normalization. The zero-drift
+// log-AR(1) specification forces E[log P_bat] = 0 => P_bat_ss = exp(0) = 1.
+// Interpretation: in SS, one unit of battery capital costs one unit of output.
 log(P_bat) = rho_bat * log(P_bat(-1)) + eps_bat;
 
 // [17] Renewable intermittency AR(1) process
@@ -340,10 +376,12 @@ end;
 // =========================================================================
 
 initval;
-    Y = 0.95; C = 0.64; L = 0.33; K_p = 11.7;
-    K_b = 0.19; K_g = 1.14; I_p = 0.29; I_bat = 0.0057;
-    I_grid = 0.01425; u = 0.97; F = 0.526; A_bat = 1.0;
-    V = 1.14; P_bat = 1.0;
+    Y = 1.00; C = 0.73; L = 0.33; K_p = 9.83;
+    K_b = 0.19; K_g = 1.14; I_p = 0.246; I_bat = 0.0057;
+    I_grid = 0.01425; u = 0.97; F = 0.526;
+    A_bat = 1.0;   // free scale choice: any positive value works; phi_int re-calibrates to match u_ss = 0.97
+    V = 1.21;
+    P_bat = 1.0;   // structurally required: unique SS of zero-drift log-AR(1); NOT a free choice
     B_star = 0; r_star = 0.01;
     a_ren = 0;   // intermittency process = 0 in steady state
     a_I = 0;     // implementation shock = 0 in steady state

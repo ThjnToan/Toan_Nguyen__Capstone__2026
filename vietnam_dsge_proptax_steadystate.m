@@ -51,34 +51,33 @@ F = (p_mu * (A_bat * K_b)^((rf-1)/rf) + (1-p_mu) * K_g^((rf-1)/rf))^(rf/(rf-1));
 % Calibrate phi_int from reliability equation
 phi_int_val = -p_psi * F / (Vol_ren_bar * log(1 - u));
 
-% Capital from no-arbitrage: (1-tau_ss)*alpha*Y/K_p + 1 - delta_p = 1 + r_star
-% => (1-tau_ss)*alpha*Y/K_p = r_star + delta_p
-% We iterate jointly since tau_ss = I_grid_ss/Y_ss = delta_g*K_g/Y
-R_target = r_star + p_delta_p;
-I_grid_ss = p_delta_g * K_g;  % = 0.01425
+% ---- Single output normalization: Y_ss = 1 ----
+% With Y_ss = 1 pinned, all steady-state quantities can be solved directly
+% without iteration.  The TFP scale Z is calibrated residually so that
+% V = Z*(u*K_p)^alpha*L^(1-alpha) is consistent with CES output = 1.
+%
+% Step 1: tau_ss = I_grid_ss / Y_ss = delta_g * K_g  (since Y_ss = 1)
+Y = 1.0;
+R_target   = r_star + p_delta_p;
+I_grid_ss  = p_delta_g * K_g;          % = 0.014250
+I_bat      = p_delta_b * K_b;          % = 0.005700
+tau_ss     = I_grid_ss / Y;            % = 0.014250 (1.425%)
 
-% Initial guess: K_p ignoring tau
-K_p = (p_alpha * u^(p_alpha) * L^(1-p_alpha) / R_target)^(1/(1-p_alpha));
+% Step 2: K_p from no-arbitrage Euler at Y_ss = 1
+%   (1 - tau_ss) * alpha * Y / K_p = R_target  =>  K_p = (1-tau_ss)*alpha/R_target
+K_p = (1 - tau_ss) * p_alpha * Y / R_target;
 
-for iter = 1:200
-    V = (u * K_p)^p_alpha * L^(1-p_alpha);
-    Y = ((1-p_omega_E) * V^((p_sigma_E-1)/p_sigma_E) + p_omega_E * E_bar^((p_sigma_E-1)/p_sigma_E))^(p_sigma_E/(p_sigma_E-1));
-    tau_ss = I_grid_ss / Y;
-    % Capital Euler at SS: (1-tau_ss)*alpha*Y/K_p = r_star + delta_p
-    K_p_new = (1 - tau_ss) * p_alpha * Y / R_target;
-    if abs(K_p_new - K_p) < 1e-12
-        break;
-    end
-    K_p = K_p_new;
-end
-K_p = K_p_new;
-V = (u * K_p)^p_alpha * L^(1-p_alpha);
-Y = ((1-p_omega_E) * V^((p_sigma_E-1)/p_sigma_E) + p_omega_E * E_bar^((p_sigma_E-1)/p_sigma_E))^(p_sigma_E/(p_sigma_E-1));
-tau_ss = I_grid_ss / Y;
+% Step 3: Required V_ss from CES inversion  Y = [(1-wE)*V^sE + wE*Ebar^sE]^(1/sE)
+%   1^sE = (1-wE)*V^sE + wE*Ebar^sE  =>  V^sE = (1 - wE*Ebar^sE)/(1-wE)
+sE = (p_sigma_E - 1) / p_sigma_E;      % = -2/3
+V_sE   = (Y^sE - p_omega_E * E_bar^sE) / (1 - p_omega_E);
+V      = V_sE^(1/sE);                  % V_ss = 1.2109
+
+% Step 4: TFP scale Z  (sole output normalization)
+Z_val  = V / ((u * K_p)^p_alpha * L^(1 - p_alpha));
 
 % Investment flows
-I_p = p_delta_p * K_p;
-I_bat = p_delta_b * K_b;
+I_p    = p_delta_p * K_p;
 I_grid = I_grid_ss;
 
 % Consumption from resource constraint
@@ -101,6 +100,7 @@ params(strcmp(M_.param_names, 'E_bar')) = E_bar;
 params(strcmp(M_.param_names, 'Vol_ren_bar')) = Vol_ren_bar;
 params(strcmp(M_.param_names, 'r_bar')) = p_r_bar;
 params(strcmp(M_.param_names, 'tau')) = tau_ss;   % write calibrated tau back to params
+params(strcmp(M_.param_names, 'Z'))   = Z_val;    % sole output normalization: Y_ss = 1
 
 % ---- Assign steady state vector (18 variables: tau is now a parameter) ----
 ys(strcmp(M_.endo_names, 'Y')) = Y;

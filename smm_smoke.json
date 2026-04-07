@@ -1,0 +1,53 @@
+{
+  "theta_hat": {
+    "phi_b": 0.05065005990807754,
+    "rho_ca": 0.1491011936473718,
+    "gamma_r": 1.6628244258058724,
+    "sigma_ca": 0.006412757681175163
+  },
+  "objective_value": 1.142056485573194,
+  "success": false,
+  "message": "Maximum number of iterations has been exceeded.",
+  "data_moments": {
+    "mean_b": 1.5502336837621302,
+    "std_b": 0.03150202752841158,
+    "ac1_b": 0.9920531364814288,
+    "std_ca": 0.028737122719963152,
+    "ac1_ca": 0.2624650984366145,
+    "mean_spread": -0.03938485302585545,
+    "std_spread": 0.0003329165791796418
+  },
+  "model_moments": {
+    "mean_b": 2.731637265512758,
+    "std_b": 0.02627330667169691,
+    "ac1_b": 0.9671764349872446,
+    "std_ca": 0.006633461671840456,
+    "ac1_ca": 0.252613012101533,
+    "mean_spread": -0.035102821379339684,
+    "std_spread": 0.00041169322279776817
+  },
+  "weights": {
+    "mean_b": 0.75,
+    "std_b": 1.0,
+    "ac1_b": 1.25,
+    "std_ca": 1.0,
+    "ac1_ca": 1.25,
+    "mean_spread": 1.25,
+    "std_spread": 1.25
+  },
+  "config": {
+    "beta": 0.99,
+    "seed": 42,
+    "n_sim": 500,
+    "burn_in": 100,
+    "maxiter": 5,
+    "data_path": "your_data.csv",
+    "self_test": false,
+    "moments_override": "vietnam_ca_targets.json",
+    "sgu_ca_only": false,
+    "rho_ca_fixed": 0.57,
+    "gamma_r_fixed": 0.8,
+    "sigma_ca_fixed": 0.003,
+    "annual_block_size": 4
+  }
+}

@@ -1,91 +1,3 @@
-﻿% !TEX program = xelatex
-\documentclass[12pt, a4paper]{article}
-\usepackage[T1]{fontenc}
-\usepackage{amsmath, amssymb, amsthm}
-\newtheorem{proposition}{Proposition}
-\usepackage{geometry}
-\usepackage{graphicx, float, booktabs, caption}
-
-% Load natbib with author-year support
-\usepackage[authoryear]{natbib}
-% Remove the comma between author and year to match AEA style (Author Year)
-\setcitestyle{aysep={}}
-
-\usepackage[colorlinks=true, citecolor=blue, linkcolor=blue, urlcolor=blue]{hyperref}
-\usepackage{setspace}
-\usepackage{tikz}
-\usetikzlibrary{arrows.meta, positioning}
-\usepackage{pgfplots}
-\pgfplotsset{compat=1.18}
-
-\geometry{left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm}
-\onehalfspacing
-\setlength{\emergencystretch}{6em}
-\sloppy
-\hbadness=10000
-
-\title{Renewable Intermittency and Grid Investment Dynamics: The Role of Scarcity-Induced Battery Innovation in Vietnam}
-\author{Toan T. Nguyen \\ \small{Advisor: Dr. Xavier Martin G. Bautista} \\ \small{Fulbright University Vietnam}}
-\date{\today}
-
-\begin{document}
-	
-	\maketitle
-	
-	\tableofcontents
-	\clearpage
-	
-	\begin{abstract}
-		This capstone investigates the macroeconomic ``agility gap''---the divergence between rapid private renewable deployment and slow public grid investment. I develop a DSGE model integrating endogenous scarcity-induced technological change in battery storage with grid reliability constraints, embedded in a small open economy framework. Variable renewable penetration creates intermittency shocks that reduce capital utilization through grid instability.
-		
-		Calibrating to Vietnam's Power Development Plan 8, I find five results. First, intermittency shocks account for 95.4\% of output volatility and 95.8\% of reliability volatility, with global battery-price shocks contributing the remainder. Second, global battery-price shocks drive 100\% of battery investment volatility, highlighting exposure to external supply chains. Third, scarcity-induced technological change generates persistent battery improvements conditional on regulatory transmission of scarcity signals ($\chi$). Fourth, proportional taxation creates a constant fiscal wedge on capital and labor income: a one-standard-deviation intermittency shock reduces output by 0.54\% and grid utilization by 1.30\%, while the fixed tax rate $\tau_{ss}=1.43\%$ lowers the after-tax return to capital and shifts the steady state relative to the lump-sum benchmark. Fifth, suppressing scarcity signals ($\chi = 0$) raises the welfare cost of intermittency by 20\%, demonstrating that market mechanisms are quantitatively important complements to storage investment.
-		
-		\vspace{0.5cm}
-		\noindent \textbf{Keywords:} Environmental DSGE, Scarcity-Induced Innovation, Endogenous Technological Change, Investment Inertia, Renewable Intermittency, Energy Storage.
-	\end{abstract}
-	\clearpage
-	
-	\section*{List of Abbreviations}
-	\noindent Abbreviations are defined at first use in the main text and listed here for quick reference.
-	
-	\begin{tabular}{@{} l p{11cm} @{}}
-		\textbf{Acronym} & \textbf{Meaning}\\
-		\midrule
-		AR(1) & First-order autoregressive process \\
-		BESS & Battery Energy Storage System(s) \\
-		CBAM & Carbon Border Adjustment Mechanism \\
-		CES & Constant Elasticity of Substitution \\
-		DTC & Directed Technical Change \\
-		DSGE & Dynamic Stochastic General Equilibrium \\
-		E-DSGE & Environmental DSGE \\
-		EIS & Elasticity of Intertemporal Substitution \\
-		ENS & Energy Not Served \\
-		ETS & Emissions Trading System \\
-		EVN & Vietnam Electricity (Vi\d{e}t Nam \DJ i\d{e}n L\d{u}c) \\
-		FEVD & Forecast Error Variance Decomposition \\
-		FiT & Feed-in Tariff \\
-		FOC & First-Order Condition \\
-		GDP & Gross Domestic Product \\
-		GSO & General Statistics Office of Vietnam \\
-		GW & Gigawatt(s) \\
-		IAM & Integrated Assessment Model \\
-		IEA & International Energy Agency \\
-		LCOE & Levelized Cost of Energy \\
-		LNG & Liquefied Natural Gas \\
-		LOLE & Loss of Load Expectation \\
-		LOLP & Loss of Load Probability \\
-		NLDC & National Load Dispatch Centre (Vietnam) \\
-		PDP8 & Vietnam Power Development Plan 8 (Decision 500/QD-TTg) \\
-		R\&D & Research and Development \\
-		SAIDI & System Average Interruption Duration Index \\
-		SAIFI & System Average Interruption Frequency Index \\
-		SOE & Small Open Economy \\
-		TFP & Total Factor Productivity \\
-		VGB & Vietnam Government Bond \\
-		VRE & Variable Renewable Energy (primarily wind and solar photovoltaic generation whose output is non-dispatchable and weather-driven) \\
-	\end{tabular}
-	
-	\clearpage
 	\section{Introduction}
 	
 	Mitigating climate change has emerged as the defining macroeconomic challenge of the 21st century. Following the Paris Agreement, global policy has pivoted decisively toward Net Zero targets, necessitating a radical transformation of energy systems. This transition is predicated on the massive deployment of Variable Renewable Energy (VRE) sources, primarily wind and solar, whose Levelized Cost of Energy (LCOE)\footnote{Levelized Cost of Energy (LCOE): an average lifetime cost per unit of electricity, typically computed as discounted total costs divided by discounted energy output.} has fallen precipitously over the last decade. However, the integration of these sources introduces a fundamental structural friction: the shift from dispatchable fossil fuel generation to non-dispatchable renewable supply. Unlike coal or gas, whose production can be adjusted to match demand, solar and wind generation are exogenously determined by nature.
@@ -220,7 +132,7 @@
 				
 			\end{axis}
 		\end{tikzpicture}
-		\caption{Descriptive evidence for the ``agility gap.'' Left axis: installed renewable capacity (GW), decomposed into solar (orange) and wind (teal). Capacity surged from near-zero in 2017 to 22.8~GW by 2024; PDP8 targets 73.5~GW by 2030. Right axis: annual grid transmission investment (USD billion), which grew modestly from \$0.6--0.8B to \$3.2B. Battery storage (violet) remained near zero through 2024 despite a PDP8 target of 14~GW by 2030. Data: PDP8 (Decision 500/QD-TTg), EVN annual reports, IEA Vietnam Energy Outlook 2023, IRENA.}
+		\caption[Descriptive Evidence for the Agility Gap]{Descriptive evidence for the ``agility gap.'' Left axis: installed renewable capacity (GW), decomposed into solar (orange) and wind (teal). Capacity surged from near-zero in 2017 to 22.8~GW by 2024; PDP8 targets 73.5~GW by 2030. Right axis: annual grid transmission investment (USD billion), which grew modestly from \$0.6--0.8B to \$3.2B. Battery storage (violet) remained near zero through 2024 despite a PDP8 target of 14~GW by 2030. Data: PDP8 (Decision 500/QD-TTg), EVN annual reports, IEA Vietnam Energy Outlook 2023, IRENA.}
 		\label{fig:agility_gap_descriptive}
 	\end{figure}
 	
@@ -378,7 +290,7 @@
 	
 	\begin{table}[H]
 		\centering
-		\caption{\textbf{Reliability Response to Flexibility Shortfalls}}
+		\caption[Reliability Response to Flexibility Shortfalls]{\textbf{Reliability Response to Flexibility Shortfalls}}
 		\label{tab:reliability_numerical}
 		\renewcommand{\arraystretch}{1.3}
 		\small
@@ -445,7 +357,7 @@
 	
 	\begin{table}[H]
 		\centering
-		\caption{\textbf{CES Flexibility: Superadditivity Under Baseline Calibration}}
+		\caption[CES Flexibility: Superadditivity Under Baseline Calibration]{\textbf{CES Flexibility: Superadditivity Under Baseline Calibration}}
 		\label{tab:ces_complementarity}
 		\renewcommand{\arraystretch}{1.3}
 		\small
@@ -515,7 +427,7 @@
 	
 	\begin{table}[H]
 		\centering
-		\caption{\textbf{Marginal Product Decomposition of Battery Rental Rate ($R_{b,ss}$)}}
+		\caption[Marginal Product Decomposition of Battery Rental Rate]{\textbf{Marginal Product Decomposition of Battery Rental Rate ($R_{b,ss}$)}}
 		\label{tab:mpk_decomp}
 		\renewcommand{\arraystretch}{1.3}
 		\small
@@ -778,7 +690,7 @@
 		\label{eq:mu_late}
 	\end{equation}
 
-	\textit{Planning-horizon average:} Across the full decade 2021--2030, the average battery investment share is approximately $(0.14 \times 6 + 0.64 \times 4)/10 \approx 0.35$. However, the model's steady state should reflect the \textit{terminal} policy environment toward which Vietnam is transitioning. To balance the current near-term allocation (μ ≈ 0.14) with the accelerating late-period mandate (μ ≈ 0.64), I adopt $\mu = 0.16$ as a conservative near-terminal value that lies between current commitments and the rapid acceleration phase. This choice reflects the policy trajectory and rules out implausibly low battery shares (μ < 0.10), while remaining credible against the near-term baseline. Sensitivity analysis confirms that all qualitative findings are robust to $\mu \in [0.12, 0.20]$.\footnote{Note that in the model's investment-rule equilibrium, the steady-state rental rates on battery capital ($\approx 2.04$) and grid capital ($\approx 0.12$) are not equalized, since investment rules are reduced-form rather than derived from CES cost minimization. The parameter $\mu$ therefore acts as a weighting coefficient in the CES flexibility aggregator that governs substitution margins around the steady state, not as an optimality condition that equates marginal products.}
+	\textit{Planning-horizon average:} Across the full decade 2021--2030, the average battery investment share is approximately $(0.14 \times 6 + 0.64 \times 4)/10 \approx 0.35$. However, the model's steady state should reflect the \textit{terminal} policy environment toward which Vietnam is transitioning. To balance the current near-term allocation ($\mu$ $\approx$ 0.14) with the accelerating late-period mandate ($\mu$ $\approx$ 0.64), I adopt $\mu = 0.16$ as a conservative near-terminal value that lies between current commitments and the rapid acceleration phase. This choice reflects the policy trajectory and rules out implausibly low battery shares ($\mu < 0.10$), while remaining credible against the near-term baseline. Sensitivity analysis confirms that all qualitative findings are robust to $\mu \in [0.12, 0.20]$.\footnote{Note that in the model's investment-rule equilibrium, the steady-state rental rates on battery capital ($\approx 2.04$) and grid capital ($\approx 0.12$) are not equalized, since investment rules are reduced-form rather than derived from CES cost minimization. The parameter $\mu$ therefore acts as a weighting coefficient in the CES flexibility aggregator that governs substitution margins around the steady state, not as an optimality condition that equates marginal products.}
 	
 	\textbf{2. Elasticity of Substitution ($\sigma_f = 0.4$):}
 	Standard macro-energy models often assume high substitutability between energy capital types. However, \citet{hart2019} and \citet{hirth2013} demonstrate that transmission and storage are \textit{imperfect complements} in the presence of intermittency. Transmission moves energy across space, while storage moves energy across time. When solar generation is zero (nighttime), infinite transmission capacity yields zero marginal utility.
@@ -848,7 +760,7 @@
 	
 	\begin{table}[H]
 		\centering
-		\caption{\textbf{Structural Parameter Calibration (Vietnam Scenario)}}
+		\caption[Structural Parameter Calibration (Vietnam Scenario)]{\textbf{Structural Parameter Calibration (Vietnam Scenario)}}
 		\label{tab:calibration}
 		\renewcommand{\arraystretch}{1.3}
 		\small
@@ -903,7 +815,7 @@
 
 	\begin{table}[H]
 		\centering
-		\caption{\textbf{Calibration Validation: Model Fit to Vietnamese Data}}
+		\caption[Calibration Validation: Model Fit to Vietnamese Data]{\textbf{Calibration Validation: Model Fit to Vietnamese Data}}
 		\label{tab:validation}
 		\renewcommand{\arraystretch}{1.3}
 		\small
@@ -942,7 +854,7 @@
 	
 	\begin{table}[H]
 		\centering
-		\caption{\textbf{Sensitivity to Debt-Elastic Premium $\phi_b$}}
+		\caption[Sensitivity to Debt-Elastic Premium $\phi_b$]{\textbf{Sensitivity to Debt-Elastic Premium $\phi_b$}}
 		\label{tab:phi_b_sensitivity}
 		\renewcommand{\arraystretch}{1.3}
 		\footnotesize
@@ -1048,7 +960,7 @@
 			\draw[->, thick] (ext) -- node[above, label_text, fill=none] {smoothing} (cons);
 			
 		\end{tikzpicture}
-		\caption{\textbf{Model Transmission Mechanism}}
+		\caption[Model Transmission Mechanism]{\textbf{Model Transmission Mechanism}}
 		\label{fig:mechanism}
 		\parbox{\linewidth}{\footnotesize \textit{Note:} Solid arrows indicate contemporaneous effects; dashed arrows indicate dynamic feedback through capital accumulation. Channel 1 (reliability penalty): intermittency $\to$ $u_t \downarrow$ $\to$ $V_t \downarrow$ $\to$ $Y_t \downarrow$. Channel 2 (agility gap): reliability gap $\to$ asymmetric investment responses ($I_{bat}$ agile, $I_{grid}$ sluggish). Channel 3 (directed learning): reliability gap $\to$ $A_{bat}$ improvement, conditional on signal transmission $\chi$. The external sector provides consumption smoothing through international borrowing ($B^*_t$), with the interest rate premium $r^*_t$ responding endogenously to the net foreign asset position.}
 	\end{figure}
@@ -1343,7 +1255,7 @@
 	
 	\begin{table}[H]
 		\centering
-		\caption{\textbf{Model Steady State}}
+		\caption[Model Steady State]{\textbf{Model Steady State}}
 		\label{tab:steady_state}
 		\renewcommand{\arraystretch}{1.3}
 		\begin{tabular}{l c p{6.5cm}}
@@ -1386,7 +1298,7 @@
 	\begin{figure}[H]
 		\centering
 		\includegraphics[width=0.98\textwidth]{irf_proptax.png}
-		\caption{\textbf{Impulse Responses to One Standard Deviation Renewable Intermittency Shock}}
+		\caption[Impulse Responses to One Standard Deviation Renewable Intermittency Shock]{\textbf{Impulse Responses to One Standard Deviation Renewable Intermittency Shock}}
 		\label{fig:irf_baseline}
 		\parbox{0.95\textwidth}{\footnotesize \textit{Note:} All variables displayed as percentage deviations from steady state over 40 quarters (10 years). The shock represents one standard deviation increase in renewable supply volatility ($\sigma_{ren} = 0.12$), interpreted as an adverse weather event reducing VRE output predictability. Persistence: $\rho_{ren} = 0.85$. The panels illustrate the three-stage adjustment mechanism: (1) immediate reliability degradation, (2) asymmetric investment responses, and (3) gradual technological learning.}
 	\end{figure}
@@ -1394,7 +1306,7 @@
 	\begin{figure}[H]
 		\centering
 		\includegraphics[width=0.95\textwidth]{fiscal_amplification.png}
-		\caption{\textbf{Fiscal Amplification Channel: Tax Rate, Output, and Investment}}
+		\caption[Fiscal Amplification Channel: Tax Rate, Output, and Investment]{\textbf{Fiscal Amplification Channel: Tax Rate, Output, and Investment}}
 		\label{fig:fiscal_amplification}
 		\parbox{0.95\textwidth}{\footnotesize \textit{Note:} Impulse responses to a one standard deviation intermittency shock ($\sigma_{ren} = 0.12$). Output $Y_t$, consumption $C_t$, productive investment $I_{p,t}$, and value added $V_t$ in level deviations from steady state. Productive investment falls by $-3.5\%$ relative to steady state on impact due to Euler equation amplification: the expected fall in future output reduces the after-tax return to capital, compressing the incentive to invest. Consumption and output decline modestly but persistently, governed by the AR(1) intermittency process ($\rho_{ren}=0.85$). The fixed proportional tax $\tau_{ss}=1.43\%$ creates a permanent wedge that shifts the steady state but does not amplify the dynamic response.}
 	\end{figure}
@@ -1417,7 +1329,7 @@
 	
 	\begin{table}[H]
 		\centering
-		\caption{\textbf{Investment Response to Intermittency Shock}}
+		\caption[Investment Response to Intermittency Shock]{\textbf{Investment Response to Intermittency Shock}}
 		\label{tab:agility_differential}
 		\renewcommand{\arraystretch}{1.3}
 		\begin{tabular}{l c c}
@@ -1470,7 +1382,7 @@
 	
 	\begin{table}[H]
 		\centering
-		\caption{\textbf{Forecast Error Variance Decomposition (40-Quarter Horizon)}}
+		\caption[Forecast Error Variance Decomposition (40-Quarter Horizon)]{\textbf{Forecast Error Variance Decomposition (40-Quarter Horizon)}}
 		\label{tab:fevd}
 		\renewcommand{\arraystretch}{1.3}
 		\small
@@ -1500,7 +1412,7 @@
 	\begin{figure}[H]
 		\centering
 		\includegraphics[width=0.98\textwidth]{reliability_valley.png}
-		\caption{\textbf{The Reliability Valley: PDP8 Transition Path}}
+		\caption[The Reliability Valley: PDP8 Transition Path]{\textbf{The Reliability Valley: PDP8 Transition Path}}
 		\label{fig:reliability_valley}
 		\parbox{0.95\textwidth}{\footnotesize \textit{Note:} Left panel shows the policy-driven increase in renewable penetration (green line), modeled as a front-loaded S-curve ($\theta_{ren}$: 15\%$\to$50\% over 100 quarters) reflecting PDP8 targets. Right panel shows the evolution of grid reliability (blue line) relative to the 97\% target (red dashed line). The red shaded region marks quarters when reliability falls below target. The valley nadir occurs at quarter 45 ($\approx$11 years into the transition), when the gap between VRE deployment and flexibility capacity is largest. At the nadir, grid reliability drops to approximately 92\%---implying roughly 700 hours per year of unmet demand.}
 	\end{figure}
@@ -1545,7 +1457,7 @@
 	
 	\begin{table}[H]
 		\centering
-		\caption{\textbf{Closing the Gap: Policy Counterfactual Results}}
+		\caption[Closing the Gap: Policy Counterfactual Results]{\textbf{Closing the Gap: Policy Counterfactual Results}}
 		\label{tab:closing_gap}
 		\renewcommand{\arraystretch}{1.3}
 		\small
@@ -1569,7 +1481,7 @@
 	\begin{figure}[H]
 		\centering
 		\includegraphics[width=0.98\textwidth]{closing_the_gap.png}
-		\caption{\textbf{Closing the Agility Gap: Policy Counterfactuals.} Left: shared S-curve renewable deployment path. Center: reliability paths under three scenarios---the battery subsidy (dash-dot) reduces the valley depth by 38.6\%, while accelerated grid planning (dashed) shortens the valley duration by 20\%. Right: flexibility accumulation versus the level required for 97\% reliability.}
+		\caption[\textbf{Closing the Agility Gap: Policy Counterfactuals}]{\textbf{Closing the Agility Gap: Policy Counterfactuals.} Left: shared S-curve renewable deployment path. Center: reliability paths under three scenarios---the battery subsidy (dash-dot) reduces the valley depth by 38.6\%, while accelerated grid planning (dashed) shortens the valley duration by 20\%. Right: flexibility accumulation versus the level required for 97\% reliability.}
 		\label{fig:closing_gap}
 	\end{figure}
 	
@@ -1589,7 +1501,7 @@
 	
 	\begin{table}[H]
 		\centering
-		\caption{\textbf{Baseline Impact Summary (One Std.\ Dev.\ Intermittency Shock)}}
+		\caption[Baseline Impact Summary (One Std.\ Dev.\ Intermittency Shock)]{\textbf{Baseline Impact Summary (One Std.\ Dev.\ Intermittency Shock)}}
 		\label{tab:baseline_summary}
 		\renewcommand{\arraystretch}{1.3}
 		\small
@@ -1667,7 +1579,7 @@
 
 	\begin{table}[H]
 		\centering
-		\caption{\textbf{Counterfactual: Welfare Cost Under Signal Attenuation}}
+		\caption[Counterfactual: Welfare Cost Under Signal Attenuation]{\textbf{Counterfactual: Welfare Cost Under Signal Attenuation}}
 		\label{tab:counterfactual}
 		\renewcommand{\arraystretch}{1.3}
 		\begin{tabular}{l c c}
@@ -1700,7 +1612,7 @@
 
 	\begin{table}[H]
 		\centering
-		\caption{\textbf{Sensitivity Analysis: Grid Investment Responsiveness ($\phi_{grid}$)}}
+		\caption[Sensitivity Analysis: Grid Investment Responsiveness]{\textbf{Sensitivity Analysis: Grid Investment Responsiveness ($\phi_{grid}$)}}
 		\label{tab:phi_grid_sensitivity}
 		\renewcommand{\arraystretch}{1.3}
 		\small
@@ -1723,7 +1635,7 @@
 
 	\begin{table}[H]
 		\centering
-		\caption{\textbf{Sensitivity Analysis: Welfare Cost by Battery Weight ($\mu$)}}
+		\caption[Sensitivity Analysis: Welfare Cost by Battery Weight ($\mu$)]{\textbf{Sensitivity Analysis: Welfare Cost by Battery Weight ($\mu$)}}
 		\renewcommand{\arraystretch}{1.3}
 		\begin{tabular}{c c}
 			\toprule
@@ -1742,7 +1654,7 @@
 
 	\begin{table}[H]
 		\centering
-		\caption{\textbf{Sensitivity Analysis: Discount Factor ($\beta$)}}
+		\caption[Sensitivity Analysis: Discount Factor ($\beta$)]{\textbf{Sensitivity Analysis: Discount Factor ($\beta$)}}
 		\label{tab:beta_sensitivity}
 		\renewcommand{\arraystretch}{1.3}
 		\small
@@ -1783,7 +1695,7 @@
 
 	\begin{table}[H]
 		\centering
-		\caption{\textbf{Joint Shock Scenario: Impact Effects and Welfare Costs}}
+		\caption[Joint Shock Scenario: Impact Effects and Welfare Costs]{\textbf{Joint Shock Scenario: Impact Effects and Welfare Costs}}
 		\label{tab:joint_shock}
 		\renewcommand{\arraystretch}{1.3}
 		\begin{tabular}{l c c c}
@@ -1848,10 +1760,6 @@
 
 	Several extensions merit investigation. First, incorporating nominal rigidities and monetary policy would allow analysis of the ``greenflation'' channel identified by \citet{airaudo2025green} in the context of intermittency-driven supply shocks. Second, a deterministic transition path for renewable penetration targets would enable more detailed analysis of the ``Reliability Valley'' phenomenon, including the optimal sequencing of storage and grid investment. Third, heterogeneous agent extensions would capture the distributional impacts of reliability shortfalls across income groups, firm sizes, and regions---a first-order concern for equity in developing economies. Fourth, endogenizing the renewable capacity decision (replacing the exogenous $\bar{E}$) would allow joint analysis of the optimal pace of renewable deployment and flexibility investment. Fifth, incorporating carbon pricing or border adjustment mechanisms (e.g., CBAM) would link the domestic reliability problem to international climate policy.
 
-	\section*{Acknowledgments}
-	
-	I am grateful to Dr.\ Xavier Martin G.\ Bautista for patient advising and detailed feedback throughout this project. All remaining errors are my own.
-	
 	\bibliographystyle{plainnat}
 	\bibliography{references}
 	
@@ -2082,4 +1990,3 @@
 	
 	In steady state, the condition becomes $(1-\tau_{ss})(1-\alpha)V_{ss} = \varphi\,C_{ss}\,L_{ss}^{1+\sigma_L}$. Together with the resource constraint and the capital Euler equation, this pins down steady-state hours $L_{ss} = 0.33$ (calibrated target) and the disutility weight $\varphi$ (calibrated endogenously, accounting for the tax wedge at $\tau_{ss} = 1.43\%$). When $\sigma_L = 1$ (baseline calibration), the condition becomes $(1-\tau_t)(1-\alpha)V_t = \varphi\,C_t\,L_t^2$, implying a unit Frisch elasticity with respect to the after-tax real wage.
 	
-\end{document}

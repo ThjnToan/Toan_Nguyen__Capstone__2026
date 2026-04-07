@@ -1,0 +1,60 @@
+{
+  "theta_hat": {
+    "phi_b": 0.046408456376253786,
+    "rho_ca": 0.18639734762624724,
+    "gamma_r": 1.5221646183236557,
+    "sigma_ca": 0.005772961387944282
+  },
+  "objective_value": 1.1570603316162897,
+  "success": true,
+  "message": "Optimization terminated successfully.",
+  "data_moments": {
+    "mean_b": 1.5502336837621302,
+    "std_b": 0.03150202752841158,
+    "ac1_b": 0.9920531364814288,
+    "std_ca": 0.028737122719963152,
+    "ac1_ca": 0.2624650984366145,
+    "mean_spread": -0.03938485302585545,
+    "std_spread": 0.0003329165791796418
+  },
+  "model_moments": {
+    "mean_b": 2.718037284728551,
+    "std_b": 0.027317429281926254,
+    "ac1_b": 0.9759472382393578,
+    "std_ca": 0.0060438299604392,
+    "ac1_ca": 0.2541962891027848,
+    "mean_spread": -0.03196774086987161,
+    "std_spread": 0.00039559282993903937
+  },
+  "weights": {
+    "mean_b": 0.75,
+    "std_b": 1.0,
+    "ac1_b": 1.25,
+    "std_ca": 1.0,
+    "ac1_ca": 1.25,
+    "mean_spread": 1.25,
+    "std_spread": 1.25
+  },
+  "bootstrap": {
+    "phi_b_bootstrap_mean": 0.04833490982269566,
+    "phi_b_bootstrap_std": 0.0008053234477329039,
+    "phi_b_bootstrap_p05": 0.04746187468050438,
+    "phi_b_bootstrap_p50": 0.04818654147051106,
+    "phi_b_bootstrap_p95": 0.0495947068407048
+  },
+  "config": {
+    "beta": 0.99,
+    "seed": 42,
+    "n_sim": 2000,
+    "burn_in": 300,
+    "maxiter": 80,
+    "data_path": "your_data.csv",
+    "self_test": false,
+    "moments_override": "vietnam_ca_targets.json",
+    "sgu_ca_only": false,
+    "rho_ca_fixed": 0.57,
+    "gamma_r_fixed": 0.8,
+    "sigma_ca_fixed": 0.003,
+    "annual_block_size": 4
+  }
+}

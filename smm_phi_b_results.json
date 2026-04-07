@@ -1,0 +1,54 @@
+{
+  "theta_hat": {
+    "phi_b": 0.04747514316750542,
+    "rho_ca": 0.5731467697526494,
+    "gamma_r": 0.7856193697922187,
+    "sigma_ca": 0.002773607079119226
+  },
+  "objective_value": 0.5442463028396374,
+  "success": true,
+  "message": "Optimization terminated successfully.",
+  "data_moments": {
+    "mean_b": 1.5502336837621302,
+    "std_b": 0.03150202752841158,
+    "ac1_b": 0.9920531364814288,
+    "std_ca": 0.004182887726619703,
+    "ac1_ca": 0.6776484931646183,
+    "mean_spread": -0.03938485302585545,
+    "std_spread": 0.0003329165791796418
+  },
+  "model_moments": {
+    "mean_b": 2.681745696328137,
+    "std_b": 0.025701399881607467,
+    "ac1_b": 0.9916466044226542,
+    "std_ca": 0.003602961347629666,
+    "ac1_ca": 0.6236196933176167,
+    "mean_spread": -0.032157207859604416,
+    "std_spread": 0.00039358646010654533
+  },
+  "weights": {
+    "mean_b": 0.75,
+    "std_b": 1.0,
+    "ac1_b": 1.25,
+    "std_ca": 1.0,
+    "ac1_ca": 1.25,
+    "mean_spread": 1.25,
+    "std_spread": 1.25
+  },
+  "bootstrap": {
+    "phi_b_bootstrap_mean": 0.04812392363842047,
+    "phi_b_bootstrap_std": 0.0005839598988735319,
+    "phi_b_bootstrap_p05": 0.04759722739493733,
+    "phi_b_bootstrap_p50": 0.0479721528161685,
+    "phi_b_bootstrap_p95": 0.0490540863432513
+  },
+  "config": {
+    "beta": 0.99,
+    "seed": 42,
+    "n_sim": 6000,
+    "burn_in": 500,
+    "maxiter": 300,
+    "data_path": "your_data.csv",
+    "self_test": false
+  }
+}

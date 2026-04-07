@@ -142,7 +142,7 @@ Vol_ren_bar = 0.0054;   // steady-state renewable volatility
 
 // External sector (Schmitt-Grohe & Uribe 2003)
 r_bar    = 1/beta - 1;  // world quarterly interest rate (~4% annual)
-phi_b    = 0.001;       // debt-elastic premium (small, for stationarity)
+phi_b    = 0.039;       // debt-elastic premium: real-data calibration from WB VN real rate & external debt/GNI (hat_phi_b = 0.03866)
 B_star_ss = 0;          // balanced trade in steady state
 
 // =========================================================================

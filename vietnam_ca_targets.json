@@ -1,0 +1,20 @@
+{
+  "series_info": {
+    "frequency": "annual",
+    "n_obs": 10,
+    "years": "2016-2025"
+  },
+  "targets_annual": {
+    "mean_ca_to_gdp": 0.0226,
+    "std_ca_to_gdp": 0.028737122719963152,
+    "ac1_ca_to_gdp": 0.2624650984366145
+  },
+  "targets_quarterly_proxy": {
+    "std_ca_to_gdp": 0.014368561359981576,
+    "notes": "Proxy using annual std divided by sqrt(4). Use with caution."
+  },
+  "smm_moment_overrides": {
+    "std_ca": 0.028737122719963152,
+    "ac1_ca": 0.2624650984366145
+  }
+}

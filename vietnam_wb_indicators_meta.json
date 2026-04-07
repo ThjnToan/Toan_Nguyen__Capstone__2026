@@ -1,0 +1,27 @@
+{
+  "indicators": {
+    "ca_to_gdp": "BN.CAB.XOKA.GD.ZS",
+    "ext_debt_to_gni": "DT.DOD.DECT.GN.ZS",
+    "gdp_current_usd": "NY.GDP.MKTP.CD",
+    "inv_to_gdp": "NE.GDI.TOTL.ZS"
+  },
+  "n_years": 40,
+  "latest": {
+    "ca_to_gdp": {
+      "year": 2024,
+      "value": 5.88742504866573
+    },
+    "ext_debt_to_gni": {
+      "year": 2024,
+      "value": 28.849298110528
+    },
+    "gdp_current_usd": {
+      "year": 2024,
+      "value": 476388230307.175
+    },
+    "inv_to_gdp": {
+      "year": 2024,
+      "value": 30.5632304440275
+    }
+  }
+}

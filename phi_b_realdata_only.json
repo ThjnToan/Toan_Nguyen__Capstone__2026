@@ -1,0 +1,53 @@
+{
+  "mode": "real-data-only",
+  "overlap_years": [
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023
+  ],
+  "n_obs": 8,
+  "inputs": {
+    "ca_file": "vietnam_ca_2016_2025.csv",
+    "real_rate_file": "vietnam_real_interest_rate_1993_2023.csv"
+  },
+  "constructed_series": {
+    "r_bar_decimal": 0.0472375,
+    "spread_decimal_by_year": {
+      "2016": 0.0032624999999999946,
+      "2017": -0.021337500000000002,
+      "2018": -0.011137500000000002,
+      "2019": 0.004362499999999998,
+      "2020": 0.013662499999999994,
+      "2021": 0.0006624999999999964,
+      "2022": -0.0130375,
+      "2023": 0.0235625
+    },
+    "debt_proxy_by_year": {
+      "2016": -0.002,
+      "2017": 0.003899,
+      "2018": -0.0150000159,
+      "2019": -0.051541516473989996,
+      "2020": -0.09720105872404788,
+      "2021": -0.0811206032003424,
+      "2022": -0.0880062800936388,
+      "2023": -0.15101609487284123
+    },
+    "debt_proxy_mean": -0.06024832115810754
+  },
+  "estimate": {
+    "phi_b_hat": 0.0,
+    "phi_b_unconstrained": -0.19243078643538322,
+    "rmse_spread_fit": 0.01378984567535112
+  },
+  "equation": "spread_t = phi_b * (exp(d_t - d_bar) - 1)",
+  "notes": [
+    "Strictly uses observed CA and observed real rates.",
+    "Debt is a proxy reconstructed from CA identity with normalized initial debt d_0=0.",
+    "Small sample; interpret as reduced-form calibration anchor, not structural truth."
+  ]
+}

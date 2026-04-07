@@ -1,0 +1,236 @@
+{
+  "mode": "phi-profile-joint",
+  "data_moments": {
+    "mean_b": 1.5502336837621302,
+    "std_b": 0.03150202752841158,
+    "ac1_b": 0.9920531364814288,
+    "std_ca": 0.028737122719963152,
+    "ac1_ca": 0.2624650984366145,
+    "mean_spread": -0.03938485302585545,
+    "std_spread": 0.0003329165791796418
+  },
+  "config": {
+    "beta": 0.99,
+    "seed": 42,
+    "n_sim": 2500,
+    "burn_in": 400,
+    "maxiter": 70,
+    "phi_min": 0.001,
+    "phi_max": 0.08,
+    "n_grid": 17,
+    "moments_override": "vietnam_ca_targets.json"
+  },
+  "weights": {
+    "mean_b": 0.75,
+    "std_b": 1.0,
+    "ac1_b": 1.25,
+    "std_ca": 1.0,
+    "ac1_ca": 1.25,
+    "mean_spread": 1.25,
+    "std_spread": 1.25
+  },
+  "profile": [
+    {
+      "phi_b": 0.001,
+      "objective": 6.509190087294103,
+      "rho_ca": 0.2660187581785537,
+      "gamma_r": 2.583234742151608e-06,
+      "sigma_ca": 0.040087538085192345,
+      "success": true,
+      "message": "Optimization terminated successfully.",
+      "model_std_ca": 0.042392579320553986,
+      "model_ac1_ca": 0.2923595800485693
+    },
+    {
+      "phi_b": 0.0059375,
+      "objective": 5.830856061078873,
+      "rho_ca": 0.24303276686390277,
+      "gamma_r": 4.213668238044766e-07,
+      "sigma_ca": 0.02988273632957887,
+      "success": true,
+      "message": "Optimization terminated successfully.",
+      "model_std_ca": 0.03138184399107918,
+      "model_ac1_ca": 0.26953103667353817
+    },
+    {
+      "phi_b": 0.010875,
+      "objective": 5.528626770559127,
+      "rho_ca": 0.2362530544839021,
+      "gamma_r": 1.313066970767257,
+      "sigma_ca": 0.02647967143803067,
+      "success": true,
+      "message": "Optimization terminated successfully.",
+      "model_std_ca": 0.02775647640196944,
+      "model_ac1_ca": 0.2630670229962028
+    },
+    {
+      "phi_b": 0.0158125,
+      "objective": 1.8677787705035,
+      "rho_ca": 0.22738182412924246,
+      "gamma_r": 0.0,
+      "sigma_ca": 0.005093508869419698,
+      "success": true,
+      "message": "Optimization terminated successfully.",
+      "model_std_ca": 0.005325735245697877,
+      "model_ac1_ca": 0.2539889582640123
+    },
+    {
+      "phi_b": 0.02075,
+      "objective": 1.494999847987189,
+      "rho_ca": 0.22593616752641754,
+      "gamma_r": 0.09474690269835757,
+      "sigma_ca": 0.005220142655249306,
+      "success": true,
+      "message": "Optimization terminated successfully.",
+      "model_std_ca": 0.005458300038480616,
+      "model_ac1_ca": 0.25393547221406065
+    },
+    {
+      "phi_b": 0.025687500000000002,
+      "objective": 1.390375293852548,
+      "rho_ca": 0.21632291825604388,
+      "gamma_r": 0.6239598996674015,
+      "sigma_ca": 0.005126285393252225,
+      "success": true,
+      "message": "Optimization terminated successfully.",
+      "model_std_ca": 0.00536561556820097,
+      "model_ac1_ca": 0.25423897503126436
+    },
+    {
+      "phi_b": 0.030625,
+      "objective": 1.3012991869743435,
+      "rho_ca": 0.20795093183630203,
+      "gamma_r": 0.956805861425312,
+      "sigma_ca": 0.0052119531149757495,
+      "success": true,
+      "message": "Optimization terminated successfully.",
+      "model_std_ca": 0.0054617976510329515,
+      "model_ac1_ca": 0.2542977432825115
+    },
+    {
+      "phi_b": 0.035562500000000004,
+      "objective": 1.2342556521854184,
+      "rho_ca": 0.2007330690235872,
+      "gamma_r": 1.1904174334461104,
+      "sigma_ca": 0.005326694953267612,
+      "success": true,
+      "message": "Optimization terminated successfully.",
+      "model_std_ca": 0.005588026767325796,
+      "model_ac1_ca": 0.25432973128260433
+    },
+    {
+      "phi_b": 0.0405,
+      "objective": 1.1915339653589119,
+      "rho_ca": 0.19426336562966495,
+      "gamma_r": 1.3626614240156096,
+      "sigma_ca": 0.0054114351293364634,
+      "success": true,
+      "message": "Optimization terminated successfully.",
+      "model_std_ca": 0.005682262241341734,
+      "model_ac1_ca": 0.25436665226177335
+    },
+    {
+      "phi_b": 0.0454375,
+      "objective": 1.1735616252921548,
+      "rho_ca": 0.18817440616929781,
+      "gamma_r": 1.4912707534733898,
+      "sigma_ca": 0.005433415965473852,
+      "success": true,
+      "message": "Optimization terminated successfully.",
+      "model_std_ca": 0.005710346718785293,
+      "model_ac1_ca": 0.25445944111984653
+    },
+    {
+      "phi_b": 0.050375,
+      "objective": 1.1795362087865366,
+      "rho_ca": 0.18210634021008842,
+      "gamma_r": 1.5845853815713786,
+      "sigma_ca": 0.00536531012351659,
+      "success": true,
+      "message": "Optimization terminated successfully.",
+      "model_std_ca": 0.0056438792249299125,
+      "model_ac1_ca": 0.25466762427738293
+    },
+    {
+      "phi_b": 0.0553125,
+      "objective": 1.2073867438632881,
+      "rho_ca": 0.17561846640871762,
+      "gamma_r": 1.6457913448754746,
+      "sigma_ca": 0.005180035585667568,
+      "success": true,
+      "message": "Optimization terminated successfully.",
+      "model_std_ca": 0.00545464904385787,
+      "model_ac1_ca": 0.25502763915481447
+    },
+    {
+      "phi_b": 0.06025,
+      "objective": 1.2532811842108353,
+      "rho_ca": 0.16811392464640457,
+      "gamma_r": 1.6741393910382392,
+      "sigma_ca": 0.004850283890648746,
+      "success": true,
+      "message": "Optimization terminated successfully.",
+      "model_std_ca": 0.005114077111728062,
+      "model_ac1_ca": 0.25555786221257476
+    },
+    {
+      "phi_b": 0.0651875,
+      "objective": 1.3108512591327128,
+      "rho_ca": 0.15883483240718815,
+      "gamma_r": 1.6666231637282372,
+      "sigma_ca": 0.0043644586068922984,
+      "success": true,
+      "message": "Optimization terminated successfully.",
+      "model_std_ca": 0.004609785722138175,
+      "model_ac1_ca": 0.25624692474612276
+    },
+    {
+      "phi_b": 0.070125,
+      "objective": 1.371397796201126,
+      "rho_ca": 0.1476118586075283,
+      "gamma_r": 1.6288114498955664,
+      "sigma_ca": 0.0037934225170522386,
+      "success": true,
+      "message": "Optimization terminated successfully.",
+      "model_std_ca": 0.004015515287581787,
+      "model_ac1_ca": 0.25709010460035664
+    },
+    {
+      "phi_b": 0.0750625,
+      "objective": 1.4273381144799477,
+      "rho_ca": 0.13524579363206715,
+      "gamma_r": 1.580213911940331,
+      "sigma_ca": 0.0032716980380775806,
+      "success": true,
+      "message": "Optimization terminated successfully.",
+      "model_std_ca": 0.0034716912139348935,
+      "model_ac1_ca": 0.2578574234119837
+    },
+    {
+      "phi_b": 0.08,
+      "objective": 1.4756427618120957,
+      "rho_ca": 0.12280512216109506,
+      "gamma_r": 1.5369058352522003,
+      "sigma_ca": 0.002863594442177763,
+      "success": true,
+      "message": "Optimization terminated successfully.",
+      "model_std_ca": 0.0030459323630637686,
+      "model_ac1_ca": 0.25847989130021426
+    }
+  ],
+  "best": {
+    "phi_b": 0.0454375,
+    "objective": 1.1735616252921548,
+    "rho_ca": 0.18817440616929781,
+    "gamma_r": 1.4912707534733898,
+    "sigma_ca": 0.005433415965473852,
+    "success": true,
+    "message": "Optimization terminated successfully.",
+    "model_std_ca": 0.005710346718785293,
+    "model_ac1_ca": 0.25445944111984653
+  },
+  "identification_band_10pct_obj": {
+    "phi_min": 0.035562500000000004,
+    "phi_max": 0.06025
+  }
+}
