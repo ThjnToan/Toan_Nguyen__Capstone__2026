@@ -17,6 +17,11 @@ clear all;
 close all;
 clc;
 
+% Standardize on LaTeX interpreter for all figures
+set(groot, 'defaultTextInterpreter', 'latex');
+set(groot, 'defaultAxesTickLabelInterpreter', 'latex');
+set(groot, 'defaultLegendInterpreter', 'latex');
+
 %% Add Dynare to MATLAB path
 addpath('C:/dynare/6.5/matlab');
 
@@ -1060,7 +1065,7 @@ plot(t_trans/4, theta_path*100, 'k-', 'LineWidth', 2.5);
 hold on;
 yline(50, 'r--', 'PDP8 Target', 'LineWidth', 1, 'LabelHorizontalAlignment', 'left');
 hold off;
-grid on; xlabel('Years'); ylabel('Renewable Penetration (%)');
+grid on; xlabel('Years'); ylabel('Renewable Penetration (\%)');
 title('VRE Deployment Path');
 
 % Panel 2: Reliability paths
@@ -1073,7 +1078,7 @@ for sc = 1:n_scen
 end
 yline(97, 'r--', 'Target (97%)', 'LineWidth', 1.5, 'LabelHorizontalAlignment', 'left');
 hold off;
-grid on; xlabel('Years'); ylabel('Grid Reliability (%)');
+grid on; xlabel('Years'); ylabel('Grid Reliability (\%)');
 title('Reliability Valley: Policy Comparison');
 legend('Location', 'south', 'FontSize', 9);
 % Compute y-limits from data (was hardcoded [85 100], clipping baseline curve to ~81%)
@@ -1121,8 +1126,8 @@ text(mid_q/4 + 0.5, theta_path(mid_q)*100 - 3, 'Inflection', 'FontSize', 8, 'Col
 hold off;
 grid on;
 xlabel('Years from baseline', 'FontSize', 10);
-ylabel('Renewable penetration (\theta_{ren}, \%)', 'FontSize', 10);
-title('VRE Deployment: S-Curve Path', 'FontSize', 11, 'FontWeight', 'bold');
+ylabel('Renewable penetration ($\theta_{ren}$, \%)', 'FontSize', 10);
+title('\textbf{VRE Deployment: S-Curve Path}', 'FontSize', 11);
 xlim([0 T_trans/4]);
 ylim([10 55]);
 
@@ -1147,7 +1152,7 @@ text(0.5, 97.4, 'Target (97\%)', 'Color', 'r', 'FontSize', 9);
 % Annotate nadir
 plot(min_u_idx/4, min_u_val, 'rv', 'MarkerSize', 10, 'MarkerFaceColor', 'r');
 text(min_u_idx/4 + 0.5, min_u_val - 0.8, ...
-    sprintf('Nadir: Q%d\n(%.1f%%)', min_u_idx, min_u_val), ...
+    {sprintf('Nadir: Q%d', min_u_idx), sprintf('(%.1f\\%%)', min_u_val)}, ...
     'FontSize', 8, 'Color', [0.7 0 0]);
 
 % Label valley
@@ -1159,13 +1164,13 @@ text(valley_center/4, min_u_val + 1.0, 'Reliability Valley', ...
 hold off;
 grid on;
 xlabel('Years from baseline', 'FontSize', 10);
-ylabel('Grid reliability (u, \%)', 'FontSize', 10);
-title('Reliability Valley: Baseline Transition', 'FontSize', 11, 'FontWeight', 'bold');
+ylabel('Grid reliability ($u$, \%)', 'FontSize', 10);
+title('\textbf{Reliability Valley: Baseline Transition}', 'FontSize', 11);
 xlim([0 T_trans/4]);
 ylim([min_u_val - 3, 100]);
 
-sgtitle('The Reliability Valley: PDP8 Transition Dynamics', ...
-    'FontSize', 13, 'FontWeight', 'bold');
+sgtitle('\textbf{The Reliability Valley: PDP8 Transition Dynamics}', ...
+    'FontSize', 13);
 
 print('reliability_valley.png', '-dpng', '-r300');
 fprintf('Figure saved: reliability_valley.png\n');

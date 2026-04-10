@@ -8,6 +8,11 @@
 *.fls
 *.fdb_latexmk
 *.synctex.gz
+*.lof
+*.lot
+*.nav
+*.snm
+*.vrb
 _ul
 nul
 cited_keys.txt

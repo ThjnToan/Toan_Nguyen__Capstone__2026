@@ -15,6 +15,12 @@
 %% ========================================================================
 
 clear all; close all; clc;
+
+% Standardize on LaTeX interpreter for all figures
+set(groot, 'defaultTextInterpreter', 'latex');
+set(groot, 'defaultAxesTickLabelInterpreter', 'latex');
+set(groot, 'defaultLegendInterpreter', 'latex');
+
 addpath('C:/dynare/6.5/matlab');
 % Ensure Dynare preprocessor is on the system PATH (needed in batch mode)
 setenv('PATH', [getenv('PATH') ';C:\dynare\6.5\preprocessor']);
@@ -510,10 +516,10 @@ irf_V = oo_.irfs.V_eps_ren;
 vars_to_plot = {'Y','C','u','V','I_bat','I_grid','I_p','F','A_bat','L','B_star','r_star'};
 irfs_to_plot = {irf_Y, irf_C, irf_u, irf_V, irf_I_bat, irf_I_grid, ...
                 irf_I_p, irf_F, irf_A_bat, irf_L, irf_B_star, irf_r_star};
-titles_plot = {'Output (Y)','Consumption (C)','Utilization (u)','Value Added (V)', ...
-               'Battery Inv. (I_{bat})','Grid Inv. (I_{grid})','Productive Inv. (I_p)', ...
-               'Flexibility (F)','Battery Tech. (A_{bat})','Labor (L)', ...
-               'Net Foreign Assets (B^*)','Interest Rate (r^*)'};
+titles_plot = {'Output ($Y$)','Consumption ($C$)','Utilization ($u$)','Value Added ($V$)', ...
+               'Battery Inv. ($I_{bat}$)','Grid Inv. ($I_{grid}$)','Productive Inv. ($I_p$)', ...
+               'Flexibility ($F$)','Battery Tech. ($A_{bat}$)','Labor ($L$)', ...
+               'Net Foreign Assets ($B^*$)','Interest Rate ($r^*$)',};
 colors_plot = {'b','b','r',[0.7 0 0],'g',[0.8 0.5 0],[0.2 0.6 0.8],'m','c',...
                [0 0.5 0.5],[0.5 0 0.5],[0.3 0.3 0.3]};
 
@@ -524,22 +530,22 @@ for ii = 1:12
     plot(t, zeros(1,T), 'k--', 'LineWidth', 0.5);
     hold off; grid on;
     title(titles_plot{ii}, 'FontSize', 10);
-    xlabel('Quarters'); ylabel('% dev from SS');
+    xlabel('Quarters'); ylabel('\% dev from SS');
 end
-sgtitle('IRFs to Intermittency Shock — Proportional Tax Variant','FontSize',13,'FontWeight','bold');
+sgtitle('\textbf{IRFs to Intermittency Shock --- Proportional Tax Variant}','FontSize',13);
 print('irf_proptax.png','-dpng','-r300');
 fprintf('[Saved] irf_proptax.png\n');
 
 %% Figure 2: Agility Gap
 figure('Position',[100 100 800 500]);
 hold on;
-plot(t, irf_I_bat,  'g-',  'LineWidth', 2.5, 'DisplayName', 'Battery Inv. (I_{bat}) — Private');
-plot(t, irf_I_grid, 'Color',[0.8 0.5 0],'LineWidth',2.5,'DisplayName','Grid Inv. (I_{grid}) — Public');
-plot(t, irf_I_p,    'b--', 'LineWidth', 1.5, 'DisplayName', 'Productive Inv. (I_p)');
+plot(t, irf_I_bat,  'g-',  'LineWidth', 2.5, 'DisplayName', 'Battery Inv. ($I_{bat}$) --- Private');
+plot(t, irf_I_grid, 'Color',[0.8 0.5 0],'LineWidth',2.5,'DisplayName','Grid Inv. ($I_{grid}$) --- Public');
+plot(t, irf_I_p,    'b--', 'LineWidth', 1.5, 'DisplayName', 'Productive Inv. ($I_p$)');
 plot(t, zeros(1,T), 'k--','LineWidth',0.5,'HandleVisibility','off');
 hold off; grid on;
-xlabel('Quarters','FontSize',12); ylabel('% Deviation from SS','FontSize',12);
-title('Agility Gap — Proportional Tax Variant','FontSize',13,'FontWeight','bold');
+xlabel('Quarters','FontSize',12); ylabel('\% Deviation from SS','FontSize',12);
+title('\textbf{Agility Gap --- Proportional Tax Variant}','FontSize',13);
 legend('Location','northeast','FontSize',11);
 print('agility_gap_proptax.png','-dpng','-r300');
 fprintf('[Saved] agility_gap_proptax.png\n');
@@ -558,7 +564,7 @@ if isfield(oo_.irfs,'Y_eps_bat')
         hold on; plot(t,zeros(1,T),'k--','LineWidth',0.5); hold off; grid on;
         title(bat_title{ii},'FontSize',10); ylabel('% dev'); xlabel('Quarters');
     end
-    sgtitle('IRFs to Battery Price Shock — Proportional Tax Variant','FontSize',13,'FontWeight','bold');
+    sgtitle('\textbf{IRFs to Battery Price Shock --- Proportional Tax Variant}','FontSize',13);
     print('irf_battery_price_proptax.png','-dpng','-r300');
     fprintf('[Saved] irf_battery_price_proptax.png\n');
 end
@@ -573,8 +579,8 @@ plot(t, irf_V,      'k:',  'LineWidth',1.5,'DisplayName','Value Added (V)');
 plot(t, zeros(1,T),'k--','LineWidth',0.5,'HandleVisibility','off');
 hold off; grid on;
 xlabel('Quarters','FontSize',12);
-ylabel('% Deviation from SS','FontSize',11);
-title('Output, Consumption & Investment — Proportional Tax Variant','FontSize',12,'FontWeight','bold');
+ylabel('\% Deviation from SS','FontSize',11);
+title('\textbf{Output, Consumption \& Investment --- Proportional Tax Variant}','FontSize',12);
 legend('Location','northeast','FontSize',10);
 print('fiscal_amplification.png','-dpng','-r300');
 fprintf('[Saved] fiscal_amplification.png\n');
@@ -585,7 +591,7 @@ chi_idx  = [find(chi_values==1.0), find(chi_values==0.3), find(chi_values==0.0)]
 figure('Position',[100 100 1200 900]);
 cols_cf = {'b','r',[0.4 0.4 0.4]};
 ls_cf   = {'-','--',':'};
-lbl_cf  = {'\chi=1.0 (Baseline)','\chi=0.3 (Partial)','\chi=0.0 (Suppressed)'};
+lbl_cf  = {'$\chi=1.0$ (Baseline)','$\chi=0.3$ (Partial)','$\chi=0.0$ (Suppressed)'};
 sub_vars = {chi_irfs_Y, chi_irfs_u, chi_irfs_A, chi_irfs_C};
 sub_title= {'Output (Y)','Utilization (u)','Battery Technology (A_{bat})','Consumption (C)'};
 for p = 1:4
@@ -606,8 +612,8 @@ subplot(2,3,5);
 wf_plot = chi_welfare(chi_idx); wf_plot(isnan(wf_plot))=0;
 bar(wf_plot,'FaceColor',[0.4 0.6 0.8]);
 set(gca,'XTickLabel',{'\chi=1.0','\chi=0.3','\chi=0.0'});
-ylabel('Welfare Cost (% SS consumption)'); title('Welfare Cost by \chi'); grid on;
-sgtitle('Counterfactual: Signal Attenuation — Proportional Tax Variant','FontSize',13,'FontWeight','bold');
+ylabel('Welfare Cost (\% SS consumption)'); title('Welfare Cost by $\chi$'); grid on;
+sgtitle('\textbf{Counterfactual: Signal Attenuation --- Proportional Tax Variant}','FontSize',13);
 print('counterfactual_chi_proptax.png','-dpng','-r300');
 fprintf('[Saved] counterfactual_chi_proptax.png\n');
 
@@ -619,8 +625,8 @@ plot(t, irf_ren_ro(Y_idx_j,:),'b--',  'LineWidth',1.5,'DisplayName','Intermitten
 plot(t, irf_bat_ro(Y_idx_j,:),'r:',   'LineWidth',1.5,'DisplayName','Battery price only');
 plot(t, zeros(1,T),'k--','LineWidth',0.5,'HandleVisibility','off');
 hold off; grid on;
-xlabel('Quarters','FontSize',12); ylabel('% Deviation from SS','FontSize',12);
-title('Perfect Storm: Joint Intermittency + Battery Price Shock','FontSize',12,'FontWeight','bold');
+xlabel('Quarters','FontSize',12); ylabel('\% Deviation from SS','FontSize',12);
+title('\textbf{Perfect Storm: Joint Intermittency + Battery Price Shock}','FontSize',12);
 legend('Location','southeast','FontSize',10);
 print('joint_shock_perfect_storm.png','-dpng','-r300');
 fprintf('[Saved] joint_shock_perfect_storm.png\n');

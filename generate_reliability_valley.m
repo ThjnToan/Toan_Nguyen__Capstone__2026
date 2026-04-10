@@ -6,6 +6,11 @@
 
 clear; clc;
 
+% Standardize on LaTeX interpreter for all figures
+set(groot, 'defaultTextInterpreter', 'latex');
+set(groot, 'defaultAxesTickLabelInterpreter', 'latex');
+set(groot, 'defaultLegendInterpreter', 'latex');
+
 %% Calibrated baseline parameters
 p_psi      = 2.0;
 p_sigma_ren = 0.12;
@@ -108,11 +113,11 @@ plot(t_trans/4, theta_path*100, 'Color', [0.13 0.55 0.13], 'LineWidth', 2.8);
 
 % PDP8 target
 yline(50, '--', 'LineWidth', 1.6, 'Color', [0.8 0 0]);
-text(0.8, 51.2, 'PDP8 target (50%)', 'Color', [0.8 0 0], 'FontSize', 8.5);
+text(0.8, 51.5, 'PDP8 target (50\%)', 'Color', [0.8 0 0], 'FontSize', 8.5);
 
 % Baseline penetration
 yline(15, ':', 'LineWidth', 1.2, 'Color', [0.5 0.5 0.5]);
-text(0.8, 13.5, 'Baseline (15%)', 'Color', [0.5 0.5 0.5], 'FontSize', 8.5);
+text(0.8, 13.5, 'Baseline (15\%)', 'Color', [0.5 0.5 0.5], 'FontSize', 8.5);
 
 % Inflection point annotation
 [~, mid_q] = min(abs(theta_path - (theta_start + theta_end)/2));
@@ -127,9 +132,8 @@ text(3, 37, {'Front-loaded';'acceleration'}, 'FontSize', 8.5, ...
 hold off;
 grid on; box on;
 xlabel('Years from transition start', 'FontSize', 10);
-ylabel('Renewable penetration (theta_{ren}, %)', 'FontSize', 10);
-title('(a)\ VRE Deployment: S-Curve Path', 'FontSize', 11, 'FontWeight', 'bold', ...
-    'Interpreter', 'none');
+ylabel('Renewable penetration ($\theta_{ren}$, \%)', 'FontSize', 10);
+title('(a) VRE Deployment: S-Curve Path', 'FontSize', 11, 'FontWeight', 'bold');
 xlim([0 T_trans/4]);
 ylim([10 55]);
 set(ax1, 'FontSize', 9);
@@ -150,13 +154,13 @@ plot(t_trans/4, u_pct, 'b-', 'LineWidth', 2.8, 'DisplayName', 'Grid reliability'
 
 % Target line
 yline(97, '--', 'LineWidth', 1.6, 'Color', [0.8 0 0]);
-text(0.8, 97.5, 'Target (97%)', 'Color', [0.8 0 0], 'FontSize', 8.5);
+text(0.8, 97.5, 'Target (97\%)', 'Color', [0.8 0 0], 'FontSize', 8.5);
 
 % Nadir marker
 plot(min_u_idx/4, min_u_val, 'v', 'MarkerSize', 10, ...
     'MarkerFaceColor', [0.8 0 0], 'MarkerEdgeColor', [0.6 0 0]);
 text(min_u_idx/4 + 0.8, min_u_val - 0.5, ...
-    sprintf('Nadir: Q%d\n(u = %.1f%%)', min_u_idx, min_u_val), ...
+    {sprintf('Nadir: Q%d', min_u_idx), sprintf('$u = %.1f\\%%$', min_u_val)}, ...
     'FontSize', 8.5, 'Color', [0.7 0 0]);
 
 % Valley label
@@ -177,9 +181,9 @@ end
 hold off;
 grid on; box on;
 xlabel('Years from transition start', 'FontSize', 10);
-ylabel('Grid reliability (u, %)', 'FontSize', 10);
-title('(b)\ The Reliability Valley: Baseline Transition', 'FontSize', 11, ...
-    'FontWeight', 'bold', 'Interpreter', 'none');
+ylabel('Grid reliability ($u$, \%)', 'FontSize', 10);
+title('(b) The Reliability Valley: Baseline Transition', 'FontSize', 11, ...
+    'FontWeight', 'bold');
 xlim([0 T_trans/4]);
 ylim([min_u_val - 3, 100]);
 set(ax2, 'FontSize', 9);

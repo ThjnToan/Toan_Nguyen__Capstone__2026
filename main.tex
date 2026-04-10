@@ -432,40 +432,7 @@
 	
 	The elasticity of substitution $\rho = 0.4$ is calibrated below unity to enforce this complementarity. The parameter $\mu = 0.16$ governs the relative weight of battery storage in the aggregate, reflecting Vietnam's current early-stage storage deployment. Innovation affects flexibility through $A_{bat,t-1}$: technology improvements induced by last period's reliability gap raise the usable energy-shifting capacity per unit of installed storage in the current period.
 	
-	The complementarity parameter $\rho < 1$ has a precise formal consequence for the returns to coordinated flexibility investment.
-	
-	\begin{proposition}[Superadditivity of Joint Flexibility Investment] \label{prop:superadditivity}
-		Let $F(x, y) = [\mu \, x^{s} + (1-\mu) \, y^{s}]^{1/s}$ be the CES flexibility aggregator with $s \equiv (\rho - 1)/\rho$, $\mu \in (0,1)$, and $\rho \in (0,1)$ (so that $s < 0$). For any baseline inputs $x_0, y_0 > 0$ and scaling factor $\lambda > 1$, the joint gain from scaling both inputs strictly exceeds the sum of individual gains:
-		\begin{equation*}
-			\underbrace{F(\lambda x_0, \lambda y_0) - F(x_0, y_0)}_{\textit{joint gain}} \;>\; \underbrace{\bigl[F(\lambda x_0, y_0) - F(x_0, y_0)\bigr]}_{\textit{battery-only gain}} + \underbrace{\bigl[F(x_0, \lambda y_0) - F(x_0, y_0)\bigr]}_{\textit{grid-only gain}}
-		\end{equation*}
-	\end{proposition}
-	
-	\noindent The result follows from the strict supermodularity of the CES aggregator when inputs are complements ($\rho < 1$). The formal proof and a quantitative characterization of the superadditivity gap are provided in Appendix~\ref{app:proof_superadditivity}. Table~\ref{tab:ces_complementarity} evaluates the gap numerically under the baseline calibration.
-	
-	\begin{table}[H]
-		\centering
-		\caption{\textbf{CES Flexibility: Superadditivity Under Baseline Calibration}}
-		\label{tab:ces_complementarity}
-		\renewcommand{\arraystretch}{1.3}
-		\small
-		\begin{tabular}{l c c}
-			\toprule
-			\textbf{Scenario} & \textbf{Flexibility ($F$)} & \textbf{Change from Baseline} \\
-			\midrule
-			Baseline ($K_b = 0.19$, $K_g = 1.14$) & 0.526 & --- \\
-			Double $K_b$ only ($K_b = 0.38$) & 0.809 & $+53.9$\% \\
-			Double $K_g$ only ($K_g = 2.28$) & 0.596 & $+13.2$\% \\
-			Double both & 1.052 & $+100.0$\% \\
-			\midrule
-			Sum of individual gains & --- & $+67.1$\% \\
-			Joint gain (Proposition~\ref{prop:superadditivity}) & --- & $+100.0$\% \\
-			Superadditivity gap & --- & $+32.9$ pp \\
-			\bottomrule
-		\end{tabular}
-		\vspace{0.2cm}
-		\parbox{\textwidth}{\footnotesize \textit{Note:} Computed from equation~\eqref{eq:flexibility_bundle} with $\rho = 0.4$, $\mu = 0.16$, $A_{bat} = 1$, $\lambda = 2$. The 32.9 percentage point superadditivity gap quantifies the complementarity premium. By Proposition~\ref{prop:superadditivity}, this gap is strictly positive for any $\rho < 1$. Battery capital has a larger individual marginal effect because $\mu = 0.16$ places it in the scarce-factor position within the CES aggregator.}
-	\end{table}
+	The complementarity parameter $\rho < 1$ has a precise formal consequence for the returns to coordinated flexibility investment. See Proposition~\ref{prop:superadditivity} in Appendix~\ref{app:proof_superadditivity} for the statement and quantitative characterization.
 	
 	\subsubsection{Laws of Motion}
 	
@@ -1856,8 +1823,44 @@
 	\bibliography{references}
 	
 	\appendix
-	
-	\section{Proof of Proposition~\ref{prop:superadditivity}} \label{app:proof_superadditivity}
+
+	\section{Superadditivity of Joint Flexibility Investment} \label{app:proof_superadditivity}
+
+	\begin{proposition}[Superadditivity of Joint Flexibility Investment] \label{prop:superadditivity}
+		Let $F(x, y) = [\mu \, x^{s} + (1-\mu) \, y^{s}]^{1/s}$ be the CES flexibility aggregator with $s \equiv (\rho - 1)/\rho$, $\mu \in (0,1)$, and $\rho \in (0,1)$ (so that $s < 0$). For any baseline inputs $x_0, y_0 > 0$ and scaling factor $\lambda > 1$, the joint gain from scaling both inputs strictly exceeds the sum of individual gains:
+		\begin{equation*}
+			\underbrace{F(\lambda x_0, \lambda y_0) - F(x_0, y_0)}_{\textit{joint gain}} \;>\; \underbrace{\bigl[F(\lambda x_0, y_0) - F(x_0, y_0)\bigr]}_{\textit{battery-only gain}} + \underbrace{\bigl[F(x_0, \lambda y_0) - F(x_0, y_0)\bigr]}_{\textit{grid-only gain}}
+		\end{equation*}
+	\end{proposition}
+
+	\noindent The result follows from the strict supermodularity of the CES aggregator when inputs are complements ($\rho < 1$). Table~\ref{tab:ces_complementarity} evaluates the superadditivity gap numerically under the baseline calibration.
+
+	\begin{table}[H]
+		\centering
+		\caption{\textbf{CES Flexibility: Superadditivity Under Baseline Calibration}}
+		\label{tab:ces_complementarity}
+		\renewcommand{\arraystretch}{1.3}
+		\small
+		\begin{tabular}{l c c}
+			\toprule
+			\textbf{Scenario} & \textbf{Flexibility ($F$)} & \textbf{Change from Baseline} \\
+			\midrule
+			Baseline ($K_b = 0.19$, $K_g = 1.14$) & 0.526 & --- \\
+			Double $K_b$ only ($K_b = 0.38$) & 0.809 & $+53.9$\% \\
+			Double $K_g$ only ($K_g = 2.28$) & 0.596 & $+13.2$\% \\
+			Double both & 1.052 & $+100.0$\% \\
+			\midrule
+			Sum of individual gains & --- & $+67.1$\% \\
+			Joint gain (Proposition~\ref{prop:superadditivity}) & --- & $+100.0$\% \\
+			Superadditivity gap & --- & $+32.9$ pp \\
+			\bottomrule
+		\end{tabular}
+		\vspace{0.2cm}
+		\parbox{\textwidth}{\footnotesize \textit{Note:} Computed from equation~\eqref{eq:flexibility_bundle} with $\rho = 0.4$, $\mu = 0.16$, $A_{bat} = 1$, $\lambda = 2$. The 32.9 percentage point superadditivity gap quantifies the complementarity premium. By Proposition~\ref{prop:superadditivity}, this gap is strictly positive for any $\rho < 1$. Battery capital has a larger individual marginal effect because $\mu = 0.16$ places it in the scarce-factor position within the CES aggregator.}
+	\end{table}
+
+	\subsection{Proof}
+
 	
 	\begin{proof}
 		It suffices to show that $F$ is strictly supermodular in $(x, y)$, i.e., that the cross-partial $\partial^2 F / \partial x \, \partial y > 0$ for all $x, y > 0$.

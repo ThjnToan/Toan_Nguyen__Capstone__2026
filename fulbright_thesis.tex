@@ -1,0 +1,137 @@
+\documentclass{fulbrightthesis}
+\usepackage{marktext}
+%% 14pt font size — using fontsize package (no blank page side effects)
+\usepackage[fontsize=14pt]{fontsize}
+
+\usepackage{fuvmacro}
+%% all the packages should go to fuvmacro PLEASE ADD AS NEEDED AS LONG AS IT DOES NOT INTERFERE WITH EXISTING FORMATTING
+
+%% Additional packages needed for thesis content
+\usepackage{float}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{longtable}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, positioning}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{setspace}
+
+%% Title — matches template title page format exactly
+\title{Renewable Intermittency and Grid Investment Dynamics: The Role of Scarcity-Induced Battery Innovation in Vietnam}
+
+\author{Name: Toan T. Nguyen \\ Advisor: Dr.\ Xavier Martin G.\ Bautista}
+
+\degree{Bachelor of Arts in Economics}
+\degreedate{Spring 2025}
+
+%end the preamble and start the document
+\begin{document}
+\baselineskip=18pt plus1pt
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+\maketitle
+
+%% ---------------------------------------------------------------
+%% DEDICATION PAGE (no page number)
+%% ---------------------------------------------------------------
+\begin{dedication}
+    To all who made this possible.
+\end{dedication}
+
+%% ---------------------------------------------------------------
+%% ROMAN-NUMBERED FRONT MATTER
+%% Order from template PDF:
+%%   TOC (i) → Abstract (ii) → Acknowledgements → List of Tables → List of Figures (v)
+%% ---------------------------------------------------------------
+\begin{romanpages}
+
+\tableofcontents
+
+\clearpage
+\section*{Abstract}
+\addcontentsline{toc}{section}{Abstract}
+I investigate the divergence between rapid private renewable deployment and slow public grid investment which is known in engineering as the ``agility gap.'' I develop an open-economy DSGE model with endogenous scarcity-induced technological change in battery storage and a grid reliability constraint, where variable renewable penetration creates intermittency shocks that reduce capital utilization through grid instability. 
+
+Calibrating the model to Vietnam's Power Development Plan 8, I find the following. First, the agility gap is quantitatively large and structurally asymmetric: battery investment responds quickly to reliability shortfalls but is governed almost entirely by global price shocks (100\% of its variance), while grid investment responds to domestic reliability signals but accumulates slowly through the fiscal rule (82\% of its variance). The two flexibility instruments are therefore driven by entirely separate forcing variables---international supply chains versus domestic fiscal decisions---which is why private storage deployment and public grid expansion cannot be treated as substitutes in policy design. Second, scarcity-induced technological change generates persistent battery improvements conditional on regulatory transmission of scarcity signals. Third, suppressing scarcity signals raises the welfare cost of intermittency by 20\%, demonstrating that market mechanisms are quantitatively important complements to storage investment.
+
+\vspace{0.5cm}
+\noindent \textbf{Keywords:} Environmental DSGE, Scarcity-Induced Innovation, Endogenous Technological Change, Investment Inertia, Renewable Intermittency, Energy Storage.
+
+\clearpage
+\section*{Acknowledgements}
+\addcontentsline{toc}{section}{Acknowledgements}
+I would like to express my deepest gratitude to my advisor, Dr.\ Xavier Martin G.\ Bautista, for his invaluable guidance, unwavering patience, and intellectual rigor throughout the development of this project. His expertise in bridging theoretical complexity with practical economic intuition has been instrumental in shaping the core of this research.
+
+I am also grateful to the faculty of the Economics program at Fulbright University Vietnam for their support and for providing a stimulating academic environment.
+
+To my friends and colleagues, thank you for the countless discussions and the mutual support that made this journey possible. Finally, I owe an immense debt of gratitude to my family for their constant encouragement and belief in my work.
+
+All remaining errors are my own.
+
+\clearpage
+\addcontentsline{toc}{section}{List of Tables}
+\listoftables
+
+\clearpage
+\addcontentsline{toc}{section}{List of Figures}
+\listoffigures
+
+\newpage
+%% ---------------------------------------------------------------
+%% List of Abbreviations (moved to Roman pages)
+%% ---------------------------------------------------------------
+\section*{List of Abbreviations}
+\addcontentsline{toc}{section}{List of Abbreviations}
+\noindent Abbreviations are defined at first use in the main text and listed here for quick reference.
+
+\begin{singlespace}
+\begin{longtable}{@{} l p{11cm} @{}}
+    \textbf{Acronym} & \textbf{Meaning}\\
+    \midrule
+    \endfirsthead
+    \textbf{Acronym} & \textbf{Meaning}\\
+    \midrule
+    \endhead
+    BESS & Battery Energy Storage System(s) \\
+    CBAM & Carbon Border Adjustment Mechanism \\
+    CES & Constant Elasticity of Substitution \\
+    DTC & Directed Technical Change \\
+    DSGE & Dynamic Stochastic General Equilibrium \\
+    E-DSGE & Environmental DSGE \\
+    EIS & Elasticity of Intertemporal Substitution \\
+    ENS & Energy Not Served \\
+    ETS & Emissions Trading System \\
+    EVN & Vietnam Electricity (Vi\d{e}t Nam \DJ i\d{e}n L\d{u}c) \\
+    FEVD & Forecast Error Variance Decomposition \\
+    FiT & Feed-in Tariff \\
+    GSO & General Statistics Office of Vietnam \\
+    IAM & Integrated Assessment Model \\
+    IEA & International Energy Agency \\
+    LCOE & Levelized Cost of Energy \\
+    LNG & Liquefied Natural Gas \\
+    LOLE & Loss of Load Expectation \\
+    LOLP & Loss of Load Probability \\
+    NLDC & National Load Dispatch Centre (Vietnam) \\
+    PDP8 & Vietnam Power Development Plan 8 (Decision 500/QD-TTg) \\
+    SAIDI & System Average Interruption Duration Index \\
+    SAIFI & System Average Interruption Frequency Index \\
+    SOE & Small Open Economy \\
+    TFP & Total Factor Productivity \\
+    VGB & Vietnam Government Bond \\
+    VRE & Variable Renewable Energy (primarily wind and solar photovoltaic generation whose output is non-dispatchable and weather-driven) \\
+\end{longtable}
+\end{singlespace}
+
+\end{romanpages}
+
+\clearpage
+
+%% ---------------------------------------------------------------
+%% Main body — input from main_body.tex (Introduction through Appendices)
+%% ---------------------------------------------------------------
+\input{main_body}
+
+\clearpage
+
+\end{document}

@@ -1,0 +1,117 @@
+\documentclass{fulbrightthesis}
+\usepackage{marktext}
+%% Change font size
+\usepackage[fontsize=14pt]{scrextend}
+
+\usepackage{fuvmacro}
+%% all the packages should go to  fuvmacro PLEASE ADD AS NEEDED AS LONG AS IT DOES NOT INTERFERE WITH EXISTING FORMATTING
+
+
+
+%% Title 
+\title{ Thesis Title: AB CD EF GH }
+%\author[1]{Co-author}
+\author{Name}
+
+
+\author{Name:      \\ Advisor:  }             %your name
+
+%\renewcommand{\submittedtext}{change the default text here if needed}
+\degree{Bachelor of Arts in Economics}     %the degree
+\degreedate{Spring 2025}         %the degree date
+
+%end the preamble and start the document
+\begin{document}
+
+%this baselineskip gives sufficient line spacing for an examiner to easily
+%markup the thesis with comments
+\baselineskip=18pt plus1pt
+
+%set the number of sectioning levels that get number and appear in the contents
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+
+
+\maketitle                  % create a title page from the preamble info
+
+%Include dedication if you have one.
+\begin{dedication}
+    Your dedication here. (Optional)
+\end{dedication}
+
+
+\begin{romanpages}          % start roman page numbering
+\tableofcontents            % generate and include a table of contents
+\addcontentsline{toc}{section}{Abstract}
+% \include{abstract}          % include the abstract
+\newpage
+
+\section*{Abstract}
+Your abstract here. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+\addcontentsline{toc}{section}{Acknowledgements}
+
+\begin{acknowledgements}
+Your acknowledgements here. (Optional)
+\end{acknowledgements}
+
+\listoftables               % generate and include a list of tables
+
+\newpage
+\listoffigures              % generate and include a list of figures
+\end{romanpages}            % end roman page numbering
+
+%Now include the body of your thesis here, with as many sections as needed:
+\section{Introduction}
+
+\section{Section 2} %The section below allow you to see how things would look like. Please replace all with your actual text, citations, tables, and figures.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+\subsection{A subsection}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+\subsubsection{A sub-subsection}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+%Test citation
+\cite{Berry1995}
+
+%Test table 
+\begin{table}
+    \centering
+    \begin{tabular}{cccc}
+        x & y & z & t\\
+       a  & b & c & d\\
+         &  &  & \\
+         &  &  & \\
+         &  &  & \\
+    \end{tabular}
+    \caption{Caption}
+    \label{tab:my_label}
+\end{table}
+
+%Test figure
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{fuvlogo.png}
+    \caption{Enter Caption}
+    \label{fig:enter-label}
+\end{figure}
+
+\section{Conclusion}
+
+
+%Your bibliography here. Remember to replace thesis-test-library.bib with your own bib.tex file
+\clearpage
+\addcontentsline{toc}{section}{References}
+\bibliographystyle{apalike}
+\bibliography{thesis-test-library.bib}
+
+%now enable appendix numbering format and include any appendices
+\clearpage
+\appendix
+\section{Appendix 1}
+
+\end{document}
