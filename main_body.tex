@@ -961,34 +961,13 @@
 	
 	In the innovation block, steady-state technological change is zero because $u_{ss} = u^*$, ensuring $A_{bat}$ is constant in the deterministic steady state. Deviations of reliability from target trigger endogenous scarcity-induced innovation through Equation~\eqref{eq:learning_by_doing}.
 	
-	\subsection{Log-Linearization}
-	
-	Variables are expressed as log-deviations from steady state, denoted by hats: $\hat{x}_t \equiv \ln X_t - \ln X_{ss}$. The system is linearized around the deterministic steady state described above. I present the key linearized equations organized by model block.
-	
-	\subsubsection{Household Block}
-	
-	The log-linearized capital Euler equation for the \textbf{proportional tax variant} is derived by linearizing the modified condition $1/C_t = \beta\,\mathbb{E}_t[(1-\tau)\alpha Y_{t+1}/K_{p,t} + 1 - \delta_p]/C_{t+1}$ around the steady state $R_{ss} = (1-\tau)\alpha Y_{ss}/K_{p,ss} + 1 - \delta_p = 1/\beta$. Since $\tau$ is a fixed parameter, its log-deviation $\hat{\tau}_t = 0$ under all shocks, and the linearized Euler equation simplifies to the standard form but with a coefficients adjusted for the steady-state tax wedge:
-	\begin{equation}
-		\hat{C}_t = \mathbb{E}_t \hat{C}_{t+1}
-		- \frac{(1-\tau)\,\alpha Y_{ss}/K_{p,ss}}{R_{ss}}\, \mathbb{E}_t \!\left(\hat{Y}_{t+1} - \hat{K}_{p,t}\right)
-		\label{eq:euler_lin}
-	\end{equation}
-	
-	The coefficient on expected output growth is the standard intertemporal elasticity of substitution scaled by the after-tax capital share. While the tax rate does not respond to shocks, its presence in the steady state ($1-\tau \approx 0.986$) reduces the equilibrium capital stock, meaning intermittency shocks propagate from a smaller productive base.
-	
-	The log-linearized labor supply condition for the \textbf{proportional tax variant} linearizes $(1-\tau)(1-\alpha)V_t = \varphi\,C_t\,L_t^{1+\sigma_L}$ as:
-	\begin{equation}
-		\hat{V}_t = \hat{C}_t + (1+\sigma_L)\hat{L}_t
-		\label{eq:labor_lin}
-	\end{equation}
-	
-	Here, the proportional tax acts as a level distortion that reduces the labor supply in steady state but does not introduce a time-varying labor wedge. Equilibrium employment and value-added respond to the reliability shortfall directly, with the tax regime determining the steady-state point from which these deviations are measured.
-	
-	The \textbf{government budget constraint} is satisfied in steady state by equation~\eqref{eq:gov_budget}. Under the fixed-tax baseline, the government does not adjust $\tau$ to balance the budget period-by-period; instead, any short-run gap between grid investment $I_{grid,t}$ and tax revenue $\tau Y_t$ is implicitly absorbed through the economy's aggregate resource constraint, functionally equivalent to a lump-sum adjustment in household income for the non-distortionary portion of the investment shock. This specification isolates the \textbf{structural wedge} effect of distortionary taxation from the dynamic feedback of tax rate changes, allowing for a cleaner identification of the "Agility Gap" mechanism.
-	
-	\subsubsection{Production Block}
-	
-	Since energy enters as a fixed endowment $\bar{E}$ (i.e., $\hat{E}_t = 0$), the log-linearized CES production function simplifies to:
+	\subsection{Core Linearized Mechanisms}
+
+Variables are expressed as log-deviations from steady state, denoted by hats: $\hat{x}_t \equiv \ln X_t - \ln X_{ss}$. The full system of 16 linearized equations is provided in Appendix~\ref{app:log_lin}. This section focuses purely on the novel transmission mechanisms that differentiate this framework from a standard real business cycle model.
+
+\subsubsection{The Reliability Wedge and Output}
+
+Since energy enters as a fixed endowment $\bar{E}$ (i.e., $\hat{E}_t = 0$), the log-linearized CES production function simplifies to:
 	\begin{equation}
 		\hat{Y}_t = (1-\omega_E) s_V^{\frac{\sigma_E - 1}{\sigma_E}} \hat{V}_t
 		\label{eq:output_lin}
@@ -1003,10 +982,8 @@
 	\end{equation}
 	
 	This equation reveals the central transmission channel: fluctuations in grid reliability $\hat{u}_t$ enter the value-added function with elasticity $\alpha$, acting identically to a TFP shock of magnitude $\alpha \hat{u}_t$. When reliability deteriorates by 1\%, effective output falls by approximately $\alpha \approx 0.35$\%. The lagged capital $\hat{K}_{p,t-1}$ is predetermined at the start of period $t$, consistent with the capital-in-advance timing in equation~\eqref{eq:value_added}.
-	
-	\subsubsection{Reliability Block}
-	
-	The reliability function is non-linear and requires careful linearization. From equation \eqref{eq:utilization}, I have:
+
+The reliability function is non-linear and requires careful linearization. From equation \eqref{eq:utilization}, I have:
 	\begin{equation}
 		u_t = 1 - \exp\left(-\psi \frac{F_t}{\phi_{int} \cdot \text{Vol}_{ren,t}}\right)
 	\end{equation}
@@ -1060,36 +1037,9 @@
 	Flexibility this period is determined entirely by last period's technology and capital stocks. Battery technology improvements ($\hat{A}_{bat,t-1}$) and battery capital ($\hat{K}_{b,t-1}$) enter additively---a 1\% improvement in technology induced last period is equivalent to a 1\% increase in physical capacity this period. This confirms that $F_t$ is fully predetermined: reliability $\hat{u}_t$ is driven solely by shocks and last period's stocks, with no within-period feedback from current investment or current innovation.
 	
 	Here $s_b \equiv \mu (A_{bat,ss} K_{b,ss})^{(\rho-1)/\rho} / F_{ss}^{(\rho-1)/\rho}$ is the steady-state share of battery services in total flexibility. Under the baseline calibration with $\mu = 0.16$ and $\rho = 0.4$, the battery share is modest ($s_b \approx 0.22$), reflecting Vietnam's current infrastructure bias toward grid transmission. This means that in the short run, public grid capital $\hat{K}_{g,t-1}$ is the dominant determinant of flexibility, but because grid capital adjusts slowly, intermittency shocks are absorbed primarily through utilization losses rather than investment responses.
-	
-	\subsubsection{Capital Accumulation}
-	
-	The linearized laws of motion are:
-	\begin{align}
-		\hat{K}_{g,t+1} &= (1-\delta_g)\hat{K}_{g,t} + \delta_g \hat{I}_{grid,t} \label{eq:kg_lin} \\
-		\hat{K}_{b,t+1} &= (1-\delta_b)\hat{K}_{b,t} + \delta_b \hat{I}_{bat,t} \label{eq:kb_lin}
-	\end{align}
-	
-	\noindent \textit{Reading the equations:} capital stocks are sluggish---most of next period's capital is inherited from the current period (the $(1-\delta)$ term), and only a small fraction $\delta$ is determined by current investment. Because $\delta_b = 0.03 > \delta_g = 0.0125$, battery capital turns over faster than grid capital (12\% vs.\ 5\% annual depreciation), meaning battery investment decisions affect the flexibility mix sooner. This asymmetry is one source of the ``agility gap.''
-	
-	The Government investment rule linearizes as:
-	\begin{equation}
-		\hat{I}_{grid,t} = -\phi_{grid} \hat{u}_t + \varepsilon_{I,t}
-		\label{eq:gridrule_lin}
-	\end{equation}
-	
-	Grid investment moves in the opposite direction to reliability---when $\hat{u}_t$ drops by 1\%, grid investment rises by $\phi_{grid} = 1.5$\%. The negative sign captures the reactive nature of public investment: the government invests more when the grid is stressed. However, because this investment must flow through the slow capital accumulation equation \eqref{eq:kg_lin}, the actual improvement in $K_g$ is delayed.
-	
-	The \textbf{proportional tax rate} in the distortionary variant balances the government budget period-by-period:
-	\begin{equation}
-		\tau_t = \frac{I_{grid,t}}{Y_t}
-		\label{eq:tau_lin}
-	\end{equation}
-	
-	In the lump-sum baseline, $\tau$ is fixed at $\tau_{ss}$ and short-run fluctuations in $I_{grid,t}$ do not affect the tax wedge. In the proportional tax variant, $\tau_t$ co-varies with the reliability-driven investment rule, introducing a time-varying distortion that affects the household's labor supply and consumption-smoothing decisions.
-	
-	\subsubsection{Innovation Block}
-	
-	The scarcity-induced innovation equation linearizes around steady state. Since $u_{ss} = u^*$, the reliability gap $(u^* - u_t)/u^*$ linearizes to $-\hat{u}_t$ (in log-deviations). Thus:
+
+\subsubsection{Scarcity-Induced Technological Change}
+The scarcity-induced innovation equation linearizes around steady state. Since $u_{ss} = u^*$, the reliability gap $(u^* - u_t)/u^*$ linearizes to $-\hat{u}_t$ (in log-deviations). Thus:
 	\begin{equation}
 		\underbrace{\hat{A}_{bat,t} - \hat{A}_{bat,t-1}}_{\text{technology growth}} = -\eta_{bat} \cdot \chi \cdot \hat{u}_t
 		\label{eq:abat_lin}
@@ -1100,49 +1050,10 @@
 	\noindent \textit{Timing.} Note that $\hat{u}_t$ on the right-hand side is fully determined prior to this equation, since $\hat{u}_t = \xi(\hat{F}_t - \hat{\varepsilon}_{ren,t})$ and $\hat{F}_t$ depends only on $\hat{A}_{bat,t-1}$ and $\hat{K}_{b,t-1}$ (equation~\ref{eq:flex_lin}). Thus the causal chain within period $t$ is strictly recursive: $\hat{F}_t \to \hat{u}_t \to \hat{A}_{bat,t}$. The updated technology $\hat{A}_{bat,t}$ then feeds into $\hat{F}_{t+1}$ next period, completing the inter-period transmission.
 	
 	The regulatory transmission parameter $\chi$ enters multiplicatively: in a fully liberalized market ($\chi = 1$), the reliability signal is fully transmitted to innovation incentives. In a regulated market ($\chi < 1$), the signal is attenuated, and technological change responds sluggishly even when flexibility is scarce.
+
+\subsection{Equilibrium Definition}
 	
-	\subsubsection{External Sector Block}
-	
-	The bond Euler equation linearizes as:
-	\begin{equation}
-		\hat{C}_t = \mathbb{E}_t \hat{C}_{t+1} - \frac{r^*_{ss}}{1+r^*_{ss}} \mathbb{E}_t \hat{r}^*_{t+1}
-		\label{eq:bond_euler_lin}
-	\end{equation}
-	
-	This is the international consumption-smoothing condition. When the foreign interest rate is expected to rise ($\hat{r}^*_{t+1} > 0$), saving abroad becomes more attractive, reducing current consumption. Combined with the capital Euler \eqref{eq:euler_lin}, this equation determines how the household allocates wealth between domestic capital and foreign bonds.
-	
-	The current account equation linearizes around the steady state with $B^*_{ss} = 0$:
-	\begin{equation}
-		B^*_t = (1 + r^*_{ss}) B^*_{t-1} + Y_{ss}\hat{Y}_t - C_{ss}\hat{C}_t - I_{p,ss}\hat{I}_{p,t} - P_{bat,ss}I_{bat,ss}(\hat{P}_{bat,t} + \hat{I}_{bat,t}) - I_{grid,ss}\hat{I}_{grid,t}
-		\label{eq:ca_lin}
-	\end{equation}
-	
-	The foreign asset position improves when output rises faster than consumption and investment (trade surplus), and worsens when domestic absorption exceeds output (trade deficit). The key insight for this model is that intermittency shocks simultaneously reduce output ($\hat{Y}_t < 0$) and increase battery investment needs ($\hat{I}_{bat,t} > 0$), creating a ``twin drain'' on the current account.
-	
-	Note that because $B^*_{ss} = 0$, the net foreign asset variable is expressed in levels (not log-deviations) around the steady state.
-	
-	The interest rate premium linearizes as:
-	\begin{equation}
-		\hat{r}^*_t = -\frac{\phi_b}{r^*_{ss}} B^*_t
-		\label{eq:premium_lin}
-	\end{equation}
-	
-	The debt-elastic premium ensures that the net foreign asset process is stationary: when the economy borrows ($B^*_t < 0$), the interest rate rises, discouraging further borrowing and stabilizing the external position. The value $\phi_b = 0.039$ is the simulation baseline, equal to the real-data estimate $\hat{\phi}_b \approx 0.039$ obtained from observed Vietnamese real interest rates and external debt ratios (see Section~\ref{sec:calibration}). Capital controls, a managed exchange rate, and underdeveloped bond markets limit the household's ability to borrow freely at the world interest rate, justifying a premium well above the SGU standard. A higher $\phi_b$ reduces consumption smoothing via international borrowing, ensuring that intermittency shocks propagate more fully into domestic consumption and welfare.
-	
-	\subsubsection{Exogenous Processes}
-	
-	The model features three exogenous driving forces:
-	\begin{align}
-		\hat{\varepsilon}_{ren,t} &= \rho_{ren} \hat{\varepsilon}_{ren,t-1} + \varepsilon^{ren}_t, & \varepsilon^{ren}_t &\sim N(0, \sigma^2_{ren}) \label{eq:shock_ren} \\
-		\hat{P}_{bat,t} &= \rho_{bat} \hat{P}_{bat,t-1} + \varepsilon^{bat}_t, & \varepsilon^{bat}_t &\sim N(0, \sigma^2_{bat}) \label{eq:shock_bat} \\
-		\varepsilon_{I,t} &\sim N(0, \sigma^2_I) \label{eq:shock_gov}
-	\end{align}
-	
-	The first is the domestic renewable intermittency shock, persistent with AR(1) coefficient $\rho_{ren} = 0.85$ capturing seasonal weather patterns. The second is a global battery price shock in log-levels (equation~\ref{eq:battery_price_shock}), with persistence $\rho_{bat} = 0.90$ matching lithium market dynamics. The third is a government grid-investment implementation shock, modeled as \textit{white noise} (i.i.d.) reflecting project-specific delays and procurement bottlenecks that are uncorrelated across periods. All shocks are assumed to be mutually independent.
-	
-	\subsection{Equilibrium Definition}
-	
-	A \textit{recursive competitive equilibrium} consists of sequences of allocations $\{C_t, L_t, K_{p,t}, K_{b,t}, K_{g,t}, I_{p,t}, I_{bat,t}, I_{grid,t}\}_{t=0}^{\infty}$, technology $\{A_{bat,t}\}_{t=0}^{\infty}$, prices $\{P_{bat,t}\}_{t=0}^{\infty}$, external sector $\{B^*_t, r^*_t\}_{t=0}^{\infty}$, reliability $\{u_t, F_t, V_t, Y_t\}_{t=0}^{\infty}$, and tax rate $\{\tau_t\}_{t=0}^{\infty}$ such that:
+	A \textit{recursive competitive equilibrium} consists of sequences of allocations $\{C_t, L_t, K_{p,t}, K_{b,t}, K_{g,t}, I_{p,t}, I_{bat,t}, I_{grid,t}\}_{t=0}^{\infty}$, technology $\{A_{bat,t}\}_{t=0}^{\infty}$, prices $\{P_{bat,t}\}_{t=0}^{\infty}$, external sector $\{B^*_t, r^*_t\}_{t=0}^{\infty}$, and reliability $\{u_t, F_t, V_t, Y_t\}_{t=0}^{\infty}$ such that:
 	\begin{enumerate}
 		\item Households maximize utility subject to the budget constraint (Equations~\ref{eq:euler_lin}--\ref{eq:labor_lin}).
 		\item The bond Euler equation determines intertemporal allocation across borders (Equation~\ref{eq:bond_euler_lin}).
@@ -1152,13 +1063,13 @@
 		\item Battery and grid capital accumulate according to their respective laws of motion (Equations~\ref{eq:kg_lin}--\ref{eq:kb_lin}).
 		\item Storage technology evolves according to the directed learning rule (Equation~\ref{eq:abat_lin}).
 		\item The government follows the reliability-targeting investment rule (Equation~\ref{eq:gridrule_lin}).
-		\item The proportional tax rate balances the government budget each period (Equation~\ref{eq:tau_lin}).
+		\item The proportional tax rate is a fixed parameter $\tau$ balancing the steady-state budget.
 		\item The current account determines net foreign asset evolution (Equation~\ref{eq:ca_lin}).
 		\item The interest rate premium responds to the debt position (Equation~\ref{eq:premium_lin}).
 		\item Exogenous processes follow AR(1) dynamics (Equations~\ref{eq:shock_ren}--\ref{eq:shock_gov}).
 	\end{enumerate}
 	
-	The linearized system contains 17 endogenous variables and 3 exogenous shocks, with $\tau_t = I_{grid,t}/Y_t$ as the additional static variable relative to the lump-sum baseline. The model satisfies the Blanchard-Kahn conditions \citep{blanchard1980} for a unique saddle-path stable solution, with 3 eigenvalues outside the unit circle matching the 3 forward-looking (jump) variables ($C_t$, $Y_t$, and $r^*_t$).\footnote{$C_t$ and $r^*_t$ are forward-looking because they appear with a lead in the capital Euler equation~\eqref{eq:euler} and the bond Euler equation~\eqref{eq:bond_euler} respectively. $Y_t$ enters the capital Euler as $Y_{t+1}$, making it a jumper in Dynare's eigenvalue classification. The six predetermined state variables are $K_{p,t-1}$, $K_{b,t-1}$, $K_{g,t-1}$, $A_{bat,t-1}$, $P_{bat,t-1}$, and $B^*_{t-1}$ (with the intermittency shock $\varepsilon_{ren,t}$ treated as an additional predetermined process). Although $\tau_{t+1}$ appears in the Euler equation as a forward-looking argument, it is determined by the static government budget $\tau_{t+1} = I_{grid,t+1}/Y_{t+1}$ and introduces no additional eigenvalue.} Seven state variables ($K_{p,t}$, $K_{b,t}$, $K_{g,t}$, $A_{bat,t}$, $P_{bat,t}$, $B^*_{t-1}$, and $\varepsilon_{ren,t}$) and 7 static variables ($L_t$, $u_t$, $F_t$, $V_t$, $I_{bat,t}$, $I_{grid,t}$, $\tau_t$) complete the system.
+	The linearized system contains 16 endogenous variables and 3 exogenous shocks. The model satisfies the Blanchard-Kahn conditions \citep{blanchard1980} for a unique saddle-path stable solution, with 3 eigenvalues outside the unit circle matching the 3 forward-looking (jump) variables ($C_t$, $Y_t$, and $r^*_t$).\footnote{$C_t$ and $r^*_t$ are forward-looking because they appear with a lead in the capital Euler equation~\eqref{eq:euler} and the bond Euler equation~\eqref{eq:bond_euler} respectively. $Y_t$ enters the capital Euler as $Y_{t+1}$, making it a jumper in Dynare's eigenvalue classification. The six predetermined state variables are $K_{p,t-1}$, $K_{b,t-1}$, $K_{g,t-1}$, $A_{bat,t-1}$, $P_{bat,t-1}$, and $B^*_{t-1}$ (with the intermittency shock $\varepsilon_{ren,t}$ treated as an additional predetermined process).} Seven state variables ($K_{p,t}$, $K_{b,t}$, $K_{g,t}$, $A_{bat,t}$, $P_{bat,t}$, $B^*_{t-1}$, and $\varepsilon_{ren,t}$) and 6 static variables ($L_t$, $u_t$, $F_t$, $V_t$, $I_{bat,t}$, $I_{grid,t}$) complete the system.
 	
 	\subsection{Transmission Channels} \label{subsec:transmission}
 	
@@ -1847,15 +1758,15 @@
 	\end{equation*}
 	subject to the period-$t$ budget constraint:
 	\begin{equation*}
-		C_t + I_{p,t} + P_{bat,t}\,I_{bat,t} + B^*_t + \tau_t Y_t
+		C_t + I_{p,t} + P_{bat,t}\,I_{bat,t} + B^*_t + \tau Y_t
 		= Y_t + (1+r^*_{t-1})\,B^*_{t-1}
 	\end{equation*}
 	which can be written equivalently as:
 	\begin{equation*}
 		C_t + I_{p,t} + P_{bat,t}\,I_{bat,t} + B^*_t
-		= (1-\tau_t) Y_t + (1+r^*_{t-1})\,B^*_{t-1}
+		= (1-\tau) Y_t + (1+r^*_{t-1})\,B^*_{t-1}
 	\end{equation*}
-	where $(1-\tau_t)$ is the net-of-tax share of output retained by the household. Since $\tau_t = I_{grid,t}/Y_t$ is endogenous and co-varies with the reliability gap, the tax rate is a state variable that the household takes as given when optimising.
+	where $(1-\tau)$ is the net-of-tax share of output retained by the household. The tax rate $\tau$ is a fixed parameter that the household takes as given when optimising.
 	and the productive capital accumulation law:
 	\begin{equation*}
 		K_{p,t+1} = (1-\delta_p)\,K_{p,t} + I_{p,t}
@@ -1867,7 +1778,7 @@
 	\begin{align*}
 		\mathcal{L} &= \mathbb{E}_0 \sum_{t=0}^{\infty} \beta^t \Bigg\{
 		\log(C_t) - \varphi \frac{L_t^{1+\sigma_L}}{1+\sigma_L} \\
-		&\quad + \lambda_t \Big[(1-\tau_t)Y_t + (1+r^*_{t-1})B^*_{t-1} - C_t
+		&\quad + \lambda_t \Big[(1-\tau)Y_t + (1+r^*_{t-1})B^*_{t-1} - C_t
 		- K_{p,t+1} + (1-\delta_p)K_{p,t}
 		- P_{bat,t}I_{bat,t} - B^*_t\Big]
 		\Bigg\}
@@ -1879,10 +1790,10 @@
 	Differentiating $\mathcal{L}$ with respect to $K_{p,t+1}$ yields two terms. In period $t$, an increase in $K_{p,t+1}$ by one unit reduces resources by $\lambda_t$. In period $t+1$ (discounted by $\beta$), a higher $K_{p,t+1}$ generates: (i) additional output $\alpha Y_{t+1}/K_{p,t+1}$ (marginal product of capital, approximated from the Cobb-Douglas value-added structure $V_{t+1} = (u_{t+1}K_{p,t+1})^\alpha L_{t+1}^{1-\alpha}$ via the chain rule through the CES aggregator; the exact expression is $\alpha(1-\omega_E)V_{t+1}^{s_E}Y_{t+1}^{1-s_E}/K_{p,t+1}$, which reduces to $\alpha Y_{t+1}/K_{p,t+1}$ as $\omega_E \to 0$; with $\omega_E = 0.045$ the approximation error is negligible); and (ii) the undepreciated capital $(1-\delta_p)$, both valued at the future shadow price $\beta\,\mathbb{E}_t[\lambda_{t+1}]$. Setting the partial derivative to zero:
 	\begin{equation*}
 		-\lambda_t + \beta\,\mathbb{E}_t\!\left[\lambda_{t+1}
-		\left((1-\tau_{t+1})\frac{\alpha Y_{t+1}}{K_{p,t+1}} + 1 - \delta_p\right)\right] = 0
+		\left((1-\tau)\frac{\alpha Y_{t+1}}{K_{p,t+1}} + 1 - \delta_p\right)\right] = 0
 	\end{equation*}
 	
-	The $(1-\tau_{t+1})$ term arises because the marginal product of capital in period $t+1$ accrues as output, which is taxed at rate $\tau_{t+1}$ before reaching the household. The undepreciated capital $(1-\delta_p)$ is not taxed since it is a return of the capital good itself, not income.
+	The $(1-\tau)$ term arises because the marginal product of capital in period $t+1$ accrues as output, which is taxed at the constant rate $\tau$ before reaching the household. The undepreciated capital $(1-\delta_p)$ is not taxed since it is a return of the capital good itself, not income.
 	
 	Rearranging:
 	\begin{equation*}
@@ -1907,7 +1818,7 @@
 	Substituting \eqref{eq:foc_c} and its period-$(t+1)$ counterpart $\lambda_{t+1} = 1/C_{t+1}$ into \eqref{eq:foc_k}:
 	\begin{equation*}
 		\frac{1}{C_t} = \beta\,\mathbb{E}_t\!\left[\frac{1}{C_{t+1}}
-		\left((1-\tau_{t+1})\frac{\alpha Y_{t+1}}{K_{p,t+1}} + 1 - \delta_p\right)\right]
+		\left((1-\tau)\frac{\alpha Y_{t+1}}{K_{p,t+1}} + 1 - \delta_p\right)\right]
 	\end{equation*}
 	
 	This is the modified capital Euler equation~\eqref{eq:euler} under proportional taxation. Compared to the lump-sum case, the after-tax return to capital is $(1-\tau)\alpha Y_{t+1}/K_{p,t}$ rather than $\alpha Y_{t+1}/K_{p,t}$, where $\tau = \tau_{ss} = 1.43\%$ is a fixed parameter. The constant wedge reduces the equilibrium capital stock by $(1-\tau_{ss})^{1/(1-\alpha)}$ relative to the lump-sum benchmark---a level effect. Because $\tau$ does not respond dynamically to shocks, the Euler equation retains the standard RBC structure: the only amplification comes from the Euler mechanism itself (persistent expected output declines generate large investment responses), not from a fiscal feedback loop.
@@ -1919,11 +1830,11 @@
 		1 = \beta\,\mathbb{E}_t\!\left[\frac{C_t}{C_{t+1}}
 		\left(\frac{\alpha Y_{t+1}}{K_{p,t+1}} + 1 - \delta_p\right)\right]
 	\end{equation*}
-	reveals the standard asset-pricing structure: the price of a unit investment (normalized to 1) equals the discounted stochastic discount factor $\beta\,(C_t/C_{t+1})$ times the gross payoff $(\alpha Y_{t+1}/K_{p,t+1} + 1 - \delta_p)$. In steady state, where $\mathbb{E}_t[\cdot]$ collapses and $C_t = C_{t+1}$, this yields:
+	reveals the standard asset-pricing structure: the price of a unit investment (normalized to 1) equals the discounted stochastic discount factor $\beta\,(C_t/C_{t+1})$ times the gross payoff $((1-\tau)\alpha Y_{t+1}/K_{p,t+1} + 1 - \delta_p)$. In steady state, where $\mathbb{E}_t[\cdot]$ collapses and $C_t = C_{t+1}$, this yields:
 	\begin{equation*}
-		(1-\tau_{ss})\frac{\alpha Y_{ss}}{K_{p,ss}} = \frac{1}{\beta} - 1 + \delta_p
+		(1-\tau)\frac{\alpha Y_{ss}}{K_{p,ss}} = \frac{1}{\beta} - 1 + \delta_p
 	\end{equation*}
-	which pins down the steady-state capital-to-output ratio as $K_{p,ss}/Y_{ss} = (1-\tau_{ss})\alpha\beta/(1 - \beta(1-\delta_p))$. The steady-state tax rate is $\tau_{ss} = I_{grid,ss}/Y_{ss} = \delta_g K_{g,ss}/Y_{ss}$, which is small (approximately 1.5\% given the calibration), so the distortion to the capital stock is modest but non-zero.
+	which pins down the steady-state capital-to-output ratio as $K_{p,ss}/Y_{ss} = (1-\tau)\alpha\beta/(1 - \beta(1-\delta_p))$. The steady-state tax rate is $\tau_{ss} = I_{grid,ss}/Y_{ss} = \delta_g K_{g,ss}/Y_{ss}$, which is small (approximately 1.65\% given the calibration), so the distortion to the capital stock is modest but non-zero.
 	
 	%=============================================================================
 	\section{Derivation of the Labor Supply Equation} \label{app:deriv_labor}
@@ -1936,7 +1847,7 @@
 	Using the same Lagrangian as in Appendix~\ref{app:deriv_euler}, differentiate with respect to $L_t$. Labor enters utility directly (disutility) and indirectly through output $Y_t$ (which affects the budget constraint via after-tax income $(1-\tau_t)Y_t$):
 	\begin{equation*}
 		\frac{\partial \mathcal{L}}{\partial L_t}
-		= \beta^t\left[-\varphi L_t^{\sigma_L} + \lambda_t (1-\tau_t) \frac{\partial Y_t}{\partial L_t}\right] = 0
+		= \beta^t\left[-\varphi L_t^{\sigma_L} + \lambda_t (1-\tau) \frac{\partial Y_t}{\partial L_t}\right] = 0
 	\end{equation*}
 	
 	\noindent The marginal product of labor in the model is derived through the chain rule across the nested production structure: $Y_t \to V_t \to L_t$. From the value-added function $V_t = Z\,(u_t K_{p,t-1})^\alpha L_t^{1-\alpha}$, the marginal product with respect to $L_t$ is $(1-\alpha)V_t/L_t$ (the predetermined capital $K_{p,t-1}$ is constant with respect to $L_t$). Passing this through the CES aggregator $Y_t = [(1-\omega_E)V_t^{s_E} + \omega_E \bar{E}^{s_E}]^{1/s_E}$, the chain rule gives $\partial Y_t/\partial L_t = (\partial Y_t / \partial V_t)\cdot(\partial V_t / \partial L_t)$. Firms in a competitive labor market equate the real wage $w_t$ to this marginal product:
@@ -1947,16 +1858,16 @@
 	
 	The factor $\partial Y_t / \partial V_t$ is the marginal product of value-added in the output aggregator. In the model, for notational economy, the entire chain $(\partial Y_t/\partial V_t)\cdot V_t$ reduces to $(1-\alpha)Y_t$ in the Cobb-Douglas limit, and more generally the competitive wage can be written as $w_t = (1-\alpha) V_t / L_t$ when referring to the value-added block (since the CES price of value-added services appears in the firm's first-order condition, and the model notation uses $V_t$ to denote the effective labor income share). Substituting into the labor FOC:
 	\begin{equation*}
-		-\varphi L_t^{\sigma_L} + \lambda_t (1-\tau_t) w_t = 0
+		-\varphi L_t^{\sigma_L} + \lambda_t (1-\tau) w_t = 0
 		\quad \Longrightarrow \quad
-		\varphi L_t^{\sigma_L} = \lambda_t (1-\tau_t) w_t
+		\varphi L_t^{\sigma_L} = \lambda_t (1-\tau) w_t
 	\end{equation*}
 	
 	\subsection*{Substituting the Shadow Price}
 	
 	From the consumption FOC, $\lambda_t = 1/C_t$. Substituting:
 	\begin{equation*}
-		\varphi L_t^{\sigma_L} = \frac{(1-\tau_t)\, w_t}{C_t}
+		\varphi L_t^{\sigma_L} = \frac{(1-\tau)\, w_t}{C_t}
 	\end{equation*}
 	
 	\subsection*{Substituting the Competitive Wage}
@@ -1967,15 +1878,15 @@
 	\end{equation*}
 	Substituting this expression for $w_t$:
 	\begin{equation*}
-		\varphi\, L_t^{\sigma_L} = \frac{(1-\tau_t)}{C_t} \cdot \frac{(1-\alpha)\,V_t}{L_t}
+		\varphi\, L_t^{\sigma_L} = \frac{(1-\tau)}{C_t} \cdot \frac{(1-\alpha)\,V_t}{L_t}
 	\end{equation*}
 	
 	Multiplying both sides by $C_t \, L_t$:
 	\begin{equation*}
-		\varphi \, C_t \, L_t^{1+\sigma_L} = (1-\tau_t)(1-\alpha)\,V_t
+		\varphi \, C_t \, L_t^{1+\sigma_L} = (1-\tau)(1-\alpha)\,V_t
 	\end{equation*}
 	
-	\noindent The $(1-\tau_t)$ term is the key difference from the lump-sum case: the proportional tax drives a wedge between the social marginal product of labor $(1-\alpha)V_t/L_t$ and the private after-tax return $(1-\tau_t)(1-\alpha)V_t/L_t$. For a given wage and consumption level, households supply less labor when $\tau_t$ is higher, reducing value-added and amplifying the contractionary effect of intermittency shocks.
+	\noindent The $(1-\tau)$ term is the key difference from the lump-sum case: the proportional tax drives a constant wedge between the social marginal product of labor $(1-\alpha)V_t/L_t$ and the private after-tax return $(1-\tau)(1-\alpha)V_t/L_t$. This steady-state wedge reduces the equilibrium labor supply, shifting the baseline downward relative to the lump-sum case.
 	
 	\subsection*{Introducing the Disutility Weight}
 	
@@ -1985,16 +1896,110 @@
 	\end{equation*}
 	Since $\varphi$ was already included from the start of this derivation, the final labor supply condition is:
 	\begin{equation*}
-		\varphi\, L_t^{\sigma_L} = \frac{(1-\tau_t)\,w_t}{C_t}
+		\varphi\, L_t^{\sigma_L} = \frac{(1-\tau)\,w_t}{C_t}
 	\end{equation*}
 	Following the same steps yields the \textbf{proportional-tax labor supply condition}:
 	\begin{equation*}
-		(1-\tau_t)(1-\alpha)\,V_t = \varphi\,C_t\,L_t^{1+\sigma_L}
+		(1-\tau)(1-\alpha)\,V_t = \varphi\,C_t\,L_t^{1+\sigma_L}
 	\end{equation*}
 	which is exactly the labor supply condition~\eqref{eq:labor_supply}.
 	
 	\subsection*{Economic Interpretation}
 	
-	The left-hand side, $(1-\tau_t)(1-\alpha)V_t$, is after-tax labor income: the household retains only the fraction $(1-\tau_t)$ of the competitive wage bill $(1-\alpha)V_t$, since the proportional tax reduces disposable income. The right-hand side, $\varphi\,C_t\,L_t^{1+\sigma_L}$, is the household's reservation wage scaled by consumption: the ratio of marginal disutility to marginal utility of consumption, the standard intratemporal optimality condition. The presence of $(1-\tau_t)$ drives a tax wedge between the social marginal product $(1-\alpha)V_t/L_t$ and the private net-of-tax return. When $\tau_t$ rises during an intermittency episode, the household's effective wage falls, reducing labor supply and amplifying the contraction in value-added.
+	The left-hand side, $(1-\tau)(1-\alpha)V_t$, is after-tax labor income: the household retains only the fraction $(1-\tau)$ of the competitive wage bill $(1-\alpha)V_t$, since the proportional tax reduces disposable income. The right-hand side, $\varphi\,C_t\,L_t^{1+\sigma_L}$, is the household's reservation wage scaled by consumption: the ratio of marginal disutility to marginal utility of consumption, the standard intratemporal optimality condition. The presence of $(1-\tau)$ drives a fixed tax wedge between the social marginal product $(1-\alpha)V_t/L_t$ and the private net-of-tax return. Because the tax rate is constant, the only dynamic effect comes from the wealth effect on consumption, without a time-varying fiscal feedback loop.
 	
-	In steady state, the condition becomes $(1-\tau_{ss})(1-\alpha)V_{ss} = \varphi\,C_{ss}\,L_{ss}^{1+\sigma_L}$. Together with the resource constraint and the capital Euler equation, this pins down steady-state hours $L_{ss} = 0.33$ (calibrated target) and the disutility weight $\varphi$ (calibrated endogenously, accounting for the tax wedge at $\tau_{ss} = 1.43\%$). When $\sigma_L = 1$ (baseline calibration), the condition becomes $(1-\tau_t)(1-\alpha)V_t = \varphi\,C_t\,L_t^2$, implying a unit Frisch elasticity with respect to the after-tax real wage.
+	In steady state, the condition becomes $(1-\tau_{ss})(1-\alpha)V_{ss} = \varphi\,C_{ss}\,L_{ss}^{1+\sigma_L}$. Together with the resource constraint and the capital Euler equation, this pins down steady-state hours $L_{ss} = 0.33$ (calibrated target) and the disutility weight $\varphi$ (calibrated endogenously, accounting for the tax wedge at $\tau_{ss} = 1.43\%$). When $\sigma_L = 1$ (baseline calibration), the condition becomes $(1-\tau)(1-\alpha)V_t = \varphi\,C_t\,L_t^2$, implying a unit Frisch elasticity with respect to the after-tax real wage.
+
+
+%=============================================================================
+\section{The Complete Log-Linearized Model} \label{app:log_lin}
+%=============================================================================
+
+This appendix presents the complete set of log-linearized equations that define the recursive competitive equilibrium. Variables with hats denote log-deviations from the deterministic steady state ($\hat{x}_t \equiv \ln X_t - \ln X_{ss}$), except for the net foreign asset position $B^*_t$ which is expressed in levels.
+
+\subsection{Household Block}
+	
+	The log-linearized capital Euler equation for the \textbf{proportional tax variant} is derived by linearizing the modified condition $1/C_t = \beta\,\mathbb{E}_t[(1-\tau)\alpha Y_{t+1}/K_{p,t} + 1 - \delta_p]/C_{t+1}$ around the steady state $R_{ss} = (1-\tau)\alpha Y_{ss}/K_{p,ss} + 1 - \delta_p = 1/\beta$. Since $\tau$ is a fixed parameter, its log-deviation $\hat{\tau}_t = 0$ under all shocks, and the linearized Euler equation simplifies to the standard form but with a coefficients adjusted for the steady-state tax wedge:
+	\begin{equation}
+		\hat{C}_t = \mathbb{E}_t \hat{C}_{t+1}
+		- \frac{(1-\tau)\,\alpha Y_{ss}/K_{p,ss}}{R_{ss}}\, \mathbb{E}_t \!\left(\hat{Y}_{t+1} - \hat{K}_{p,t}\right)
+		\label{eq:euler_lin}
+	\end{equation}
+	
+	The coefficient on expected output growth is the standard intertemporal elasticity of substitution scaled by the after-tax capital share. While the tax rate does not respond to shocks, its presence in the steady state ($1-\tau \approx 0.986$) reduces the equilibrium capital stock, meaning intermittency shocks propagate from a smaller productive base.
+	
+	The log-linearized labor supply condition for the \textbf{proportional tax variant} linearizes $(1-\tau)(1-\alpha)V_t = \varphi\,C_t\,L_t^{1+\sigma_L}$ as:
+	\begin{equation}
+		\hat{V}_t = \hat{C}_t + (1+\sigma_L)\hat{L}_t
+		\label{eq:labor_lin}
+	\end{equation}
+	
+	Here, the proportional tax acts as a level distortion that reduces the labor supply in steady state but does not introduce a time-varying labor wedge. Equilibrium employment and value-added respond to the reliability shortfall directly, with the tax regime determining the steady-state point from which these deviations are measured.
+	
+	The \textbf{government budget constraint} is satisfied in steady state by equation~\eqref{eq:gov_budget}. Under the fixed-tax baseline, the government does not adjust $\tau$ to balance the budget period-by-period; instead, any short-run gap between grid investment $I_{grid,t}$ and tax revenue $\tau Y_t$ is implicitly absorbed through the economy's aggregate resource constraint, functionally equivalent to a lump-sum adjustment in household income for the non-distortionary portion of the investment shock. This specification isolates the \textbf{structural wedge} effect of distortionary taxation from the dynamic feedback of tax rate changes, allowing for a cleaner identification of the "Agility Gap" mechanism.
+	
+	
+\subsection{Capital Accumulation}
+	
+	The linearized laws of motion are:
+	\begin{align}
+		\hat{K}_{g,t+1} &= (1-\delta_g)\hat{K}_{g,t} + \delta_g \hat{I}_{grid,t} \label{eq:kg_lin} \\
+		\hat{K}_{b,t+1} &= (1-\delta_b)\hat{K}_{b,t} + \delta_b \hat{I}_{bat,t} \label{eq:kb_lin}
+	\end{align}
+	
+	\noindent \textit{Reading the equations:} capital stocks are sluggish---most of next period's capital is inherited from the current period (the $(1-\delta)$ term), and only a small fraction $\delta$ is determined by current investment. Because $\delta_b = 0.03 > \delta_g = 0.0125$, battery capital turns over faster than grid capital (12\% vs.\ 5\% annual depreciation), meaning battery investment decisions affect the flexibility mix sooner. This asymmetry is one source of the ``agility gap.''
+	
+	The Government investment rule linearizes as:
+	\begin{equation}
+		\hat{I}_{grid,t} = -\phi_{grid} \hat{u}_t + \varepsilon_{I,t}
+		\label{eq:gridrule_lin}
+	\end{equation}
+	
+	Grid investment moves in the opposite direction to reliability---when $\hat{u}_t$ drops by 1\%, grid investment rises by $\phi_{grid} = 1.5$\%. The negative sign captures the reactive nature of public investment: the government invests more when the grid is stressed. However, because this investment must flow through the slow capital accumulation equation \eqref{eq:kg_lin}, the actual improvement in $K_g$ is delayed.
+	
+	The \textbf{proportional tax rate} $\tau$ is a fixed parameter calibrated to balance the steady-state government budget.
+	
+	In the distortionary variant, $\tau$ is fixed at $\tau_{ss}$ and short-run fluctuations in $I_{grid,t}$ do not affect the tax wedge. The government commits to a constant rate before the period begins, creating a permanent fiscal wedge on capital returns and labor supply, shifting the steady state and altering welfare relative to the lump-sum baseline, without an endogenous feedback loop from intermittency to tax rates.
+	
+	
+\subsection{External Sector Block}
+	
+	The bond Euler equation linearizes as:
+	\begin{equation}
+		\hat{C}_t = \mathbb{E}_t \hat{C}_{t+1} - \frac{r^*_{ss}}{1+r^*_{ss}} \mathbb{E}_t \hat{r}^*_{t+1}
+		\label{eq:bond_euler_lin}
+	\end{equation}
+	
+	This is the international consumption-smoothing condition. When the foreign interest rate is expected to rise ($\hat{r}^*_{t+1} > 0$), saving abroad becomes more attractive, reducing current consumption. Combined with the capital Euler \eqref{eq:euler_lin}, this equation determines how the household allocates wealth between domestic capital and foreign bonds.
+	
+	The current account equation linearizes around the steady state with $B^*_{ss} = 0$:
+	\begin{equation}
+		B^*_t = (1 + r^*_{ss}) B^*_{t-1} + Y_{ss}\hat{Y}_t - C_{ss}\hat{C}_t - I_{p,ss}\hat{I}_{p,t} - P_{bat,ss}I_{bat,ss}(\hat{P}_{bat,t} + \hat{I}_{bat,t}) - I_{grid,ss}\hat{I}_{grid,t}
+		\label{eq:ca_lin}
+	\end{equation}
+	
+	The foreign asset position improves when output rises faster than consumption and investment (trade surplus), and worsens when domestic absorption exceeds output (trade deficit). The key insight for this model is that intermittency shocks simultaneously reduce output ($\hat{Y}_t < 0$) and increase battery investment needs ($\hat{I}_{bat,t} > 0$), creating a ``twin drain'' on the current account.
+	
+	Note that because $B^*_{ss} = 0$, the net foreign asset variable is expressed in levels (not log-deviations) around the steady state.
+	
+	The interest rate premium linearizes as:
+	\begin{equation}
+		\hat{r}^*_t = -\frac{\phi_b}{r^*_{ss}} B^*_t
+		\label{eq:premium_lin}
+	\end{equation}
+	
+	The debt-elastic premium ensures that the net foreign asset process is stationary: when the economy borrows ($B^*_t < 0$), the interest rate rises, discouraging further borrowing and stabilizing the external position. The value $\phi_b = 0.039$ is the simulation baseline, equal to the real-data estimate $\hat{\phi}_b \approx 0.039$ obtained from observed Vietnamese real interest rates and external debt ratios (see Section~\ref{sec:calibration}). Capital controls, a managed exchange rate, and underdeveloped bond markets limit the household's ability to borrow freely at the world interest rate, justifying a premium well above the SGU standard. A higher $\phi_b$ reduces consumption smoothing via international borrowing, ensuring that intermittency shocks propagate more fully into domestic consumption and welfare.
+	
+	
+\subsection{Exogenous Processes}
+	
+	The model features three exogenous driving forces:
+	\begin{align}
+		\hat{\varepsilon}_{ren,t} &= \rho_{ren} \hat{\varepsilon}_{ren,t-1} + \varepsilon^{ren}_t, & \varepsilon^{ren}_t &\sim N(0, \sigma^2_{ren}) \label{eq:shock_ren} \\
+		\hat{P}_{bat,t} &= \rho_{bat} \hat{P}_{bat,t-1} + \varepsilon^{bat}_t, & \varepsilon^{bat}_t &\sim N(0, \sigma^2_{bat}) \label{eq:shock_bat} \\
+		\varepsilon_{I,t} &\sim N(0, \sigma^2_I) \label{eq:shock_gov}
+	\end{align}
+	
+	The first is the domestic renewable intermittency shock, persistent with AR(1) coefficient $\rho_{ren} = 0.85$ capturing seasonal weather patterns. The second is a global battery price shock in log-levels (equation~\ref{eq:battery_price_shock}), with persistence $\rho_{bat} = 0.90$ matching lithium market dynamics. The third is a government grid-investment implementation shock, modeled as \textit{white noise} (i.i.d.) reflecting project-specific delays and procurement bottlenecks that are uncorrelated across periods. All shocks are assumed to be mutually independent.
+	
+	
