@@ -1,0 +1,61 @@
+function [g1, T_order, T] = static_g1(y, x, params, sparse_rowval, sparse_colval, sparse_colptr, T_order, T)
+if nargin < 8
+    T_order = -1;
+    T = NaN(12, 1);
+end
+[T_order, T] = vietnam_dsge_proptax.sparse.static_g1_tt(y, x, params, T_order, T);
+g1_v = NaN(48, 1);
+g1_v(1)=(-(params(1)*(1-params(23))*params(4)/y(4)/y(2)));
+g1_v(2)=1;
+g1_v(3)=(-1);
+g1_v(4)=(-1)/(y(2)*y(2))-(-(params(1)*(1+(1-params(23))*params(4)*y(1)/y(4)-params(5))))/(y(2)*y(2));
+g1_v(5)=(-1)/(y(2)*y(2))-(-(params(1)*(1+y(16))))/(y(2)*y(2));
+g1_v(6)=(-(params(3)*T(1)));
+g1_v(7)=1;
+g1_v(8)=(-(y(2)*params(3)*getPowerDeriv(y(3),1+params(2),1)));
+g1_v(9)=(-(T(3)*getPowerDeriv(y(3),1-params(4),1)));
+g1_v(10)=(-(params(1)*(-((1-params(23))*params(4)*y(1)))/(y(4)*y(4))/y(2)));
+g1_v(11)=(-(T(4)*params(30)*y(10)*T(9)));
+g1_v(12)=1-(1-params(5));
+g1_v(13)=(-(params(10)*y(12)*T(10)*T(11)));
+g1_v(14)=1-(1-params(12));
+g1_v(15)=(-(T(11)*(1-params(10))*getPowerDeriv(y(6),T(6),1)));
+g1_v(16)=1-(1-params(13));
+g1_v(17)=(-1);
+g1_v(18)=1;
+g1_v(19)=((y(8))-y(8))/((y(8))*(y(8)));
+g1_v(20)=(-1);
+g1_v(21)=y(14);
+g1_v(22)=((y(9))-y(9))/((y(9))*(y(9)));
+g1_v(23)=(-1);
+g1_v(24)=1;
+g1_v(25)=(-(T(4)*params(30)*y(4)*T(9)));
+g1_v(26)=1;
+g1_v(27)=(-(T(12)/y(14)));
+g1_v(28)=(-(y(12)*(-(params(19)*params(20)))/params(14)));
+g1_v(29)=(-(exp(y(18))*T(12)));
+g1_v(30)=T(5)*(-params(8))/(params(9)*params(29)*exp(y(17)));
+g1_v(31)=1;
+g1_v(32)=(-(T(11)*params(10)*y(5)*T(10)));
+g1_v(33)=1-(1+params(19)*params(20)*(params(14)-y(10))/params(14));
+g1_v(34)=(1-params(23))*(1-params(4));
+g1_v(35)=(-((1-params(7))*getPowerDeriv(y(13),(params(6)-1)/params(6),1)*getPowerDeriv(T(2),params(6)/(params(6)-1),1)));
+g1_v(36)=1;
+g1_v(37)=(-((-T(8))/(y(14)*y(14))));
+g1_v(38)=y(8);
+g1_v(39)=1/y(14)-params(21)*1/y(14);
+g1_v(40)=1-(1+y(16));
+g1_v(41)=(-(params(26)*(-exp(params(27)-y(15)))));
+g1_v(42)=(-(params(1)/y(2)));
+g1_v(43)=(-y(15));
+g1_v(44)=1;
+g1_v(45)=T(5)*(-((-params(8))*y(11)*params(9)*params(29)*exp(y(17))))/(params(9)*params(29)*exp(y(17))*params(9)*params(29)*exp(y(17)));
+g1_v(46)=1-params(17);
+g1_v(47)=(-(T(8)*exp(y(18))));
+g1_v(48)=1-params(18);
+if ~isoctave && matlab_ver_less_than('9.8')
+    sparse_rowval = double(sparse_rowval);
+    sparse_colval = double(sparse_colval);
+end
+g1 = sparse(sparse_rowval, sparse_colval, g1_v, 18, 18);
+end

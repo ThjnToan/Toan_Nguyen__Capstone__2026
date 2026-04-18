@@ -1,0 +1,29 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "MATLAB - Run Dynare Model",
+      "runtimeExecutable": "matlab",
+      "runtimeArgs": ["-batch", "run_dynare"],
+      "port": 0
+    },
+    {
+      "name": "MATLAB - Generate Reliability Valley Figure",
+      "runtimeExecutable": "matlab",
+      "runtimeArgs": ["-batch", "generate_reliability_valley"],
+      "port": 0
+    },
+    {
+      "name": "LaTeX - Compile Paper (xelatex)",
+      "runtimeExecutable": "xelatex",
+      "runtimeArgs": ["-interaction=nonstopmode", "main.tex"],
+      "port": 0
+    },
+    {
+      "name": "Python - DSGE Model (Vietnam)",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["dsge_model_vietnam.py"],
+      "port": 0
+    }
+  ]
+}

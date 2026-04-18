@@ -1,60 +1,49 @@
-# LaTeX intermediate files
+# LaTeX build artifacts
 *.aux
-*.log
-*.out
 *.bbl
 *.blg
+*.lof
+*.log
+*.lot
+*.out
 *.toc
+*.synctex.gz
+*.synctex(busy)
 *.fls
 *.fdb_latexmk
-*.synctex.gz
-*.lof
-*.lot
 *.nav
 *.snm
 *.vrb
-_ul
-nul
-cited_keys.txt
+texput.log
+missfont.log
 
-# Dynare intermediate files
-+vietnam_dsge/
-vietnam_dsge/
-vietnam_dsge.log
-+vietnam_dsge_proptax/
-vietnam_dsge_proptax/
-vietnam_dsge_proptax.log
+# LaTeX temp files
+*.tmp.*
+main.tex.tmp*
 
-# MATLAB
-*.asv
-*.m~
-*.mat
-*.csv
-
-# However, you might want to keep the final dynare results and IRFs around, so we force-add them later or keep them out of gitignore if needed. Actually, let's keep `.mat` and `.csv` in gitignore to prevent huge diffs, but we will track your main source files.
-
-# Wickens variant (work in progress, not yet published)
-*wickens*
-Wickens_*
-proptax_wickens_results.json
-dsge_model_vietnam_wickens.py
-
-# LaTeX editor temp files
-*.tex.tmp.*
-
-# Log/output capture files
-latex_err.txt
-latex_out.txt
-matlab_err.txt
-matlab_error.txt
-matlab_out.txt
-matlab_output.txt
-
-# Misc
-.DS_Store
-.claude/
-zixU9qGI
-"Laptop K1 - Shortcut.lnk"
+# Python
 __pycache__/
-*.nav
-*.snm
+*.pyc
+*.pyo
+
+# MATLAB temp
+*.asv
+
+# Windows junk
+Thumbs.db
+desktop.ini
+*.lnk
+nul
+
+# Output/log text files
+latex_*.txt
+matlab_*.txt
+*_output.txt
+*_err.txt
+*_out.txt
+
+# Playwright / browser automation
+.playwright-mcp/
+
+# VS Code
+.vscode/
