@@ -128,7 +128,7 @@
 				
 			\end{axis}
 		\end{tikzpicture}
-		\caption[Descriptive Evidence for the Agility Gap]{Descriptive evidence for the agility gap. Left axis: installed renewable capacity (GW), decomposed into solar (orange) and wind (teal). Capacity surged from near-zero in 2017 to 22.8~GW by 2024; PDP8 targets 73.5~GW by 2030. Right axis: annual grid transmission investment (USD billion), which grew modestly from \$0.6--0.8B to \$3.2B. Battery storage (violet) remained near zero through 2024 despite a PDP8 target of 14~GW by 2030. Data: \citep{mof2023} (PDP8), \citep{evn2023}, \citep{iea2023}.}
+		\caption[Descriptive Evidence for the Agility Gap]{Descriptive evidence for the agility gap. Left axis: installed renewable capacity (GW), decomposed into solar (orange) and wind (teal). Capacity surged from near-zero in 2017 to 22.8~GW by 2024; PDP8 targets 73.5~GW by 2030. Right axis: annual grid transmission investment (USD billion), which grew modestly from \$0.6-$00.8$B to \$3.2B. Battery storage (violet) remained near zero through 2024 despite a PDP8 target of 14~GW by 2030. Data: \citep{mof2023} (PDP8), \citep{evn2023}, \citep{iea2023}.}
 		\label{fig:agility_gap_descriptive}
 	\end{figure}
 	
@@ -489,8 +489,8 @@ where $\eta_{bat}$ is the innovation elasticity, $\chi\in(0,1]$ captures regulat
 			\node[state] (Igrid) at (8.5, -3) {Grid Invest.\\$I_{grid,t}$};
 			
 			% Bottom layer (External sector & Consumption)
-			\node[outcome] (cons) at (2, -5.5) {Consumption\\$C_t$, Welfare};
-			\node[outcome] (ext) at (8.5, -5.5) {Current Account\\$B^*_t, r^*_t$};
+			\node[outcome] (cons) at (2, $05.5$) {Consumption\\$C_t$, Welfare};
+			\node[outcome] (ext) at (8.5, $05.5$) {Current Account\\$B^*_t, r^*_t$};
 			
 			% Arrows from shocks
 			\draw[->, red!70, thick] (eps_ren) -- node[right, label_text, text=red!70, fill=none] {$\downarrow u$} (rel);
@@ -616,13 +616,13 @@ The recursive competitive equilibrium is formally stated in Appendix~\ref{app:eq
 	
 	\subsection{Technology Adoption Elasticity and Innovation}
 	
-		The technology adoption elasticity is set to $\eta_{bat} = 0.10$ (quarterly), within the 0.05--0.35 induced-innovation elasticity range estimated by \citet{popp2002} and consistent with the 18--22\% battery experience curve of \citet{kittner2017}. A sustained 10\% reliability gap in the model yields approximately 1\% quarterly battery efficiency improvement, matching the secular pace of cost reduction documented in \citet{way2022}.
+		The technology adoption elasticity is set to $\eta_{bat} = 0.10$ (quarterly), within the 0.05-$00.35$ induced-innovation elasticity range estimated by \citet{popp2002} and consistent with the 18--22\% battery experience curve of \citet{kittner2017}. A sustained 10\% reliability gap in the model yields approximately 1\% quarterly battery efficiency improvement, matching the secular pace of cost reduction documented in \citet{way2022}.
 	
 	The baseline sets $\chi=1.0$ (full signal transmission); the regulated counterfactual uses $\chi=0.3$, calibrated to Vietnam's documented retail tariff pass-through of 25--35\% \citep{ieefa2022}.
 	
 	\subsection{Battery Price Shock Calibration}
 	
-	The world battery price shock follows $\rho_{bat} = 0.90$ and $\sigma_{bat} = 0.08$ (quarterly). The half-life of $\approx 6.6$ quarters (1.6 years) matches the 2--3 year lithium supply-demand adjustment cycle driven by mine development timelines \citep{bloombergnef2023}, and is consistent with BloombergNEF annual AR(1) estimates of 0.88--0.93 for quarterly-averaged battery pack prices.
+	The world battery price shock follows $\rho_{bat} = 0.90$ and $\sigma_{bat} = 0.08$ (quarterly). The half-life of $\approx 6.6$ quarters (1.6 years) matches the 2--3 year lithium supply-demand adjustment cycle driven by mine development timelines \citep{bloombergnef2023}, and is consistent with BloombergNEF annual AR(1) estimates of 0.88-$00.93$ for quarterly-averaged battery pack prices.
 	
 	\subsection{Government and Fiscal Policy}
 	The grid investment rule parameter $\phi_{grid} = 1.5$ is the semi-elasticity of public grid investment to reliability shortfalls, calibrated to Vietnam's fiscal response to the June 2023 power shortages \citep{evn2023,worldbank2022}. The fixed proportional tax rate $\tau_{ss} = 1.43\%$ finances steady-state grid maintenance ($I_{grid,ss}/Y_{ss} = \delta_g K_{g,ss}$).
@@ -650,7 +650,7 @@ The recursive competitive equilibrium is formally stated in Appendix~\ref{app:eq
 			Capital Share & $\alpha$ & 0.35 & Labor compensation share $\approx 0.65$ \citep{gso2024}; capital share $= 1 - 0.65$ \\
 			Depreciation (Prod.) & $\delta_p$ & 0.025 & Quarterly rate (10\% annual) \\
 			Labor Elasticity & $\sigma_L$ & 1.0 & Standard Frisch elasticity \\
-			Energy-VA Elasticity & $\sigma_E$ & 0.6 & Energy--value-added gross complements; \citet{heutel2012} U.S. range 0.4--0.7; consistent with \citep{iea2023} \\
+			Energy-VA Elasticity & $\sigma_E$ & 0.6 & Energy--value-added gross complements; \citet{heutel2012} U.S. range 0.4-$00.7$; consistent with \citep{iea2023} \\
 			Battery Price (SS) & $\bar{P}_{bat}$ & 1.0 & Normalized \\
 			TFP Scale & $Z$ & 1.131 & Calibrated so $Y_{ss}=1$ (sole output normalization); absorbs residual scaling from $L_{ss}=\tfrac{1}{3}$, $\bar{E}=0.15$ \\
 			\midrule
@@ -725,7 +725,7 @@ The recursive competitive equilibrium is formally stated in Appendix~\ref{app:eq
 			\midrule
 			\multicolumn{5}{l}{Energy Sector} \\
 			Grid reliability ($u_{ss}$) & 97.0\% & 97.0\% & T & \citet{evn2023} \\
-			Battery/grid capital ratio & $\approx$0.14--0.16 & 0.167 & F & \citet{mof2023} \\
+			Battery/grid capital ratio & $\approx$0.14-$00.16$ & 0.167 & F & \citet{mof2023} \\
 			\bottomrule
 		\end{tabular}
 		\vspace{0.2cm}
@@ -878,7 +878,7 @@ The recursive competitive equilibrium is formally stated in Appendix~\ref{app:eq
 	
 	\subsubsection{Valley Characteristics}
 	
-	The Reliability Valley reaches its nadir at quarter 45, approximately 11.2 years into the transition. At this point, grid reliability drops to 81.3%---a decline of 15.7 percentage points below the 97\% target. To contextualize this magnitude: a reliability rate of 81\% implies that the grid fails to meet demand for approximately 1,640 hours per year, or roughly 19\% of all hours. This is comparable in severity to the 2021 Texas winter storm (88--90\% reliability over several days, \$130 billion in damages; \citealp{callaway2018}), but it represents a sustained multi-year degradation rather than a transient crisis---making its macroeconomic consequences potentially far more damaging.
+	The Reliability Valley reaches its nadir at quarter 45, approximately 11.2 years into the transition. At this point, grid reliability drops to $81.3%$---a decline of 15.7 percentage points below the 97\% target. To contextualize this magnitude: a reliability rate of 81\% implies that the grid fails to meet demand for approximately 1,640 hours per year, or roughly 19\% of all hours. This is comparable in severity to the 2021 Texas winter storm (88--90\% reliability over several days, \$130 billion in damages; \citealp{callaway2018}), but it represents a sustained multi-year degradation rather than a transient crisis---making its macroeconomic consequences potentially far more damaging.
 	
 	While the simulation's quantitative depth depends on investment calibration choices, the qualitative finding---that an agility gap between fast VRE deployment and slow flexibility accumulation generates a sustained reliability shortfall centered on the early-to-mid transition---is robust to a wide range of parameterizations. The valley persists throughout the transition period (100 quarters in the baseline), during which reliability remains below target. This prolonged instability has several economic consequences:
 	
@@ -972,7 +972,7 @@ The recursive competitive equilibrium is formally stated in Appendix~\ref{app:eq
 		\Lambda_{\text{baseline}} = 0.000569\% \text{ of steady-state consumption}
 	\end{equation*}
 	
-	\noindent This is the compensating consumption variation: a household would be indifferent between (1) experiencing the stochastic shock path shown in Figure~\ref{fig:irf_baseline} and (2) permanently consuming 0.000569\% less in the deterministic steady state. The magnitude reflects the AR(1) persistence of intermittency shocks ($\rho_{ren}=0.85$): each shock degrades reliability for approximately $1/(1-0.85)=6.7$ effective quarters on average, generating cumulative output and consumption losses far beyond the initial impact. The welfare relevance lies both in the absolute magnitude and in the relative comparison across regulatory regimes.
+	\noindent This is the compensating consumption variation: a household would be indifferent between (1) experiencing the stochastic shock path shown in Figure~\ref{fig:irf_baseline} and (2) permanently consuming 0.000569\% less in the deterministic steady state. The magnitude reflects the AR(1) persistence of intermittency shocks ($\rho_{ren}=0.85$): each shock degrades reliability for approximately $1/(1$00.85$)=6.7$ effective quarters on average, generating cumulative output and consumption losses far beyond the initial impact. The welfare relevance lies both in the absolute magnitude and in the relative comparison across regulatory regimes.
 	
 		The stochastic simulation (1000 periods) shows output volatility of 1.60\% and utilization volatility of 1.96\% of steady state, reflecting persistent propagation through capital accumulation. The $\Lambda_{\text{baseline}} = 0.000569\%$ is a lower bound for a single shock (omitting distributional impacts, industrial hysteresis, and political instability) and serves as the reference point for the counterfactual analysis below. This magnitude is consistent with the Lucas \citeyearpar{lucas1987} tradition of small but non-trivial business-cycle welfare costs; the quantitatively important finding is the \textit{relative} comparison---suppressing scarcity signals raises this cost by 20\%.
 
@@ -1125,7 +1125,7 @@ The recursive competitive equilibrium is formally stated in Appendix~\ref{app:eq
 
 	\textbf{Second, scarcity-induced technological change provides a persistent adjustment mechanism.} The innovation mechanism generates cumulative improvements in battery technology ($A_{bat}$), with the simulated mean reaching 1.015 over 1000 periods (autocorrelation 0.997). This 1.5\% technology improvement is entirely endogenous, driven by the reliability gap channel. However, the innovation rate depends critically on the regulatory parameter $\chi$---when scarcity signals are suppressed ($\chi \to 0$), technological progress stalls and welfare costs rise by 20\%.
 
-	\textbf{Third, the model's transmission channels are quantitatively validated.} The Dynare simulation confirms expected signs: output and reliability are highly correlated (0.986), and battery price shocks affect investment negatively ($\rho = -0.979$ between $P_{bat}$ and $I_{bat}$). The proportional tax is fixed, so its role appears entirely through steady-state comparisons: the constant wedge $\tau_{ss}=1.43\%$ shifts equilibrium quantities, not their dynamic comovement. These correlations validate the model's internal consistency.
+	\textbf{Third, the model's transmission channels are quantitatively validated.} The Dynare simulation confirms expected signs: output and reliability are highly correlated (0.986), and battery price shocks affect investment negatively ($\rho = $00.97$9$ between $P_{bat}$ and $I_{bat}$). The proportional tax is fixed, so its role appears entirely through steady-state comparisons: the constant wedge $\tau_{ss}=1.43\%$ shifts equilibrium quantities, not their dynamic comovement. These correlations validate the model's internal consistency.
 
 	
 
@@ -1574,7 +1574,7 @@ Parameters are calibrated such that the steady state matches Vietnamese macroeco
 			Flexibility ($F$) & 0.526 & Aggregate smoothing capacity \\
 			Battery Technology ($A_{bat}$) & 1.000 & Initial technology index; free scale choice (only growth rate $\eta_{bat}$ has economic content)$^{\ddagger}$ \\
 			Battery Price ($P_{bat}$) & 1.000 & AR(1) unconditional mean; $\mathbb{E}[\log P_{bat}]=0$ structurally pins $P_{bat,ss}=1$ (not a free choice)$^{\ddagger}$ \\
-			Net Foreign Assets ($B^*$) & 0.000 & Zero NFA position; consistent with Vietnam's mean CA/GDP $\approx -0.03\%$ over 2000--2024 \\
+			Net Foreign Assets ($B^*$) & 0.000 & Zero NFA position; consistent with Vietnam's mean CA/GDP $\approx $00.03$\%$ over 2000--2024 \\
 			World Interest Rate ($r^*$) & 0.0101 & $= 1/\beta - 1$ (quarterly) \\
 			\midrule
 			\multicolumn{3}{l}{Steady-State Investment Flows} \\
