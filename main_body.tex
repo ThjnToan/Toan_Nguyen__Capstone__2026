@@ -190,7 +190,7 @@
 		\label{eq:hh_budget}
 	\end{equation}
 	
-	where $	au$ is the fixed proportional tax, $w_t$ the real wage, $R_t$ the rental rate on $K_{p,t-1}$, and $B^*_t$ net foreign assets.\footnote{\label{fn:timing_convention}Capital installed at $t-1$ is productive in $t$; investment $I_{p,t}$ does not contribute until $t+1$.}
+	where $\tau$ is the fixed proportional tax, $w_t$ the real wage, $R_t$ the rental rate on $K_{p,t-1}$, and $B^*_t$ net foreign assets.\footnote{\label{fn:timing_convention}Capital installed at $t-1$ is productive in $t$; investment $I_{p,t}$ does not contribute until $t+1$.}
 
 The household chooses $\{C_t, L_t, K_{p,t+1}, B^*_t\}$ to maximize utility subject to the budget constraint \eqref{eq:hh_budget} and the standard capital accumulation law \eqref{eq:productive_capital}; the Lagrangian derivation is in Appendix~\ref{app:deriv_euler}.
 	
@@ -628,7 +628,7 @@ The recursive competitive equilibrium is formally stated in Appendix~\ref{app:eq
 	The world battery price shock follows $\rho_{bat} = 0.90$ and $\sigma_{bat} = 0.08$ (quarterly). The half-life of $\approx 6.6$ quarters (1.6 years) matches the 2--3 year lithium supply-demand adjustment cycle driven by mine development timelines \citep{bloombergnef2023}, and is consistent with BloombergNEF annual AR(1) estimates of 0.88--0.93 for quarterly-averaged battery pack prices.
 	
 	\subsection{Government and Fiscal Policy}
-	The grid investment rule parameter $\phi_{grid} = 1.5$ is the semi-elasticity of public grid investment to reliability shortfalls, calibrated to Vietnam's fiscal response to the June 2023 power shortages \citep{evn2023,worldbank2022}. The fixed proportional tax rate $	au_{ss} = 1.43\%$ finances steady-state grid maintenance ($I_{grid,ss}/Y_{ss} = \delta_g K_{g,ss}$).
+	The grid investment rule parameter $\phi_{grid} = 1.5$ is the semi-elasticity of public grid investment to reliability shortfalls, calibrated to Vietnam's fiscal response to the June 2023 power shortages \citep{evn2023,worldbank2022}. The fixed proportional tax rate $\tau_{ss} = 1.43\%$ finances steady-state grid maintenance ($I_{grid,ss}/Y_{ss} = \delta_g K_{g,ss}$).
 	
 	The grid investment implementation shock has AR(1) persistence $\rho_I = 0.70$ (quarterly, half-life $\approx$1.9 quarters) and standard deviation $\sigma_I = 0.05$.\footnote{$\varepsilon_{I,t}$ is a \textit{quarterly budget-execution shock}---a temporary disruption to the \textit{disbursement rate} of planned investment---not a shock to total project timelines. The 2--3 year completion delays in \citet{worldbank2022} are embedded in capital accumulation dynamics; the AR(1) shock captures quarterly disturbances (budget sequestration, contractor delays, procurement bottlenecks) that Ministry of Finance execution reports show resolve within one to two fiscal quarters \citep{mof2023}. The volatility $\sigma_I = 0.05$ (20\% annualized) matches the CV of annual public energy investment disbursements \citep{worldbank2022}.} Implementation shocks account for 82\% of grid investment variance---consistent with the view that public energy investment in Vietnam is primarily constrained by execution capacity rather than the reliability signal itself.
 	
