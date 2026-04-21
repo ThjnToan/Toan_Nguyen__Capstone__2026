@@ -603,18 +603,15 @@ The recursive competitive equilibrium is formally stated in Appendix~\ref{app:eq
 	Intermittency is calibrated to Vietnamese solar and wind data \citep{iea2023, gso2024}: persistence $\rho_{ren} = 0.85$ (monsoon-driven seasonal autocorrelation), volatility $\sigma_{ren} = 0.12$ (national fleet CV of monthly output), and bound $\varepsilon_{max} = 3\sigma_{ren}$ ensuring non-negativity with 99\% probability.
 
 	\subsubsection{Flexibility Production Function}
-	
-	\textbf{1. The Flexibility Weight ($\mu = 0.16$): Calibrated from PDP8 Investment Trajectory}
 
-	$\mu=0.16$ is calibrated from PDP8 investment flows: the near-term battery share is $0.24/(0.24+1.49)\approx 0.14$, rising to $0.64$ in 2027--2030; the baseline adopts a conservative near-terminal value, robust to $\mu\in[0.12,0.20]$.
-	
-	\textbf{2. Elasticity of Substitution ($\sigma_f = 0.4$):} Battery and grid are gross complements ($\sigma_f<1$): transmission moves power across space, storage across time, and neither alone delivers system reliability \citep{hart2019,hirth2013}.
-	
-	\textbf{3. Reliability Function Parameters:}
-	
-	The exponential utilization function \eqref{eq:utilization} contains two key parameters: $\psi$ and $\phi_{int}$.
-	
-	$\psi=2.0$ is identified from the slope moment $\Delta u/(\Delta\ln F\cdot(1-u_{ss}))\approx 1.85$ (reliability rose 1.5~pp following a 20\% transmission expansion, 2016--2020 \citep{evn2023}); $\phi_{int}\approx 55.6$ is then pinned by the level condition $u_{ss}=0.97$. Both are robust for $\psi\in[1.5,3.0]$.
+	\paragraph{Flexibility Weight ($\mu = 0.16$).}
+	Calibrated from PDP8 investment flows: the near-term battery share is $0.24/(0.24+1.49)\approx 0.14$, rising to $0.64$ in 2027--2030; the baseline adopts a conservative near-terminal value, robust to $\mu\in[0.12,0.20]$.
+
+	\paragraph{Elasticity of Substitution ($\sigma_f = 0.4$).}
+	Battery and grid are gross complements ($\sigma_f<1$): transmission moves power across space, storage across time, and neither alone delivers system reliability \citep{hart2019,hirth2013}.
+
+	\paragraph{Reliability Function Parameters.}
+	The exponential utilization function \eqref{eq:utilization} contains two key parameters: $\psi$ and $\phi_{int}$. The parameter $\psi=2.0$ is identified from the slope moment $\Delta u/(\Delta\ln F\cdot(1-u_{ss}))\approx 1.85$ (reliability rose 1.5~pp following a 20\% transmission expansion, 2016--2020 \citep{evn2023}); $\phi_{int}\approx 55.6$ is then pinned by the level condition $u_{ss}=0.97$. Both are robust for $\psi\in[1.5,3.0]$.
 	
 	
 	\subsection{Technology Adoption Elasticity and Innovation}
