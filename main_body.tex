@@ -128,7 +128,7 @@
 				
 			\end{axis}
 		\end{tikzpicture}
-		\caption[Descriptive Evidence for the Agility Gap]{Descriptive evidence for the agility gap. Left axis: installed renewable capacity (GW), decomposed into solar (orange) and wind (teal). Capacity surged from near-zero in 2017 to 22.8~GW by 2024; PDP8 targets 73.5~GW by 2030. Right axis: annual grid transmission investment (USD billion), which grew modestly from \$0.6--0.8B to \$3.2B. Battery storage (violet) remained near zero through 2024 despite a PDP8 target of 14~GW by 2030. Data: PDP8 (Decision 500/QD-TTg), EVN annual reports, IEA Vietnam Energy Outlook 2023, IRENA.}
+		\caption[Descriptive Evidence for the Agility Gap]{Descriptive evidence for the agility gap. Left axis: installed renewable capacity (GW), decomposed into solar (orange) and wind (teal). Capacity surged from near-zero in 2017 to 22.8~GW by 2024; PDP8 targets 73.5~GW by 2030. Right axis: annual grid transmission investment (USD billion), which grew modestly from \$0.6--0.8B to \$3.2B. Battery storage (violet) remained near zero through 2024 despite a PDP8 target of 14~GW by 2030. Data: \citep{mof2023} (PDP8), \citep{evn2023}, \citep{iea2023}.}
 		\label{fig:agility_gap_descriptive}
 	\end{figure}
 	
@@ -614,7 +614,7 @@ The recursive competitive equilibrium is formally stated in Appendix~\ref{app:eq
 	
 	The exponential utilization function \eqref{eq:utilization} contains two key parameters: $\psi$ and $\phi_{int}$.
 	
-	$\psi=2.0$ is identified from the slope moment $\Delta u/(\Delta\ln F\cdot(1-u_{ss}))\approx 1.85$ (EVN data: reliability rose 1.5~pp following a 20\% transmission expansion, 2016--2020 \citep{worldbank2022}); $\phi_{int}\approx 55.6$ is then pinned by the level condition $u_{ss}=0.97$. Both are robust for $\psi\in[1.5,3.0]$.
+	$\psi=2.0$ is identified from the slope moment $\Delta u/(\Delta\ln F\cdot(1-u_{ss}))\approx 1.85$ (reliability rose 1.5~pp following a 20\% transmission expansion, 2016--2020 \citep{evn2023}); $\phi_{int}\approx 55.6$ is then pinned by the level condition $u_{ss}=0.97$. Both are robust for $\psi\in[1.5,3.0]$.
 	
 	
 	\subsection{Technology Adoption Elasticity and Innovation}
@@ -634,9 +634,9 @@ The recursive competitive equilibrium is formally stated in Appendix~\ref{app:eq
 	
 	\subsection{External Sector} \label{subsec:external_sector}
 
-	The world interest rate is set to $\bar{r} = 1/\beta - 1 = 0.0101$ (quarterly), ensuring consistency with the household's Euler equation in steady state. The discount factor $\beta = 0.99$ is disciplined by Vietnam's historical real interest rate series (World Bank, 1993--2023). Over the post-WTO modern era (2000--2023, 23 annual observations), the mean real rate on long-term government bonds was 3.14\% annually, implying $\beta = (1 + 0.0314)^{-1/4} \approx 0.9691 \approx 0.97$. The value $\beta = 0.99$ is slightly higher, corresponding to approximately 4\% annualized real returns; this conservative choice reflects Vietnam's current government borrowing costs and serves as a defensible anchor for fiscal policy analysis. Sensitivity to $\beta \in [0.95, 0.99]$ is documented in the robustness appendix.
+	The world interest rate is set to $\bar{r} = 1/\beta - 1 = 0.0101$ (quarterly), ensuring consistency with the household's Euler equation in steady state. The discount factor $\beta = 0.99$ is disciplined by Vietnam's historical real interest rate series \citep{worldbank2024}. Over the post-WTO modern era (2000--2023, 23 annual observations), the mean real rate on long-term government bonds was 3.14\% annually, implying $\beta = (1 + 0.0314)^{-1/4} \approx 0.9691 \approx 0.97$. The value $\beta = 0.99$ is slightly higher, corresponding to approximately 4\% annualized real returns; this conservative choice reflects Vietnam's current government borrowing costs and serves as a defensible anchor for fiscal policy analysis. Sensitivity to $\beta \in [0.95, 0.99]$ is documented in the robustness appendix.
 	
-	The debt-elastic premium $\phi_b = 0.039$ is estimated from Vietnam's real interest rate and external debt/GNI (World Bank 1993--2023) by no-intercept OLS ($R^2 = 0.16$); $\phi_b = 0.039$ yields the credible $-3.5\%$ investment response vs.\ $-21.8\%$ at the SGU standard (Table~\ref{tab:phi_b_sensitivity}).
+	The debt-elastic premium $\phi_b = 0.039$ is estimated from Vietnam's real interest rate and external debt/GNI \citep{worldbank2024} by no-intercept OLS ($R^2 = 0.16$); $\phi_b = 0.039$ yields the credible $-3.5\%$ investment response vs.\ $-21.8\%$ at the SGU standard (Table~\ref{tab:phi_b_sensitivity}).
 
 	\begin{table}[H]
 		\centering
@@ -649,17 +649,17 @@ The recursive competitive equilibrium is formally stated in Appendix~\ref{app:eq
 			\textbf{Parameter} & \textbf{Sym.} & \textbf{Value} & \textbf{Source / Economic Rationale} \\
 			\midrule
 			\multicolumn{4}{l}{Households \& Production} \\
-			Discount Factor & $\beta$ & 0.99 & World Bank real interest rate series (2000--2023): mean 3.14\% ann. $\Rightarrow$ $\beta = 0.9691$; chosen value reflects conservative fiscal anchor \\
-			Capital Share & $\alpha$ & 0.35 & National accounts labor compensation share $\approx 0.65$ (GSO, standard growth accounting); capital share $= 1 - 0.65$ \\
+			Discount Factor & $\beta$ & 0.99 & Mean real rate 3.14\% ann. \citep{worldbank2024} $\Rightarrow$ $\beta = 0.9691$; chosen value reflects conservative fiscal anchor \\
+			Capital Share & $\alpha$ & 0.35 & Labor compensation share $\approx 0.65$ \citep{gso2024}; capital share $= 1 - 0.65$ \\
 			Depreciation (Prod.) & $\delta_p$ & 0.025 & Quarterly rate (10\% annual) \\
 			Labor Elasticity & $\sigma_L$ & 1.0 & Standard Frisch elasticity \\
-			Energy-VA Elasticity & $\sigma_E$ & 0.6 & Energy--value-added gross complements; \citet{heutel2012} U.S. range 0.4--0.7; consistent with IEA (2023) Southeast Asia estimates \\
+			Energy-VA Elasticity & $\sigma_E$ & 0.6 & Energy--value-added gross complements; \citet{heutel2012} U.S. range 0.4--0.7; consistent with \citep{iea2023} \\
 			Battery Price (SS) & $\bar{P}_{bat}$ & 1.0 & Normalized \\
 			TFP Scale & $Z$ & 1.131 & Calibrated so $Y_{ss}=1$ (sole output normalization); absorbs residual scaling from $L_{ss}=\tfrac{1}{3}$, $\bar{E}=0.15$ \\
 			\midrule
 			\multicolumn{4}{l}{Energy \& Reliability (Micro-founded)} \\
 			Reliability Sens. & $\psi$ & 2.0 & Moment-matched to EVN grid availability target of 97\% \citep{evn2023}; robust for $\psi \in [1.5, 3.0]$ \\
-			Intermit. Persistence & $\rho_{ren}$ & 0.85 & Seasonal weather correlation (IEA 2023) \\
+			Intermit. Persistence & $\rho_{ren}$ & 0.85 & Seasonal weather correlation \citep{iea2023} \\
 			Intermit. Volatility & $\sigma_{ren}$ & 0.12 & CV of monthly VN solar output \citep{gso2024,iea2023} \\
 			Battery Weight & $\mu$ & 0.16 & Calibrated to PDP8 battery share of total energy investment: $I_{bat}/(I_{bat}+I_{grid}) \approx 0.14$, rounded to 0.16 \\
 			Subst. Elasticity & $\rho_f$ & 0.40 & Empirical complementarity \citep{hart2019} \\
