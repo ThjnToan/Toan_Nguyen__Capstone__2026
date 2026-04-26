@@ -1,78 +1,94 @@
-# Renewable Intermittency and Grid Reliability: A Directed Technical Change Model of Vietnam
+# Renewable Intermittency and Grid Investment Dynamics
 
-**Author:** Toan T. Nguyen (Justin)  
-**Advisor:** Dr. Xavier Martin G. Bautista  
-**Institution:** Fulbright University Vietnam  
-**Date:** Spring 2026
+**Scarcity-Induced Battery Innovation in Vietnam's Energy Transition**
 
----
-
-## 1. Project Overview
-
-This repository contains the MATLAB/Dynare codebase and LaTeX manuscript for the capstone thesis investigating the macroeconomic challenges of Vietnam's clean energy transition.
-
-The project develops a **Small Open Economy DSGE model** calibrated to Vietnam's **Power Development Plan 8 (PDP8)**. It examines the structural mismatch between rapid Variable Renewable Energy (VRE) deployment and the slower accumulation of grid flexibility assets.
-
-### Key Economic Mechanisms
-
-1. **Reliability Penalty (Endogenous TFP):** Renewable intermittency is modeled as a negative TFP shock governed by an exponential reliability constraint. When grid flexibility is insufficient, installed physical capital cannot be fully utilized.
-
-2. **The "Agility Gap":** A structural friction where private battery adoption is agile but exposed to global price shocks, while public grid investment responds sluggishly due to bureaucratic "Time-to-Build" lags.
-
-3. **Endogenous Learning-by-Doing:** Battery technology improves endogenously, driven by the "Shadow Price of Reliability"—the scarcity signal generated when the grid underperforms.
-
-4. **Current Account Vulnerability:** Global battery price spikes act as a macroeconomic trilemma, simultaneously draining the trade balance and increasing sovereign borrowing premiums.
+**Author:** Toan T. Nguyen (Justin) · **Advisor:** Dr. Xavier Martin G. Bautista
+**Institution:** Fulbright University Vietnam · **Date:** Spring 2025
 
 ---
 
-## 2. File Structure
+## Overview
+
+This repository contains the MATLAB/Dynare codebase and LaTeX manuscript for a capstone thesis investigating the macroeconomic challenges of Vietnam's clean energy transition. The project develops a **Small Open Economy DSGE model** with endogenous scarcity-induced technological change in battery storage and a grid reliability constraint, calibrated to Vietnam's **Power Development Plan 8 (PDP8)**.
+
+### Key Mechanisms
+
+| Mechanism | Description |
+|---|---|
+| **Reliability Penalty** | Renewable intermittency reduces capital utilization through grid instability — an endogenous TFP wedge |
+| **Agility Gap** | Private battery investment responds quickly but is dominated by global price shocks; public grid investment accumulates slowly through fiscal rules |
+| **Scarcity-Induced Innovation** | Battery technology improves endogenously when the grid reliability gap signals scarcity |
+| **Dual External Exposure** | Simultaneous vulnerability to global battery supply chains and domestic fiscal constraints |
+
+### Main Findings
+
+- Intermittency shocks account for **95.4% of output volatility**
+- Global battery-price shocks drive **100% of battery investment volatility**
+- Suppressing scarcity signals raises the welfare cost of intermittency by **20%**
+- Battery and grid capital are **imperfect complements** — neither alone solves the reliability problem
+
+---
+
+## Repository Structure
 
 ```
-/
-├── main.tex                      # LaTeX manuscript
-├── main.pdf                      # Compiled thesis
-├── vietnam_dsge.mod             # Dynare structural model
-├── run_dynare.m                 # Master execution script
-├── vietnam_dsge_steadystate.m  # Analytical steady-state solver
-└── save_to_github.bat          # Auto-commit helper
+├── fulbright_thesis.tex              # Main thesis (compiles thesis.pdf)
+├── fulbrightthesis.cls               # Thesis document class
+├── fuvmacro.sty                      # Macro/style package
+├── main_body.tex                     # Thesis body (introduction through appendices)
+├── main.tex                          # Standalone article variant
+│
+├── vietnam_dsge.mod                  # Baseline Dynare model
+├── vietnam_dsge_steadystate.m        # Steady-state solver (baseline)
+├── run_dynare.m                      # Script to run baseline model
+├── vietnam_dsge_proptax.mod          # Proportional-tax variant
+├── vietnam_dsge_proptax_steadystate.m# Steady-state solver (proptax)
+├── run_dynare_proptax.m              # Script to run proptax model
+│
+├── vietnam_dsge_wickens.mod          # Wickens (2008) extension variant
+├── vietnam_dsge_wickens_steadystate.m
+│
+├── test_ss.m                         # Steady-state validation script
+├── references.bib                    # Bibliography
+├── figures/                          # Generated figures
+├── data/                             # Calibration data
+├── scripts/                          # Additional MATLAB scripts
+├── docs/                             # Documentation
+│
+├── vietnam_dsge/                     # Dynare output (baseline)
+├── vietnam_dsge_proptax/             # Dynare output (proptax)
+│
+├── *.png                             # Generated IRF/valley figures
+└── *.docx                            # Advisory memos
 ```
 
 ---
 
-## 3. Core Model (`vietnam_dsge.mod`)
+## Compiling the Thesis
 
-The Dynare model defines 16 linearized structural equations for the small open economy.
+```bash
+pdflatex fulbright_thesis.tex
+bibtex fulbright_thesis
+pdflatex fulbright_thesis.tex
+pdflatex fulbright_thesis.tex
+```
 
-**Key equations:**
-- **Steady state (lines 143-144):** `r_bar = 1/beta - 1` — Foreign interest rate tied to discount factor
-- **Reliability (line 175):** `u = xi * (F - Vol_ren)` — Utilization falls when flexibility fails to keep pace with renewable volatility
-- **Flexibility CES (line 176-177):** `F = s_b * (A_bat + K_b) + (1 - s_b) * K_g` — Aggregate flexibility from batteries and grid
-- **Battery investment (line 183):** `I_bat = -phi_grid * u - P_bat` — Investment rises when reliability falls
-- **Learning-by-Doing (line 185):** `A_bat - A_bat(-1) = -eta_bat * chi * u` — Innovation accelerates with reliability scarcity
+## Running the Model
 
----
-
-## 4. Running the Code
-
-### Prerequisites
-- MATLAB (R2023a or newer)
-- [Dynare](https://www.dynare.org/) (version 5.x or 6.x)
-- Add Dynare to MATLAB path: `addpath('c:\dynare\6.1\matlab')`
-
-### Execution
-1. Open `run_dynare.m` in MATLAB
-2. Run the script (takes ~5-10 seconds)
-3. Outputs include:
-   - Generated IRF figures
-   - `agility_gap_dynare.png` — 25-year reliability valley simulation
-   - `counterfactual_chi.png` — Welfare analysis across market liberalization scenarios
-   - `joint_shock_perfect_storm.png` — Combined shock scenario
-
-### Compile Manuscript
-Run `xelatex main.tex` or use your preferred LaTeX editor.
+1. Open MATLAB with Dynare 6.x on the path
+2. Run `run_dynare.m` (baseline) or `run_dynare_proptax.m` (proportional tax variant)
+3. Generated figures are saved as PNGs in the root directory
 
 ---
 
-## 5. Version Control
+## Citation
 
-Double-click `save_to_github.bat` to auto-commit and push changes to the `main` branch.
+```bibtex
+@thesis{nguyen2025renewable,
+  author  = {Toan T. Nguyen},
+  title   = {Renewable Intermittency and Grid Investment Dynamics:
+             The Role of Scarcity-Induced Battery Innovation in Vietnam},
+  school  = {Fulbright University Vietnam},
+  year    = {2025}
+}
+```
