@@ -41,9 +41,31 @@ matlab_*.txt
 *_output.txt
 *_err.txt
 *_out.txt
+stderr.txt
+stdout.txt
 
 # Playwright / browser automation
 .playwright-mcp/
 
 # VS Code
 .vscode/
+
+# Backup files
+*.backup
+*.bak
+
+# Python scripts (temporary)
+fix_*.py
+remove_*.py
+
+# Dynare generated output (large binaries)
+*.mat
+*.cod
+
+# Compiled standalone PDF (fulbright_thesis.pdf is the canonical thesis PDF)
+main.pdf
+Fulbright_ECON_Capstone_Thesis_Template.pdf
+
+# Unnecessary misc
+compile*.log
+.Vietnam_DSGE_Midterm_Slides/
