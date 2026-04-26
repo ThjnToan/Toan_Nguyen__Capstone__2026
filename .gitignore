@@ -25,6 +25,10 @@ main.tex.tmp*
 __pycache__/
 *.pyc
 *.pyo
+*.py
+
+# Claude / editor local settings
+.claude/settings.local.json
 
 # MATLAB temp
 *.asv
