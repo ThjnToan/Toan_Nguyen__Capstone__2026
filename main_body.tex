@@ -128,7 +128,7 @@
 				
 			\end{axis}
 		\end{tikzpicture}
-		\caption[Descriptive Evidence for the Agility Gap]{Descriptive evidence for the agility gap. Left axis: installed renewable capacity (GW), decomposed into solar (orange) and wind (teal). Capacity surged from near-zero in 2017 to 22.8~GW by 2024; PDP8 targets 73.5~GW by 2030. Right axis: annual grid transmission investment (USD billion), which grew modestly from \$0.6-$00.8$B to \$3.2B. Battery storage (violet) remained near zero through 2024 despite a PDP8 target of 14~GW by 2030. Data: \citep{mof2023} (PDP8), \citep{evn2023}, \citep{iea2023}.}
+		\caption[Descriptive Evidence for the Agility Gap]{Descriptive evidence for the agility gap. Left axis: installed renewable capacity (GW), decomposed into solar (orange) and wind (teal). Capacity surged from near-zero in 2017 to 22.8~GW by 2024; PDP8 targets 73.5~GW by 2030. Right axis: annual grid transmission investment (USD billion), which grew modestly from \$0.6--\$0.8B to \$3.2B. Battery storage (violet) remained near zero through 2024 despite a PDP8 target of 14~GW by 2030. Data: \citep{mof2023} (PDP8), \citep{evn2023}, \citep{iea2023}.}
 		\label{fig:agility_gap_descriptive}
 	\end{figure}
 	
@@ -612,7 +612,7 @@ The recursive competitive equilibrium is formally stated in Section~\ref{sec:equ
 	
 	\section{Calibration} \label{sec:calibration}
 	
-	The model is calibrated at a quarterly frequency to capture the structural characteristics of the Vietnamese economy and the specific investment targets outlined in the Eighth Power Development Plan (PDP8). The calibration strategy proceeds in three stages: (i) standard structural parameters are set to match long-run moments of the Vietnamese economy; (ii) the novel reliability and intermittency parameters are micro-founded using engineering data from the General Statistics Office of Vietnam \citep{gso2024} and the International Energy Agency \citep{iea2023}; and (iii) innovation parameters are drawn from the empirical induced innovation literature. Table 1 summarizes the baseline calibration.
+	The model is calibrated at a quarterly frequency to capture the structural characteristics of the Vietnamese economy and the specific investment targets outlined in the Eighth Power Development Plan (PDP8). The calibration strategy proceeds in three stages: (i) standard structural parameters are set to match long-run moments of the Vietnamese economy; (ii) the novel reliability and intermittency parameters are micro-founded using engineering data from the General Statistics Office of Vietnam \citep{gso2024} and the International Energy Agency \citep{iea2023}; and (iii) innovation parameters are drawn from the empirical induced innovation literature. Table~\ref{tab:calibration} summarizes the baseline calibration.
 	
 	\subsection{Preferences and Production}
 	I set the discount factor $\beta = 0.99$, implying an annualized real interest rate of 4\%, consistent with the average return on government bonds in emerging Asian economies. The capital share in the value-added function is set to $\alpha = 0.35$, matching the standard labor income share of 0.65 observed in Vietnam \citep{gso2024}. The depreciation rate of productive capital is set to $\delta_p = 0.025$ (10\% annually). The elasticity of labor supply is set to $\sigma_L = 1.0$, a standard value in the New Keynesian literature for developing economies.
@@ -641,7 +641,7 @@ The recursive competitive equilibrium is formally stated in Section~\ref{sec:equ
 	
 	\subsection{Technology Adoption Elasticity and Innovation}
 	
-		The technology adoption elasticity is set to $\eta_{bat} = 0.10$ (quarterly), within the 0.05-$00.35$ induced-innovation elasticity range estimated by \citet{popp2002} and consistent with the 18--22\% battery experience curve of \citet{kittner2017}. A sustained 10\% reliability gap in the model yields approximately 1\% quarterly battery efficiency improvement, matching the secular pace of cost reduction documented in \citet{way2022}.
+		The technology adoption elasticity is set to $\eta_{bat} = 0.10$ (quarterly), within the 0.05--0.35 induced-innovation elasticity range estimated by \citet{popp2002} and consistent with the 18--22\% battery experience curve of \citet{kittner2017}. A sustained 10\% reliability gap in the model yields approximately 1\% quarterly battery efficiency improvement, matching the secular pace of cost reduction documented in \citet{way2022}.
 	
 	The baseline sets $\chi=1.0$ (full signal transmission); the regulated counterfactual uses $\chi=0.3$, calibrated to Vietnam's documented retail tariff pass-through of 25--35\% \citep{ieefa2022}.
 	
@@ -1349,7 +1349,7 @@ The recursive competitive equilibrium is formally stated in Section~\ref{sec:equ
 	\begin{equation*}
 		(1-\tau)\frac{\alpha Y_{ss}}{K_{p,ss}} = \frac{1}{\beta} - 1 + \delta_p
 	\end{equation*}
-	which pins down the steady-state capital-to-output ratio as $K_{p,ss}/Y_{ss} = (1-\tau)\alpha\beta/(1 - \beta(1-\delta_p))$. The steady-state tax rate is $\tau_{ss} = I_{grid,ss}/Y_{ss} = \delta_g K_{g,ss}/Y_{ss}$, which is small (approximately 1.65\% given the calibration), so the distortion to the capital stock is modest but non-zero.
+	which pins down the steady-state capital-to-output ratio as $K_{p,ss}/Y_{ss} = (1-\tau)\alpha\beta/(1 - \beta(1-\delta_p))$. The steady-state tax rate is $\tau_{ss} = I_{grid,ss}/Y_{ss} = \delta_g K_{g,ss}/Y_{ss}$, which is small (approximately 1.43\% given the calibration), so the distortion to the capital stock is modest but non-zero.
 	
 	%=============================================================================
 	\section{Derivation of the Labor Supply Equation} \label{app:deriv_labor}
@@ -1559,7 +1559,7 @@ Parameters are calibrated such that the steady state matches Vietnamese macroeco
 			Flexibility ($F$) & 0.526 & Aggregate smoothing capacity \\
 			Battery Technology ($A_{bat}$) & 1.000 & Initial technology index; free scale choice (only growth rate $\eta_{bat}$ has economic content)$^{\ddagger}$ \\
 			Battery Price ($P_{bat}$) & 1.000 & AR(1) unconditional mean; $\mathbb{E}[\log P_{bat}]=0$ structurally pins $P_{bat,ss}=1$ (not a free choice)$^{\ddagger}$ \\
-			Net Foreign Assets ($B^*$) & 0.000 & Zero NFA position; consistent with Vietnam's mean CA/GDP $\approx $00.03$\%$ over 2000--2024 \\
+			Net Foreign Assets ($B^*$) & 0.000 & Zero NFA position; consistent with Vietnam's mean CA/GDP $\approx -0.03\%$ over 2000--2024 \\
 			World Interest Rate ($r^*$) & 0.0101 & $= 1/\beta - 1$ (quarterly) \\
 			\midrule
 			\multicolumn{3}{l}{Steady-State Investment Flows} \\

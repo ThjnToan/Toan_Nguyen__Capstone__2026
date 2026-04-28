@@ -235,13 +235,9 @@ T_w = min(T, length(irf_C));
 disc = beta_val .^ (0:T_w-1);
 norm_factor = (1 - beta_val^T_w) / (1 - beta_val);
 
-sum_disc = sum(disc .* log(1 + irf_C(1:T_w)/100));
-welfare_baseline = abs((1 - exp(sum_disc / norm_factor)) * 100);
-
 fprintf('========================================\n');
 fprintf('WELFARE ANALYSIS\n');
 fprintf('========================================\n');
-fprintf('  Baseline welfare cost (chi=1.0): %.6f%%\n', welfare_baseline);
 
 %% ========================================================================
 %% 7. COUNTERFACTUAL: SIGNAL ATTENUATION (chi variation)
@@ -289,13 +285,13 @@ for i = 1:length(chi_values)
         chi_irfs_u(i,:)   = irf_ro(u_idx,:);
         chi_irfs_A(i,:)   = irf_ro(A_idx,:);
 
-        sd_chi = sum(disc .* log(1 + chi_irfs_C(i,:)/100));
-        chi_welfare(i) = abs((1 - exp(sd_chi / norm_factor)) * 100);
+        % Welfare change relative to baseline stochastic path (chi=1.0).
+        % Positive = CF consumption path is worse than baseline (welfare cost).
+        sd_chi = sum(disc .* log((1 + chi_irfs_C(i,:)/100) ./ (1 + irf_C(1:T_w)/100)));
+        chi_welfare(i) = (1 - exp(sd_chi / norm_factor)) * 100;
 
-        fprintf('  chi=%.1f: Welfare=%.6f%%  DeltaWelfare=%+.2f%%  Impact_Y=%+.4f%%\n', ...
-            chi_values(i), chi_welfare(i), ...
-            (chi_welfare(i)/chi_welfare(1)-1)*100, ...
-            chi_irfs_Y(i,1));
+        fprintf('  chi=%.1f: DeltaWelfare=%+.6f%%  Impact_Y=%+.4f%%\n', ...
+            chi_values(i), chi_welfare(i), chi_irfs_Y(i,1));
     else
         fprintf('  chi=%.1f: FAILED (BK conditions not satisfied)\n', chi_values(i));
         chi_welfare(i) = NaN;
@@ -354,10 +350,10 @@ for i = 1:length(phi_vals)
         phi_impact_Ib(i) = irf_ro2(Ib_i,1);
         phi_cum_u(i)     = sum(irf_ro2(u_i,:));
 
-        sd_phi = sum(disc .* log(1 + irf_ro2(C_i,1:T_w)/100));
-        phi_welfare(i) = abs((1 - exp(sd_phi / norm_factor)) * 100);
+        sd_phi = sum(disc .* log((1 + irf_ro2(C_i,1:T_w)/100) ./ (1 + irf_C(1:T_w)/100)));
+        phi_welfare(i) = (1 - exp(sd_phi / norm_factor)) * 100;
 
-        fprintf('  phi_grid=%.1f: Welfare=%.6f%% Impact_Igrid=%+.4f%% CumU=%.4f\n', ...
+        fprintf('  phi_grid=%.1f: DeltaWelfare=%+.6f%% Impact_Igrid=%+.4f%% CumU=%.4f\n', ...
             phi_vals(i), phi_welfare(i), phi_impact_Ig(i), phi_cum_u(i));
     else
         fprintf('  phi_grid=%.1f: FAILED\n', phi_vals(i));
@@ -413,10 +409,10 @@ for i = 1:length(phib_vals)
         phib_Ip_pct(i) = irf_rb(Ip_ib, 1) / Ip_ss * 100;
         phib_Bstar(i)  = irf_rb(Bs_ib, 1);
 
-        sd_b = sum(disc .* log(1 + irf_rb(C_ib, 1:T_w) / 100));
-        phib_welfare(i) = abs((1 - exp(sd_b / norm_factor)) * 100);
+        sd_b = sum(disc .* log((1 + irf_rb(C_ib, 1:T_w) / 100) ./ (1 + irf_C(1:T_w) / 100)));
+        phib_welfare(i) = (1 - exp(sd_b / norm_factor)) * 100;
 
-        fprintf('  phi_b=%.3f: Welfare=%.6f%%  I_p=%+.2f%%  B_star=%+.6f\n', ...
+        fprintf('  phi_b=%.3f: DeltaWelfare=%+.6f%%  I_p=%+.2f%%  B_star=%+.6f\n', ...
             phib_vals(i), phib_welfare(i), phib_Ip_pct(i), phib_Bstar(i));
     else
         fprintf('  phi_b=%.3f: FAILED (BK conditions not satisfied)\n', phib_vals(i));
@@ -428,6 +424,258 @@ end
 set_param_value('phi_b', 0.039);
 [oo_.dr, ~, M_.params] = resol(0, M_, options_, oo_.dr, ...
     oo_.dr.ys, oo_.exo_steady_state, oo_.exo_det_steady_state);
+fprintf('\n');
+
+%% ========================================================================
+%% 8c. SENSITIVITY ANALYSIS: mu (battery share in flexibility)
+%% ========================================================================
+fprintf('========================================\n');
+fprintf('SENSITIVITY: mu\n');
+fprintf('========================================\n');
+mu_vals = [0.10, 0.16, 0.25];
+mu_welfare  = zeros(size(mu_vals));
+mu_impact_Y = zeros(size(mu_vals));
+
+for i = 1:length(mu_vals)
+    set_param_value('mu', mu_vals(i));
+    [dr_ys_mu, params_mu, ~] = vietnam_dsge_proptax_steadystate(...
+        oo_.dr.ys, oo_.exo_steady_state, M_, options_);
+    M_.params = params_mu;
+    [dr_mu, info_mu, M_.params] = resol(0, M_, options_, oo_.dr, ...
+        dr_ys_mu, oo_.exo_steady_state, oo_.exo_det_steady_state);
+
+    if info_mu(1) == 0
+        nvar = M_.endo_nbr;
+        eps_idx = find(strcmp(M_.exo_names,'eps_ren'));
+        sr = M_.params(strcmp(M_.param_names,'sigma_ren'));
+        sv = zeros(M_.exo_nbr,1); sv(eps_idx) = sr;
+
+        irf_mu = zeros(nvar, T);
+        st = dr_mu.ghu * sv; irf_mu(:,1) = st;
+        for tt = 2:T
+            sv2 = st(M_.nstatic+1:M_.nstatic+M_.nspred);
+            st = dr_mu.ghx * sv2; irf_mu(:,tt) = st;
+        end
+        irf_rmu = zeros(nvar,T); irf_rmu(dr_mu.order_var,:) = irf_mu;
+
+        Y_idx_mu = find(strcmp(M_.endo_names,'Y'));
+        C_idx_mu = find(strcmp(M_.endo_names,'C'));
+        mu_impact_Y(i) = irf_rmu(Y_idx_mu,1);
+
+        sd_mu = sum(disc .* log((1 + irf_rmu(C_idx_mu,1:T_w)/100) ./ (1 + irf_C(1:T_w)/100)));
+        mu_welfare(i) = (1 - exp(sd_mu / norm_factor)) * 100;
+
+        fprintf('  mu=%.2f: DeltaWelfare=%+.6f%%  Impact_Y=%+.4f%%\n', ...
+            mu_vals(i), mu_welfare(i), mu_impact_Y(i));
+    else
+        fprintf('  mu=%.2f: FAILED\n', mu_vals(i));
+        mu_welfare(i) = NaN;
+    end
+end
+
+% Restore mu=0.16
+set_param_value('mu', 0.16);
+[dr_ys_rmu, params_rmu, ~] = vietnam_dsge_proptax_steadystate(...
+    oo_.dr.ys, oo_.exo_steady_state, M_, options_);
+M_.params = params_rmu;
+[oo_.dr, ~, M_.params] = resol(0, M_, options_, oo_.dr, ...
+    dr_ys_rmu, oo_.exo_steady_state, oo_.exo_det_steady_state);
+fprintf('\n');
+
+%% ========================================================================
+%% 8d. SENSITIVITY ANALYSIS: beta (discount factor)
+%% ========================================================================
+fprintf('========================================\n');
+fprintf('SENSITIVITY: beta\n');
+fprintf('========================================\n');
+beta_vals = [0.98, 0.99, 0.995];
+beta_welfare  = zeros(size(beta_vals));
+beta_impact_Bstar = zeros(size(beta_vals));
+beta_C_share = zeros(size(beta_vals));
+
+for i = 1:length(beta_vals)
+    set_param_value('beta', beta_vals(i));
+    set_param_value('r_bar', 1/beta_vals(i) - 1);
+    [dr_ys_b2, params_b2, ~] = vietnam_dsge_proptax_steadystate(...
+        oo_.dr.ys, oo_.exo_steady_state, M_, options_);
+    M_.params = params_b2;
+    [dr_b2, info_b2, M_.params] = resol(0, M_, options_, oo_.dr, ...
+        dr_ys_b2, oo_.exo_steady_state, oo_.exo_det_steady_state);
+
+    if info_b2(1) == 0
+        nvar = M_.endo_nbr;
+        eps_idx = find(strcmp(M_.exo_names,'eps_ren'));
+        sr = M_.params(strcmp(M_.param_names,'sigma_ren'));
+        sv = zeros(M_.exo_nbr,1); sv(eps_idx) = sr;
+
+        irf_b2 = zeros(nvar, T);
+        st = dr_b2.ghu * sv; irf_b2(:,1) = st;
+        for tt = 2:T
+            sv2 = st(M_.nstatic+1:M_.nstatic+M_.nspred);
+            st = dr_b2.ghx * sv2; irf_b2(:,tt) = st;
+        end
+        irf_rb2 = zeros(nvar,T); irf_rb2(dr_b2.order_var,:) = irf_b2;
+
+        C_idx_b = find(strcmp(M_.endo_names,'C'));
+        Bstar_idx_b = find(strcmp(M_.endo_names,'B_star'));
+
+        beta_impact_Bstar(i) = irf_rb2(Bstar_idx_b, 1);
+        beta_C_share(i) = dr_b2.ys(C_idx_b) / dr_b2.ys(Y_idx_mu) * 100;
+
+        disc_b = beta_vals(i).^(0:T_w-1);
+        norm_b = sum(disc_b);
+        sd_b2 = sum(disc_b .* log(1 + irf_rb2(C_idx_b,1:T_w)/100));
+        beta_welfare(i) = abs((1 - exp(sd_b2 / norm_b)) * 100);
+
+        fprintf('  beta=%.3f (ann. rate ~%.1f%%): DeltaWelfare=%+.6f%%  Impact_B*=%+.4f  C/Y=%.1f%%\n', ...
+            beta_vals(i), (1/beta_vals(i)-1)*400, beta_welfare(i), ...
+            beta_impact_Bstar(i), beta_C_share(i));
+    else
+        fprintf('  beta=%.3f: FAILED\n', beta_vals(i));
+        beta_welfare(i) = NaN;
+    end
+end
+
+% Restore beta=0.99
+set_param_value('beta', 0.99);
+set_param_value('r_bar', 1/0.99 - 1);
+[dr_ys_rb, params_rb, ~] = vietnam_dsge_proptax_steadystate(...
+    oo_.dr.ys, oo_.exo_steady_state, M_, options_);
+M_.params = params_rb;
+[oo_.dr, ~, M_.params] = resol(0, M_, options_, oo_.dr, ...
+    dr_ys_rb, oo_.exo_steady_state, oo_.exo_det_steady_state);
+fprintf('\n');
+
+%% ========================================================================
+%% 8e. TRANSITION DYNAMICS: Reliability Valley
+%% ========================================================================
+fprintf('========================================\n');
+fprintf('RELIABILITY VALLEY: TRANSITION DYNAMICS\n');
+fprintf('========================================\n');
+
+% Restore baseline parameters
+set_param_value('chi', 1.0);
+set_param_value('psi', 2.0);
+set_param_value('phi_grid', 1.5);
+set_param_value('mu', 0.16);
+[oo_.dr.ys, M_.params, ~] = vietnam_dsge_proptax_steadystate(oo_.dr.ys, oo_.exo_steady_state, M_, options_);
+[oo_.dr, ~, M_.params] = resol(0, M_, options_, oo_.dr, oo_.dr.ys, oo_.exo_steady_state, oo_.exo_det_steady_state);
+
+% Transition parameters
+T_trans = 100;
+t_trans = (1:T_trans)';
+
+theta_start = 0.15;
+theta_end   = 0.50;
+k_steep = 0.08;
+t_mid = 35;
+theta_path = theta_start + (theta_end - theta_start) ./ (1 + exp(-k_steep * (t_trans - t_mid)));
+
+p_psi_val     = M_.params(strcmp(M_.param_names, 'psi'));
+phi_int_val   = M_.params(strcmp(M_.param_names, 'phi_int'));
+p_sigma_ren   = M_.params(strcmp(M_.param_names, 'sigma_ren'));
+p_delta_b     = M_.params(strcmp(M_.param_names, 'delta_b'));
+p_delta_g     = M_.params(strcmp(M_.param_names, 'delta_g'));
+p_mu          = M_.params(strcmp(M_.param_names, 'mu'));
+p_rho_flex    = M_.params(strcmp(M_.param_names, 'rho_flex'));
+
+K_b_ss = oo_.dr.ys(strcmp(M_.endo_names, 'K_b'));
+K_g_ss = oo_.dr.ys(strcmp(M_.endo_names, 'K_g'));
+A_bat_ss = oo_.dr.ys(strcmp(M_.endo_names, 'A_bat'));
+F_ss_val = oo_.dr.ys(strcmp(M_.endo_names, 'F'));
+u_ss_val = oo_.dr.ys(strcmp(M_.endo_names, 'u'));
+
+K_ren_base = 0.045 / theta_start;
+
+scenario_labels = {'Baseline (\phi_{grid}=1.5)', ...
+                   'Accelerated Grid (\phi_{grid}=3.0)', ...
+                   'Battery Subsidy (P_{bat}=0.8)'};
+n_scen = 3;
+
+grid_growth_base = 0.0135;
+grid_accel_factor = [1.0, 2.0, 1.0];
+bat_growth_base = 0.020;
+bat_accel_factor = [1.0, 1.0, 1.5];
+learning_boost = [0.0, 0.0, 0.02];
+
+u_paths     = zeros(T_trans, n_scen);
+F_paths     = zeros(T_trans, n_scen);
+K_b_paths   = zeros(T_trans, n_scen);
+K_g_paths   = zeros(T_trans, n_scen);
+Vol_paths   = zeros(T_trans, n_scen);
+
+for sc = 1:n_scen
+    K_b_t = K_b_ss;
+    K_g_t = K_g_ss;
+    A_bat_t = A_bat_ss;
+
+    for qq = 1:T_trans
+        K_ren_t = K_ren_base * (theta_path(qq) / theta_start);
+        Vol_ren_t = theta_path(qq) * K_ren_t * p_sigma_ren;
+
+        s_f = (p_rho_flex - 1) / p_rho_flex;
+        F_t = (p_mu * (A_bat_t * K_b_t)^s_f + (1-p_mu) * K_g_t^s_f)^(1/s_f);
+
+        z_t = p_psi_val * F_t / (phi_int_val * Vol_ren_t);
+        u_t = 1 - exp(-z_t);
+
+        u_paths(qq, sc) = u_t;
+        F_paths(qq, sc) = F_t;
+        K_b_paths(qq, sc) = K_b_t;
+        K_g_paths(qq, sc) = K_g_t;
+        Vol_paths(qq, sc) = Vol_ren_t;
+
+        u_gap = max(0, 0.97 - u_t) / 0.97;
+
+        grid_growth = grid_growth_base * grid_accel_factor(sc) * (1 + 2*u_gap);
+        I_grid_t = (p_delta_g + grid_growth) * K_g_t;
+        K_g_t = (1 - p_delta_g) * K_g_t + I_grid_t;
+
+        bat_growth = bat_growth_base * bat_accel_factor(sc) * (1 + 3*u_gap);
+        I_bat_t = (p_delta_b + bat_growth) * K_b_t;
+        K_b_t = (1 - p_delta_b) * K_b_t + I_bat_t;
+
+        A_bat_t = A_bat_t * (1 + 0.10 * u_gap + learning_boost(sc));
+    end
+end
+
+valley_results = zeros(n_scen, 4);
+for sc = 1:n_scen
+    [min_u, min_idx] = min(u_paths(:, sc));
+    valley_results(sc, 1) = min_u * 100;
+    valley_results(sc, 2) = min_idx;
+
+    below_target = u_paths(:, sc) < 0.97;
+    valley_results(sc, 3) = sum(below_target);
+
+    post_valley = find(~below_target & (1:T_trans)' > min_idx, 1, 'first');
+    if ~isempty(post_valley)
+        valley_results(sc, 4) = post_valley;
+    else
+        valley_results(sc, 4) = T_trans;
+    end
+end
+
+fprintf('RELIABILITY VALLEY COMPARISON:\n');
+fprintf('%-35s  %8s  %8s  %10s  %10s\n', 'Scenario', 'Min u(%)', 'Quarter', 'Duration', 'Recovery');
+for sc = 1:n_scen
+    fprintf('%-35s  %7.2f%%  Q%-6d  %8d Q  Q%-8d\n', ...
+        scenario_labels{sc}, valley_results(sc,1), valley_results(sc,2), ...
+        valley_results(sc,3), valley_results(sc,4));
+end
+
+baseline_depth = 97 - valley_results(1,1);
+for sc = 2:n_scen
+    depth_sc = 97 - valley_results(sc,1);
+    reduction = (baseline_depth - depth_sc) / baseline_depth * 100;
+    duration_reduction = (valley_results(1,3) - valley_results(sc,3)) / valley_results(1,3) * 100;
+    fprintf('  %s:\n', scenario_labels{sc});
+    fprintf('    Valley depth reduction: %.1f%% (%.2f pp -> %.2f pp)\n', ...
+        reduction, baseline_depth, depth_sc);
+    fprintf('    Duration reduction:     %.1f%% (%d Q -> %d Q)\n', ...
+        duration_reduction, valley_results(1,3), valley_results(sc,3));
+end
+
 fprintf('\n');
 
 %% ========================================================================
@@ -476,15 +724,14 @@ for tt=2:T; sv2=st_b(M_.nstatic+1:M_.nstatic+M_.nspred); st_b=oo_.dr.ghx*sv2; ir
 irf_bat_ro=zeros(nvar,T); irf_bat_ro(oo_.dr.order_var,:)=irf_bat_only;
 
 sd_ren = sum(disc.*log(1+irf_ren_ro(C_idx_j,1:T_w)/100));
-sd_bat = sum(disc.*log(1+irf_bat_ro(C_idx_j,1:T_w)/100));
-welfare_ren = abs((1-exp(sd_ren/norm_factor))*100);
-welfare_bat = abs((1-exp(sd_bat/norm_factor))*100);
+welfare_ren_baseline = abs((1-exp(sd_ren/norm_factor))*100);
 
-fprintf('  Intermittency-only welfare:  %.6f%%\n', welfare_ren);
-fprintf('  Battery-price-only welfare:  %.6f%%\n', welfare_bat);
-fprintf('  Joint (perfect storm) welfare: %.6f%%\n', welfare_joint);
-fprintf('  Sum of individuals:          %.6f%%\n', welfare_ren+welfare_bat);
-fprintf('  Interaction term:            %.6f%%\n', welfare_joint-(welfare_ren+welfare_bat));
+% Joint shock welfare change relative to intermittency-only baseline
+delta_lambda_joint = (welfare_joint - welfare_ren_baseline);
+
+fprintf('  Intermittency baseline:     %.6f%%\n', welfare_ren_baseline);
+fprintf('  Joint shock welfare:        %.6f%%\n', welfare_joint);
+fprintf('  ΔΛ_joint (vs baseline):     %+.6f%%\n', delta_lambda_joint);
 fprintf('  Impact Y (joint):    %+.4f%%\n', irf_joint(Y_idx_j,1));
 fprintf('  Impact u (joint):    %+.4f%%\n', irf_joint(u_idx_j,1));
 fprintf('  Impact I_bat (joint):%+.4f%%\n', irf_joint(Ib_idx_j,1));
@@ -694,8 +941,7 @@ if isfield(oo_,'variance_decomposition')
     fprintf(fid,'  },\n');
 end
 
-% Welfare
-fprintf(fid,'  "welfare_baseline": %.10f,\n', welfare_baseline);
+% Welfare (ΔΛ = change from baseline stochastic path)
 fprintf(fid,'  "welfare_chi": {\n');
 for i = 1:length(chi_values)
     comma = ','; if i==length(chi_values), comma=''; end
@@ -703,10 +949,9 @@ for i = 1:length(chi_values)
 end
 fprintf(fid,'  },\n');
 
-% Signal value
-if ~isnan(chi_welfare(find(chi_values==1.0))) && ~isnan(chi_welfare(find(chi_values==0.0)))
-    signal_pct = (chi_welfare(end)/chi_welfare(1)-1)*100;
-    fprintf(fid,'  "signal_value_pct": %.6f,\n', abs(signal_pct));
+% Signal value: ΔΛ for complete suppression (chi=0)
+if ~isnan(chi_welfare(end))
+    fprintf(fid,'  "signal_value_pct": %.6f,\n', chi_welfare(end));
 end
 
 % Sensitivity phi_grid
@@ -727,11 +972,42 @@ for i = 1:length(phib_vals)
 end
 fprintf(fid,'  ],\n');
 
+% Sensitivity mu
+fprintf(fid,'  "sensitivity_mu": [\n');
+for i = 1:length(mu_vals)
+    comma = ','; if i==length(mu_vals), comma=''; end
+    fprintf(fid,'    {"mu":%.2f,"welfare":%.8f,"impact_Y":%.6f}%s\n',...
+        mu_vals(i),mu_welfare(i),mu_impact_Y(i),comma);
+end
+fprintf(fid,'  ],\n');
+
+% Sensitivity beta
+fprintf(fid,'  "sensitivity_beta": [\n');
+for i = 1:length(beta_vals)
+    comma = ','; if i==length(beta_vals), comma=''; end
+    fprintf(fid,'    {"beta":%.3f,"welfare":%.8f,"impact_Bstar":%.6f,"C_share":%.1f}%s\n',...
+        beta_vals(i),beta_welfare(i),beta_impact_Bstar(i),beta_C_share(i),comma);
+end
+fprintf(fid,'  ],\n');
+
+% Valley results
+fprintf(fid,'  "valley": {\n');
+fprintf(fid,'    "baseline_nadir": %.2f,\n', valley_results(1,1));
+fprintf(fid,'    "baseline_depth_pp": %.2f,\n', 97 - valley_results(1,1));
+fprintf(fid,'    "baseline_duration": %d,\n', valley_results(1,3));
+fprintf(fid,'    "accel_grid_nadir": %.2f,\n', valley_results(2,1));
+fprintf(fid,'    "accel_grid_depth_pp": %.2f,\n', 97 - valley_results(2,1));
+fprintf(fid,'    "accel_grid_duration": %d,\n', valley_results(2,3));
+fprintf(fid,'    "battery_subsidy_nadir": %.2f,\n', valley_results(3,1));
+fprintf(fid,'    "battery_subsidy_depth_pp": %.2f,\n', 97 - valley_results(3,1));
+fprintf(fid,'    "battery_subsidy_duration": %d\n', valley_results(3,3));
+fprintf(fid,'  },\n');
+
 % Joint shock
 fprintf(fid,'  "joint_shock": {\n');
-fprintf(fid,'    "welfare_ren_only": %.10f,\n', welfare_ren);
-fprintf(fid,'    "welfare_bat_only": %.10f,\n', welfare_bat);
+fprintf(fid,'    "welfare_ren_baseline": %.10f,\n', welfare_ren_baseline);
 fprintf(fid,'    "welfare_joint": %.10f,\n', welfare_joint);
+fprintf(fid,'    "delta_lambda_joint": %.10f,\n', delta_lambda_joint);
 fprintf(fid,'    "impact_Y": %.10f,\n', irf_joint(Y_idx_j,1));
 fprintf(fid,'    "impact_u": %.10f,\n', irf_joint(u_idx_j,1));
 fprintf(fid,'    "impact_I_bat": %.10f\n', irf_joint(Ib_idx_j,1));
@@ -768,9 +1044,9 @@ if ~isnan(chi_welfare(chi10_idx)) && ~isnan(chi_welfare(chi00_idx))
         (chi_welfare(chi00_idx)/chi_welfare(chi10_idx)-1)*100);
 end
 fprintf('\nJOINT SHOCK:\n');
-fprintf('  Intermittency-only: %.4f%%\n', welfare_ren);
-fprintf('  Battery-only:       %.4f%%\n', welfare_bat);
-fprintf('  Joint:              %.4f%%\n', welfare_joint);
+fprintf('  Baseline (ren only):  %.6f%%\n', welfare_ren_baseline);
+fprintf('  Joint (ren + bat):    %.6f%%\n', welfare_joint);
+fprintf('  ΔΛ_joint (vs baseline): %+.6f%%\n', delta_lambda_joint);
 fprintf('\n==========================================\n');
 fprintf('  RUN COMPLETE\n');
 fprintf('==========================================\n');

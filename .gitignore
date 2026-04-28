@@ -70,6 +70,11 @@ remove_*.py
 main.pdf
 Fulbright_ECON_Capstone_Thesis_Template.pdf
 
+# Dynare output directories
+vietnam_dsge/
+vietnam_dsge_proptax/
+vietnam_dsge_wickens/
+
 # Unnecessary misc
 compile*.log
 .Vietnam_DSGE_Midterm_Slides/

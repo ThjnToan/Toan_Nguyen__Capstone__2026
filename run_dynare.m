@@ -25,9 +25,12 @@ set(groot, 'defaultLegendInterpreter', 'latex');
 %% Add Dynare to MATLAB path
 addpath('C:/dynare/6.5/matlab');
 
+%% Change to model directory
+cd('C:/Users/Laptop K1/OneDrive/Documents/MATLAB');
+
 %% Run the Dynare model
 fprintf('Running Vietnam DSGE model in Dynare...\n');
-dynare C:/Users/Laptop K1/OneDrive/Documents/MATLAB/vietnam_dsge noclearall;
+dynare vietnam_dsge noclearall;
 
 fprintf('\nModel solved successfully!\n');
 fprintf('Blanchard-Kahn conditions verified.\n');
