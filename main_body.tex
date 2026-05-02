@@ -179,7 +179,7 @@
 		\left[
 		\log(C_t) - \varphi \frac{L_t^{1+\sigma_L}}{1+\sigma_L}
 		\right]
-		\label{eq:utility}
+		\label{eq:utility},
 	\end{equation}
 	
 	subject to the budget constraint:
@@ -187,26 +187,26 @@
 		C_t + I_{p,t} + P_{bat,t} I_{bat,t} + B^*_t + \tau Y_t + T_t
 		=
 		w_t L_t + R_t K_{p,t-1} + \Pi_t + (1+r^*_{t-1}) B^*_{t-1}
-		\label{eq:hh_budget}
+		\label{eq:hh_budget},
 	\end{equation}
 	
 	where $\tau$ is the fixed proportional tax, $T_t$ is a residual lump-sum tax (or transfer) that balances the government budget dynamically ($I_{grid,t} = \tau Y_t + T_t$), $w_t$ the real wage, $R_t$ the rental rate on $K_{p,t-1}$, $\Pi_t$ the rents from the exogenous energy endowment, and $B^*_t$ net foreign assets.\footnote{\label{fn:timing_convention}Capital installed at $t-1$ is productive in $t$; investment $I_{p,t}$ does not contribute until $t+1$.}
 
-The household chooses $\{C_t, L_t, K_{p,t+1}, B^*_t\}$ to maximize utility subject to the budget constraint \eqref{eq:hh_budget} and the standard capital accumulation law \eqref{eq:productive_capital}; the Lagrangian derivation is in Appendix~\ref{app:deriv_euler}.
+The household chooses $\{C_t, L_t, K_{p,t+1}, B^*_t\}$ to maximize utility subject to the budget constraint \eqref{eq:hh_budget} and the standard capital accumulation law \eqref{eq:productive_capital}; the mathematical derivation is in Appendix~\ref{app:deriv_euler}.
 	
 	
-\paragraph{Euler equation for capital.} With proportional taxation, the after-tax return to capital in period $t+1$ is $(1-\tau)\alpha Y_{t+1}/K_{p,t}$, where $\tau$ is the fixed tax rate. The intertemporal optimality condition becomes:\footnote{The full step-by-step Lagrangian derivation of this condition is provided in Appendix~\ref{app:deriv_euler}.}
+\paragraph{Euler equation for capital.} With proportional taxation, the after-tax return to capital in period $t+1$ is $(1-\tau)\alpha Y_{t+1}/K_{p,t}$, where $\tau$ is the fixed tax rate. The intertemporal optimality condition becomes:\footnote{The mathematical derivation is in Appendix~\ref{app:deriv_euler}.}
 	\begin{equation}
 		\frac{1}{C_t} = \beta \mathbb{E}_t \left[ \frac{(1-\tau)\,\alpha Y_{t+1}/K_{p,t} + 1 - \delta_p}{C_{t+1}} \right]
-		\label{eq:euler}
+		\label{eq:euler}.
 	\end{equation}
 	
 	The tax wedge $\tau$ shifts the steady-state capital stock downward but does not amplify shock dynamics beyond the standard Euler mechanism.
 	
-	\paragraph{Labor supply.} With the proportional tax, the household equates the marginal disutility of labor to the after-tax marginal utility of income. Substituting the competitive wage $w_t = (1-\alpha)V_t/L_t$:\footnote{The full step-by-step Lagrangian derivation of this condition is provided in Appendix~\ref{app:deriv_labor}.}
+	\paragraph{Labor supply.} With the proportional tax, the household equates the marginal disutility of labor to the after-tax marginal utility of income. Substituting the competitive wage $w_t = (1-\alpha)V_t/L_t$:\footnote{The mathematical derivation is in Appendix~\ref{app:deriv_labor}.}
 	\begin{equation}
 		(1-\tau)(1-\alpha) V_t = \varphi \, C_t \, L_t^{1+\sigma_L}
-		\label{eq:labor_supply}
+		\label{eq:labor_supply}.
 	\end{equation}
 	
 	The parameter $\varphi$ is calibrated endogenously to match steady-state labor hours $L_{ss} = 0.33$.
@@ -219,7 +219,7 @@ The household chooses $\{C_t, L_t, K_{p,t+1}, B^*_t\}$ to maximize utility subje
 	
 	\begin{equation}
 		Y_t = \left[(1-\omega_E)V_t^{s_E} + \omega_E \bar{E}^{s_E}\right]^{1/s_E}
-		\label{eq:final_output}
+		\label{eq:final_output}.
 	\end{equation}
 	
 	When $\sigma_E = 0.6 < 1$, energy and value-added are gross complements: disruptions to energy supply translate into disproportionately large output losses \citep{heutel2012}.
@@ -228,7 +228,7 @@ Value-added production combines labor and effective capital services:
 	
 	\begin{equation}
 		V_t = Z\,(u_t K_{p,t-1})^\alpha L_t^{1-\alpha}
-		\label{eq:value_added}
+		\label{eq:value_added}.
 	\end{equation}
 	
 	Effective capital $u_t K_{p,t-1}$ is the operational fraction of installed capacity ($u_t \in (0,1)$, capturing system-wide outages rather than a firm-level choice): a 3\% reliability shortfall is equivalent to a TFP loss of $\alpha \times 3\%\approx 1\%$.
@@ -243,7 +243,7 @@ Energy enters as a fixed endowment $\bar{E}$ (PDP8 targets); the intermittency s
 	
 	\begin{equation}
 		u_t = 1 - \exp\left(-\psi \frac{F_t}{\phi_{int} \cdot \text{Vol}_{ren,t}}\right)
-		\label{eq:utilization}
+		\label{eq:utilization}.
 	\end{equation}
 	
 	Grid reliability is an increasing, concave function of the ratio of flexibility assets ($F_t$) to renewable volatility ($\text{Vol}_{ren,t}$). When the system has abundant flexibility relative to volatility, nearly all capital can operate ($u_t \approx 1$); when flexibility is scarce, outages proliferate and utilization collapses.
@@ -278,7 +278,7 @@ where $F_t$ is total flexibility, $\phi_{int}\approx 55.6$ scales volatility to 
 	The volatility term captures the absolute variability of renewable generation:
 	\begin{equation}
 		\overline{\text{Vol}}_{ren} = \theta_{ren} \cdot K_{ren} \cdot \sigma_{ren}
-		\label{eq:renewable_volatility}
+		\label{eq:renewable_volatility},
 	\end{equation}
 	
 	where $\theta_{ren}$, $K_{ren}$, and $\sigma_{ren}$ are the penetration share, installed capacity, and CV of the intermittency shock. The shock $\varepsilon_{ren,t}$ enters multiplicatively as $\overline{\text{Vol}}_{ren}\cdot\exp(\varepsilon_{ren,t})$; in transition simulations $\overline{\text{Vol}}_{ren}$ rises with VRE expansion.
@@ -295,7 +295,7 @@ where $F_t$ is total flexibility, $\phi_{int}\approx 55.6$ scales volatility to 
 		(1-\mu) K_{g,t-1}^{s_F}
 		\right]^{1/s_F},
 		\qquad \rho < 1 \;\Leftrightarrow\; s_F < 0
-		\label{eq:flexibility_bundle}
+		\label{eq:flexibility_bundle}.
 	\end{equation}
 	
 	The negative exponent $s_F<0$ ($\rho=0.4<1$) enforces imperfect complementarity; all inputs are predetermined from period $t-1$. See Proposition~\ref{prop:superadditivity} (Appendix~\ref{app:proof_superadditivity}).
@@ -306,7 +306,7 @@ where $F_t$ is total flexibility, $\phi_{int}\approx 55.6$ scales volatility to 
 	
 	\begin{equation}
 		K_{g,t+1} = (1-\delta_g)K_{g,t} + I_{grid,t}
-		\label{eq:grid_capital}
+		\label{eq:grid_capital}.
 	\end{equation}
 	
 	Grid investment is undertaken by the government and is subject to institutional inertia, reflecting planning delays and construction lags. As a result, public flexibility adjusts slowly to changes in renewable penetration.
@@ -315,13 +315,13 @@ where $F_t$ is total flexibility, $\phi_{int}\approx 55.6$ scales volatility to 
 	
 	\begin{equation}
 		K_{b,t+1} = (1-\delta_b)K_{b,t} + I_{bat,t}
-		\label{eq:battery_capital}
+		\label{eq:battery_capital}.
 	\end{equation}
 	
 	Battery capital follows a standard linear accumulation law without adjustment costs, as the modular and scalable nature of battery storage allows rapid deployment without the installation frictions typically associated with heavy infrastructure.
 	
 	\paragraph{Battery Investment Decision.}
-	A fully endogenous optimization of battery capital subject to the non-linear reliability constraint would create non-convexities that complicate the Blanchard-Kahn conditions. The investment rule below proxies the gradient of the structural shadow price while preserving local saddle-path stability; the full shadow-price derivation is provided in Appendix~\ref{app:deriv_euler}.
+	A fully endogenous optimization of battery capital subject to the non-linear reliability constraint would create non-convexities that complicate the Blanchard-Kahn conditions. The investment rule below proxies the gradient of the structural shadow price while preserving local saddle-path stability; the mathematical derivation is in Appendix~\ref{app:deriv_euler}.
 
 	Table~\ref{tab:mpk_decomp} evaluates the shadow rental rate at steady state, yielding $R_{b,ss} = 10.93\%$ quarterly. The flexibility bottleneck ($\partial F / \partial(A_{bat} K_b) = 2.04$) is the dominant force, reflecting battery scarcity in the CES aggregator, while the reliability gradient is moderate because the system operates near $u_{ss} = 0.97$.
 	
@@ -351,7 +351,7 @@ where $F_t$ is total flexibility, $\phi_{int}\approx 55.6$ scales volatility to 
 
 	\begin{equation}
 		\frac{I_{bat,t}}{\bar{I}_{bat}} = \left(\frac{u^*}{u_t}\right)^{\phi_{grid}} \cdot \frac{1}{P_{bat,t}}
-		\label{eq:battery_investment}
+		\label{eq:battery_investment}.
 	\end{equation}
 	
 	Higher $\phi_{grid}$ implies more aggressive deployment when the grid is stressed; the price term $1/P_{bat,t}$ reflects Vietnam's price-taking position in global markets.
@@ -361,7 +361,7 @@ where $F_t$ is total flexibility, $\phi_{int}\approx 55.6$ scales volatility to 
 	Battery technology evolves through scarcity-induced learning: when reliability falls below target, the return to improving storage rises and innovation accelerates \citep{hicks1932, acemoglu2002}. The law of motion is:
 	\begin{equation}
 		A_{bat,t} = A_{bat,t-1} \times \left(1 + \eta_{bat} \cdot \chi \cdot \frac{u^* - u_t}{u^*}\right)
-		\label{eq:learning_by_doing}
+		\label{eq:learning_by_doing},
 	\end{equation}
 	
 where $\eta_{bat}$ is the innovation elasticity, $\chi\in(0,1]$ captures regulatory signal attenuation, and $u^*$ is the reliability target. Innovation is zero at $u_t=u^*$, accelerates when reliability falls below target, and enters $F_{t+1}$ with a one-period delay eliminating within-period simultaneity.
@@ -374,7 +374,7 @@ where $\eta_{bat}$ is the innovation elasticity, $\chi\in(0,1]$ captures regulat
 		\frac{I_{grid,t}}{\bar{I}_{grid}} =
 		\left(\frac{u^*}{u_t}\right)^{\phi_{grid}}
 		\exp(\varepsilon_{I,t})
-		\label{eq:grid_investment_rule}
+		\label{eq:grid_investment_rule}.
 	\end{equation}
 	
 	The government spends more on grid infrastructure when reliability falls below target, and less when the grid is performing well. This rule is structurally identical to the battery investment rule \eqref{eq:battery_investment} except that it lacks a price term (grid investment uses domestically produced goods) and includes an implementation shock $\varepsilon_{I,t}$ reflecting bureaucratic delays, procurement bottlenecks, and construction lags.
@@ -388,7 +388,7 @@ where $\eta_{bat}$ is the innovation elasticity, $\chi\in(0,1]$ captures regulat
 	Battery investment goods are priced at world price $P_{bat,t}$, which enters the resource constraint and the battery investment rule. The world price of batteries evolves according to a persistent AR(1) process:
 	\begin{equation}
 		\log P_{bat,t} = \rho_{bat} \log P_{bat,t-1} + \varepsilon_{bat,t}
-		\label{eq:battery_price_shock}
+		\label{eq:battery_price_shock},
 	\end{equation}
 	
 	where $\varepsilon_{bat,t} \sim N(0, \sigma^2_{bat})$ captures global shocks to battery costs (e.g., lithium price volatility, supply chain disruptions). This channel allows the model to examine how external cost shocks to the green transition propagate through the domestic economy. In steady state, $P_{bat,ss} = 1$ (normalized).
@@ -402,7 +402,7 @@ where $\eta_{bat}$ is the innovation elasticity, $\chi\in(0,1]$ captures regulat
 	The household's optimality condition for international bond holdings yields:
 	\begin{equation}
 		\frac{1}{C_t} = \beta \, \mathbb{E}_t \left[ \frac{1 + r^*_t}{C_{t+1}} \right]
-		\label{eq:bond_euler}
+		\label{eq:bond_euler}.
 	\end{equation}
 
 	Combining with \eqref{eq:euler} delivers the no-arbitrage condition $(1-\tau)\alpha Y_{t+1}/K_{p,t} + 1 - \delta_p = 1 + r^*_t$, confirming that the domestic after-tax return equals the external borrowing rate in equilibrium.
@@ -412,7 +412,7 @@ where $\eta_{bat}$ is the innovation elasticity, $\chi\in(0,1]$ captures regulat
 	The country-specific interest rate rises with external debt, following \citet{schmittgrohe2003}:
 	\begin{equation}
 		r^*_t = \bar{r} + \phi_b \left( \exp(\bar{B}^* - B^*_t) - 1 \right)
-		\label{eq:interest_premium}
+		\label{eq:interest_premium}.
 	\end{equation}
 
 	With $\bar{r} = 1/\beta - 1$ and $\bar{B}^* = 0$, this premium stabilizes the net foreign asset process and resolves the unit-root problem standard in small open economy models.
@@ -422,13 +422,13 @@ where $\eta_{bat}$ is the innovation elasticity, $\chi\in(0,1]$ captures regulat
 	Output equals domestic absorption plus net capital outflows:
 	\begin{equation}
 		Y_t = C_t + I_{p,t} + P_{bat,t} I_{bat,t} + I_{grid,t} + \underbrace{(B^*_t - (1+r^*_{t-1})B^*_{t-1})}_{\text{net capital outflow}}
-		\label{eq:goods_market_clearing}
+		\label{eq:goods_market_clearing}.
 	\end{equation}
 	
 	\noindent Investment in productive capital $I_{p,t}$ evolves as:
 	\begin{equation}
 		K_{p,t+1} = (1-\delta_p) K_{p,t} + I_{p,t}
-		\label{eq:productive_capital}
+		\label{eq:productive_capital}.
 	\end{equation}
 	
 	\subsection{Equilibrium Definition} \label{sec:equilibrium}
@@ -567,7 +567,7 @@ Variables are expressed as log-deviations from steady state, denoted by hats: $\
 Since energy enters as a fixed endowment $\bar{E}$ (i.e., $\hat{E}_t = 0$), the log-linearized CES production function simplifies to:
 	\begin{equation}
 		\hat{Y}_t = (1-\omega_E) s_V^{\frac{\sigma_E - 1}{\sigma_E}} \hat{V}_t
-		\label{eq:output_lin}
+		\label{eq:output_lin}.
 	\end{equation}
 	
 	Output fluctuations are proportional to value-added fluctuations, with the proportionality constant determined by the energy share and the CES curvature. Because energy is fixed, all business-cycle variation in output comes through the value-added channel, and hence through the reliability mechanism that drives $\hat{V}_t$.
@@ -575,13 +575,13 @@ Since energy enters as a fixed endowment $\bar{E}$ (i.e., $\hat{E}_t = 0$), the 
 	Here $s_V \equiv V_{ss}^{(\sigma_E-1)/\sigma_E} / [V_{ss}^{(\sigma_E-1)/\sigma_E} + (\omega_E/(1-\omega_E)) \bar{E}^{(\sigma_E-1)/\sigma_E}]$ denotes the steady-state value-added share in the CES aggregate. The value-added component linearizes as:
 	\begin{equation}
 		\hat{V}_t = \alpha(\hat{u}_t + \hat{K}_{p,t-1}) + (1-\alpha)\hat{L}_t
-		\label{eq:va_lin}
+		\label{eq:va_lin}.
 	\end{equation}
 	
 	Reliability $\hat{u}_t$ enters value-added with elasticity $\alpha$ (a 1\% reliability drop reduces output by $\approx 0.35\%$). Linearizing the exponential reliability function around steady state yields the reliability wedge equation, with reliability elasticity $\xi \equiv \frac{1-u_{ss}}{u_{ss}} \cdot \psi \frac{F_{ss}}{\phi_{int} \cdot \text{Vol}_{ren,ss}}$:
 	\begin{equation}
 		\hat{u}_t = -\xi \cdot \hat{\varepsilon}_{ren,t}
-		\label{eq:reliability_lin}
+		\label{eq:reliability_lin}.
 	\end{equation}
 	
 	Under the baseline ($\xi \approx 0.26$), a 5\% adverse intermittency shock reduces utilization by $\approx$1.3~pp if flexibility does not adjust, the Agility Gap mechanism.	
@@ -592,7 +592,7 @@ Since energy enters as a fixed endowment $\bar{E}$ (i.e., $\hat{E}_t = 0$), the 
 The scarcity-induced innovation equation linearizes around steady state. Since $u_{ss} = u^*$, the reliability gap $(u^* - u_t)/u^*$ linearizes to $-\hat{u}_t$ (in log-deviations). Thus:
 	\begin{equation}
 		\underbrace{\hat{A}_{bat,t} - \hat{A}_{bat,t-1}}_{\text{technology growth}} = -\eta_{bat} \cdot \chi \cdot \hat{u}_t
-		\label{eq:abat_lin}
+		\label{eq:abat_lin}.
 	\end{equation}
 	
 	Battery technology improves proportionally to the reliability shortfall, modulated by $\eta_{bat}=0.10$ and regulatory transmission $\chi$; suppressed signals or a healthy grid cause technology to stagnate. Full system in Appendix~\ref{app:log_lin}.	
@@ -948,12 +948,12 @@ The recursive competitive equilibrium is formally stated in Section~\ref{sec:equ
 	For any counterfactual economy indexed by a perturbed parameter (e.g.\ $\chi$, $\phi_{grid}$, $\phi_b$, $\mu$, $\beta$), I define the counterfactual welfare change $\Delta\Lambda$ as the consumption-equivalent change relative to the baseline:
 	\begin{equation}
 		\mathbb{E}_0 \sum_{t=0}^{T} \beta^t \log\!\left((1-\Delta\Lambda)\,C_t^{\text{base}}\right) = \mathbb{E}_0 \sum_{t=0}^{T} \beta^t \log(C_t^{\text{CF}})
-		\label{eq:welfare_change_defn}
+		\label{eq:welfare_change_defn},
 	\end{equation}
 	which rearranges to
 	\begin{equation}
 		\Delta\Lambda = 1 - \exp\!\left[\frac{1-\beta}{1-\beta^{T+1}} \sum_{t=0}^{T} \beta^t \log\!\left(\frac{C_t^{\text{CF}}}{C_t^{\text{base}}}\right)\right],
-		\label{eq:welfare_change}
+		\label{eq:welfare_change},
 	\end{equation}
 	with $T = 40$ quarters (10 years). The interpretation is direct: $\Delta\Lambda$ is the permanent fraction of baseline consumption the household would be willing to give up (positive $\Delta\Lambda$) or would need to receive (negative $\Delta\Lambda$) in order to be indifferent between living in the baseline economy and living in the counterfactual economy. By construction $\Delta\Lambda = 0$ when the counterfactual parameter equals its baseline value; positive $\Delta\Lambda$ denotes a welfare cost of the counterfactual, negative $\Delta\Lambda$ a welfare gain. Since all counterfactuals considered here share the baseline's steady state (neither $\chi$ nor $\phi_{grid}$ enters the steady-state system, and $B^*_{ss}=0$ nullifies $\phi_b$), the log ratio reduces to a ratio of percent deviations without a steady-state correction.
 
@@ -1151,12 +1151,12 @@ The recursive competitive equilibrium is formally stated in Section~\ref{sec:equ
 	
 	The state vector comprises predetermined variables:
 	\begin{equation}
-		\mathbf{s}_t = (\hat{K}_{p,t}, \hat{K}_{b,t}, \hat{K}_{g,t}, \hat{A}_{bat,t}, \hat{P}_{bat,t}, B^*_{t-1}, \hat{\varepsilon}_{ren,t})
+		\mathbf{s}_t = (\hat{K}_{p,t}, \hat{K}_{b,t}, \hat{K}_{g,t}, \hat{A}_{bat,t}, \hat{P}_{bat,t}, B^*_{t-1}, \hat{\varepsilon}_{ren,t}),
 	\end{equation}
 	and the solution takes the form:
 	\begin{align}
 		\mathbf{s}_{t+1} &= \mathbf{M} \, \mathbf{s}_t + \mathbf{N} \, \boldsymbol{\varepsilon}_t \\
-		\mathbf{y}_t &= \mathbf{P} \, \mathbf{s}_t
+		\mathbf{y}_t &= \mathbf{P} \, \mathbf{s}_t,
 	\end{align}
 	
 	where $\mathbf{y}_t$ denotes the vector of jump and static variables, and $\mathbf{M}$, $\mathbf{N}$, $\mathbf{P}$ are coefficient matrices determined by the Blanchard-Kahn decomposition \citep{blanchard1980}. The Blanchard-Kahn conditions are verified numerically: under the baseline calibration, the system has 3 eigenvalues outside the unit circle (1.033, $-2.229$, and $\infty$), matching the 3 forward-looking variables ($C_t$, $Y_t$, and $r^*_t$). The seven stable eigenvalues (0, $\approx$0, 0.90, 0.97, 0.98, 0.99, 0.99) govern the persistence of the state variables.
@@ -1169,7 +1169,7 @@ The recursive competitive equilibrium is formally stated in Section~\ref{sec:equ
 	\begin{proposition}[Superadditivity of Joint Flexibility Investment] \label{prop:superadditivity}
 		Let $F(x, y) = [\mu \, x^{s} + (1-\mu) \, y^{s}]^{1/s}$ be the CES flexibility aggregator with $s \equiv (\rho - 1)/\rho$, $\mu \in (0,1)$, and $\rho \in (0,1)$ (so that $s < 0$). For any baseline inputs $x_0, y_0 > 0$ and scaling factor $\lambda > 1$, the joint gain from scaling both inputs strictly exceeds the sum of individual gains:
 		\begin{equation*}
-			\underbrace{F(\lambda x_0, \lambda y_0) - F(x_0, y_0)}_{\textit{joint gain}} \;>\; \underbrace{\bigl[F(\lambda x_0, y_0) - F(x_0, y_0)\bigr]}_{\textit{battery-only gain}} + \underbrace{\bigl[F(x_0, \lambda y_0) - F(x_0, y_0)\bigr]}_{\textit{grid-only gain}}
+			\underbrace{F(\lambda x_0, \lambda y_0) - F(x_0, y_0)}_{\textit{joint gain}} \;>\; \underbrace{\bigl[F(\lambda x_0, y_0) - F(x_0, y_0)\bigr]}_{\textit{battery-only gain}} + \underbrace{\bigl[F(x_0, \lambda y_0) - F(x_0, y_0)\bigr]}_{\textit{grid-only gain}}.
 		\end{equation*}
 	\end{proposition}
 
@@ -1207,12 +1207,12 @@ The recursive competitive equilibrium is formally stated in Section~\ref{sec:equ
 		
 		Define $G(x,y) \equiv \mu \, x^s + (1-\mu) \, y^s$, so that $F = G^{1/s}$. The first partial derivative is:
 		\begin{equation*}
-			\frac{\partial F}{\partial x} = \mu \, x^{s-1} \, G^{1/s - 1}
+			\frac{\partial F}{\partial x} = \mu \, x^{s-1} \, G^{1/s - 1}.
 		\end{equation*}
 		
 		Differentiating with respect to $y$:
 		\begin{equation*}
-			\frac{\partial^2 F}{\partial x \, \partial y} = \mu(1-\mu)(1-s) \, x^{s-1} \, y^{s-1} \, G^{1/s - 2}
+			\frac{\partial^2 F}{\partial x \, \partial y} = \mu(1-\mu)(1-s) \, x^{s-1} \, y^{s-1} \, G^{1/s - 2}.
 		\end{equation*}
 		
 		Since $\rho \in (0,1)$ implies $s < 0$, each factor is strictly positive: (i) $\mu(1-\mu) > 0$; (ii) $1-s > 1 > 0$; (iii) $x^{s-1}, y^{s-1} > 0$ for $x, y > 0$; (iv) $G > 0$ implies $G^{1/s-2} > 0$. Hence $\partial^2 F / \partial x \, \partial y > 0$, establishing strict supermodularity.
@@ -1220,7 +1220,7 @@ The recursive competitive equilibrium is formally stated in Section~\ref{sec:equ
 		By Topkis's theorem \citep{topkis1998}, strict supermodularity implies:
 		\begin{equation*}
 			F(x', y') + F(x, y) > F(x', y) + F(x, y')
-			\quad \text{for all } x' > x,\; y' > y
+			\quad \text{for all } x' > x,\; y' > y.
 		\end{equation*}
 		
 		Setting $x' = \lambda x_0$ and $y' = \lambda y_0$ and rearranging yields the stated inequality. $\qed$
@@ -1269,22 +1269,22 @@ The recursive competitive equilibrium is formally stated in Section~\ref{sec:equ
 	\begin{equation*}
 		\max_{\{C_t,\, L_t,\, K_{p,t+1},\, B^*_t\}_{t=0}^{\infty}} \;
 		\mathbb{E}_0 \sum_{t=0}^{\infty} \beta^t
-		\left[\log(C_t) - \varphi \frac{L_t^{1+\sigma_L}}{1+\sigma_L}\right]
+		\left[\log(C_t) - \varphi \frac{L_t^{1+\sigma_L}}{1+\sigma_L}\right],
 	\end{equation*}
 	subject to the period-$t$ budget constraint:
 	\begin{equation*}
 		C_t + I_{p,t} + P_{bat,t}\,I_{bat,t} + B^*_t + \tau Y_t
-		= Y_t + (1+r^*_{t-1})\,B^*_{t-1}
+		= Y_t + (1+r^*_{t-1})\,B^*_{t-1},
 	\end{equation*}
 	which can be written equivalently as:
 	\begin{equation*}
 		C_t + I_{p,t} + P_{bat,t}\,I_{bat,t} + B^*_t
-		= (1-\tau) Y_t + (1+r^*_{t-1})\,B^*_{t-1}
+		= (1-\tau) Y_t + (1+r^*_{t-1})\,B^*_{t-1},
 	\end{equation*}
 	where $(1-\tau)$ is the net-of-tax share of output retained by the household. The tax rate $\tau$ is a fixed parameter that the household takes as given when optimising.
 	and the productive capital accumulation law:
 	\begin{equation*}
-		K_{p,t+1} = (1-\delta_p)\,K_{p,t} + I_{p,t}
+		K_{p,t+1} = (1-\delta_p)\,K_{p,t} + I_{p,t}.
 	\end{equation*}
 	
 	\subsection*{Lagrangian Formation}
@@ -1296,7 +1296,7 @@ The recursive competitive equilibrium is formally stated in Section~\ref{sec:equ
 		&\quad + \lambda_t \Big[(1-\tau)Y_t + (1+r^*_{t-1})B^*_{t-1} - C_t
 		- K_{p,t+1} + (1-\delta_p)K_{p,t}
 		- P_{bat,t}I_{bat,t} - B^*_t\Big]
-		\Bigg\}
+		\Bigg\},
 	\end{align*}
 	where $\lambda_t$ is the Lagrange multiplier on the period-$t$ budget constraint, interpretable as the marginal utility of wealth.
 	
@@ -1305,7 +1305,7 @@ The recursive competitive equilibrium is formally stated in Section~\ref{sec:equ
 	Differentiating $\mathcal{L}$ with respect to $K_{p,t+1}$ yields two terms. In period $t$, an increase in $K_{p,t+1}$ by one unit reduces resources by $\lambda_t$. In period $t+1$ (discounted by $\beta$), a higher $K_{p,t+1}$ generates: (i) additional output $\alpha Y_{t+1}/K_{p,t+1}$ (marginal product of capital, approximated from the Cobb-Douglas value-added structure $V_{t+1} = (u_{t+1}K_{p,t+1})^\alpha L_{t+1}^{1-\alpha}$ via the chain rule through the CES aggregator; the exact expression is $\alpha(1-\omega_E)V_{t+1}^{s_E}Y_{t+1}^{1-s_E}/K_{p,t+1}$, which reduces to $\alpha Y_{t+1}/K_{p,t+1}$ as $\omega_E \to 0$; with $\omega_E = 0.045$ the approximation error is negligible); and (ii) the undepreciated capital $(1-\delta_p)$, both valued at the future shadow price $\beta\,\mathbb{E}_t[\lambda_{t+1}]$. Setting the partial derivative to zero:
 	\begin{equation*}
 		-\lambda_t + \beta\,\mathbb{E}_t\!\left[\lambda_{t+1}
-		\left((1-\tau)\frac{\alpha Y_{t+1}}{K_{p,t+1}} + 1 - \delta_p\right)\right] = 0
+		\left((1-\tau)\frac{\alpha Y_{t+1}}{K_{p,t+1}} + 1 - \delta_p\right)\right] = 0.
 	\end{equation*}
 	
 	The $(1-\tau)$ term arises because the marginal product of capital in period $t+1$ accrues as output, which is taxed at the constant rate $\tau$ before reaching the household. The undepreciated capital $(1-\delta_p)$ is not taxed since it is a return of the capital good itself, not income.
@@ -1314,7 +1314,7 @@ The recursive competitive equilibrium is formally stated in Section~\ref{sec:equ
 	\begin{equation*}
 		\lambda_t = \beta\,\mathbb{E}_t\!\left[\lambda_{t+1}
 		\left((1-\tau_{t+1})\frac{\alpha Y_{t+1}}{K_{p,t+1}} + 1 - \delta_p\right)\right]
-		\tag{A1}\label{eq:foc_k}
+		\tag{A1}\label{eq:foc_k}.
 	\end{equation*}
 	
 	\subsection*{First-Order Condition with Respect to $C_t$}
@@ -1324,7 +1324,7 @@ The recursive competitive equilibrium is formally stated in Section~\ref{sec:equ
 		\frac{\partial \mathcal{L}}{\partial C_t} = \beta^t\left[\frac{1}{C_t} - \lambda_t\right] = 0
 		\quad \Longrightarrow \quad
 		\lambda_t = \frac{1}{C_t}
-		\tag{A2}\label{eq:foc_c}
+		\tag{A2}\label{eq:foc_c}.
 	\end{equation*}
 	Thus the shadow price of the budget constraint equals the marginal utility of consumption.
 	
@@ -1333,7 +1333,7 @@ The recursive competitive equilibrium is formally stated in Section~\ref{sec:equ
 	Substituting \eqref{eq:foc_c} and its period-$(t+1)$ counterpart $\lambda_{t+1} = 1/C_{t+1}$ into \eqref{eq:foc_k}:
 	\begin{equation*}
 		\frac{1}{C_t} = \beta\,\mathbb{E}_t\!\left[\frac{1}{C_{t+1}}
-		\left((1-\tau)\frac{\alpha Y_{t+1}}{K_{p,t+1}} + 1 - \delta_p\right)\right]
+		\left((1-\tau)\frac{\alpha Y_{t+1}}{K_{p,t+1}} + 1 - \delta_p\right)\right].
 	\end{equation*}
 	
 	This is the modified capital Euler equation~\eqref{eq:euler} under proportional taxation. Compared to the lump-sum case, the after-tax return to capital is $(1-\tau)\alpha Y_{t+1}/K_{p,t}$ rather than $\alpha Y_{t+1}/K_{p,t}$, where $\tau = \tau_{ss} = 1.43\%$ is a fixed parameter. The constant wedge reduces the equilibrium capital stock by $(1-\tau_{ss})^{1/(1-\alpha)}$ relative to the lump-sum benchmark, a level effect. Because $\tau$ does not respond dynamically to shocks, the Euler equation retains the standard RBC structure: the only amplification comes from the Euler mechanism itself (persistent expected output declines generate large investment responses), not from a fiscal feedback loop.
@@ -1343,11 +1343,11 @@ The recursive competitive equilibrium is formally stated in Section~\ref{sec:equ
 	Rearranging the Euler equation as:
 	\begin{equation*}
 		1 = \beta\,\mathbb{E}_t\!\left[\frac{C_t}{C_{t+1}}
-		\left(\frac{\alpha Y_{t+1}}{K_{p,t+1}} + 1 - \delta_p\right)\right]
+		\left(\frac{\alpha Y_{t+1}}{K_{p,t+1}} + 1 - \delta_p\right)\right],
 	\end{equation*}
 	reveals the standard asset-pricing structure: the price of a unit investment (normalized to 1) equals the discounted stochastic discount factor $\beta\,(C_t/C_{t+1})$ times the gross payoff $((1-\tau)\alpha Y_{t+1}/K_{p,t+1} + 1 - \delta_p)$. In steady state, where $\mathbb{E}_t[\cdot]$ collapses and $C_t = C_{t+1}$, this yields:
 	\begin{equation*}
-		(1-\tau)\frac{\alpha Y_{ss}}{K_{p,ss}} = \frac{1}{\beta} - 1 + \delta_p
+		(1-\tau)\frac{\alpha Y_{ss}}{K_{p,ss}} = \frac{1}{\beta} - 1 + \delta_p,
 	\end{equation*}
 	which pins down the steady-state capital-to-output ratio as $K_{p,ss}/Y_{ss} = (1-\tau)\alpha\beta/(1 - \beta(1-\delta_p))$. The steady-state tax rate is $\tau_{ss} = I_{grid,ss}/Y_{ss} = \delta_g K_{g,ss}/Y_{ss}$, which is small (approximately 1.43\% given the calibration), so the distortion to the capital stock is modest but non-zero.
 	
@@ -1362,43 +1362,43 @@ The recursive competitive equilibrium is formally stated in Section~\ref{sec:equ
 	Using the same Lagrangian as in Appendix~\ref{app:deriv_euler}, differentiate with respect to $L_t$. Labor enters utility directly (disutility) and indirectly through output $Y_t$ (which affects the budget constraint via after-tax income $(1-\tau_t)Y_t$):
 	\begin{equation*}
 		\frac{\partial \mathcal{L}}{\partial L_t}
-		= \beta^t\left[-\varphi L_t^{\sigma_L} + \lambda_t (1-\tau) \frac{\partial Y_t}{\partial L_t}\right] = 0
+		= \beta^t\left[-\varphi L_t^{\sigma_L} + \lambda_t (1-\tau) \frac{\partial Y_t}{\partial L_t}\right] = 0.
 	\end{equation*}
 	
 	\noindent The marginal product of labor in the model is derived through the chain rule across the nested production structure: $Y_t \to V_t \to L_t$. From the value-added function $V_t = Z\,(u_t K_{p,t-1})^\alpha L_t^{1-\alpha}$, the marginal product with respect to $L_t$ is $(1-\alpha)V_t/L_t$ (the predetermined capital $K_{p,t-1}$ is constant with respect to $L_t$). Passing this through the CES aggregator $Y_t = [(1-\omega_E)V_t^{s_E} + \omega_E \bar{E}^{s_E}]^{1/s_E}$, the chain rule gives $\partial Y_t/\partial L_t = (\partial Y_t / \partial V_t)\cdot(\partial V_t / \partial L_t)$. Firms in a competitive labor market equate the real wage $w_t$ to this marginal product:
 	\begin{equation*}
 		w_t = \frac{\partial Y_t}{\partial L_t}
-		= \frac{\partial Y_t}{\partial V_t} \cdot \frac{(1-\alpha)V_t}{L_t}
+		= \frac{\partial Y_t}{\partial V_t} \cdot \frac{(1-\alpha)V_t}{L_t}.
 	\end{equation*}
 	
 	The factor $\partial Y_t / \partial V_t$ is the marginal product of value-added in the output aggregator. In the model, for notational economy, the entire chain $(\partial Y_t/\partial V_t)\cdot V_t$ reduces to $(1-\alpha)Y_t$ in the Cobb-Douglas limit, and more generally the competitive wage can be written as $w_t = (1-\alpha) V_t / L_t$ when referring to the value-added block (since the CES price of value-added services appears in the firm's first-order condition, and the model notation uses $V_t$ to denote the effective labor income share). Substituting into the labor FOC:
 	\begin{equation*}
 		-\varphi L_t^{\sigma_L} + \lambda_t (1-\tau) w_t = 0
 		\quad \Longrightarrow \quad
-		\varphi L_t^{\sigma_L} = \lambda_t (1-\tau) w_t
+		\varphi L_t^{\sigma_L} = \lambda_t (1-\tau) w_t.
 	\end{equation*}
 	
 	\subsection*{Substituting the Shadow Price}
 	
 	From the consumption FOC, $\lambda_t = 1/C_t$. Substituting:
 	\begin{equation*}
-		\varphi L_t^{\sigma_L} = \frac{(1-\tau)\, w_t}{C_t}
+		\varphi L_t^{\sigma_L} = \frac{(1-\tau)\, w_t}{C_t}.
 	\end{equation*}
 	
 	\subsection*{Substituting the Competitive Wage}
 	
 	The representative firm maximizes profits, taking the wage as given. The firm's first-order condition for labor is:
 	\begin{equation*}
-		w_t = \frac{(1-\alpha)\,V_t}{L_t}
+		w_t = \frac{(1-\alpha)\,V_t}{L_t}.
 	\end{equation*}
 	Substituting this expression for $w_t$:
 	\begin{equation*}
-		\varphi\, L_t^{\sigma_L} = \frac{(1-\tau)}{C_t} \cdot \frac{(1-\alpha)\,V_t}{L_t}
+		\varphi\, L_t^{\sigma_L} = \frac{(1-\tau)}{C_t} \cdot \frac{(1-\alpha)\,V_t}{L_t}.
 	\end{equation*}
 	
 	Multiplying both sides by $C_t \, L_t$:
 	\begin{equation*}
-		\varphi \, C_t \, L_t^{1+\sigma_L} = (1-\tau)(1-\alpha)\,V_t
+		\varphi \, C_t \, L_t^{1+\sigma_L} = (1-\tau)(1-\alpha)\,V_t.
 	\end{equation*}
 	
 	\noindent The $(1-\tau)$ term is the key difference from the lump-sum case: the proportional tax drives a constant wedge between the social marginal product of labor $(1-\alpha)V_t/L_t$ and the private after-tax return $(1-\tau)(1-\alpha)V_t/L_t$. This steady-state wedge reduces the equilibrium labor supply, shifting the baseline downward relative to the lump-sum case.
@@ -1407,15 +1407,15 @@ The recursive competitive equilibrium is formally stated in Section~\ref{sec:equ
 	
 	The utility function in the model includes a labor disutility weight $\varphi > 0$:
 	\begin{equation*}
-		U_t = \log(C_t) - \varphi\,\frac{L_t^{1+\sigma_L}}{1+\sigma_L}
+		U_t = \log(C_t) - \varphi\,\frac{L_t^{1+\sigma_L}}{1+\sigma_L}.
 	\end{equation*}
 	Since $\varphi$ was already included from the start of this derivation, the final labor supply condition is:
 	\begin{equation*}
-		\varphi\, L_t^{\sigma_L} = \frac{(1-\tau)\,w_t}{C_t}
+		\varphi\, L_t^{\sigma_L} = \frac{(1-\tau)\,w_t}{C_t}.
 	\end{equation*}
 	Following the same steps yields the \textbf{proportional-tax labor supply condition}:
 	\begin{equation*}
-		(1-\tau)(1-\alpha)\,V_t = \varphi\,C_t\,L_t^{1+\sigma_L}
+		(1-\tau)(1-\alpha)\,V_t = \varphi\,C_t\,L_t^{1+\sigma_L},
 	\end{equation*}
 	which is exactly the labor supply condition~\eqref{eq:labor_supply}.
 	
@@ -1438,7 +1438,7 @@ This appendix presents the complete set of log-linearized equations that define 
 	\begin{equation}
 		\hat{C}_t = \mathbb{E}_t \hat{C}_{t+1}
 		- \frac{(1-\tau)\,\alpha Y_{ss}/K_{p,ss}}{R_{ss}}\, \mathbb{E}_t \!\left(\hat{Y}_{t+1} - \hat{K}_{p,t}\right)
-		\label{eq:euler_lin}
+		\label{eq:euler_lin}.
 	\end{equation}
 	
 	The coefficient on expected output growth is the standard intertemporal elasticity of substitution scaled by the after-tax capital share. While the tax rate does not respond to shocks, its presence in the steady state ($1-\tau \approx 0.986$) reduces the equilibrium capital stock, meaning intermittency shocks propagate from a smaller productive base.
@@ -1446,7 +1446,7 @@ This appendix presents the complete set of log-linearized equations that define 
 	The log-linearized labor supply condition for the \textbf{proportional tax variant} linearizes $(1-\tau)(1-\alpha)V_t = \varphi\,C_t\,L_t^{1+\sigma_L}$ as:
 	\begin{equation}
 		\hat{V}_t = \hat{C}_t + (1+\sigma_L)\hat{L}_t
-		\label{eq:labor_lin}
+		\label{eq:labor_lin}.
 	\end{equation}
 	
 	Here, the proportional tax acts as a level distortion that reduces the labor supply in steady state but does not introduce a time-varying labor wedge. Equilibrium employment and value-added respond to the reliability shortfall directly, with the tax regime determining the steady-state point from which these deviations are measured.
@@ -1459,7 +1459,7 @@ This appendix presents the complete set of log-linearized equations that define 
 	The linearized laws of motion are:
 	\begin{align}
 		\hat{K}_{g,t+1} &= (1-\delta_g)\hat{K}_{g,t} + \delta_g \hat{I}_{grid,t} \label{eq:kg_lin} \\
-		\hat{K}_{b,t+1} &= (1-\delta_b)\hat{K}_{b,t} + \delta_b \hat{I}_{bat,t} \label{eq:kb_lin}
+		\hat{K}_{b,t+1} &= (1-\delta_b)\hat{K}_{b,t} + \delta_b \hat{I}_{bat,t} \label{eq:kb_lin}.
 	\end{align}
 	
 	\noindent Reading the equations: capital stocks are sluggish, most of next period's capital is inherited from the current period (the $(1-\delta)$ term), and only a small fraction $\delta$ is determined by current investment. Because $\delta_b = 0.03 > \delta_g = 0.0125$, battery capital turns over faster than grid capital (12\% vs.\ 5\% annual depreciation), meaning battery investment decisions affect the flexibility mix sooner. This asymmetry is one source of the agility gap.
@@ -1467,7 +1467,7 @@ This appendix presents the complete set of log-linearized equations that define 
 	The Government investment rule linearizes as:
 	\begin{equation}
 		\hat{I}_{grid,t} = -\phi_{grid} \hat{u}_t + \varepsilon_{I,t}
-		\label{eq:gridrule_lin}
+		\label{eq:gridrule_lin}.
 	\end{equation}
 	
 	Grid investment moves in the opposite direction to reliability, when $\hat{u}_t$ drops by 1\%, grid investment rises by $\phi_{grid} = 1.5$\%. The negative sign captures the reactive nature of public investment: the government invests more when the grid is stressed. However, because this investment must flow through the slow capital accumulation equation \eqref{eq:kg_lin}, the actual improvement in $K_g$ is delayed.
@@ -1482,7 +1482,7 @@ This appendix presents the complete set of log-linearized equations that define 
 	The bond Euler equation linearizes as:
 	\begin{equation}
 		\hat{C}_t = \mathbb{E}_t \hat{C}_{t+1} - \frac{r^*_{ss}}{1+r^*_{ss}} \mathbb{E}_t \hat{r}^*_{t+1}
-		\label{eq:bond_euler_lin}
+		\label{eq:bond_euler_lin}.
 	\end{equation}
 	
 	This is the international consumption-smoothing condition. When the foreign interest rate is expected to rise ($\hat{r}^*_{t+1} > 0$), saving abroad becomes more attractive, reducing current consumption. Combined with the capital Euler \eqref{eq:euler_lin}, this equation determines how the household allocates wealth between domestic capital and foreign bonds.
@@ -1490,7 +1490,7 @@ This appendix presents the complete set of log-linearized equations that define 
 	The current account equation linearizes around the steady state with $B^*_{ss} = 0$:
 	\begin{equation}
 		B^*_t = (1 + r^*_{ss}) B^*_{t-1} + Y_{ss}\hat{Y}_t - C_{ss}\hat{C}_t - I_{p,ss}\hat{I}_{p,t} - P_{bat,ss}I_{bat,ss}(\hat{P}_{bat,t} + \hat{I}_{bat,t}) - I_{grid,ss}\hat{I}_{grid,t}
-		\label{eq:ca_lin}
+		\label{eq:ca_lin}.
 	\end{equation}
 	
 	The foreign asset position improves when output rises faster than consumption and investment (trade surplus), and worsens when domestic absorption exceeds output (trade deficit). The key insight for this model is that intermittency shocks simultaneously reduce output ($\hat{Y}_t < 0$) and increase battery investment needs ($\hat{I}_{bat,t} > 0$), creating a ``twin drain'' on the current account.
@@ -1500,7 +1500,7 @@ This appendix presents the complete set of log-linearized equations that define 
 	The interest rate premium linearizes as:
 	\begin{equation}
 		\hat{r}^*_t = -\frac{\phi_b}{r^*_{ss}} B^*_t
-		\label{eq:premium_lin}
+		\label{eq:premium_lin}.
 	\end{equation}
 	
 	The debt-elastic premium ensures that the net foreign asset process is stationary: when the economy borrows ($B^*_t < 0$), the interest rate rises, discouraging further borrowing and stabilizing the external position. The value $\phi_b = 0.039$ is the simulation baseline, equal to the real-data estimate $\hat{\phi}_b \approx 0.039$ obtained from observed Vietnamese real interest rates and external debt ratios (see Section~\ref{sec:calibration}). Capital controls, a managed exchange rate, and underdeveloped bond markets limit the household's ability to borrow freely at the world interest rate, justifying a premium well above the SGU standard. A higher $\phi_b$ reduces consumption smoothing via international borrowing, ensuring that intermittency shocks propagate more fully into domestic consumption and welfare.
@@ -1512,7 +1512,7 @@ This appendix presents the complete set of log-linearized equations that define 
 	\begin{align}
 		\hat{\varepsilon}_{ren,t} &= \rho_{ren} \hat{\varepsilon}_{ren,t-1} + \varepsilon^{ren}_t, & \varepsilon^{ren}_t &\sim N(0, \sigma^2_{ren}) \label{eq:shock_ren} \\
 		\hat{P}_{bat,t} &= \rho_{bat} \hat{P}_{bat,t-1} + \varepsilon^{bat}_t, & \varepsilon^{bat}_t &\sim N(0, \sigma^2_{bat}) \label{eq:shock_bat} \\
-		\varepsilon_{I,t} &\sim N(0, \sigma^2_I) \label{eq:shock_gov}
+		\varepsilon_{I,t} &\sim N(0, \sigma^2_I) \label{eq:shock_gov}.
 	\end{align}
 	
 	The first is the domestic renewable intermittency shock, persistent with AR(1) coefficient $\rho_{ren} = 0.85$ capturing seasonal weather patterns. The second is a global battery price shock in log-levels (equation~\ref{eq:battery_price_shock}), with persistence $\rho_{bat} = 0.90$ matching lithium market dynamics. The third is a government grid-investment implementation shock, modeled as white noise (i.i.d.) reflecting project-specific delays and procurement bottlenecks that are uncorrelated across periods. All shocks are assumed to be mutually independent.
