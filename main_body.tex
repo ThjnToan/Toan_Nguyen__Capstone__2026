@@ -159,7 +159,7 @@
 	
 	Taken together, the literature leaves a critical gap at the intersection of renewable intermittency, endogenous grid reliability, and scarcity-induced innovation, precisely the nexus this capstone addresses. The model developed in the next section fills that gap by jointly endogenizing the reliability constraint, battery technological change, and the asymmetric investment dynamics that produce the agility gap.
 	
-	\section{Methodology} \label{sec:methodology}
+	\section{The Model} \label{sec:methodology}
 	
 	\subsection{Model Overview}
 	
@@ -195,7 +195,7 @@
 The household chooses $\{C_t, L_t, K_{p,t+1}, B^*_t\}$ to maximize utility subject to the budget constraint \eqref{eq:hh_budget} and the standard capital accumulation law \eqref{eq:productive_capital}; the mathematical derivation is in Appendix~\ref{app:deriv_euler}.
 	
 	
-\paragraph{Euler equation for capital.} With proportional taxation, the after-tax return to capital in period $t+1$ is $(1-\tau)\alpha Y_{t+1}/K_{p,t}$, where $\tau$ is the fixed tax rate. The intertemporal optimality condition becomes:\footnote{The mathematical derivation is in Appendix~\ref{app:deriv_euler}.}
+\paragraph{Euler equation.} With proportional taxation, the after-tax return to capital in period $t+1$ is $(1-\tau)\alpha Y_{t+1}/K_{p,t}$, where $\tau$ is the fixed tax rate. The intertemporal optimality condition becomes:\footnote{The mathematical derivation is in Appendix~\ref{app:deriv_euler}.}
 	\begin{equation}
 		\frac{1}{C_t} = \beta \mathbb{E}_t \left[ \frac{(1-\tau)\,\alpha Y_{t+1}/K_{p,t} + 1 - \delta_p}{C_{t+1}} \right]
 		\label{eq:euler}.
@@ -479,11 +479,11 @@ where $\eta_{bat}$ is the innovation elasticity, $\chi\in(0,1]$ captures regulat
 
 	Together, these mechanisms generate endogenous transition dynamics in which reliability scarcity, innovation, fiscal distortions, and macroeconomic performance are jointly determined.
 	
-	\section{Model Mechanics} \label{sec:mechanics}
+	\section{Model Mechanisms} \label{sec:mechanics}
 	
 	This section derives the log-linearized equilibrium system, characterizes the steady state, and describes the transmission channels through which intermittency shocks propagate. The model is solved using first-order perturbation methods following the Dynare toolkit approach \citep{Adjemianetal2024}, implemented in Dynare 6 \citep{Adjemianetal2024}. The solution methodology follows \citet{uhlig1999} for analyzing nonlinear dynamic stochastic models through log-linearization around the deterministic steady state.
 	
-	\subsection{Transmission Mechanism}
+	\subsection{Transmission Channels}
 	
 	Figure \ref{fig:mechanism} summarizes the model's transmission channels. The three exogenous shocks propagate through distinct but interconnected pathways.
 	
