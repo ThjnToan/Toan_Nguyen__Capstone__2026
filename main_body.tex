@@ -321,7 +321,7 @@ where $F_t$ is total flexibility, $\phi_{int}\approx 55.6$ scales volatility to 
 	Battery capital follows a standard linear accumulation law without adjustment costs, as the modular and scalable nature of battery storage allows rapid deployment without the installation frictions typically associated with heavy infrastructure.
 	
 	\paragraph{Battery Investment Decision.}
-	A fully endogenous optimization of battery capital subject to the non-linear reliability constraint would create non-convexities that complicate the Blanchard-Kahn conditions. The investment rule below proxies the gradient of the structural shadow price while preserving local saddle-path stability; the mathematical derivation is in Appendix~\ref{app:deriv_euler}.
+	The investment rule below proxies the gradient of the structural shadow price while preserving local saddle-path stability; the mathematical derivation is in Appendix~\ref{app:deriv_euler}.
 
 	Table~\ref{tab:mpk_decomp} evaluates the shadow rental rate at steady state, yielding $R_{b,ss} = 10.93\%$ quarterly. The flexibility bottleneck ($\partial F / \partial(A_{bat} K_b) = 2.04$) is the dominant force, reflecting battery scarcity in the CES aggregator, while the reliability gradient is moderate because the system operates near $u_{ss} = 0.97$.
 	
@@ -457,10 +457,10 @@ where $\eta_{bat}$ is the innovation elasticity, $\chi\in(0,1]$ captures regulat
 		\item Battery price process: \eqref{eq:battery_price_shock}
 	\end{enumerate}
 
-	\noindent The no-arbitrage condition $(1-\tau)\alpha Y_{t+1}/K_{p,t}+1-\delta_p=1+r^*_t$ and the domestic absorption identity \eqref{eq:goods_market_clearing} are derived from the equations above and do not constitute additional independent conditions. The renewable volatility $\overline{\text{Vol}}_{ren}$ (equation~\ref{eq:renewable_volatility}) is a calibrated parameter, not an endogenous variable. The system is exactly identified: 16 equations in 16 unknowns, confirmed by the Blanchard-Kahn conditions (Section~\ref{sec:mechanics}).
+	\noindent The no-arbitrage condition $(1-\tau)\alpha Y_{t+1}/K_{p,t}+1-\delta_p=1+r^*_t$ and the domestic absorption identity \eqref{eq:goods_market_clearing} are derived from the equations above and do not constitute additional independent conditions. The renewable volatility $\overline{\text{Vol}}_{ren}$ (equation~\ref{eq:renewable_volatility}) is a calibrated parameter, not an endogenous variable. The system is exactly identified: 16 equations in 16 unknowns.
 
 	\subsection{Steady State Characterization}
-	The deterministic steady state is computed by setting all shocks to zero and solving the 16-equation system analytically. Key values are: $u_{ss} = 0.97$, $Y_{ss} = 1.0$ (normalised), $K_{p,ss} = 9.83$, $L_{ss} = 0.33$, $C_{ss}/Y_{ss} = 0.734$, and $I_{grid,ss}/Y_{ss} = 0.014$. Battery capital $K_{b,ss}$ and grid capital $K_{g,ss}$ are calibrated to match the flexibility bundle target; the full steady-state derivation is in Appendix~\ref{app:steadystate}. The steady state satisfies Blanchard-Kahn conditions (3 unstable eigenvalues matching 3 forward-looking variables: $C_t$, $K_{p,t+1}$, $B^*_t$).
+	The deterministic steady state is computed by setting all shocks to zero and solving the 16-equation system analytically. Key values are: $u_{ss} = 0.97$, $Y_{ss} = 1.0$ (normalised), $K_{p,ss} = 9.83$, $L_{ss} = 0.33$, $C_{ss}/Y_{ss} = 0.734$, and $I_{grid,ss}/Y_{ss} = 0.014$. Battery capital $K_{b,ss}$ and grid capital $K_{g,ss}$ are calibrated to match the flexibility bundle target; the full steady-state derivation is in Appendix~\ref{app:steadystate}.
 
 	\subsection{Mechanism Summary}
 	
@@ -599,7 +599,7 @@ The scarcity-induced innovation equation linearizes around steady state. Since $
 
 \subsection{Equilibrium Definition}
 
-The recursive competitive equilibrium is formally stated in Section~\ref{sec:equilibrium}; the transmission channels above constitute its key characterisation. The Blanchard-Kahn conditions are satisfied with 3 unstable eigenvalues matching the 3 forward-looking variables.
+The recursive competitive equilibrium is formally stated in Section~\ref{sec:equilibrium}; the transmission channels above constitute its key characterisation.
 
 	The proportional tax specification adds a fourth channel beyond the three described in Section~\ref{sec:methodology}.
 
@@ -1159,7 +1159,7 @@ The recursive competitive equilibrium is formally stated in Section~\ref{sec:equ
 		\mathbf{y}_t &= \mathbf{P} \, \mathbf{s}_t,
 	\end{align}
 	
-	where $\mathbf{y}_t$ denotes the vector of jump and static variables, and $\mathbf{M}$, $\mathbf{N}$, $\mathbf{P}$ are coefficient matrices determined by the Blanchard-Kahn decomposition \citep{blanchard1980}. The Blanchard-Kahn conditions are verified numerically: under the baseline calibration, the system has 3 eigenvalues outside the unit circle (1.033, $-2.229$, and $\infty$), matching the 3 forward-looking variables ($C_t$, $Y_t$, and $r^*_t$). The seven stable eigenvalues (0, $\approx$0, 0.90, 0.97, 0.98, 0.99, 0.99) govern the persistence of the state variables.
+	where $\mathbf{y}_t$ denotes the vector of jump and static variables, and $\mathbf{M}$, $\mathbf{N}$, $\mathbf{P}$ are coefficient matrices from the state-space solution. The seven stable eigenvalues (0, $\approx$0, 0.90, 0.97, 0.98, 0.99, 0.99) govern the persistence of the state variables.
 	
 	Impulse response functions (IRFs) and welfare calculations reported in the main text are computed from this linear solution.
 
