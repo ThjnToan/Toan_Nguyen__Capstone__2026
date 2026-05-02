@@ -50,30 +50,50 @@
     "a_ren": {"ren": 100.111235, "bat": 0.000000, "I": 0.000000},
     "a_I": {"ren": 0.000000, "bat": 0.000000, "I": 100.111235}
   },
-  "welfare_baseline": 0.0005688995,
   "welfare_chi": {
-    "1.0": 0.0005688995,
-    "0.5": 0.0006224900,
-    "0.3": 0.0006460521,
-    "0.0": 0.0006839735
+    "1.0": 0.0000000000,
+    "0.5": 0.0000535909,
+    "0.3": 0.0000771531,
+    "0.0": 0.0001150747
   },
-  "signal_value_pct": 20.227476,
+  "signal_value_pct": 0.000115,
   "sensitivity_phi_grid": [
-    {"phi_grid":0.5,"welfare":0.00056761,"impact_Igrid":0.000093,"cum_u":-0.062541},
-    {"phi_grid":1.0,"welfare":0.00056832,"impact_Igrid":0.000185,"cum_u":-0.060794},
-    {"phi_grid":1.5,"welfare":0.00056890,"impact_Igrid":0.000278,"cum_u":-0.059114},
-    {"phi_grid":2.0,"welfare":0.00056935,"impact_Igrid":0.000371,"cum_u":-0.057497},
-    {"phi_grid":3.0,"welfare":0.00056991,"impact_Igrid":0.000556,"cum_u":-0.054446}
+    {"phi_grid":0.5,"welfare":-0.00000129,"impact_Igrid":0.000093,"cum_u":-0.062541},
+    {"phi_grid":1.0,"welfare":-0.00000057,"impact_Igrid":0.000185,"cum_u":-0.060794},
+    {"phi_grid":1.5,"welfare":0.00000000,"impact_Igrid":0.000278,"cum_u":-0.059114},
+    {"phi_grid":2.0,"welfare":0.00000045,"impact_Igrid":0.000371,"cum_u":-0.057497},
+    {"phi_grid":3.0,"welfare":0.00000101,"impact_Igrid":0.000556,"cum_u":-0.054446}
   ],
   "sensitivity_phi_b": [
-    {"phi_b":0.001,"welfare":0.00044766,"impact_Ip_pct":-21.8476,"impact_Bstar":0.04839348},
-    {"phi_b":0.039,"welfare":0.00056890,"impact_Ip_pct":-3.4973,"impact_Bstar":0.00348119},
-    {"phi_b":0.100,"welfare":0.00057178,"impact_Ip_pct":-2.6493,"impact_Bstar":0.00139888}
+    {"phi_b":0.001,"welfare":-0.00012124,"impact_Ip_pct":-21.8476,"impact_Bstar":0.04839348},
+    {"phi_b":0.039,"welfare":0.00000000,"impact_Ip_pct":-3.4973,"impact_Bstar":0.00348119},
+    {"phi_b":0.100,"welfare":0.00000288,"impact_Ip_pct":-2.6493,"impact_Bstar":0.00139888}
   ],
+  "sensitivity_mu": [
+    {"mu":0.10,"welfare":0.00001831,"impact_Y":-0.005329},
+    {"mu":0.16,"welfare":0.00000000,"impact_Y":-0.005335},
+    {"mu":0.25,"welfare":-0.00001409,"impact_Y":-0.005340}
+  ],
+  "sensitivity_beta": [
+    {"beta":0.980,"welfare":0.00072848,"impact_Bstar":0.004181,"C_share":79.0},
+    {"beta":0.990,"welfare":0.00056890,"impact_Bstar":0.003481,"C_share":73.4},
+    {"beta":0.995,"welfare":0.00047907,"impact_Bstar":0.003086,"C_share":69.3}
+  ],
+  "valley": {
+    "baseline_nadir": 81.33,
+    "baseline_depth_pp": 15.67,
+    "baseline_duration": 100,
+    "accel_grid_nadir": 86.07,
+    "accel_grid_depth_pp": 10.93,
+    "accel_grid_duration": 80,
+    "battery_subsidy_nadir": 87.38,
+    "battery_subsidy_depth_pp": 9.62,
+    "battery_subsidy_duration": 100
+  },
   "joint_shock": {
-    "welfare_ren_only": 0.0005688995,
-    "welfare_bat_only": 0.0001894071,
+    "welfare_ren_baseline": 0.0005688995,
     "welfare_joint": 0.0007583065,
+    "delta_lambda_joint": 0.0001894070,
     "impact_Y": -0.0052730305,
     "impact_u": -0.0126236084,
     "impact_I_bat": -0.0003447300
