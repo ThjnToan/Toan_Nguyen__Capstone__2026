@@ -650,7 +650,7 @@ The scarcity-induced innovation equation linearizes around steady state. Since $
 
 	The world interest rate is set to $\bar{r} = 1/\beta - 1 = 0.0101$ (quarterly), ensuring consistency with the household's Euler equation in steady state. The discount factor $\beta = 0.99$ is disciplined by Vietnam's historical real interest rate series \citep{worldbank2024}. Over the post-WTO modern era (2000--2023, 23 annual observations), the mean real rate on long-term government bonds was $3.14\%$ annually, implying $\beta = (1 + 0.0314)^{-1/4} \approx 0.9691 \approx 0.97$. The value $\beta = 0.99$ is slightly higher, corresponding to approximately $4\%$ annualized real returns; this conservative choice reflects Vietnam's current government borrowing costs and serves as a defensible anchor for fiscal policy analysis. Sensitivity to $\beta \in [0.95, 0.99]$ is documented in the robustness appendix.
 	
-	The debt-elastic premium $\phi_b = 0.039$ is estimated from Vietnam's real interest rate and external debt/GNI \citep{worldbank2024} by no-intercept OLS ($R^2 = 0.16$); $\phi_b = 0.039$ yields the credible $-3.5\%$ investment response vs.\ $-21.8\%$ at the SGU standard (Table~\ref{tab:phi_b_sensitivity}).
+	The debt-elastic premium $\phi_b = 0.039$ is estimated from Vietnam's real interest rate and external debt/GNI \citep{worldbank2024} by no-intercept OLS ($R^2 = 0.16$); $\phi_b = 0.039$ yields the credible $-3.5\%$ investment response vs.\ $-21.8\%$ at the SGU standard.
 
 	\begin{table}[H]
 		\centering
@@ -713,7 +713,7 @@ The scarcity-induced innovation equation linearizes around steady state. Since $
 			\bottomrule
 		\end{tabular}
 		\vspace{0.2cm}
-		\parbox{\textwidth}{\footnotesize \textit{Note:} Depreciation rates listed as quarterly values with annual equivalents in parentheses. Battery Weight ($\mu$) is calibrated to the battery share of total PDP8 energy infrastructure investment. The debt premium is disciplined by a reduced-form real-data calibration using \citep{worldbank2024} observations on Vietnam's real interest rate and gross external debt/GNI; the resulting point estimate is $\hat{\phi}_b = 0.03866 \approx 0.039$. The baseline calibration therefore uses $\phi_b = 0.039$, and Table~\ref{tab:phi_b_sensitivity} reports sensitivity around that benchmark. All calibration targets are documented in Section~\ref{sec:calibration}.}
+		\parbox{\textwidth}{\footnotesize \textit{Note:} Depreciation rates listed as quarterly values with annual equivalents in parentheses. Battery Weight ($\mu$) is calibrated to the battery share of total PDP8 energy infrastructure investment. The debt premium is disciplined by a reduced-form real-data calibration using \citep{worldbank2024} observations on Vietnam's real interest rate and gross external debt/GNI; the resulting point estimate is $\hat{\phi}_b = 0.03866 \approx 0.039$. All calibration targets are documented in Section~\ref{sec:calibration}.}
 	\end{table}
 	
 	\subsection{Calibration Validation} \label{sec:calibration_validation}
@@ -749,36 +749,7 @@ The scarcity-induced innovation equation linearizes around steady state. Since $
 		\parbox{\textwidth}{\footnotesize \textbf{Note:} Model values are computed from the deterministic steady state. Type: Targeted = calibration target (moment directly used to pin parameters); Untargeted = free check (moment implied by model structure, not targeted). $^{\dagger}$The raw model consumption share is 73.4\%, but the model abstracts from government consumption expenditure (approximately 6--7\% of GDP in Vietnam) and net exports. Adjusting for government consumption, the model-implied private consumption share of disposable output would be approximately 65\%, consistent with the data. The real interest rate discrepancy (3.1\% data vs.\ 4.0\% model) reflects the conservative choice of $\beta = 0.99$, which corresponds to a slightly higher implied rate than the 2000--2023 historical mean of 3.14\%; the sensitivity table (Table~\ref{tab:beta_sensitivity}) documents robustness across $\beta \in [0.98, 0.995]$.}
 	\end{table}
 	
-	The calibration targets are closely matched: $\beta = 0.99$ reflects Vietnam's 3.14\% mean real rate \citep{worldbank2024}; $\alpha = 0.35$ is the residual capital share given a labor income share of 0.65 \citep{gso2024}; and $\phi_b = 0.039$ is the data-anchored debt-elastic premium documented in Section~\ref{subsec:external_sector}, with sensitivity reported in Table~\ref{tab:phi_b_sensitivity} below.
-	
-	\begin{table}[H]
-		\centering
-		\caption[Sensitivity to Debt-Elastic Premium $\phi_b$]{\textbf{Sensitivity to Debt-Elastic Premium $\phi_b$}}
-		\label{tab:phi_b_sensitivity}
-		\renewcommand{\arraystretch}{1.3}
-		\footnotesize
-		\begin{tabular}{l c c c}
-			\toprule
-			& $\phi_b = 0.001$ & $\phi_b = 0.039$ & $\phi_b = 0.10$ \\
-			& (SGU standard) & (Data-anchored) & (Strong restrictions) \\
-			\midrule
-			$I_p$ impact (intermit.\ shock) & $-21.8\%$ & $-3.5\%$ & $-2.6\%$ \\
-			$B^*$ impact (intermit.\ shock) & $+0.048$ & $+0.003$ & $+0.001$ \\
-			B-K conditions & Satisfied & Satisfied & Satisfied \\
-			Qualitative FEVD rankings & Unchanged & Unchanged & Unchanged \\
-			\bottomrule
-		\end{tabular}
-		\vspace{0.2cm}
-		\parbox{\linewidth}{\footnotesize \textbf{Note:} All values are computed by re-solving the system at each $\phi_b$; the steady state is independent of $\phi_b$ since $B^*_{ss}=0$. The $B^*$ impact is the period-1 level deviation of net foreign assets following a one-standard-deviation intermittency shock; positive values indicate a surplus. Key qualitative findings, intermittency dominates output variance, battery prices dominate $I_{bat}$ variance, are robust across all three values. The baseline $\phi_b = 0.039$ is preferred on economic grounds: the SGU-standard value generates the implausible $-21.8\%$ quarterly investment collapse, while $\phi_b = 0.039$ yields the credible $-3.5\%$ response; the data-anchored regression ($R^2 = 0.16$) corroborates the order of magnitude.}
-	\end{table}
-	
-	Three patterns confirm economic plausibility. \paragraph{Investment volatility compression.} Rising $\phi_b$ compresses $I_p$ volatility (from $-21.8\%$ to $-3.5\%$ to $-2.6\%$) by discouraging large current-account swings and spreading shocks more evenly across investment and consumption.
-
-	\paragraph{Current-account monotonicity.} The current-account surplus shrinks monotonically with $\phi_b$ ($+0.048$ to $+0.003$ to $+0.001$), consistent with Vietnam's observed modest surpluses during domestic slowdowns \citep{worldbank2024}.
-
-	\paragraph{Calibration rationale for $\phi_b$.} The choice $\phi_b = 0.039$ is economically motivated: the SGU-standard $\phi_b = 0.001$ generates a $-21.8\%$ quarterly investment collapse inconsistent with Vietnamese national accounts, while Vietnam's partially restricted capital account rules out the near-frictionless limit. Qualitative FEVD rankings and welfare costs are insensitive to the precise value within $\phi_b \in [0.039, 0.10]$. The data-anchored regression ($R^2 = 0.16$, $\hat{\phi}_b = 0.039$) corroborates the order of magnitude.
-
-
+	The calibration targets are closely matched: $\beta = 0.99$ reflects Vietnam's 3.14\% mean real rate \citep{worldbank2024}; $\alpha = 0.35$ is the residual capital share given a labor income share of 0.65 \citep{gso2024}; and $\phi_b = 0.039$ is the data-anchored debt-elastic premium documented in Section~\ref{subsec:external_sector}.
 	
 	\section{Baseline Analysis} \label{sec:results}
 	
@@ -1058,6 +1029,27 @@ The scarcity-induced innovation equation linearizes around steady state. Since $
 		\parbox{\textwidth}{\footnotesize \textbf{Note:} $\Delta\Lambda$ is the welfare change relative to the baseline stochastic path at $\beta = 0.990$; positive values are welfare costs, negative values welfare gains. Lower $\beta$ implies more impatient households and a higher steady-state real interest rate $r^* = 1/\beta - 1$. The world rate $\bar{r}$ is adjusted jointly with $\beta$ to maintain $r^*_{ss} = \bar{r}$ in steady state. Annual rate $\approx (1/\beta - 1) \times 400$. C/Y is the steady-state consumption share.}
 	\end{table}
 
+	\paragraph{Debt-Elastic Premium ($\phi_b$).} Table~\ref{tab:phi_b_sensitivity} reports sensitivity of investment and current-account responses to the debt-elastic premium. Rising $\phi_b$ compresses $I_p$ volatility (from $-21.8\%$ to $-3.5\%$ to $-2.6\%$) by discouraging large current-account swings, while the current-account surplus shrinks monotonically ($+0.048$ to $+0.003$ to $+0.001$), consistent with Vietnam's observed modest surpluses during domestic slowdowns \citep{worldbank2024}. The baseline $\phi_b = 0.039$ is preferred on economic grounds: the SGU-standard value generates an implausible $-21.8\%$ quarterly investment collapse inconsistent with Vietnamese national accounts, while the partially restricted capital account rules out the near-frictionless limit. Qualitative FEVD rankings and welfare costs are insensitive to the precise value within $\phi_b \in [0.039, 0.10]$.
+
+	\begin{table}[H]
+		\centering
+		\caption[Sensitivity to Debt-Elastic Premium $\phi_b$]{\textbf{Sensitivity to Debt-Elastic Premium $\phi_b$}}
+		\label{tab:phi_b_sensitivity}
+		\renewcommand{\arraystretch}{1.3}
+		\footnotesize
+		\begin{tabular}{l c c c}
+			\toprule
+			& $\phi_b = 0.001$ & $\phi_b = 0.039$ & $\phi_b = 0.10$ \\
+			& (SGU standard) & (Data-anchored) & (Strong restrictions) \\
+			\midrule
+			$I_p$ impact (intermit.\ shock) & $-21.8\%$ & $-3.5\%$ & $-2.6\%$ \\
+			$B^*$ impact (intermit.\ shock) & $+0.048$ & $+0.003$ & $+0.001$ \\
+			Qualitative FEVD rankings & Unchanged & Unchanged & Unchanged \\
+			\bottomrule
+		\end{tabular}
+		\vspace{0.2cm}
+		\parbox{\linewidth}{\footnotesize \textbf{Note:} All values are computed by re-solving the system at each $\phi_b$; the steady state is independent of $\phi_b$ since $B^*_{ss}=0$. The $B^*$ impact is the period-1 level deviation of net foreign assets following a one-standard-deviation intermittency shock; positive values indicate a surplus. Key qualitative findings, intermittency dominates output variance and battery prices dominate $I_{bat}$ variance, are robust across all three values. The data-anchored regression ($R^2 = 0.16$) corroborates the order of magnitude.}
+	\end{table}
 
 	\subsection{External Sector Dynamics}
 
