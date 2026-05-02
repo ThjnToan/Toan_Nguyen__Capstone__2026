@@ -476,7 +476,7 @@ where $\eta_{bat}$ is the innovation elasticity, $\chi\in(0,1]$ captures regulat
 	The reliability gap also accelerates scarcity-induced technological change in battery storage (equation \eqref{eq:learning_by_doing}), increasing the effective productivity of storage services. This creates a virtuous cycle where scarcity induces both more investment and faster technological progress. However, when regulatory distortions dampen scarcity signals ($\chi < 1$), this innovation channel is attenuated, prolonging reliability shortfalls and amplifying macroeconomic volatility.
 	
 	\paragraph{Channel 4: The Fiscal Wedge Channel.}
-	The fixed tax $\tau$ imposes a permanent wedge: $K_{p,ss}$ is $\approx$1.4\% below the lump-sum benchmark, reducing structural resilience without dynamic amplification.
+	The fixed tax $\tau$ imposes a permanent wedge, reducing structural resilience without dynamic amplification.
 
 	Together, these mechanisms generate endogenous transition dynamics in which reliability scarcity, innovation, fiscal distortions, and macroeconomic performance are jointly determined.
 	
@@ -726,27 +726,27 @@ The scarcity-induced innovation equation linearizes around steady state. Since $
 		\label{tab:validation}
 		\renewcommand{\arraystretch}{1.3}
 		\small
-		\begin{tabular}{l c c c p{3.5cm}}
+		\begin{tabular}{l c c l p{3.5cm}}
 			\toprule
 			\textbf{Moment} & \textbf{Data} & \textbf{Model} & \textbf{Type} & \textbf{Source} \\
 			\midrule
 			\multicolumn{5}{l}{Macroeconomic Aggregates} \\
-			Total investment rate (I/Y) & 27.8\% & 26.6\% & T & \citep{gso2024} \\
-			Labor hours share ($L_{ss}$) & 33\% & 33.0\% & T & Standard RBC \\
-			Consumption share (C/Y) & 65.3\% & 65.0\%$^{\dagger}$ & F & \citep{gso2024} \\
-			Real interest rate (ann.) & 3.1\% & 4.0\% & T & \citep{worldbank2024} \\
+			Total investment rate (I/Y) & 27.8\% & 26.6\% & Targeted & \citep{gso2024} \\
+			Labor hours share ($L_{ss}$) & 33\% & 33.0\% & Targeted & Standard RBC \\
+			Consumption share (C/Y) & 65.3\% & 65.0\%$^{\dagger}$ & Untargeted & \citep{gso2024} \\
+			Real interest rate (ann.) & 3.1\% & 4.0\% & Targeted & \citep{worldbank2024} \\
 			\midrule
 			\multicolumn{5}{l}{Fiscal and External Sector} \\
-			Tax rate $\tau_{ss}$ & 1.4\% & 1.43\% & T & \citep{mof2023} \\
-			Current account / GDP & $-0.03\%$ & 0\% & F & \citep{worldbank2024} \\
+			Tax rate $\tau_{ss}$ & 1.4\% & 1.43\% & Targeted & \citep{mof2023} \\
+			Current account / GDP & $-0.03\%$ & 0\% & Untargeted & \citep{worldbank2024} \\
 			\midrule
 			\multicolumn{5}{l}{Energy Sector} \\
-			Grid reliability ($u_{ss}$) & 97.0\% & 97.0\% & T & \citep{evn2023} \\
-			Battery/grid capital ratio & $\approx$0.14--0.16 & 0.167 & F & \citep{mof2023} \\
+			Grid reliability ($u_{ss}$) & 97.0\% & 97.0\% & Targeted & \citep{evn2023} \\
+			Battery/grid capital ratio & $\approx$0.14--0.16 & 0.167 & Untargeted & \citep{mof2023} \\
 			\bottomrule
 		\end{tabular}
 		\vspace{0.2cm}
-		\parbox{\textwidth}{\footnotesize \textbf{Note:} Model values are computed from the deterministic steady state. Type: T = calibration target (moment directly used to pin parameters); F = free check (moment implied by model structure, not targeted). $^{\dagger}$The raw model consumption share is 73.4\%, but the model abstracts from government consumption expenditure (approximately 6--7\% of GDP in Vietnam) and net exports. Adjusting for government consumption, the model-implied private consumption share of disposable output would be approximately 65\%, consistent with the data. The real interest rate discrepancy (3.1\% data vs.\ 4.0\% model) reflects the conservative choice of $\beta = 0.99$, which corresponds to a slightly higher implied rate than the 2000--2023 historical mean of 3.14\%; the sensitivity table (Table~\ref{tab:beta_sensitivity}) documents robustness across $\beta \in [0.98, 0.995]$.}
+		\parbox{\textwidth}{\footnotesize \textbf{Note:} Model values are computed from the deterministic steady state. Type: Targeted = calibration target (moment directly used to pin parameters); Untargeted = free check (moment implied by model structure, not targeted). $^{\dagger}$The raw model consumption share is 73.4\%, but the model abstracts from government consumption expenditure (approximately 6--7\% of GDP in Vietnam) and net exports. Adjusting for government consumption, the model-implied private consumption share of disposable output would be approximately 65\%, consistent with the data. The real interest rate discrepancy (3.1\% data vs.\ 4.0\% model) reflects the conservative choice of $\beta = 0.99$, which corresponds to a slightly higher implied rate than the 2000--2023 historical mean of 3.14\%; the sensitivity table (Table~\ref{tab:beta_sensitivity}) documents robustness across $\beta \in [0.98, 0.995]$.}
 	\end{table}
 	
 	The calibration targets are closely matched: $\beta = 0.99$ reflects Vietnam's 3.14\% mean real rate \citep{worldbank2024}; $\alpha = 0.35$ is the residual capital share given a labor income share of 0.65 \citep{gso2024}; and $\phi_b = 0.039$ is the data-anchored debt-elastic premium documented in Section~\ref{subsec:external_sector}, with sensitivity reported in Table~\ref{tab:phi_b_sensitivity} below.
