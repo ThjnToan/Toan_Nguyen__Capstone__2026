@@ -838,45 +838,6 @@ The scarcity-induced innovation equation linearizes around steady state. Since $
 	
 			Three structural features produce the valley. First, Vietnam's PDP8 front-loads renewable deployment (the Feed-in Tariff boom nearly doubled solar capacity in 18 months), so intermittency rises faster than flexibility can respond. Second, public grid infrastructure follows a bureaucratic investment rule with 5--7 year commissioning lags: even aggressive fiscal responses cannot offset the accumulated deficit within the transition window. Third, battery deployment, though more agile, is bounded by global supply chains and financing constraints (calibrated at 2.0\% quarterly growth); and because storage and transmission are complements ($\rho = 0.4$), neither alone can substitute for the other. The valley thus represents a predictable consequence of unbalanced transition planning.
 	
-	\subsubsection{Policy Implications}
-	
-	Importantly, the Reliability Valley is not inevitable. It arises from the specific sequencing embedded in Vietnam's current policy trajectory. To quantify the potential for policy intervention, I simulate two counterfactual scenarios against the baseline, holding the renewable deployment path fixed.
-	
-	\subsubsection{Policy Counterfactual: Closing the Gap}
-
-
-	\begin{table}[H]
-		\centering
-		\caption[Closing the Gap: Policy Counterfactual Results]{\textbf{Closing the Gap: Policy Counterfactual Results}}
-		\label{tab:closing_gap}
-		\renewcommand{\arraystretch}{1.3}
-		\small
-		\begin{tabular}{l c c c c}
-			\toprule
-			\textbf{Scenario} & \textbf{Valley Nadir} & \textbf{Depth (pp)} & \textbf{Duration (Q)} & \textbf{Recovery} \\
-			\midrule
-			Baseline ($\phi_{\text{grid}} = 1.5$) & 81.3\% & 15.7 & 100 & -- \\
-			Accel.\ Grid ($\phi_{\text{grid}} = 3.0$) & 86.1\% & 10.9 & 80 & Q81 \\
-			Battery Subsidy ($P_{\text{bat}} = 0.8$) & 87.4\% & 9.6 & 100 & -- \\
-			\midrule
-			\multicolumn{5}{l}{Improvement relative to baseline:} \\
-			Accel.\ Grid & & $-30.3\%$ & $-20.0\%$ & \\
-			Battery Subsidy & & $-38.6\%$ & $0.0\%$ & \\
-			\bottomrule
-		\end{tabular}
-		\vspace{0.2cm}
-		\parbox{\textwidth}{\footnotesize \textbf{Note:} Valley nadir is the minimum grid reliability during the 100-quarter transition. Depth is measured as percentage points below the 97\% target. Duration is the number of quarters with $u_t < 0.97$. Recovery is the first quarter reliability returns above 97\%. All scenarios share the same S-curve renewable deployment path (15\% to 50\% penetration).}
-	\end{table}
-	
-	\begin{figure}[H]
-		\centering
-		\includegraphics[width=0.98\textwidth]{closing_the_gap.png}
-		\caption[Closing the Agility Gap: Policy Counterfactuals]{\textbf{Closing the Agility Gap: Policy Counterfactuals.} Left: shared S-curve renewable deployment path. Center: reliability paths under three scenarios, the battery subsidy (dash-dot) reduces the valley depth by 38.6\%, while accelerated grid planning (dashed) shortens the valley duration by 20\%. Right: flexibility accumulation versus the level required for 97\% reliability.}
-		\label{fig:closing_gap}
-	\end{figure}
-	
-	Two counterfactual scenarios share the baseline S-curve renewable path (15\% to 50\% penetration over 100 quarters): (A) Accelerated Grid Planning ($\phi_{\text{grid}}=3.0$) and (B) Battery Subsidy ($P_{\text{bat}}=0.8$, a 20\% price reduction). Table~\ref{tab:closing_gap} and Figure~\ref{fig:closing_gap} summarise results. Battery subsidies reduce valley depth by 38.6\% (from 15.7~pp to 9.6~pp), while accelerated grid planning shortens duration by 20\% and achieves recovery by Q81. Neither policy alone eliminates the valley, confirming the complementarity proposition: addressing the agility gap requires coordinated investment in both flexibility instruments. Full counterfactual results are tabulated in Appendix~\ref{app:solution}.
-	
 	\subsection{Summary of Baseline Dynamics}
 	
 	The baseline analysis establishes three facts: (1) intermittency shocks reduce output by 0.53\% on impact via the reliability wedge, with 95.4\% of output variance attributable to the intermittency shock (Appendix~\ref{app:fevd}); (2) the agility gap, battery investment dominated by global price signals, grid investment constrained by fiscal-infrastructure lags, amplifies the Reliability Valley during rapid VRE deployment; and (3) scarcity-induced technological change creates a self-correcting but slow mechanism that partially offsets the long-run costs. These dynamics motivate the welfare and counterfactual analysis in Section~\ref{sec:welfare}.
@@ -1009,6 +970,42 @@ The scarcity-induced innovation equation linearizes around steady state. Since $
 	The monotonic relationship between $\chi$ and welfare cost confirms the model's central policy prediction: market-based mechanisms that transmit scarcity signals, such as real-time pricing, capacity payments, or ancillary service remuneration, are quantitatively important complements to direct investment in storage capacity. Regulatory regimes that suppress these signals (e.g., fixed retail tariffs, administrative dispatch without market clearing) impose a measurable welfare penalty by disabling the economy's endogenous innovation response.
 
 	This relationship is not a simulation artifact but a structural property of the model, as formalized in Proposition~\ref{prop:chi_monotonicity} above.
+
+	\subsection{Counterfactual 2: Closing the Agility Gap}
+
+	Importantly, the Reliability Valley is not inevitable. It arises from the specific sequencing embedded in Vietnam's current policy trajectory. To quantify the potential for policy intervention, I simulate two counterfactual scenarios against the baseline, holding the renewable deployment path fixed.
+
+	\begin{table}[H]
+		\centering
+		\caption[Closing the Gap: Policy Counterfactual Results]{\textbf{Closing the Gap: Policy Counterfactual Results}}
+		\label{tab:closing_gap}
+		\renewcommand{\arraystretch}{1.3}
+		\small
+		\begin{tabular}{l c c c c}
+			\toprule
+			\textbf{Scenario} & \textbf{Valley Nadir} & \textbf{Depth (pp)} & \textbf{Duration (Q)} & \textbf{Recovery} \\
+			\midrule
+			Baseline ($\phi_{\text{grid}} = 1.5$) & 81.3\% & 15.7 & 100 & -- \\
+			Accel.\ Grid ($\phi_{\text{grid}} = 3.0$) & 86.1\% & 10.9 & 80 & Q81 \\
+			Battery Subsidy ($P_{\text{bat}} = 0.8$) & 87.4\% & 9.6 & 100 & -- \\
+			\midrule
+			\multicolumn{5}{l}{Improvement relative to baseline:} \\
+			Accel.\ Grid & & $-30.3\%$ & $-20.0\%$ & \\
+			Battery Subsidy & & $-38.6\%$ & $0.0\%$ & \\
+			\bottomrule
+		\end{tabular}
+		\vspace{0.2cm}
+		\parbox{\textwidth}{\footnotesize \textbf{Note:} Valley nadir is the minimum grid reliability during the 100-quarter transition. Depth is measured as percentage points below the 97\% target. Duration is the number of quarters with $u_t < 0.97$. Recovery is the first quarter reliability returns above 97\%. All scenarios share the same S-curve renewable deployment path (15\% to 50\% penetration).}
+	\end{table}
+
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.98\textwidth]{closing_the_gap.png}
+		\caption[Closing the Agility Gap: Policy Counterfactuals]{\textbf{Closing the Agility Gap: Policy Counterfactuals.} Left: shared S-curve renewable deployment path. Center: reliability paths under three scenarios, the battery subsidy (dash-dot) reduces the valley depth by 38.6\%, while accelerated grid planning (dashed) shortens the valley duration by 20\%. Right: flexibility accumulation versus the level required for 97\% reliability.}
+		\label{fig:closing_gap}
+	\end{figure}
+
+	Two counterfactual scenarios share the baseline S-curve renewable path (15\% to 50\% penetration over 100 quarters): (A) Accelerated Grid Planning ($\phi_{\text{grid}}=3.0$) and (B) Battery Subsidy ($P_{\text{bat}}=0.8$, a 20\% price reduction). Table~\ref{tab:closing_gap} and Figure~\ref{fig:closing_gap} summarise results. Battery subsidies reduce valley depth by 38.6\% (from 15.7~pp to 9.6~pp), while accelerated grid planning shortens duration by 20\% and achieves recovery by Q81. Neither policy alone eliminates the valley, confirming the complementarity proposition: addressing the agility gap requires coordinated investment in both flexibility instruments. Full counterfactual results are tabulated in Appendix~\ref{app:solution}.
 
 	\subsubsection{Parameter Sensitivity}
 
