@@ -745,14 +745,9 @@ The scarcity-induced innovation equation linearizes around steady state. Since $
 	
 	This section characterizes the model's baseline behavior: the deterministic steady state and the dynamic response to intermittency shocks. These results establish the reference point against which the welfare analysis in Section~\ref{sec:welfare} is evaluated. Throughout, I emphasize the model's core mechanism: the structural divergence between rapid renewable deployment and sluggish flexibility accumulation, the agility gap.
 	
-	\subsection{Steady State}
-	
-	
 	Table~\ref{tab:steady_state} (Appendix~\ref{app:steadystate}) reports all 16 steady-state values. Key targets: $u_{ss}=0.97$, $K_{p,ss}/Y_{ss}=9.83$, $C_{ss}/Y_{ss}=0.734$.
-	
-	\subsubsection{The Efficiency Wedge of Renewable Reliability} \label{subsec:ss_analysis}
 
-	Table~\ref{tab:steady_state} shows the steady-state values. The 3\% reliability shortfall ($1-u_{ss}=0.03$) acts as an efficiency wedge, reducing effective capital services by $\alpha \times 3\% = 1.05$~pp relative to perfect reliability. This structural drag is the starting point from which intermittency shocks propagate.
+ 	The 3\% reliability shortfall ($1-u_{ss}=0.03$) acts as an efficiency wedge, reducing effective capital services by $\alpha \times 3\% = 1.05$~pp relative to perfect reliability. This structural drag is the starting point from which intermittency shocks propagate.
 
 	\subsection{Impulse Response to Renewable Intermittency Shock}
 	
@@ -886,6 +881,10 @@ The scarcity-induced innovation equation linearizes around steady state. Since $
 	
 	The baseline analysis establishes three facts: (1) intermittency shocks reduce output by 0.53\% on impact via the reliability wedge, with 95.4\% of output variance attributable to the intermittency shock (Appendix~\ref{app:fevd}); (2) the agility gap, battery investment dominated by global price signals, grid investment constrained by fiscal-infrastructure lags, amplifies the Reliability Valley during rapid VRE deployment; and (3) scarcity-induced technological change creates a self-correcting but slow mechanism that partially offsets the long-run costs. These dynamics motivate the welfare and counterfactual analysis in Section~\ref{sec:welfare}.
 	
+	\subsection{External Sector Dynamics}
+	
+	The open economy generates dual exposure through two mechanisms. First, intermittency shocks reduce output while compressing investment more sharply, generating a current account surplus ($B^*$ rises by 0.003 on impact) as the debt-elastic premium ($\phi_b = 0.039$) limits external borrowing. Second, battery price shocks act as adverse terms-of-trade shocks for a battery-importing economy, slowing flexibility accumulation and, through the reliability channel, reducing output. Intermittency dominates $B^*$ volatility (100\%) while battery price shocks contribute 4\% (Appendix~\ref{app:fevd}); the debt-elastic premium provides a stabilizing feedback but amplifies the welfare cost of repeated shocks. These dynamics reinforce the policy case for domestic battery manufacturing capacity.
+	
 	\subsection{Sensitivity of Baseline Dynamics to Key Parameters}
 	
 	Table~\ref{tab:baseline_sensitivity} reports how the propagation and recovery of the baseline intermittency shock vary with three parameters that govern persistence, learning speed, and regulatory transmission. Because capital stocks are predetermined, the impact effects (output $-0.53\%$ and reliability $-1.30\%$) are mechanically identical across all specifications; variation appears only in the propagation phase from quarter 2 onward.
@@ -951,7 +950,7 @@ The scarcity-induced innovation equation linearizes around steady state. Since $
 	
 	This section examines how welfare varies across regulatory regimes and structural parameters. The baseline stochastic path, the impulse response in Figure \ref{fig:irf_baseline} obtained under the calibrated economy ($\chi = 1.0$, $\phi_{grid} = 1.5$, $\phi_b = 0.039$, $\mu = 0.16$, $\beta = 0.99$) following a one-standard-deviation intermittency shock, is the reference point against which all counterfactuals are compared.
 
-	\subsection{Welfare Metric}
+	\subsection{Consumption Equivalent Variation}
 
 	Household welfare is measured by the expected lifetime utility:
 	\begin{equation}
@@ -980,7 +979,7 @@ The scarcity-induced innovation equation linearizes around steady state. Since $
 	
 	\noindent The result follows from the log-linearized innovation equation: higher $\chi$ amplifies the technology response $\hat{A}_{bat,t}$ to each reliability shortfall, raising flexibility and hence consumption in all subsequent periods. The formal proof is in Appendix~\ref{app:proof_chi}.
 
-	\subsection{Counterfactual: Signal Attenuation}
+	\subsection{Counterfactual 1: Signal Attenuation}
 
 	The model's scarcity-induced innovation mechanism is conditional on the regulatory transmission parameter $\chi$, which governs how effectively reliability scarcity signals are transmitted to private innovators. To quantify the welfare implications of regulatory distortions, I vary $\chi$ from the baseline ($\chi = 1.0$, full transmission) to complete suppression ($\chi = 0.0$) and compute the welfare change $\Delta\Lambda$ relative to the baseline stochastic path using equation~\eqref{eq:welfare_change}. By construction $\Delta\Lambda(\chi = 1.0) = 0$; positive values indicate the welfare cost of moving from the baseline regulatory regime to a more distorted one.
 
@@ -1011,9 +1010,9 @@ The scarcity-induced innovation equation linearizes around steady state. Since $
 
 	This relationship is not a simulation artifact but a structural property of the model, as formalized in Proposition~\ref{prop:chi_monotonicity} above.
 
-	\subsection{Parameter Sensitivity}
+	\subsubsection{Parameter Sensitivity}
 
-	To assess robustness, I examine the sensitivity of welfare to three structural parameters: the reliability curvature $\psi$, the grid investment responsiveness $\phi_{grid}$, and the battery weight $\mu$. In each case the welfare change $\Delta\Lambda$ is computed relative to the baseline stochastic path (equation~\ref{eq:welfare_change}), so that the baseline value of each parameter yields $\Delta\Lambda = 0$ by construction.
+	To assess robustness, I examine the sensitivity of the previous counterfactual to three structural parameters: the reliability curvature $\psi$, the grid investment responsiveness $\phi_{grid}$, and the battery weight $\mu$. In each case the welfare change $\Delta\Lambda$ is computed relative to the baseline stochastic path (equation~\ref{eq:welfare_change}), so that the baseline value of each parameter yields $\Delta\Lambda = 0$ by construction.
 
 	\paragraph{Reliability Curvature ($\psi$).} The first-order perturbation solution is invariant to $\psi$: since $\phi_{int}$ is calibrated jointly with $\psi$ to hit $u_{ss}=0.97$, the linearization coefficient $\xi = \psi(1-u_{ss})/(\phi_{int}\cdot\text{Vol}_{ren,ss})$ is unchanged. Higher $\psi$ matters only for nonlinear curvature in the Reliability Valley (Section~\ref{subsec:valley}).
 
@@ -1079,10 +1078,6 @@ The scarcity-induced innovation equation linearizes around steady state. Since $
 		\vspace{0.2cm}
 		\parbox{\textwidth}{\footnotesize \textbf{Note:} $\Delta\Lambda$ is the welfare change relative to the baseline stochastic path at $\beta = 0.990$; positive values are welfare costs, negative values welfare gains. Lower $\beta$ implies more impatient households and a higher steady-state real interest rate $r^* = 1/\beta - 1$. The world rate $\bar{r}$ is adjusted jointly with $\beta$ to maintain $r^*_{ss} = \bar{r}$ in steady state. Annual rate $\approx (1/\beta - 1) \times 400$. C/Y is the steady-state consumption share.}
 	\end{table}
-
-	\subsection{External Sector Dynamics}
-
-	The open economy generates dual exposure through two mechanisms. First, intermittency shocks reduce output while compressing investment more sharply, generating a current account surplus ($B^*$ rises by 0.003 on impact) as the debt-elastic premium ($\phi_b = 0.039$) limits external borrowing. Second, battery price shocks act as adverse terms-of-trade shocks for a battery-importing economy, slowing flexibility accumulation and, through the reliability channel, reducing output. Intermittency dominates $B^*$ volatility (100\%) while battery price shocks contribute 4\% (Appendix~\ref{app:fevd}); the debt-elastic premium provides a stabilizing feedback but amplifies the welfare cost of repeated shocks. These dynamics reinforce the policy case for domestic battery manufacturing capacity.
 
 	\subsection{Joint Shock Scenario: Perfect Storm} \label{subsec:joint_shock}
 
