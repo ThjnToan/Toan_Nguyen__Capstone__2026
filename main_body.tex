@@ -263,28 +263,7 @@ Energy enters as a fixed endowment $\bar{E}$ (PDP8 targets); the intermittency s
 	
 	This exponential form is standard in reliability engineering \citep{zakeri2015, lund2015}: $u_t \in (0,1)$ for all $F_t > 0$, reliability is bounded between grid collapse and perfection, and marginal returns to flexibility are strictly diminishing.
 	
-	Table~\ref{tab:reliability_numerical} illustrates this nonlinearity: a 10\% flexibility deficit reduces reliability by 1.26~pp, but a 50\% deficit causes a 14.32~pp collapse. The accelerating penalty motivates the Reliability Valley analysis in Section~\ref{sec:results}.
-	
-	\begin{table}[H]
-		\centering
-		\caption[Reliability Response to Flexibility Shortfalls]{\textbf{Reliability Response to Flexibility Shortfalls}}
-		\label{tab:reliability_numerical}
-		\renewcommand{\arraystretch}{1.3}
-		\small
-		\begin{tabular}{c c c c}
-			\toprule
-			\textbf{Flexibility Shortfall} & \textbf{Reliability ($u_t$)} & \textbf{Rel.\ Loss (pp)} & \textbf{Approx.\ Output Loss} \\
-			\midrule
-			0\% (steady state) & 97.00\% & -- & -- \\
-			$-5$\% & 96.43\% & 0.57 & $-0.21$\% \\
-			$-10$\% & 95.74\% & 1.26 & $-0.45$\% \\
-			$-20$\% & 93.95\% & 3.05 & $-1.10$\% \\
-			$-30$\% & 91.41\% & 5.59 & $-2.02$\% \\
-			$-50$\% & 82.68\% & 14.32 & $-5.17$\% \\
-			\bottomrule
-		\end{tabular}
-		\parbox{\linewidth}{\footnotesize \textit{Note:} Computed from equation~\eqref{eq:utilization} under the baseline calibration ($\psi = 2.0$, $\phi_{int} = 55.6$). Output loss approximated as $\alpha \times \Delta u / u_{ss}$, capturing the direct effective-capital channel. The convexity of the reliability function implies that moderate flexibility shortfalls (10--20\%) have manageable consequences, but large deficits trigger disproportionate reliability collapses, motivating the Reliability Valley analysis in Section~\ref{sec:results}.}
-	\end{table}
+	Table~\ref{tab:reliability_numerical} in Appendix~\ref{app:reliability} illustrates this nonlinearity: a 10\% flexibility deficit reduces reliability by 1.26~pp, but a 50\% deficit causes a 14.32~pp collapse. The accelerating penalty motivates the Reliability Valley analysis in Section~\ref{sec:results}.
 	
 	The volatility term captures the absolute variability of renewable generation:
 	\begin{equation}
@@ -489,11 +468,27 @@ where $\eta_{bat}$ is the innovation elasticity, $\chi\in(0,1]$ captures regulat
 	\paragraph{Channel 4: The Fiscal Wedge Channel.}
 	The fixed tax $\tau$ imposes a permanent wedge, reducing structural resilience without dynamic amplification.
 
-	Together, these mechanisms generate endogenous transition dynamics in which reliability scarcity, innovation, fiscal distortions, and macroeconomic performance are jointly determined.
-	
 	\section{Model Mechanisms} \label{sec:mechanics}
 	
 	This section derives the log-linearized equilibrium system, characterizes the steady state, and describes the transmission channels through which intermittency shocks propagate. The model is solved using first-order perturbation methods following the Dynare toolkit approach \citep{Adjemianetal2024}, implemented in Dynare 6 \citep{Adjemianetal2024}. The solution methodology follows \citet{uhlig1999} for analyzing nonlinear dynamic stochastic models through log-linearization around the deterministic steady state.
+	
+	\subsection{Mechanism Summary}
+	
+	The model generates five propagation channels. The first three correspond to its core novelties, endogenous reliability, scarcity-induced innovation, and asymmetric investment dynamics, while Channels 4 and 5 are additional structural features that shape the steady state and external exposure.
+	
+	\paragraph{Channel 1: Intermittency to Reliability to Output.}
+	Renewable intermittency shocks $\varepsilon_{ren,t}$ reduce grid reliability $u_t$ by increasing the mismatch between supply and demand (through $\text{Vol}_{ren,t}$). Lower reliability directly reduces effective capital utilization, acting as a negative productivity shock that depresses output $Y_t$, raises the effective cost of capital, and lowers wages.
+	
+	\paragraph{Channel 2: Reliability Gap to Investment.}
+	Reduced reliability widens the gap $u^*/u_t$, raising the return to battery storage and stimulating battery investment $I_{bat,t}$ through the investment rule \eqref{eq:battery_investment}. Grid investment responds through the government's fiscal rule \eqref{eq:grid_investment_rule}. The differential speed of response, private battery versus public grid, constitutes the agility gap.
+	
+	\paragraph{Channel 3: Reliability Gap to Scarcity-Induced Innovation to Productivity Gain.}
+	The reliability gap also accelerates scarcity-induced technological change in battery storage (equation \eqref{eq:learning_by_doing}), increasing the effective productivity of storage services. This creates a virtuous cycle where scarcity induces both more investment and faster technological progress. However, when regulatory distortions dampen scarcity signals ($\chi < 1$), this innovation channel is attenuated, prolonging reliability shortfalls and amplifying macroeconomic volatility.
+	
+	\paragraph{Channel 4: The Fiscal Wedge Channel.}
+	The fixed tax $\tau$ imposes a permanent wedge, reducing structural resilience without dynamic amplification.
+
+	Together, these mechanisms generate endogenous transition dynamics in which reliability scarcity, innovation, fiscal distortions, and macroeconomic performance are jointly determined.
 	
 	\subsection{Transmission Channels}
 	
@@ -794,6 +789,8 @@ The scarcity-induced innovation equation linearizes around steady state. Since $
 		\label{fig:fiscal_amplification}
 		\parbox{0.95\textwidth}{\footnotesize \textbf{Note:} Impulse responses to a one standard deviation intermittency shock ($\sigma_{ren} = 0.12$). Output $Y_t$, consumption $C_t$, productive investment $I_{p,t}$, and value added $V_t$ in level deviations from steady state. Productive investment falls by $-3.5\%$ relative to steady state on impact due to Euler equation amplification: the expected fall in future output reduces the after-tax return to capital, compressing the incentive to invest. Consumption and output decline modestly but persistently, governed by the AR(1) intermittency process ($\rho_{ren}=0.85$). The fixed proportional tax $\tau_{ss}=1.43\%$ creates a permanent wedge that shifts the steady state but does not amplify the dynamic response.}
 	\end{figure}
+	
+	The impulse response to a renewable intermittency shock unfolds through a three-stage adjustment mechanism. Stage~1 captures the immediate reliability penalty that reduces effective capital services. Stage~2 documents the asymmetric investment responses that constitute the agility gap. Stage~3 describes the gradual activation of scarcity-induced technological change that partially offsets the long-run costs. Each stage is analyzed in turn below.
 	
 	\subsubsection{Stage 1: The Reliability Penalty Mechanism}
 	
@@ -1194,6 +1191,28 @@ The scarcity-induced innovation equation linearizes around steady state. Since $
 	
 	Impulse response functions (IRFs) and welfare calculations reported in the main text are computed from this linear solution.
 
+	\section{Reliability Function Properties} \label{app:reliability}
+	
+	\begin{table}[H]
+		\centering
+		\caption[Reliability Response to Flexibility Shortfalls]{\textbf{Reliability Response to Flexibility Shortfalls}}
+		\label{tab:reliability_numerical}
+		\renewcommand{\arraystretch}{1.3}
+		\small
+		\begin{tabular}{c c c c}
+			\toprule
+			\textbf{Flexibility Shortfall} & \textbf{Reliability ($u_t$)} & \textbf{Rel.\ Loss (pp)} & \textbf{Approx.\ Output Loss} \\
+			\midrule
+			0\% (steady state) & 97.00\% & -- & -- \\
+			$-5$\% & 96.43\% & 0.57 & $-0.21$\% \\
+			$-10$\% & 95.74\% & 1.26 & $-0.45$\% \\
+			$-20$\% & 93.95\% & 3.05 & $-1.10$\% \\
+			$-30$\% & 91.41\% & 5.59 & $-2.02$\% \\
+			$-50$\% & 82.68\% & 14.32 & $-5.17$\% \\
+			\bottomrule
+		\end{tabular}
+		\parbox{\linewidth}{\footnotesize \textit{Note:} Computed from equation~\eqref{eq:utilization} under the baseline calibration ($\psi = 2.0$, $\phi_{int} = 55.6$). Output loss approximated as $\alpha \times \Delta u / u_{ss}$, capturing the direct effective-capital channel. The convexity of the reliability function implies that moderate flexibility shortfalls (10--20\%) have manageable consequences, but large deficits trigger disproportionate reliability collapses, motivating the Reliability Valley analysis in Section~\ref{sec:results}.}
+	\end{table}
 
 	\section{Superadditivity of Joint Flexibility Investment} \label{app:proof_superadditivity}
 
