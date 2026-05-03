@@ -149,7 +149,7 @@
 	
 	This theoretical mechanism has found robust empirical support. \citet{popp2002} provided early evidence that higher energy prices significantly induce energy-efficient patenting activity. More recently, \citet{aghion2016} utilized microdata from the global automotive industry to show that firms tend to innovate in areas where they have prior expertise (path dependence), but that fuel price shocks successfully redirect R\&D toward electric and hybrid technologies. Similarly, \citet{calel2016} finds that firms regulated under the EU Emissions Trading System (ETS) increased low-carbon patenting by 10\% compared to a matched control group without crowding out other R\&D, suggesting that policy can effectively steer the direction of technical progress.
 	
-	However, a fundamental limitation in standard DTC models is the assumption regarding the elasticity of substitution. The AABH framework relies on the premise that clean and dirty inputs are high substitutes. Under this condition, innovation in clean energy allows it to seamlessly replace fossil fuels. Yet, structural analyses challenge this assumption in the presence of intermittency. As renewable penetration rises, the lack of dispatchability renders clean energy an imperfect substitute for baseload fossil generation \citep{hirth2013, joskow2011}. Consequently, models that treat clean capital as a homogeneous block overlook the necessity of complementary innovations. As argued by \citet{hart2019}, when inputs are complements rather than substitutes, technological progress must target not just generation, but the bottleneck technologies, specifically storage, that enable substitutability.
+	However, a fundamental limitation in standard DTC models is the assumption regarding the elasticity of substitution. The framework of \citet{acemoglu2012environment}---henceforth AABH---relies on the premise that clean and dirty inputs are high substitutes. Under this condition, innovation in clean energy allows it to seamlessly replace fossil fuels. Yet, structural analyses challenge this assumption in the presence of intermittency. As renewable penetration rises, the lack of dispatchability renders clean energy an imperfect substitute for baseload fossil generation \citep{hirth2013, joskow2011}. Consequently, models that treat clean capital as a homogeneous block overlook the necessity of complementary innovations. As argued by \citet{hart2019}, when inputs are complements rather than substitutes, technological progress must target not just generation, but the bottleneck technologies, specifically storage, that enable substitutability.
 	
 	An alternative mechanism for technological progress is learning-by-doing, where costs decline through accumulated production experience rather than explicit R\&D allocation. \citet{arrow1962} first formalized this idea, and it has been widely applied to renewable energy technologies. \citet{nemet2006} documents dramatic cost reductions in solar photovoltaics driven by cumulative deployment, while \citet{kittner2017} shows similar patterns for battery storage using a two-factor learning curve that integrates both deployment experience and innovation activity. \citet{way2022} extend this approach with stochastic Wright's Law forecasts across fifty technologies, projecting continued steep cost declines for batteries through 2050. Unlike DTC, learning-by-doing does not require modeling innovation sectors or resource constraints, making it particularly suitable for capturing technological progress in capital goods like batteries where costs decline through manufacturing scale and operational experience.
 	
@@ -203,7 +203,7 @@
 		\label{eq:hh_budget},
 	\end{equation}
 	
-	where $\tau$ is the fixed proportional tax rate, $T_t$ is a residual lump-sum tax (or transfer) that balances the government budget dynamically ($I_{grid,t} = \tau Y_t + T_t$), $w_t$ the real wage, $R_t$ the rental rate on $K_{p,t-1}$, $\Pi_t$ the rents from the exogenous energy endowment, and $B^*_t$ net foreign assets.\footnote{\label{fn:timing_convention}Capital installed at $t-1$ is productive in $t$; investment $I_{p,t}$ does not contribute until $t+1$.}
+	where $\tau$ is the fixed proportional tax rate, $T_t$ is a residual lump-sum tax (or transfer) that balances the government budget dynamically, $w_t$ the real wage, $R_t$ the rental rate on $K_{p,t-1}$, $\Pi_t$ the rents from the exogenous energy endowment, and $B^*_t$ net foreign assets.\footnote{\label{fn:timing_convention}Capital installed at $t-1$ is productive in $t$; investment $I_{p,t}$ does not contribute until $t+1$.}
 
 The household chooses $\{C_t, L_t, K_{p,t+1}, B^*_t\}$ to maximize utility subject to the budget constraint \eqref{eq:hh_budget} and the standard capital accumulation law \eqref{eq:productive_capital}; the mathematical derivation is in Appendix~\ref{app:deriv_euler}.
 	
@@ -222,20 +222,22 @@ The household chooses $\{C_t, L_t, K_{p,t+1}, B^*_t\}$ to maximize utility subje
 		\label{eq:labor_supply}.
 	\end{equation}
 	
-	The parameter $\varphi$ is calibrated endogenously to match steady-state labor hours $L_{ss} = 0.33$.
+
 	
 	\subsection{The Production Sector}
 	
 	\subsubsection{Final Goods Production}
 	
-	Final output $Y_t$ is produced by a representative firm using a nested Constant Elasticity of Substitution (CES) technology that combines value-added and energy inputs. To reduce notational clutter in the CES expressions that follow, I adopt the convention of writing exponents in terms of the substitution parameter $s \equiv (\sigma - 1)/\sigma$ for a given elasticity $\sigma$. When $\sigma < 1$ (complements), $s < 0$; when $\sigma > 1$ (substitutes), $s > 0$; when $\sigma = 1$ (Cobb-Douglas), $s = 0$. Using $s_E \equiv (\sigma_E - 1)/\sigma_E$ for the output aggregator:
+	Final output $Y_t$ is produced by a representative firm using a nested Constant Elasticity of Substitution (CES) technology that combines value-added and energy inputs. To reduce notational clutter in the CES expressions that follow, I adopt the convention of writing exponents in terms of the substitution parameter $s \equiv (\sigma - 1)/\sigma$ for a given elasticity $\sigma$. Using $s_E \equiv (\sigma_E - 1)/\sigma_E$ for the output aggregator:
 	
 	\begin{equation}
 		Y_t = \left[(1-\omega_E)V_t^{s_E} + \omega_E \bar{E}^{s_E}\right]^{1/s_E}
 		\label{eq:final_output}.
 	\end{equation}
+
+Energy enters as a fixed endowment $\bar{E}$ (PDP8 targets); the intermittency shock propagates through the reliability function rather than energy supply directly.
 	
-	When $\sigma_E = 0.6 < 1$, energy and value-added are gross complements: disruptions to energy supply translate into disproportionately large output losses \citep{heutel2012}.
+	When $\sigma_E < 1$, energy and value-added are gross complements: disruptions to energy supply translate into disproportionately large output losses \citep{heutel2012}.
 
 Value-added production combines labor and effective capital services:
 	
@@ -245,8 +247,6 @@ Value-added production combines labor and effective capital services:
 	\end{equation}
 	
 	Effective capital $u_t K_{p,t-1}$ is the operational fraction of installed capacity ($u_t \in (0,1)$, capturing system-wide outages rather than a firm-level choice): a 3\% reliability shortfall is equivalent to a TFP loss of $\alpha \times 3\%\approx 1\%$.
-
-Energy enters as a fixed endowment $\bar{E}$ (PDP8 targets); the intermittency shock propagates through the reliability function rather than energy supply directly.
 	
 	\subsection{Grid Reliability and Flexibility Assets}
 	
@@ -371,7 +371,11 @@ where $\eta_{bat}$ is the innovation elasticity, $\chi\in(0,1]$ captures regulat
 	
 	This rule captures the reactive nature of infrastructure policy, where investment accelerates following reliability crises rather than anticipating them. The parameter $\phi_{grid}$ governs the aggressiveness of the fiscal response.
 	
-	The government finances grid investment through a fixed proportional tax $\tau_{ss}=I_{grid,ss}/Y_{ss}=1.43\%$ ($\tau_{ss}=\delta_g K_{g,ss}/Y_{ss}=0.0143$), ensuring tax revenue covers replacement grid investment.
+	The government finances grid investment through a fixed proportional tax $\tau_{ss}=I_{grid,ss}/Y_{ss}=1.43\%$ ($\tau_{ss}=\delta_g K_{g,ss}/Y_{ss}=0.0143$), ensuring tax revenue covers replacement grid investment. Formally, the government budget is balanced dynamically by a lump-sum transfer $T_t$:
+	\begin{equation}
+		I_{grid,t} = \tau Y_t + T_t
+		\label{eq:gov_budget}.
+	\end{equation}
 
 	\subsection{Battery Price Dynamics}
 	
