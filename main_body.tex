@@ -203,7 +203,7 @@
 		\label{eq:hh_budget},
 	\end{equation}
 	
-	where $\tau$ is the fixed proportional tax, $T_t$ is a residual lump-sum tax (or transfer) that balances the government budget dynamically ($I_{grid,t} = \tau Y_t + T_t$), $w_t$ the real wage, $R_t$ the rental rate on $K_{p,t-1}$, $\Pi_t$ the rents from the exogenous energy endowment, and $B^*_t$ net foreign assets.\footnote{\label{fn:timing_convention}Capital installed at $t-1$ is productive in $t$; investment $I_{p,t}$ does not contribute until $t+1$.}
+	where $\tau$ is the fixed proportional tax rate, $T_t$ is a residual lump-sum tax (or transfer) that balances the government budget dynamically ($I_{grid,t} = \tau Y_t + T_t$), $w_t$ the real wage, $R_t$ the rental rate on $K_{p,t-1}$, $\Pi_t$ the rents from the exogenous energy endowment, and $B^*_t$ net foreign assets.\footnote{\label{fn:timing_convention}Capital installed at $t-1$ is productive in $t$; investment $I_{p,t}$ does not contribute until $t+1$.}
 
 The household chooses $\{C_t, L_t, K_{p,t+1}, B^*_t\}$ to maximize utility subject to the budget constraint \eqref{eq:hh_budget} and the standard capital accumulation law \eqref{eq:productive_capital}; the mathematical derivation is in Appendix~\ref{app:deriv_euler}.
 	
@@ -451,22 +451,6 @@ where $\eta_{bat}$ is the innovation elasticity, $\chi\in(0,1]$ captures regulat
 
 	\subsection{Steady State Characterization}
 	The deterministic steady state is computed by setting all shocks to zero and solving the 16-equation system analytically. Key values are: $u_{ss} = 0.97$, $Y_{ss} = 1.0$ (normalised), $K_{p,ss} = 9.83$, $L_{ss} = 0.33$, $C_{ss}/Y_{ss} = 0.734$, and $I_{grid,ss}/Y_{ss} = 0.014$. Battery capital $K_{b,ss}$ and grid capital $K_{g,ss}$ are calibrated to match the flexibility bundle target; the full steady-state derivation is in Appendix~\ref{app:steadystate}.
-
-	\subsection{Mechanism Summary}
-	
-	The model generates five propagation channels. The first three correspond to its core novelties, endogenous reliability, scarcity-induced innovation, and asymmetric investment dynamics, while Channels 4 and 5 are additional structural features that shape the steady state and external exposure.
-	
-	\paragraph{Channel 1: Intermittency to Reliability to Output.}
-	Renewable intermittency shocks $\varepsilon_{ren,t}$ reduce grid reliability $u_t$ by increasing the mismatch between supply and demand (through $\text{Vol}_{ren,t}$). Lower reliability directly reduces effective capital utilization, acting as a negative productivity shock that depresses output $Y_t$, raises the effective cost of capital, and lowers wages.
-	
-	\paragraph{Channel 2: Reliability Gap to Investment.}
-	Reduced reliability widens the gap $u^*/u_t$, raising the return to battery storage and stimulating battery investment $I_{bat,t}$ through the investment rule \eqref{eq:battery_investment}. Grid investment responds through the government's fiscal rule \eqref{eq:grid_investment_rule}. The differential speed of response, private battery versus public grid, constitutes the agility gap.
-	
-	\paragraph{Channel 3: Reliability Gap to Scarcity-Induced Innovation to Productivity Gain.}
-	The reliability gap also accelerates scarcity-induced technological change in battery storage (equation \eqref{eq:learning_by_doing}), increasing the effective productivity of storage services. This creates a virtuous cycle where scarcity induces both more investment and faster technological progress. However, when regulatory distortions dampen scarcity signals ($\chi < 1$), this innovation channel is attenuated, prolonging reliability shortfalls and amplifying macroeconomic volatility.
-	
-	\paragraph{Channel 4: The Fiscal Wedge Channel.}
-	The fixed tax $\tau$ imposes a permanent wedge, reducing structural resilience without dynamic amplification.
 
 	\section{Model Mechanisms} \label{sec:mechanics}
 	
@@ -938,9 +922,32 @@ The scarcity-induced innovation equation linearizes around steady state. Since $
 	
 	Third, regulatory signal transmission $\chi$ determines whether the scarcity gap actually feeds back into technological progress. When $\chi=0$, the innovation channel is completely shut down: $A_{bat}$ remains at its steady-state level and the valley is deepest ($u=-0.23\%$ at Q10). Even partial signal suppression ($\chi=0.5$) halves the technology gain and noticeably slows recovery. This validates the paper's central claim that the efficacy of scarcity-induced innovation is strictly conditional on the institutional mechanism through which scarcity signals are transmitted to innovators. In regulated power markets where tariffs or ancillary-service payments suppress price volatility, the learning channel can be severely attenuated even when grid stress is severe.
 	
+	\paragraph{Debt-Elastic Premium ($\phi_b$).} Table~\ref{tab:phi_b_sensitivity} reports sensitivity of investment and current-account responses to the debt-elastic premium. Rising $\phi_b$ compresses $I_p$ volatility (from $-21.8\%$ to $-3.5\%$ to $-2.6\%$) by discouraging large current-account swings, while the current-account surplus shrinks monotonically ($+0.048$ to $+0.003$ to $+0.001$), consistent with Vietnam's observed modest surpluses during domestic slowdowns \citep{worldbank2024}. The baseline $\phi_b = 0.039$ is preferred on economic grounds: the SGU-standard value generates an implausible $-21.8\%$ quarterly investment collapse inconsistent with Vietnamese national accounts, while the partially restricted capital account rules out the near-frictionless limit. Qualitative FEVD rankings and welfare costs are insensitive to the precise value within $\phi_b \in [0.039, 0.10]$.
+
+	\begin{table}[H]
+		\centering
+		\caption[Sensitivity to Debt-Elastic Premium $\phi_b$]{\textbf{Sensitivity to Debt-Elastic Premium $\phi_b$}}
+		\label{tab:phi_b_sensitivity}
+		\renewcommand{\arraystretch}{1.3}
+		\footnotesize
+		\begin{tabular}{l c c c}
+			\toprule
+			& $\phi_b = 0.001$ & $\phi_b = 0.039$ & $\phi_b = 0.10$ \\
+			& (SGU standard) & (Data-anchored) & (Strong restrictions) \\
+			\midrule
+			$I_p$ impact (intermit.\ shock) & $-21.8\%$ & $-3.5\%$ & $-2.6\%$ \\
+			$B^*$ impact (intermit.\ shock) & $+0.048$ & $+0.003$ & $+0.001$ \\
+			Qualitative FEVD rankings & Unchanged & Unchanged & Unchanged \\
+			\bottomrule
+		\end{tabular}
+		\vspace{0.2cm}
+		\parbox{\linewidth}{\footnotesize \textbf{Note:} All values are computed by re-solving the system at each $\phi_b$; the steady state is independent of $\phi_b$ since $B^*_{ss}=0$. The $B^*$ impact is the period-1 level deviation of net foreign assets following a one-standard-deviation intermittency shock; positive values indicate a surplus. Key qualitative findings, intermittency dominates output variance and battery prices dominate $I_{bat}$ variance, are robust across all three values. The data-anchored regression ($R^2 = 0.16$) corroborates the order of magnitude.}
+	\end{table}
+	
 	%% ========================================================================
 	\section{Welfare Analysis} \label{sec:welfare}
 	%% ========================================================================
+	
 	
 	This section examines how welfare varies across regulatory regimes and structural parameters. The baseline stochastic path, the impulse response in Figure \ref{fig:irf_baseline} obtained under the calibrated economy ($\chi = 1.0$, $\phi_{grid} = 1.5$, $\phi_b = 0.039$, $\mu = 0.16$, $\beta = 0.99$) following a one-standard-deviation intermittency shock, is the reference point against which all counterfactuals are compared.
 
@@ -1071,28 +1078,6 @@ The scarcity-induced innovation equation linearizes around steady state. Since $
 		\end{tabular}
 		\vspace{0.2cm}
 		\parbox{\textwidth}{\footnotesize \textbf{Note:} $\Delta\Lambda$ is the welfare change relative to the baseline stochastic path at $\beta = 0.990$; positive values are welfare costs, negative values welfare gains. Lower $\beta$ implies more impatient households and a higher steady-state real interest rate $r^* = 1/\beta - 1$. The world rate $\bar{r}$ is adjusted jointly with $\beta$ to maintain $r^*_{ss} = \bar{r}$ in steady state. Annual rate $\approx (1/\beta - 1) \times 400$. C/Y is the steady-state consumption share.}
-	\end{table}
-
-	\paragraph{Debt-Elastic Premium ($\phi_b$).} Table~\ref{tab:phi_b_sensitivity} reports sensitivity of investment and current-account responses to the debt-elastic premium. Rising $\phi_b$ compresses $I_p$ volatility (from $-21.8\%$ to $-3.5\%$ to $-2.6\%$) by discouraging large current-account swings, while the current-account surplus shrinks monotonically ($+0.048$ to $+0.003$ to $+0.001$), consistent with Vietnam's observed modest surpluses during domestic slowdowns \citep{worldbank2024}. The baseline $\phi_b = 0.039$ is preferred on economic grounds: the SGU-standard value generates an implausible $-21.8\%$ quarterly investment collapse inconsistent with Vietnamese national accounts, while the partially restricted capital account rules out the near-frictionless limit. Qualitative FEVD rankings and welfare costs are insensitive to the precise value within $\phi_b \in [0.039, 0.10]$.
-
-	\begin{table}[H]
-		\centering
-		\caption[Sensitivity to Debt-Elastic Premium $\phi_b$]{\textbf{Sensitivity to Debt-Elastic Premium $\phi_b$}}
-		\label{tab:phi_b_sensitivity}
-		\renewcommand{\arraystretch}{1.3}
-		\footnotesize
-		\begin{tabular}{l c c c}
-			\toprule
-			& $\phi_b = 0.001$ & $\phi_b = 0.039$ & $\phi_b = 0.10$ \\
-			& (SGU standard) & (Data-anchored) & (Strong restrictions) \\
-			\midrule
-			$I_p$ impact (intermit.\ shock) & $-21.8\%$ & $-3.5\%$ & $-2.6\%$ \\
-			$B^*$ impact (intermit.\ shock) & $+0.048$ & $+0.003$ & $+0.001$ \\
-			Qualitative FEVD rankings & Unchanged & Unchanged & Unchanged \\
-			\bottomrule
-		\end{tabular}
-		\vspace{0.2cm}
-		\parbox{\linewidth}{\footnotesize \textbf{Note:} All values are computed by re-solving the system at each $\phi_b$; the steady state is independent of $\phi_b$ since $B^*_{ss}=0$. The $B^*$ impact is the period-1 level deviation of net foreign assets following a one-standard-deviation intermittency shock; positive values indicate a surplus. Key qualitative findings, intermittency dominates output variance and battery prices dominate $I_{bat}$ variance, are robust across all three values. The data-anchored regression ($R^2 = 0.16$) corroborates the order of magnitude.}
 	\end{table}
 
 	\subsection{External Sector Dynamics}
