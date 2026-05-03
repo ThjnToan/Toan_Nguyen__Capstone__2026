@@ -895,33 +895,33 @@ The scarcity-induced innovation equation linearizes around steady state. Since $
 		\label{tab:baseline_sensitivity}
 		\renewcommand{\arraystretch}{1.3}
 		\small
-		\begin{tabular}{l c c c c c}
+		\begin{tabular}{l c c c c}
 			\toprule
-			\textbf{Param.} & \textbf{Value} & \textbf{Q10 $Y$ (\%)} & \textbf{Q10 $u$ (\% rel.\ ss)} & \textbf{Q10 $A_{bat}$ (\%)} & \textbf{Welfare (\%)} \\
+			\textbf{Param.} & \textbf{Value} & \textbf{Q10 $Y$ (\%)} & \textbf{Q10 $u$ (\% rel.\ ss)} & \textbf{Q10 $A_{bat}$ (\%)} \\
 			\midrule
-			Baseline & -- & $-0.12$ & $-0.18$ & $+0.67$ & 0.057 \\
+			Baseline & -- & $-0.12$ & $-0.18$ & $+0.67$ \\
 			\midrule
-			$\rho_{ren}$ (persistence) & 0.70 & $-0.02$ & $+0.01$ & $+0.39$ & 0.030 \\
-			& 0.95 & $-0.32$ & $-0.65$ & $+1.05$ & 0.131 \\
+			$\rho_{ren}$ (persistence) & 0.70 & $-0.02$ & $+0.01$ & $+0.39$ \\
+			& 0.95 & $-0.32$ & $-0.65$ & $+1.05$ \\
 			\midrule
-			$\eta_{bat}$ (innovation) & 0.05 & $-0.13$ & $-0.20$ & $+0.34$ & 0.062 \\
-			& 0.20 & $-0.10$ & $-0.13$ & $+1.27$ & 0.048 \\
+			$\eta_{bat}$ (innovation) & 0.05 & $-0.13$ & $-0.20$ & $+0.34$ \\
+			& 0.20 & $-0.10$ & $-0.13$ & $+1.27$ \\
 			\midrule
-			$\chi$ (regulatory signal) & 0.0 & $-0.14$ & $-0.23$ & 0.00 & 0.068 \\
-			& 0.5 & $-0.13$ & $-0.20$ & $+0.34$ & 0.062 \\
+			$\chi$ (regulatory signal) & 0.0 & $-0.14$ & $-0.23$ & 0.00 \\
+			& 0.5 & $-0.13$ & $-0.20$ & $+0.34$ \\
 			\bottomrule
 		\end{tabular}
 		\vspace{0.2cm}
-		\parbox{\textwidth}{\footnotesize \textbf{Note:} All entries are percentage deviations from the deterministic steady state at quarter 10 following a one-standard-deviation intermittency shock ($\sigma_{ren}=0.12$). Welfare is the consumption-equivalent cost computed along the IRF path. Impact effects ($Y=-0.53\%$, $u=-1.30\%$) are identical across rows because capital stocks are predetermined and the shock enters only through the static reliability equation.}
+		\parbox{\textwidth}{\footnotesize \textbf{Note:} All entries are percentage deviations from the deterministic steady state at quarter 10 following a one-standard-deviation intermittency shock ($\sigma_{ren}=0.12$). Impact effects ($Y=-0.53\%$, $u=-1.30\%$) are identical across rows because capital stocks are predetermined and the shock enters only through the static reliability equation.}
 	\end{table}
 	
-	Three patterns emerge. First, shock persistence $\rho_{ren}$ is the dominant driver of the valley depth. When intermittency is transient ($\rho_{ren}=0.70$), the economy has nearly recovered by quarter 10: output is only $-0.02\%$ below steady state and reliability has returned to target. When the shock is highly persistent ($\rho_{ren}=0.95$), the recession deepens to $-0.32\%$ and reliability remains $-0.65\%$ below target, with a welfare cost more than four times larger than the baseline. This underscores that the macroeconomic damage of renewable intermittency is driven not by the shock's initial magnitude but by its duration.
+	Three patterns emerge. First, shock persistence $\rho_{ren}$ is the dominant driver of the valley depth. When intermittency is transient ($\rho_{ren}=0.70$), the economy has nearly recovered by quarter 10: output is only $-0.02\%$ below steady state and reliability has returned to target. When the shock is highly persistent ($\rho_{ren}=0.95$), the recession deepens to $-0.32\%$ and reliability remains $-0.65\%$ below target. This underscores that the macroeconomic damage of renewable intermittency is driven not by the shock's initial magnitude but by its duration.
 	
-	Second, the innovation elasticity $\eta_{bat}$ governs the speed of scarcity-induced learning and thereby the pace of recovery. Doubling $\eta_{bat}$ from 0.10 to 0.20 raises the Q10 technology gain from 0.67\% to 1.27\%, accelerating reliability recovery ($-0.13\%$ vs.\ $-0.18\%$) and lowering the welfare cost from 0.057\% to 0.048\%. Conversely, halving $\eta_{bat}$ to 0.05 cuts the technology gain roughly in half ($+0.34\%$) and deepens the valley. This confirms that the quantitative importance of the learning channel is tightly linked to the empirical magnitude of induced innovation, a parameter disciplined by the battery experience-curve literature \citep{kittner2017, way2022}.
+	Second, the innovation elasticity $\eta_{bat}$ governs the speed of scarcity-induced learning and thereby the pace of recovery. Doubling $\eta_{bat}$ from 0.10 to 0.20 raises the Q10 technology gain from 0.67\% to 1.27\%, accelerating reliability recovery ($-0.13\%$ vs.\ $-0.18\%$). Conversely, halving $\eta_{bat}$ to 0.05 cuts the technology gain roughly in half ($+0.34\%$) and deepens the valley. This confirms that the quantitative importance of the learning channel is tightly linked to the empirical magnitude of induced innovation, a parameter disciplined by the battery experience-curve literature \citep{kittner2017, way2022}.
 	
 	Third, regulatory signal transmission $\chi$ determines whether the scarcity gap actually feeds back into technological progress. When $\chi=0$, the innovation channel is completely shut down: $A_{bat}$ remains at its steady-state level and the valley is deepest ($u=-0.23\%$ at Q10). Even partial signal suppression ($\chi=0.5$) halves the technology gain and noticeably slows recovery. This validates the paper's central claim that the efficacy of scarcity-induced innovation is strictly conditional on the institutional mechanism through which scarcity signals are transmitted to innovators. In regulated power markets where tariffs or ancillary-service payments suppress price volatility, the learning channel can be severely attenuated even when grid stress is severe.
 	
-	\paragraph{Debt-Elastic Premium ($\phi_b$).} Table~\ref{tab:phi_b_sensitivity} reports sensitivity of investment and current-account responses to the debt-elastic premium. Rising $\phi_b$ compresses $I_p$ volatility (from $-21.8\%$ to $-3.5\%$ to $-2.6\%$) by discouraging large current-account swings, while the current-account surplus shrinks monotonically ($+0.048$ to $+0.003$ to $+0.001$), consistent with Vietnam's observed modest surpluses during domestic slowdowns \citep{worldbank2024}. The baseline $\phi_b = 0.039$ is preferred on economic grounds: the SGU-standard value generates an implausible $-21.8\%$ quarterly investment collapse inconsistent with Vietnamese national accounts, while the partially restricted capital account rules out the near-frictionless limit. Qualitative FEVD rankings and welfare costs are insensitive to the precise value within $\phi_b \in [0.039, 0.10]$.
+	\paragraph{Debt-Elastic Premium ($\phi_b$).} Table~\ref{tab:phi_b_sensitivity} reports sensitivity of investment and current-account responses to the debt-elastic premium. Rising $\phi_b$ compresses $I_p$ volatility (from $-21.8\%$ to $-3.5\%$ to $-2.6\%$) by discouraging large current-account swings, while the current-account surplus shrinks monotonically ($+0.048$ to $+0.003$ to $+0.001$), consistent with Vietnam's observed modest surpluses during domestic slowdowns \citep{worldbank2024}. The baseline $\phi_b = 0.039$ is preferred on economic grounds: the SGU-standard value generates an implausible $-21.8\%$ quarterly investment collapse inconsistent with Vietnamese national accounts, while the partially restricted capital account rules out the near-frictionless limit. Qualitative FEVD rankings are insensitive to the precise value within $\phi_b \in [0.039, 0.10]$.
 
 	\begin{table}[H]
 		\centering
