@@ -1147,32 +1147,17 @@ The scarcity-induced innovation equation linearizes around steady state. Since $
 
 
 	\clearpage
+	\phantomsection
+	\addcontentsline{toc}{section}{References}
 	\bibliographystyle{apalike}
 	\bibliography{references}
 
 	\appendix
 	
-	%=============================================================================
-	\section{Solution Methodology and Computational Implementation} \label{app:solution}
-	%=============================================================================
+	\clearpage
+	\section{Appendix}
 	
-	The model is solved using first-order perturbation around the deterministic steady state, implemented in Dynare 6 \citep{Adjemianetal2024}. This approach approximates the policy functions as linear functions of the state variables and is appropriate given that the model's non-linearities (primarily the exponential reliability function) have been absorbed into the linearization coefficients, particularly $\xi$.
-	
-	The state vector comprises predetermined variables:
-	\begin{equation}
-		\mathbf{s}_t = (\hat{K}_{p,t}, \hat{K}_{b,t}, \hat{K}_{g,t}, \hat{A}_{bat,t}, \hat{P}_{bat,t}, B^*_{t-1}, \hat{\varepsilon}_{ren,t}),
-	\end{equation}
-	and the solution takes the form:
-	\begin{align}
-		\mathbf{s}_{t+1} &= \mathbf{M} \, \mathbf{s}_t + \mathbf{N} \, \boldsymbol{\varepsilon}_t \\
-		\mathbf{y}_t &= \mathbf{P} \, \mathbf{s}_t,
-	\end{align}
-	
-	where $\mathbf{y}_t$ denotes the vector of jump and static variables, and $\mathbf{M}$, $\mathbf{N}$, $\mathbf{P}$ are coefficient matrices from the state-space solution. The seven stable eigenvalues (0, $\approx$0, 0.90, 0.97, 0.98, 0.99, 0.99) govern the persistence of the state variables.
-	
-	Impulse response functions (IRFs) and welfare calculations reported in the main text are computed from this linear solution.
-
-	\section{Reliability Function Properties} \label{app:reliability}
+	\subsection{Reliability Function Properties} \label{app:reliability}
 	
 	\begin{table}[H]
 		\centering
@@ -1195,7 +1180,7 @@ The scarcity-induced innovation equation linearizes around steady state. Since $
 		\parbox{\linewidth}{\footnotesize \textit{Note:} Computed from equation~\eqref{eq:utilization} under the baseline calibration ($\psi = 2.0$, $\phi_{int} = 55.6$). Output loss approximated as $\alpha \times \Delta u / u_{ss}$, capturing the direct effective-capital channel. The convexity of the reliability function implies that moderate flexibility shortfalls (10--20\%) have manageable consequences, but large deficits trigger disproportionate reliability collapses, motivating the Reliability Valley analysis in Section~\ref{sec:results}.}
 	\end{table}
 
-	\section{Superadditivity of Joint Flexibility Investment} \label{app:proof_superadditivity}
+	\subsection{Superadditivity of Joint Flexibility Investment} \label{app:proof_superadditivity}
 
 	\begin{proposition}[Superadditivity of Joint Flexibility Investment] \label{prop:superadditivity}
 		Let $F(x, y) = [\mu \, x^{s} + (1-\mu) \, y^{s}]^{1/s}$ be the CES flexibility aggregator with $s \equiv (\rho - 1)/\rho$, $\mu \in (0,1)$, and $\rho \in (0,1)$ (so that $s < 0$). For any baseline inputs $x_0, y_0 > 0$ and scaling factor $\lambda > 1$, the joint gain from scaling both inputs strictly exceeds the sum of individual gains:
@@ -1259,37 +1244,8 @@ The scarcity-induced innovation equation linearizes around steady state. Since $
 	
 	\noindent \textbf{Remark (Superadditivity Gap).} By homogeneity of degree one, the joint gain equals exactly $(\lambda - 1) F(x_0, y_0)$. Each individual gain is strictly less than $(\lambda-1) F$ due to the strict concavity of $F$ in each argument separately. The superadditivity gap, the excess of the joint gain over the sum of individual gains, measures the pure complementarity premium from coordinated investment. This gap vanishes only as $\rho \to 1$ (perfect substitutes) and grows as $\rho \to 0$ (Leontief). Table~\ref{tab:ces_complementarity} in the main text evaluates the gap numerically under the baseline calibration.
 	
-	\section{Proof of Proposition~\ref{prop:chi_monotonicity}} \label{app:proof_chi}
-	
-	\begin{proof}
-		The counterfactual welfare change is defined as the compensating variation relative to the baseline stochastic path:
-		\begin{equation*}
-			\Delta\Lambda(\chi) = 1 - \exp\!\left[\frac{1-\beta}{1-\beta^{T+1}} \sum_{t=0}^{T} \beta^t \log\!\left(\frac{C_t^{\chi}}{C_t^{\text{base}}}\right)\right],
-		\end{equation*}
-		where $C_t^{\chi}$ is the consumption path under signal parameter $\chi$ and $C_t^{\text{base}}$ is the consumption path at $\chi_{\text{base}} = 1.0$. It suffices to show that $\sum_{t=0}^{T}\beta^t \log(C_t^{\chi}/C_t^{\text{base}})$ is strictly increasing in $\chi$.
-
-		From the log-linearized innovation equation~\eqref{eq:abat_lin}, technology evolves as:
-		\begin{equation*}
-			\hat{A}_{bat,t} - \hat{A}_{bat,t-1} = -\eta_{bat}\,\chi\,\hat{u}_t.
-		\end{equation*}
-		For any sequence of reliability shortfalls $\hat{u}_t < 0$ (which holds whenever an adverse intermittency shock strikes), an increase from $\chi_2$ to $\chi_1 > \chi_2$ yields a strictly larger technology growth rate in every period $t \geq 1$:
-		\begin{equation*}
-			\hat{A}_{bat,t}(\chi_1) > \hat{A}_{bat,t}(\chi_2)\quad \text{for all } t \geq 1.
-		\end{equation*}
-		Since $\hat{A}_{bat,t}$ enters flexibility through equation~\eqref{eq:flexibility_bundle} with coefficient $s_b > 0$, and flexibility enters reliability through equation~\eqref{eq:reliability_lin} with coefficient $\xi > 0$, a higher $A_{bat}$ raises $\hat{u}_t$, which via equation~\eqref{eq:va_lin} raises value-added and hence output. By the capital Euler equation~\eqref{eq:euler_lin}, higher expected output raises current consumption. Therefore for any $\chi_1 > \chi_2$:
-		\begin{equation*}
-			C_t^{\chi_1} \geq C_t^{\chi_2}\quad \forall\, t,
-		\end{equation*}
-		with strict inequality for $t \geq 1$ following the first period of learning. Since $C_t^{\text{base}}$ does not depend on $\chi$, dividing both paths by the common baseline preserves the inequality:
-		\begin{equation*}
-			\sum_{t=0}^{T}\beta^t \log\!\left(\frac{C_t^{\chi_1}}{C_t^{\text{base}}}\right) > \sum_{t=0}^{T}\beta^t \log\!\left(\frac{C_t^{\chi_2}}{C_t^{\text{base}}}\right),
-		\end{equation*}
-		which implies $\Delta\Lambda(\chi_1) < \Delta\Lambda(\chi_2)$. Evaluating at $\chi_1 = \chi_{\text{base}} = 1.0$ gives $\Delta\Lambda(\chi_{\text{base}}) = 0$. $\qed$
-	\end{proof}
-	
-	
 	%=============================================================================
-	\section{Derivation of the Capital Euler Equation} \label{app:deriv_euler}
+	\subsection{Derivation of the Capital Euler Equation} \label{app:deriv_euler}
 	%=============================================================================
 	
 	This appendix provides the complete step-by-step derivation of the capital Euler equation~\eqref{eq:euler} from the household's optimization problem.
@@ -1383,7 +1339,7 @@ The scarcity-induced innovation equation linearizes around steady state. Since $
 	which pins down the steady-state capital-to-output ratio as $K_{p,ss}/Y_{ss} = (1-\tau)\alpha\beta/(1 - \beta(1-\delta_p))$. The steady-state tax rate is $\tau_{ss} = I_{grid,ss}/Y_{ss} = \delta_g K_{g,ss}/Y_{ss}$, which is small (approximately 1.43\% given the calibration), so the distortion to the capital stock is modest but non-zero.
 	
 	%=============================================================================
-	\section{Derivation of the Labor Supply Equation} \label{app:deriv_labor}
+	\subsection{Derivation of the Labor Supply Equation} \label{app:deriv_labor}
 	%=============================================================================
 	
 	This appendix provides the complete step-by-step derivation of the labor supply condition~\eqref{eq:labor_supply} from the household's optimization problem and the competitive firm's wage-setting rule.
@@ -1458,7 +1414,7 @@ The scarcity-induced innovation equation linearizes around steady state. Since $
 
 
 %=============================================================================
-\section{The Complete Log-Linearized Model} \label{app:log_lin}
+\subsection{The Complete Log-Linearized Model} \label{app:log_lin}
 %=============================================================================
 
 This appendix presents the complete set of log-linearized equations that define the recursive competitive equilibrium. Variables with hats denote log-deviations from the deterministic steady state ($\hat{x}_t \equiv \ln X_t - \ln X_{ss}$), except for the net foreign asset position $B^*_t$ which is expressed in levels.
@@ -1549,7 +1505,7 @@ This appendix presents the complete set of log-linearized equations that define 
 	The first is the domestic renewable intermittency shock, persistent with AR(1) coefficient $\rho_{ren} = 0.85$ capturing seasonal weather patterns. The second is a global battery price shock in log-levels (equation~\ref{eq:battery_price_shock}), with persistence $\rho_{bat} = 0.90$ matching lithium market dynamics. The third is a government grid-investment implementation shock, modeled as white noise (i.i.d.) reflecting project-specific delays and procurement bottlenecks that are uncorrelated across periods. All shocks are assumed to be mutually independent.
 
 %=============================================================================
-\section{Steady State Derivation} \label{app:steadystate}
+\subsection{Steady State Derivation} \label{app:steadystate}
 %=============================================================================
 
 In the deterministic steady state (all shocks set to zero), the following conditions hold:
@@ -1606,7 +1562,7 @@ Parameters are calibrated such that the steady state matches Vietnamese macroeco
 
 
 %=============================================================================
-\section{Forecast Error Variance Decomposition} \label{app:fevd}
+\subsection{Forecast Error Variance Decomposition} \label{app:fevd}
 %=============================================================================
 
 The forecast error variance decomposition (FEVD) identifies the relative contribution of each structural shock to the volatility of endogenous variables at a 40-quarter horizon. The decomposition is computed from the state-space representation of the log-linearized system using the standard projection formula: the forecast error variance of variable $i$ at horizon $h$ is decomposed into shares attributable to each orthogonalized shock $j$ via the impulse response coefficients $\Psi_{i,j}(k)$. Formally, the share of shock $j$ in the $h$-step ahead forecast error variance of variable $i$ is
@@ -1640,4 +1596,51 @@ Grid investment ($I_{grid}$) & 25 & $<$2 & 82 \\
 \parbox{\textwidth}{\footnotesize \textbf{Note:} Percentage of forecast error variance attributable to each shock from Dynare stochastic simulation (1000 periods). Shares can exceed 100\% due to non-zero correlation of simulated shocks in finite samples. Intermittency shocks drive 95.4\% of output volatility; global battery-price shocks contribute 5\%. Consumption volatility is split between intermittency (85\%) and battery-price shocks (11\%), reflecting the dominance of persistent domestic shocks. Grid investment variance is 82\% driven by implementation shocks $\varepsilon_I$ via the investment rule.}
 \end{table}
 
+	\subsection{Proof of Proposition~\ref{prop:chi_monotonicity}} \label{app:proof_chi}
+	
+	\begin{proof}
+		The counterfactual welfare change is defined as the compensating variation relative to the baseline stochastic path:
+		\begin{equation*}
+			\Delta\Lambda(\chi) = 1 - \exp\!\left[\frac{1-\beta}{1-\beta^{T+1}} \sum_{t=0}^{T} \beta^t \log\!\left(\frac{C_t^{\chi}}{C_t^{\text{base}}}\right)\right],
+		\end{equation*}
+		where $C_t^{\chi}$ is the consumption path under signal parameter $\chi$ and $C_t^{\text{base}}$ is the consumption path at $\chi_{\text{base}} = 1.0$. It suffices to show that $\sum_{t=0}^{T}\beta^t \log(C_t^{\chi}/C_t^{\text{base}})$ is strictly increasing in $\chi$.
+
+		From the log-linearized innovation equation~\eqref{eq:abat_lin}, technology evolves as:
+		\begin{equation*}
+			\hat{A}_{bat,t} - \hat{A}_{bat,t-1} = -\eta_{bat}\,\chi\,\hat{u}_t.
+		\end{equation*}
+		For any sequence of reliability shortfalls $\hat{u}_t < 0$ (which holds whenever an adverse intermittency shock strikes), an increase from $\chi_2$ to $\chi_1 > \chi_2$ yields a strictly larger technology growth rate in every period $t \geq 1$:
+		\begin{equation*}
+			\hat{A}_{bat,t}(\chi_1) > \hat{A}_{bat,t}(\chi_2)\quad \text{for all } t \geq 1.
+		\end{equation*}
+		Since $\hat{A}_{bat,t}$ enters flexibility through equation~\eqref{eq:flexibility_bundle} with coefficient $s_b > 0$, and flexibility enters reliability through equation~\eqref{eq:reliability_lin} with coefficient $\xi > 0$, a higher $A_{bat}$ raises $\hat{u}_t$, which via equation~\eqref{eq:va_lin} raises value-added and hence output. By the capital Euler equation~\eqref{eq:euler_lin}, higher expected output raises current consumption. Therefore for any $\chi_1 > \chi_2$:
+		\begin{equation*}
+			C_t^{\chi_1} \geq C_t^{\chi_2}\quad \forall\, t,
+		\end{equation*}
+		with strict inequality for $t \geq 1$ following the first period of learning. Since $C_t^{\text{base}}$ does not depend on $\chi$, dividing both paths by the common baseline preserves the inequality:
+		\begin{equation*}
+			\sum_{t=0}^{T}\beta^t \log\!\left(\frac{C_t^{\chi_1}}{C_t^{\text{base}}}\right) > \sum_{t=0}^{T}\beta^t \log\!\left(\frac{C_t^{\chi_2}}{C_t^{\text{base}}}\right),
+		\end{equation*}
+		which implies $\Delta\Lambda(\chi_1) < \Delta\Lambda(\chi_2)$. Evaluating at $\chi_1 = \chi_{\text{base}} = 1.0$ gives $\Delta\Lambda(\chi_{\text{base}}) = 0$. $\qed$
+	\end{proof}
+
+	%=============================================================================
+	\subsection{Solution Methodology and Computational Implementation} \label{app:solution}
+	%=============================================================================
+	
+	The model is solved using first-order perturbation around the deterministic steady state, implemented in Dynare 6 \citep{Adjemianetal2024}. This approach approximates the policy functions as linear functions of the state variables and is appropriate given that the model's non-linearities (primarily the exponential reliability function) have been absorbed into the linearization coefficients, particularly $\xi$.
+	
+	The state vector comprises predetermined variables:
+	\begin{equation}
+		\mathbf{s}_t = (\hat{K}_{p,t}, \hat{K}_{b,t}, \hat{K}_{g,t}, \hat{A}_{bat,t}, \hat{P}_{bat,t}, B^*_{t-1}, \hat{\varepsilon}_{ren,t}),
+	\end{equation}
+	and the solution takes the form:
+	\begin{align}
+		\mathbf{s}_{t+1} &= \mathbf{M} \, \mathbf{s}_t + \mathbf{N} \, \boldsymbol{\varepsilon}_t \\
+		\mathbf{y}_t &= \mathbf{P} \, \mathbf{s}_t,
+	\end{align}
+	
+	where $\mathbf{y}_t$ denotes the vector of jump and static variables, and $\mathbf{M}$, $\mathbf{N}$, $\mathbf{P}$ are coefficient matrices from the state-space solution. The seven stable eigenvalues (0, $\approx$0, 0.90, 0.97, 0.98, 0.99, 0.99) govern the persistence of the state variables.
+	
+	Impulse response functions (IRFs) and welfare calculations reported in the main text are computed from this linear solution.
 
