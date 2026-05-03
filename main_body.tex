@@ -1,6 +1,6 @@
 	\section{Introduction}
 	
-	Mitigating climate change has emerged as the defining macroeconomic challenge of the 21st century. Following the Paris Agreement, global policy has pivoted decisively toward Net Zero targets, necessitating a radical transformation of energy systems. This transition is predicated on the massive deployment of Variable Renewable Energy (VRE) sources, primarily wind and solar, whose Levelized Cost of Energy (LCOE)\footnote{Levelized Cost of Energy (LCOE): an average lifetime cost per unit of electricity, typically computed as discounted total costs divided by discounted energy output.} has fallen precipitously over the last decade. However, the integration of these sources introduces a fundamental structural friction: the shift from dispatchable fossil fuel generation to non-dispatchable renewable supply. Unlike coal or gas, whose production can be adjusted to match demand, solar and wind generation are exogenously determined by nature.
+	Mitigating climate change has emerged as the defining macroeconomic challenge of the 21st century. Following the Paris Agreement, global policy has pivoted decisively toward Net Zero targets, necessitating a radical transformation of energy systems. This transition is predicated on the massive deployment of Variable Renewable Energy (VRE) sources, primarily wind and solar, whose Levelized Cost of Energy (LCOE) has fallen precipitously over the last decade.\footnote{Levelized Cost of Energy (LCOE): an average lifetime cost per unit of electricity, typically computed as discounted total costs divided by discounted energy output.} However, the integration of these sources introduces a fundamental structural friction: the shift from dispatchable fossil fuel generation to non-dispatchable renewable supply. Unlike coal or gas, whose production can be adjusted to match demand, solar and wind generation are exogenously determined by nature.
 	
 	As noted by \citet{ambec2012}, the non-storability of electricity implies that supply and demand must clear instantaneously; when VRE penetration increases without a corresponding increase in storage capacity, the marginal value of renewable energy declines. This phenomenon, empirically documented as the ``cannibalization effect'' \citep{hirth2013}, implies that the decarbonization challenge is not merely one of installing generation capacity, but also one of managing the reliability penalty associated with supply volatility.
 	
@@ -203,7 +203,7 @@
 		\label{eq:hh_budget},
 	\end{equation}
 	
-	where $\tau$ is the fixed proportional tax rate, $T_t$ is a residual lump-sum tax (or transfer) that balances the government budget dynamically, $w_t$ the real wage, $R_t$ the rental rate on $K_{p,t-1}$, $\Pi_t$ the rents from the exogenous energy endowment, and $B^*_t$ net foreign assets.\footnote{\label{fn:timing_convention}Capital installed at $t-1$ is productive in $t$; investment $I_{p,t}$ does not contribute until $t+1$.}
+	where $\tau$ is the fixed proportional tax rate, $T_t$ is a residual lump-sum tax (or transfer), $w_t$ the real wage, $R_t$ the rental rate on $K_{p,t-1}$, $\Pi_t$ the rents from the exogenous energy endowment, and $B^*_t$ net foreign assets.\footnote{\label{fn:timing_convention}Capital installed at $t-1$ is productive in $t$; investment $I_{p,t}$ does not contribute until $t+1$.}
 
 The household chooses $\{C_t, L_t, K_{p,t+1}, B^*_t\}$ to maximize utility subject to the budget constraint \eqref{eq:hh_budget} and the standard capital accumulation law \eqref{eq:productive_capital}; the mathematical derivation is in Appendix~\ref{app:deriv_euler}.
 	
@@ -235,7 +235,7 @@ The household chooses $\{C_t, L_t, K_{p,t+1}, B^*_t\}$ to maximize utility subje
 		\label{eq:final_output}.
 	\end{equation}
 
-Energy enters as a fixed endowment $\bar{E}$ (PDP8 targets); the intermittency shock propagates through the reliability function rather than energy supply directly.
+Energy enters as a fixed endowment $\bar{E}$; the intermittency shock propagates through the reliability function rather than energy supply directly.
 	
 	When $\sigma_E < 1$, energy and value-added are gross complements: disruptions to energy supply translate into disproportionately large output losses \citep{heutel2012}.
 
@@ -246,7 +246,7 @@ Value-added production combines labor and effective capital services:
 		\label{eq:value_added}.
 	\end{equation}
 	
-	Effective capital $u_t K_{p,t-1}$ is the operational fraction of installed capacity ($u_t \in (0,1)$, capturing system-wide outages rather than a firm-level choice): a 3\% reliability shortfall is equivalent to a TFP loss of $\alpha \times 3\%\approx 1\%$.
+	Effective capital $u_t K_{p,t-1}$ is the operational fraction of installed capacity ($u_t \in (0,1)$, capturing system-wide outages rather than a firm-level choice.)
 	
 	\subsection{Grid Reliability and Flexibility Assets}
 	
@@ -259,11 +259,11 @@ Value-added production combines labor and effective capital services:
 		\label{eq:utilization}.
 	\end{equation}
 	
-	Grid reliability is an increasing, concave function of the ratio of flexibility assets ($F_t$) to renewable volatility ($\text{Vol}_{ren,t}$). When the system has abundant flexibility relative to volatility, nearly all capital can operate ($u_t \approx 1$); when flexibility is scarce, outages proliferate and utilization collapses.
+	Grid reliability is an increasing, concave function of the ratio of flexibility assets ($F_t$) to renewable volatility ($\text{Vol}_{ren,t}$). When the system has abundant flexibility relative to volatility, nearly all capital can operate; when flexibility is scarce, outages proliferate and utilization collapses.
 	
 	This exponential form is standard in reliability engineering \citep{zakeri2015, lund2015}: $u_t \in (0,1)$ for all $F_t > 0$, reliability is bounded between grid collapse and perfection, and marginal returns to flexibility are strictly diminishing.
 	
-	Table~\ref{tab:reliability_numerical} in Appendix~\ref{app:reliability} illustrates this nonlinearity: a 10\% flexibility deficit reduces reliability by 1.26~pp, but a 50\% deficit causes a 14.32~pp collapse. The accelerating penalty motivates the Reliability Valley analysis in Section~\ref{sec:results}.
+	Table~\ref{tab:reliability_numerical} in Appendix~\ref{app:reliability} illustrates this nonlinearity: a 10\% flexibility deficit reduces reliability by 1.26~pp, but a 50\% deficit causes a 14.32~pp collapse.\footnote{The accelerating penalty motivates the Reliability Valley analysis in Section~\ref{sec:results}.}
 	
 	The volatility term captures the absolute variability of renewable generation:
 	\begin{equation}
@@ -288,7 +288,7 @@ Value-added production combines labor and effective capital services:
 		\label{eq:flexibility_bundle}.
 	\end{equation}
 	
-	The negative exponent $s_F<0$ ($\rho=0.4<1$) enforces imperfect complementarity; all inputs are predetermined from period $t-1$. See Proposition~\ref{prop:superadditivity} (Appendix~\ref{app:proof_superadditivity}).
+	The negative exponent $s_F<0$ enforces imperfect complementarity; all inputs are predetermined from period $t-1$.\footnote{See Proposition~\ref{prop:superadditivity} (Appendix~\ref{app:proof_superadditivity}).}
 	
 	\subsubsection{Laws of Motion}
 	
@@ -313,30 +313,6 @@ Value-added production combines labor and effective capital services:
 	\paragraph{Battery Investment Decision.}
 	The investment rule below proxies the gradient of the structural shadow price while preserving local saddle-path stability; the mathematical derivation is in Appendix~\ref{app:deriv_euler}.
 
-	Table~\ref{tab:mpk_decomp} evaluates the shadow rental rate at steady state, yielding $R_{b,ss} = 10.93\%$ quarterly. The flexibility bottleneck ($\partial F / \partial(A_{bat} K_b) = 2.04$) is the dominant force, reflecting battery scarcity in the CES aggregator, while the reliability gradient is moderate because the system operates near $u_{ss} = 0.97$.
-	
-	\begin{table}[H]
-		\centering
-		\caption[Marginal Product Decomposition of Battery Rental Rate]{\textbf{Marginal Product Decomposition of Battery Rental Rate ($R_{b,ss}$)}}
-		\label{tab:mpk_decomp}
-		\renewcommand{\arraystretch}{1.3}
-		\small
-		\begin{tabular}{l l c l}
-			\toprule
-			\textbf{Component} & \textbf{Expression} & \textbf{Value} & \textbf{Interpretation} \\
-			\midrule
-			CES output share & $\partial Y / \partial V$ & 0.725 & Value-added dominates output \\
-			Utilization effect & $\partial V / \partial u = \alpha V/u$ & 0.370 & Capital utilization channel \\
-			Reliability gradient & $\partial u / \partial F$ & 0.200 & Moderate (near flat of exp.\ curve) \\
-			Flexibility bottleneck & $\partial F / \partial (A_{bat} K_b)$ & 2.040 & Scarce factor in CES \\
-			\midrule
-			\textbf{Shadow rental rate} & $R_{b,ss}$ & \textbf{0.109} & \textbf{10.93\% quarterly} \\
-			\bottomrule
-		\end{tabular}
-		\vspace{0.2cm}
-		\parbox{\textwidth}{\footnotesize \textit{Note:} Evaluated at the deterministic steady state. $R_{b,ss} = (\partial Y/\partial V) \times (\partial V/\partial u) \times (\partial u/\partial F) \times (\partial F/\partial(A_{bat} K_b)) \times A_{bat} = 0.725 \times 0.370 \times 0.200 \times 2.040 \times 1.0 = 0.109$. The large flexibility bottleneck term reflects batteries' position as the scarce factor ($\mu = 0.16$) in the CES aggregator. When $u_t$ falls below target, the reliability gradient steepens (since $\partial u/\partial F \propto (1-u_t)$), amplifying $R_b$ and triggering the investment response.}
-	\end{table}
-	
 	Rising reliability gap $(1-u_t)$ steepens the gradient and raises $R_{b,t}$, motivating:
 
 	\begin{equation}
@@ -371,7 +347,7 @@ where $\eta_{bat}$ is the innovation elasticity, $\chi\in(0,1]$ captures regulat
 	
 	This rule captures the reactive nature of infrastructure policy, where investment accelerates following reliability crises rather than anticipating them. The parameter $\phi_{grid}$ governs the aggressiveness of the fiscal response.
 	
-	The government finances grid investment through a fixed proportional tax $\tau_{ss}=I_{grid,ss}/Y_{ss}=1.43\%$ ($\tau_{ss}=\delta_g K_{g,ss}/Y_{ss}=0.0143$), ensuring tax revenue covers replacement grid investment. Formally, the government budget is balanced dynamically by a lump-sum transfer $T_t$:
+	The government finances grid investment through a fixed proportional tax $\tau$, ensuring tax revenue covers replacement grid investment. Formally, the government budget is balanced dynamically by a lump-sum transfer $T_t$:
 	\begin{equation}
 		I_{grid,t} = \tau Y_t + T_t
 		\label{eq:gov_budget}.
@@ -385,7 +361,7 @@ where $\eta_{bat}$ is the innovation elasticity, $\chi\in(0,1]$ captures regulat
 		\label{eq:battery_price_shock},
 	\end{equation}
 	
-	where $\varepsilon_{bat,t} \sim N(0, \sigma^2_{bat})$ captures global shocks to battery costs (e.g., lithium price volatility, supply chain disruptions). This channel allows the model to examine how external cost shocks to the green transition propagate through the domestic economy. In steady state, $P_{bat,ss} = 1$ (normalized).
+	where $\varepsilon_{bat,t} \sim N(0, \sigma^2_{bat})$ captures global shocks to battery costs (e.g., lithium price volatility, supply chain disruptions). This channel allows the model to examine how external cost shocks to the green transition propagate through the domestic economy.
 	
 	\subsection{External Sector}
 	
@@ -454,7 +430,7 @@ where $\eta_{bat}$ is the innovation elasticity, $\chi\in(0,1]$ captures regulat
 	\noindent The no-arbitrage condition $(1-\tau)\alpha Y_{t+1}/K_{p,t}+1-\delta_p=1+r^*_t$ and the domestic absorption identity \eqref{eq:goods_market_clearing} are derived from the equations above and do not constitute additional independent conditions. The renewable volatility $\overline{\text{Vol}}_{ren}$ (equation~\ref{eq:renewable_volatility}) is a calibrated parameter, not an endogenous variable. The system is exactly identified: 16 equations in 16 unknowns.
 
 	\subsection{Steady State Characterization}
-	The deterministic steady state is computed by setting all shocks to zero and solving the 16-equation system analytically. Key values are: $u_{ss} = 0.97$, $Y_{ss} = 1.0$ (normalised), $K_{p,ss} = 9.83$, $L_{ss} = 0.33$, $C_{ss}/Y_{ss} = 0.734$, and $I_{grid,ss}/Y_{ss} = 0.014$. Battery capital $K_{b,ss}$ and grid capital $K_{g,ss}$ are calibrated to match the flexibility bundle target; the full steady-state derivation is in Appendix~\ref{app:steadystate}.
+	The deterministic steady state is computed by setting all shocks to zero and solving the 16-equation system analytically. 	Key values are: $u_{ss} = 0.97$, $Y_{ss} = 1.0$ (normalised), $K_{p,ss} = 9.83$, $L_{ss} = 0.33$, $C_{ss}/Y_{ss} = 0.734$, $I_{grid,ss}/Y_{ss} = 0.014$, and $P_{bat,ss} = 1$ (normalized). Battery capital $K_{b,ss}$ and grid capital $K_{g,ss}$ are calibrated to match the flexibility bundle target; the full steady-state derivation is in Appendix~\ref{app:steadystate}.
 
 	\section{Model Mechanisms} \label{sec:mechanics}
 	
@@ -590,7 +566,7 @@ The scarcity-induced innovation equation linearizes around steady state. Since $
 		\label{eq:abat_lin}.
 	\end{equation}
 	
-	Battery technology improves proportionally to the reliability shortfall, modulated by $\eta_{bat}=0.10$ and regulatory transmission $\chi$; suppressed signals or a healthy grid cause technology to stagnate. Full system in Appendix~\ref{app:log_lin}.	
+	Battery technology improves proportionally to the reliability shortfall, modulated by $\eta_{bat}=0.10$ and regulatory transmission $\chi$; suppressed signals or a healthy grid cause technology to stagnate.\footnote{Full system in Appendix~\ref{app:log_lin}.}
 
 	\paragraph{Interaction: The Reliability Valley.}
 	The interaction of Channels 1--4 generates the Reliability Valley identified in the abstract. During a transition to high renewable penetration, the deterministic path of increasing intermittency outpaces both the sluggish accumulation of public grid capital (Channel 3) and the gradual improvement in storage technology (Channel 2). The resulting reliability shortfall persists for several years, during which households bear welfare losses through reduced consumption and increased energy price volatility. The depth and duration of the valley depend on the relative speed of private innovation versus public infrastructure accumulation, the Agility Gap.
@@ -751,7 +727,31 @@ The scarcity-induced innovation equation linearizes around steady state. Since $
 	
 	Table~\ref{tab:steady_state} (Appendix~\ref{app:steadystate}) reports all 16 steady-state values. Key targets: $u_{ss}=0.97$, $K_{p,ss}/Y_{ss}=9.83$, $C_{ss}/Y_{ss}=0.734$.
 
- 	The 3\% reliability shortfall ($1-u_{ss}=0.03$) acts as an efficiency wedge, reducing effective capital services by $\alpha \times 3\% = 1.05$~pp relative to perfect reliability. This structural drag is the starting point from which intermittency shocks propagate.
+  	The 3\% reliability shortfall ($1-u_{ss}=0.03$) acts as an efficiency wedge, reducing effective capital services by $\alpha \times 3\% = 1.05$~pp relative to perfect reliability. This structural drag is the starting point from which intermittency shocks propagate.
+
+	Table~\ref{tab:mpk_decomp} evaluates the shadow rental rate at steady state, yielding $R_{b,ss} = 10.93\%$ quarterly. The flexibility bottleneck ($\partial F / \partial(A_{bat} K_b) = 2.04$) is the dominant force, reflecting battery scarcity in the CES aggregator, while the reliability gradient is moderate because the system operates near $u_{ss} = 0.97$.
+	
+	\begin{table}[H]
+		\centering
+		\caption[Marginal Product Decomposition of Battery Rental Rate]{\textbf{Marginal Product Decomposition of Battery Rental Rate ($R_{b,ss}$)}}
+		\label{tab:mpk_decomp}
+		\renewcommand{\arraystretch}{1.3}
+		\small
+		\begin{tabular}{l l c l}
+			\toprule
+			\textbf{Component} & \textbf{Expression} & \textbf{Value} & \textbf{Interpretation} \\
+			\midrule
+			CES output share & $\partial Y / \partial V$ & 0.725 & Value-added dominates output \\
+			Utilization effect & $\partial V / \partial u = \alpha V/u$ & 0.370 & Capital utilization channel \\
+			Reliability gradient & $\partial u / \partial F$ & 0.200 & Moderate (near flat of exp.\ curve) \\
+			Flexibility bottleneck & $\partial F / \partial (A_{bat} K_b)$ & 2.040 & Scarce factor in CES \\
+			\midrule
+			\textbf{Shadow rental rate} & $R_{b,ss}$ & \textbf{0.109} & \textbf{10.93\% quarterly} \\
+			\bottomrule
+		\end{tabular}
+		\vspace{0.2cm}
+		\parbox{\textwidth}{\footnotesize \textit{Note:} Evaluated at the deterministic steady state. $R_{b,ss} = (\partial Y/\partial V) \times (\partial V/\partial u) \times (\partial u/\partial F) \times (\partial F/\partial(A_{bat} K_b)) \times A_{bat} = 0.725 \times 0.370 \times 0.200 \times 2.040 \times 1.0 = 0.109$. The large flexibility bottleneck term reflects batteries' position as the scarce factor ($\mu = 0.16$) in the CES aggregator. When $u_t$ falls below target, the reliability gradient steepens (since $\partial u/\partial F \propto (1-u_t)$), amplifying $R_b$ and triggering the investment response.}
+	\end{table}
 
 	\subsection{Impulse Response to Renewable Intermittency Shock}
 	
