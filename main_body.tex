@@ -1076,7 +1076,7 @@ The scarcity-induced innovation equation linearizes around steady state. Since $
 		\parbox{\textwidth}{\footnotesize \textbf{Note:} $\Delta\Lambda$ is the welfare change relative to the baseline stochastic path at $\beta = 0.990$; positive values are welfare costs, negative values welfare gains. Lower $\beta$ implies more impatient households and a higher steady-state real interest rate $r^* = 1/\beta - 1$. The world rate $\bar{r}$ is adjusted jointly with $\beta$ to maintain $r^*_{ss} = \bar{r}$ in steady state. Annual rate $\approx (1/\beta - 1) \times 400$. C/Y is the steady-state consumption share.}
 	\end{table}
 
-	\subsection{Joint Shock Scenario: Perfect Storm} \label{subsec:joint_shock}
+	\subsection{Counterfactual 3: Joint Shock Scenario} \label{subsec:joint_shock}
 
 	The baseline impulse response is driven by the intermittency shock alone. In practice, adverse shocks may coincide, for example, a period of low renewable generation may overlap with a spike in global lithium prices, simultaneously increasing intermittency and raising the cost of the storage remedy. To assess this scenario, I add a one-standard-deviation battery-price shock ($\varepsilon_{bat}$) to the baseline intermittency shock and compute the welfare change relative to the baseline using equation~\eqref{eq:welfare_change}.
 
@@ -1105,7 +1105,7 @@ The scarcity-induced innovation equation linearizes around steady state. Since $
 
 	Two findings emerge. First, adding the battery-price shock to the baseline intermittency shock imposes an additional welfare cost of $\Delta\Lambda \approx 0.0189\%$ of steady-state consumption. Second, the joint scenario creates a ``scissors effect'': intermittency raises the need for storage while the battery price shock raises its cost, generating a net decline in battery investment ($-6.05\%$) and strengthening the case for strategic battery reserves or long-term procurement contracts.
 
-	\subsection{Summary}
+	\subsection{Summary of Welfare Analysis}
 
 	The baseline analysis (Section~\ref{sec:results}) and welfare analysis establish four core findings.
 
@@ -1129,7 +1129,11 @@ The scarcity-induced innovation equation linearizes around steady state. Since $
 
 	Third, scarcity-induced innovation: battery technology improves endogenously when the grid is stressed (0.65\% gain by quarter 10), but the proportional tax wedge prevents accumulation into persistent long-run gains beyond steady-state levels. Innovation remains conditional on scarcity signal transmission ($\chi > 0$).
 
-	Counterfactual analysis reveals that fully suppressing scarcity signals ($\chi = 0$) imposes a welfare cost of $\Delta\Lambda \approx 0.0115\%$ of steady-state consumption relative to the baseline stochastic economy, with monotonic intermediate costs for partial suppression. This confirms that the scarcity-induced innovation channel is quantitatively important for welfare. The constant fiscal wedge shifts the steady state but does not create dynamic amplification beyond the standard Euler mechanism.
+	Counterfactual 1 (Signal Attenuation) reveals that fully suppressing scarcity signals ($\chi = 0$) imposes a welfare cost of $\Delta\Lambda \approx 0.0115\%$ of steady-state consumption relative to the baseline stochastic economy, with monotonic intermediate costs for partial suppression. This confirms that the scarcity-induced innovation channel is quantitatively important for welfare. The constant fiscal wedge shifts the steady state but does not create dynamic amplification beyond the standard Euler mechanism.
+
+	Counterfactual 2 (Closing the Agility Gap) examines whether the Reliability Valley can be mitigated through policy intervention. Two scenarios are simulated against the baseline S-curve renewable path: (A) Accelerated Grid Planning ($\phi_{\text{grid}}=3.0$) and (B) Battery Subsidy ($P_{\text{bat}}=0.8$). Battery subsidies reduce valley depth by $38.6\%$ (from $15.7$~pp to $9.6$~pp), while accelerated grid planning shortens duration by $20\%$ and achieves recovery by Q81. Neither policy alone eliminates the valley, confirming the complementarity proposition: addressing the agility gap requires coordinated investment in both flexibility instruments.
+
+	Counterfactual 3 (Joint Shock Scenario) assesses simultaneous intermittency and battery-price shocks. The joint scenario imposes an additional welfare cost of $\Delta\Lambda \approx 0.0189\%$ relative to the baseline, and creates a ``scissors effect'': intermittency raises the need for storage while the battery-price shock raises its cost, generating a net decline in battery investment ($-6.05\%$). This strengthens the case for strategic battery reserves or long-term procurement contracts.
 
 	These findings carry direct policy implications. Market-based mechanisms that transmit scarcity signals, real-time pricing, capacity payments, ancillary service remuneration, are necessary complements to direct storage investment. For Vietnam, achieving $\chi \approx 1$ requires competitive wholesale pricing, capacity remuneration for storage, and ancillary service compensation; the welfare cost at $\chi=0$ quantifies the cost of regulatory inertia.
 
